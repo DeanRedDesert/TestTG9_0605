@@ -16,6 +16,7 @@ namespace Gaff.Core.GaffEditor
 	/// </summary>
 	public static class GaffRunner
 	{
+		private const int MaxStepSearchGame = 4000;
 		private const int MaxSearchGames = 20000;
 
 		public static async Task<GaffResult> RunGaffAsync(this IReadOnlyList<GaffStep> gaffSteps, IRunner runner, IDecisionGenerator primaryDecisionGenerator, Inputs initialInputs, bool isWasm)
@@ -45,7 +46,7 @@ namespace Gaff.Core.GaffEditor
 				var counter = 0;
 
 				// Run the same game cycle until we get a match
-				while (counter < MaxSearchGames)
+				while (overallSearchCount < MaxSearchGames && stepSearchCount < MaxStepSearchGame)
 				{
 					// Need to periodically delay to allow the wasm UI to update.
 					if (isWasm && counter % 500 == 0)
@@ -93,6 +94,8 @@ namespace Gaff.Core.GaffEditor
 				}
 
 				var moveToNextStep = CheckForAllTrue(selectedGaff.NextStepConditions, initialResultForStep, currentResult, gaffResult, stepStateData);
+
+				moveToNextStep = stepSearchCount < MaxStepSearchGame ? moveToNextStep : StepConditionResult.Fail;
 
 				switch (moveToNextStep)
 				{

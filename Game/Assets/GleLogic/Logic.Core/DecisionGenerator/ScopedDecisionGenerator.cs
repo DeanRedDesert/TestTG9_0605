@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Logic.Core.Utility;
 
@@ -312,7 +313,19 @@ namespace Logic.Core.DecisionGenerator
 		public ulong ChooseOneIndex(ulong indexCount, Func<ulong, ulong> getWeight, ulong totalWeight, Func<ulong, string> getName, Func<IReadOnlyList<string>> getAdditionalScopes = null)
 			=> decisionGenerator.ChooseIndexes(indexCount, 1, true, getWeight, totalWeight, getName, () => GetContext(getAdditionalScopes))[0];
 
-		private string GetContext(Func<string> getAdditionalScope) => getAdditionalScope == null ? Scope : $"{Scope}_{getAdditionalScope()}";
+		private string GetContext(Func<string> getAdditionalScope)
+		{
+			if (getAdditionalScope == null)
+				return Scope;
+
+			var s1 = getAdditionalScope();
+			var s2 = getAdditionalScope();
+
+			if (s1 != s2)
+				throw new Exception($"Additional scopes should be consistent every time: {s1} vs {s2}");
+
+			return $"{Scope}_{s1}";
+		}
 
 		// ReSharper disable once SuggestBaseTypeForParameter
 		private string GetContext(Func<IReadOnlyList<string>> getAdditionalScopes)
@@ -324,6 +337,11 @@ namespace Logic.Core.DecisionGenerator
 
 			if (additionalScopes.Count == 0)
 				return Scope;
+
+			var additionalScopes2 = getAdditionalScopes();
+
+			if (!additionalScopes.SequenceEqual(additionalScopes2))
+				throw new Exception($"Additional scopes should be consistent every time: {string.Join("_", additionalScopes)} vs {string.Join("_", additionalScopes2)}");
 
 			var sb = new StringBuilder();
 			sb.Append(Scope);

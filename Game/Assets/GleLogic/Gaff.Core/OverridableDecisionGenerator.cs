@@ -94,6 +94,9 @@ namespace Gaff.Core
 			if (w1.GetLength() != w2.GetLength())
 				return false;
 
+			if (w1 is IEquivalent equivalent)
+				return equivalent.IsEquivalent(w2);
+
 			var length = w1.GetLength();
 
 			// Don't bother comparing if the list of weights is too long.
@@ -103,7 +106,6 @@ namespace Gaff.Core
 			// If we make it here then we need to inspect the specific known types.
 			switch (w1)
 			{
-				case IEquivalent s1: return s1.IsEquivalent(w2); // WeightedTable<T> and custom user types
 				case ISymbolListStrip s1: // WeightedSymbolListStrip, SymbolListStrip and SymbolReplacementStrip
 				{
 					var s2 = (ISymbolListStrip)w2;
