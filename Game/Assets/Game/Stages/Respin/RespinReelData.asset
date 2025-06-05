@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b961ed577e7844f5ad312f43fb4a1789, type: 3}
-  m_Name: UtilitySymbolWindows
+  m_Script: {fileID: 11500000, guid: e240b5ba1e344f6785d8e2435ded1b7d, type: 3}
+  m_Name: RespinReelData
   m_EditorClassIdentifier: 
-  symbolWindows:
-  - stageName: Base
-    decisionName: 
+  resultName: LockedSymbolWindow
+  inheritedResults:
+  - stage:
+      id: 10000
+      name: Base
     resultName: SymbolWindow
-  - stageName: FreeGames
-    decisionName: 
+  - stage:
+      id: 10001
+      name: FreeGames
     resultName: SymbolWindow
-  - stageName: Respin
-    decisionName: 
-    resultName: LockedSymbolWindow
