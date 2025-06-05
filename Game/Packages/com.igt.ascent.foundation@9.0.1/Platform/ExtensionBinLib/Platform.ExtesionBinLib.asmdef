@@ -1,0 +1,16 @@
+{
+  "name": "IGT.Ascent.Communication.Platform.ExtensionBinLib",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Ascent.Communication.Platform.ExtensionLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Ascent.Communication.Platform.ExtensionBinLib.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

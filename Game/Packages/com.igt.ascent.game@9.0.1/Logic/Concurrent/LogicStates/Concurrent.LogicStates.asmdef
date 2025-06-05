@@ -1,0 +1,30 @@
+{
+  "name": "IGT.Ascent.Logic.Concurrent.LogicStates",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Ascent.Communication.Platform",
+    "IGT.Ascent.Communication.Platform.CoplayerLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.ShellLib.Interfaces",
+    "IGT.Game.Core.Communication.Logic.CommServices",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Logging",
+    "IGT.Ascent.ObserverPattern",
+    "IGT.Ascent.OutcomeList",
+    "IGT.Ascent.OutcomeList.Interfaces",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Logic.BetFramework",
+    "IGT.Game.Core.Logic.Services",
+    "IGT.Ascent.Logic.Concurrent.Interfaces",
+    "IGT.Ascent.Logic.Concurrent.ServiceProviders"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:complexType name="BetDefinition">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="betableTypeReference" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Reference to a pattern or bonus</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="betAmount" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>The amount of the bet</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="isMaxBet" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>Is the maximum bet for the pattern.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BetDefinitionList">
+		<xs:sequence>
+			<xs:element name="BetDefinition" type="BetDefinition" maxOccurs="unbounded"/>
+			<xs:element name="isMax" type="xs:boolean"/>
+			<xs:element name="totalBet" type="xs:unsignedInt"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BetDefinitionList" type="BetDefinitionList">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

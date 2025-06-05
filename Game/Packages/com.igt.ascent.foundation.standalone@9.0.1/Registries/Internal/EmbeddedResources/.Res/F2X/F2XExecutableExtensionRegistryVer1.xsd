@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by Tyrell Atterberry (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XExecutableExtensionRegistryVer1="F2XExecutableExtensionRegistryVer1.xsd" targetNamespace="F2XExecutableExtensionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.3">
+	<!-- Version 1.0: Initial registry. -->
+	<!-- Version 1.1: Added SystemExtensionActivationBehavior. -->
+	<!-- Version 1.2: Added AppExtensionActivation. -->
+	<!-- Version 1.3: Added InAppChooserSupport to AppExtensionConfiguration. -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="ExecutableExtensionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing an executable extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="SystemExtensionActivationBehavior" type="F2XExecutableExtensionRegistryVer1:SystemExtensionActivationBehavior" default="NoSystemActivation" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Allows the executable extension to behave as a system extension (i.e. having a broad scope) and therefore be active independent of the activation of linked entities (i.e. theme or TSM).  The extension may still be linked/imported by other (theme and/or TSM) entities, regardless of the value of this setting.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="AppExtensionActivation" type="F2XExecutableExtensionRegistryVer1:AppExtensionConfiguration" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Providing this section of the registry will allow the extension to behave as an application extension.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ExecutableExtensionBinRegistry" type="xs:anyURI">
+							<xs:annotation>
+								<xs:documentation>Relative path to extension executable/bin that supports this extension. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TagDataFile" type="F2XRegistryTypesVer1:TagDataFileType">
+							<xs:annotation>
+								<xs:documentation>Custom extension file for use with the extension.  Passed to the executable during startup.  Opaque to the Foundation.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="F2XRegistryTypesVer1:ExtensionImportList" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>List of optional or required extensions to be linked at runtime.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- Types -->
+	<xs:complexType name="AppExtensionConfiguration">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SupportedCultures" type="F2XExecutableExtensionRegistryVer1:CultureList">
+				<xs:annotation>
+					<xs:documentation>The list of cultures supported by the app.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceDirectory" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Path relative to the package root that contains a localized resource table.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChooserContent" type="F2XExecutableExtensionRegistryVer1:ChooserContent">
+				<xs:annotation>
+					<xs:documentation>All content for displaying this app in a Chooser.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChooserVisibility" type="F2XExecutableExtensionRegistryVer1:ChooserVisibility">
+				<xs:annotation>
+					<xs:documentation>The expected visiblity of the app within the chooser.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SupportedDisplayModes" type="F2XExecutableExtensionRegistryVer1:DisplayModeList">
+				<xs:annotation>
+					<xs:documentation>A list of display modes supported by the app.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InAppChooserSupport" type="F2XExecutableExtensionRegistryVer1:InAppChooserSupport" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Status of App's ability to handle chooser behavior. Defaults to Unsupported if not supplied.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ChooserVisibility">
+		<xs:annotation>
+			<xs:documentation>The expected visibility of the application within the chooser.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Hidden">
+				<xs:annotation>
+					<xs:documentation>The application should not be independently selectable, and no icon or other information will be visible within the chooser.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Selectable">
+				<xs:annotation>
+					<xs:documentation>The application should be selectable within the chooser.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CultureList">
+		<xs:annotation>
+			<xs:documentation>A list of cultures.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="Culture" type="F2XRegistryTypesVer1:CultureStringType">
+				<xs:annotation>
+					<xs:documentation>A culture supported by the extension.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="DisplayMode">
+		<xs:annotation>
+			<xs:documentation>Modes of display that are supported by the app.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Shared">
+				<xs:annotation>
+					<xs:documentation>The application is capable of being displayed along side of other app extensions and games.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Independent">
+				<xs:annotation>
+					<xs:documentation>The application is capable of being selected and displayed by itself, without the need of another game or app extension to also be shown.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DisplayModeList">
+		<xs:annotation>
+			<xs:documentation>A list of supported display modes by the app.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Mode" type="F2XExecutableExtensionRegistryVer1:DisplayMode"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChooserContent">
+		<xs:annotation>
+			<xs:documentation>All content for displaying this app in a Chooser.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NameKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Key used to resolve the localized app name, used for display purposes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IconKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Image resource containing an icon used for app selection (e.g. Chooser).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LogoKey" type="F2XRegistryTypesVer1:LocalizationKey" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Image resource containing a logo used for larger display areas (e.g. the top box).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PromoKey" type="F2XRegistryTypesVer1:LocalizationKey" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Image resource used to promote the app to the player in the Chooser (e.g. advertises major app features).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoadingDisplayKey" type="F2XRegistryTypesVer1:LocalizationKey" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Image resource to be used while the app is loading.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AttractKey" type="F2XRegistryTypesVer1:LocalizationKey" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Movie resource to be used for attract (on the top box).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HierarchicalCustomMenuTabs" type="F2XExecutableExtensionRegistryVer1:HierarchicalCustomMenuTabList" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The multilayered filtering on the chooser. Filtering depths for custom choosers will be chooser specific.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HierarchicalCustomMenuTabList">
+		<xs:annotation>
+			<xs:documentation>The multilayered filtering on the chooser. Filtering depths for custom choosers will be chooser specific. If this and the CustomMenuTabs are present the CustomMenuTabs data will be ignored.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Tabs" type="F2XExecutableExtensionRegistryVer1:HierarchicalCustomMenuTabNode" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Nested filtering data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HierarchicalCustomMenuTabNode">
+		<xs:annotation>
+			<xs:documentation>An object to hold the filtering hierarchy.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Key" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>A localized key representing the current filter level value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Children" type="F2XExecutableExtensionRegistryVer1:HierarchicalCustomMenuTabNode" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The subtree off of the current tab node.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="InAppChooserSupport">
+		<xs:annotation>
+			<xs:documentation>Levels of support for an in-app chooser.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unsupported">
+				<xs:annotation>
+					<xs:documentation>The application has no support for an in-app chooser.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Simple">
+				<xs:annotation>
+					<xs:documentation>The application indicates that it will query and request central app changes, but will not handle the ChooserRequested message.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Exclusive">
+				<xs:annotation>
+					<xs:documentation>The application indicates support for taking ownership of chooser behaviors while in context. With the current support of Extension App Selection category, the application will query and request central app changes, and will also handle the ChooserRequested message.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SystemExtensionActivationBehavior">
+		<xs:annotation>
+			<xs:documentation>The type of system extension activation behavior.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NoSystemActivation">
+				<xs:annotation>
+					<xs:documentation>The executable extension is NOT behaving as system extension.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ContinuousSystemActivation">
+				<xs:annotation>
+					<xs:documentation>Continually active (except during package management), in support of the Foundation or other system-level component.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

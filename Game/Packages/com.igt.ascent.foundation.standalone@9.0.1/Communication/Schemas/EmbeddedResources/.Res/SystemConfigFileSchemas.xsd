@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 (x64) (http://www.altova.com) by Terry Zeng (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="SystemConfigurations">
+		<xs:annotation>
+			<xs:documentation>Configurations to simulate system behaviors needed by the Standalone Game Lib.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PaytableList"/>
+				<xs:element ref="FoundationOwnedSettings" minOccurs="0"/>
+				<xs:element ref="SystemControlledProgressives" minOccurs="0"/>
+				<xs:element ref="GameSubModeType" minOccurs="0"/>
+				<xs:element ref="TournamentSessionConfiguration" minOccurs="0"/>
+				<xs:element ref="StompBrokerConfiguration" minOccurs="0"/>
+				<xs:element ref="SystemProgressiveSimulator" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PaytableList">
+		<xs:annotation>
+			<xs:documentation>List of paytables for one single theme.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PaytableConfiguration" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="PaytableBinding">
+								<xs:attribute name="IsDefault" type="xs:boolean" use="optional" default="false"/>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FoundationOwnedSettings">
+		<xs:annotation>
+			<xs:documentation>Foundation owned configurations, environment attributes etc.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EnvironmentAttribute" type="EnvironmentAttributeString" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="GameMinBet" type="xs:long" minOccurs="0"/>
+				<xs:element name="WinCapBehavior" type="WinCapBehaviorType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="WinCapLimit" type="xs:long" minOccurs="0"/>
+				<xs:element name="WinCapMultiplier" type="xs:unsignedInt" minOccurs="0"/>
+				<xs:element name="ProgressiveWinCapLimit" type="xs:long" minOccurs="0"/>
+				<xs:element name="TotalWinCapLimit" type="xs:long" minOccurs="0"/>
+				<xs:element name="TransferBankToWagerable" type="xs:long" minOccurs="0"/>
+				<xs:element name="MaxHistorySteps" type="xs:unsignedInt" default="50" minOccurs="0"/>
+				<xs:element name="CreditFormatter" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>
+							Configurations to the credit formatted including the Major Currency Symbol ($, £), Smallest Currency Unit Symbol (¢),
+							Thousands Separator (1,000 1.000), and Decimal Separator (1.50 1, 50).
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DecimalSeparator" type="CreditFormatString"/>
+							<xs:element name="DigitGroupSeparator" type="CreditFormatString"/>
+							<xs:element name="CurrencySymbol" type="CreditFormatString"/>
+							<xs:element name="CurrencyCentSymbol" type="CreditFormatString"/>
+							<xs:element name="UseCreditSeparator" type="xs:boolean" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AncillarySetting" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Settings for Ancillary Game</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Supported" type="xs:boolean"/>
+							<xs:element name="CycleLimit">
+								<xs:simpleType>
+									<xs:restriction base="xs:long">
+										<xs:minInclusive value="1"/>
+										<xs:maxInclusive value="999999"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="MonetaryLimit">
+								<xs:simpleType>
+									<xs:restriction base="xs:long">
+										<xs:minInclusive value="1"/>
+										<xs:maxInclusive value="2000000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AutoPlayConfiguration" type="AutoPlayConfigurationType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AutoPlayConfirmationRequired" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AutoPlaySpeedIncreaseAllowed" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="DisplayVideoReelsForStepper" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Jurisdiction" type="xs:string"/>
+				<xs:element name="MinimumBaseGamePresentationTime" type="xs:unsignedInt" minOccurs="0"/>
+				<xs:element name="MinimumFreeSpinTime" type="xs:unsignedInt" minOccurs="0"/>
+				<xs:element name="CreditMeterBehavior" type="CreditMeterBehaviorType" minOccurs="0"/>
+				<xs:element name="RoundWagerUpPlayoffEnabled" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="MarketingBehavior" type="MarketingBehaviorType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BonusSoaaSettings" type="BonusSoaaSettingsType" minOccurs="0"/>
+				<xs:element name="RtpOrderedByBetRequired" type="xs:boolean" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SystemControlledProgressives">
+		<xs:annotation>
+			<xs:documentation>Controllers and link setup for system controlled progressives.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ProgressiveControllers">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ProgressiveController" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ControllerLevel" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="StartingAmount" type="xs:long"/>
+													<xs:element name="MaximumAmount" type="xs:long"/>
+													<xs:element name="ContributionPercentage">
+														<xs:simpleType>
+															<xs:restriction base="xs:float">
+																<xs:minInclusive value="0"/>
+																<xs:maxInclusive value="1"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="PrizeString" type="xs:string"/>
+													<xs:element name="IsEventBased" type="xs:boolean" minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="Id" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:int">
+															<xs:minInclusive value="0"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProgressiveSetups" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ProgressiveSetup" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PaytableConfiguration" type="PaytableBinding"/>
+										<xs:element name="ProgressiveLink" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="GameLevel">
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:minInclusive value="0"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ControllerName" type="xs:string"/>
+													<xs:element name="ControllerLevel" type="xs:int"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PaytableBinding">
+		<xs:annotation>
+			<xs:documentation>This type is for the association of a denomination and a paytable in a paytable file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ThemeIdentifier">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="64"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PaytableIdentifier" type="xs:string"/>
+			<xs:element name="PaytableName" type="xs:string"/>
+			<xs:element name="PaytableFileName" type="xs:string"/>
+			<xs:element name="PayvarType" type="PaytablePayvarType" default="Standard" minOccurs="0"/>
+			<xs:element name="Denomination">
+				<xs:simpleType>
+					<xs:restriction base="DenomType">
+						<xs:minInclusive value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ButtonPanelMinBet" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedLong">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MaxBet" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedLong">
+						<xs:minInclusive value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GameSubModeType">
+		<xs:annotation>
+			<xs:documentation>The game sub-mode for current theme.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Type" type="GameSubModeString" default="Standard"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TournamentSessionConfiguration">
+		<xs:annotation>
+			<xs:documentation>Tournament session configuration</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InitialCredits" type="xs:long" default="0"/>
+				<xs:element name="CountdownDuration" type="xs:int" default="0"/>
+				<xs:element name="PlayDuration" type="xs:int" default="0"/>
+				<xs:element name="SessionType" type="TournamentSessionType" default="Invalid"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StompBrokerConfiguration">
+		<xs:annotation>
+			<xs:documentation>Configuration information for the STOMP broker</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Hostname" type="xs:string" default="127.0.0.1"/>
+				<xs:element name="Port" type="xs:int" default="61613"/>
+				<xs:element name="Version" type="Version" nillable="false"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SystemProgressiveSimulator">
+		<xs:annotation>
+			<xs:documentation>Progressive Simulator Setup</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="Credits" type="xs:int" minOccurs="0"/>
+				<xs:element name="ContributionFrequency" type="xs:int" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Version">
+		<xs:annotation>
+			<xs:documentation>The version number that indicates the specific foundation behavior of the STOMP server and G2S implementation</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Major" type="xs:unsignedInt" default="1"/>
+			<xs:element name="Minor" type="xs:unsignedInt" default="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="DenomType">
+		<xs:annotation>
+			<xs:documentation>This type is for the denomination in cents. It restrains the values with enumeration. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:unsignedInt">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>This denomination is specific to UGP game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6">
+				<xs:annotation>
+					<xs:documentation>This denomination is specific to UGP game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="7">
+				<xs:annotation>
+					<xs:documentation>This denomination is specific to UGP game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="8">
+				<xs:annotation>
+					<xs:documentation>This denomination is specific to UGP game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="9">
+				<xs:annotation>
+					<xs:documentation>This denomination is specific to UGP game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="25"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="50"/>
+			<xs:enumeration value="100"/>
+			<xs:enumeration value="200"/>
+			<xs:enumeration value="250"/>
+			<xs:enumeration value="500"/>
+			<xs:enumeration value="1000"/>
+			<xs:enumeration value="2000"/>
+			<xs:enumeration value="2500"/>
+			<xs:enumeration value="5000"/>
+			<xs:enumeration value="10000"/>
+			<xs:enumeration value="20000"/>
+			<xs:enumeration value="25000"/>
+			<xs:enumeration value="50000"/>
+			<xs:enumeration value="100000"/>
+			<xs:enumeration value="200000"/>
+			<xs:enumeration value="250000"/>
+			<xs:enumeration value="500000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EnvironmentAttributeString">
+		<xs:annotation>
+			<xs:documentation>This type is for the environment attributes.  It restrains the values with enumeration.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BankedCredits"/>
+			<xs:enumeration value="Cds"/>
+			<xs:enumeration value="ShowDemo"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CreditFormatString">
+		<xs:annotation>
+			<xs:documentation>This type is for the credit formatter.  It restrains the length of the string.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16"/>
+			<xs:minLength value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AutoPlayConfigurationType">
+		<xs:annotation>
+			<xs:documentation>Settings for Auto Play </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NotAvailable"/>
+			<xs:enumeration value="PlayerInitiatedAvailable"/>
+			<xs:enumeration value="HostInitiatedAvailable"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CreditMeterBehaviorType">
+		<xs:annotation>
+			<xs:documentation>Settings for credit meter behavior</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Invalid"/>
+			<xs:enumeration value="PlayerSelectableDefaultCredits"/>
+			<xs:enumeration value="PlayerSelectableDefaultCurrency"/>
+			<xs:enumeration value="AlwaysCurrency"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GameSubModeString">
+		<xs:annotation>
+			<xs:documentation>This type is for the game sub-mode. It restrains the values with enumeration.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="Tournament"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TournamentSessionType">
+		<xs:annotation>
+			<xs:documentation>The tournament session type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Invalid"/>
+			<xs:enumeration value="TimedCredits"/>
+			<xs:enumeration value="Credits"/>
+			<xs:enumeration value="Timer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PaytablePayvarType">
+		<xs:annotation>
+			<xs:documentation>The payvar registry type supported by this payvar</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="Tournament"/>
+			<xs:enumeration value="PayvarGroupTemplate"/>
+			<xs:enumeration value="SingleMultiTemplate"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WinCapBehaviorType">
+		<xs:annotation>
+			<xs:documentation>Type for telling the Bin what behavior to use when calculating the win cap.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FixedWinCapAmount">
+				<xs:annotation>
+					<xs:documentation>Indicates the win cap limit is a fixed amount.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MultipliedByCurrentBet">
+				<xs:annotation>
+					<xs:documentation>Indicates the win cap limit is an amount that is calculated by multiplying a value by the current bet (e.g. win cap limit = multiplier * current bet).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MultipliedByMaxBet">
+				<xs:annotation>
+					<xs:documentation>Indicates the win cap limit is an amount that is calculated by multiplying a value by the max bet (e.g. win cap limit = multiplier * max bet).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MarketingBehaviorType">
+		<xs:annotation>
+			<xs:documentation>EGM wide marketing behavior.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TopScreenGameAdvertisement" type="TopScreenGameAdvertisementType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>EGM wide setting for the top screen game advertisement.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TopScreenGameAdvertisementType">
+		<xs:annotation>
+			<xs:documentation>Type describing content to display for top screen game advertising.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Invalid">
+				<xs:annotation>
+					<xs:documentation>Indicates the Foundation could not determine the content type.  In this case, the game is responsible for displaying its standard advertisement.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Promo">
+				<xs:annotation>
+					<xs:documentation>Indicates games should show a general, graphical screen which promotes the game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Paytable">
+				<xs:annotation>
+					<xs:documentation>Indicates games should show possible win combinations for the game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BonusSoaaSettingsType">
+		<xs:annotation>
+			<xs:documentation>Settings for Bonus Single Option Auto Advance feature.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Supported" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Whether this setting is supported.  This is used to simulate the case when the game is running with older Foundations.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IsAllowed" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Whether SOAA is allowed in bonus.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinDelaySeconds" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Mininum time (in seconds) the bonus has to wait for player interaction before SOAA.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

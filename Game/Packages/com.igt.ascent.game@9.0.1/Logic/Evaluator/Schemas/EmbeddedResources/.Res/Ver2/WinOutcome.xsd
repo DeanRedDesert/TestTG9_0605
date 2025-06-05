@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="2.0">
+	<xs:include schemaLocation="Cell.xsd"/>
+	<xs:include schemaLocation="Trigger.xsd"/>
+	<xs:include schemaLocation="Cluster.xsd"/>
+	<xs:complexType name="WinOutcome">
+		<xs:annotation>
+			<xs:documentation>A win outcome contains the total win amount and outcome item list for an evaluation. It can be referred to by name or index.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="WinOutcomeItems" type="WinOutcomeItem" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="totalWinAmount" type="xs:long" use="required">
+			<xs:annotation>
+				<xs:documentation>Total win amount</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A unique name that can be used to reference a specific instance.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Prize">
+		<xs:sequence>
+			<xs:element name="ProgressiveLevels" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A list of progressive level names from the schema type ProgressLevelType</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Trigger" type="Trigger" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Triggers which are associated with this win.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="multiplier" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>The amount this prize is multiplied by in order to contribute to the total win amount</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="prizeScaleName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A unique name that can be used to reference a specific instance.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="winAmount" type="xs:long" use="required">
+			<xs:annotation>
+				<xs:documentation>The win amount in credits for the prize</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="prizeName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the prize in the slot prize scale.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="averageBonusPay" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>This is the average bonus pay from initiating the stageFlowTrigger. It is used to prioritize the flow ids.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Pattern">
+		<xs:sequence>
+			<xs:element name="Cluster" type="Cluster">
+				<xs:annotation>
+					<xs:documentation>A cluster is a ordered group of cells that represent the win.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SymbolList" type="Symbols">
+				<xs:annotation>
+					<xs:documentation>A ordered list of sybmols that appear in the win.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="count" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>The number of times the symbol appears in the win.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A unique name that can be used to reference a specific instance.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="patternListName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A named reference to an existing pattern list.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="WinOutcomeItem">
+		<xs:annotation>
+			<xs:documentation>Contains the data produced by the evaluator for a specific win. This includes prize, patterns, clusters and cells.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Prize" type="Prize">
+				<xs:annotation>
+					<xs:documentation>A prize contains is referred to by name and contains the win amount and multiplier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Pattern" type="Pattern" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A pattern is a set of clusters that are used by the evaluator to produce a prize.  Each cluster is a set of cells where symbols can be looked for.  E.g.  A standard 5 reel  line would be a set of  5 clusters with 1 cell in each.  The standard 5x3  scatter would be a set of 5 clusters with 3 cells in each.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A unique name that can be used to reference a specific instance.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="winLevelIndex" type="xs:unsignedInt" use="required"/>
+		<xs:attribute name="displayable" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>Flag which indicates if this win is to be displayed. If false then the game should indicate the win, but should not show a value for it, or reflect its value in the total.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="displayReason" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Field which is used to indicate the reason an award was added by the system. This reason should be shown when cycling the wins.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Symbols">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A unique identifier for the symbol. This is used in other schemas to refer to this symbol.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="WinOutcome" type="WinOutcome"/>
+</xs:schema>

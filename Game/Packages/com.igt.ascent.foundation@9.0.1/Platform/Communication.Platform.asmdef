@@ -1,0 +1,25 @@
+{
+  "name": "IGT.Ascent.Communication.Platform",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Ascent.Restricted.EventManagement",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "IGT.Game.Core.Communication.Foundation.F2X",
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas",
+    "IGT.Game.Core.Communication.Foundation.Transport",
+    "IGT.Ascent.Communication.Platform.CoplayerLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Ascent.Communication.Platform.ShellLib.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

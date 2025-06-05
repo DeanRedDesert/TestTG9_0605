@@ -1,0 +1,18 @@
+{
+  "name": "IGT.Game.Core.GameReport.GamePerformance",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.GameMeter",
+    "IGT.Game.Core.GameReport.GamePerformance.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

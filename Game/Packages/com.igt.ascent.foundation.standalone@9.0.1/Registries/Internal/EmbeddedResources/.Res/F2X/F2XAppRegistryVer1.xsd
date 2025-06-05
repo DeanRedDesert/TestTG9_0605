@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					 xmlns:F2XAppRegistryVer1="F2XAppRegistryVer1.xsd" targetNamespace="F2XAppRegistryVer1.xsd"
+					 elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0"
+					 xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="AppRegistry">
+		<xs:annotation>
+			<xs:documentation>Game discovery registry for describing an app and the initial state of app related configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TargetRegistry" type="F2XAppRegistryVer1:TargetRegistry">
+					<xs:annotation>
+						<xs:documentation>Target registry this app wraps.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ChooserContent" type="F2XAppRegistryVer1:ChooserContent">
+					<xs:annotation>
+						<xs:documentation>All content for displaying this app in a Chooser.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Properties" type="F2XRegistryTypesVer1:PropertiesType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>
+							Provides flexible/loosely coupled way of declaring static properties visible to the AI/Foundation. Example: An optional
+							AI package may contain a custom Chooser that may use properties to identify games that it is compatible with it.
+							Properties should be organized under sections and should be viewed as Key, Value pairs.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="ChooserCategory">
+		<xs:annotation>
+			<xs:documentation>App categories in the Chooser.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Blackjack"/>
+			<xs:enumeration value="iGame"/>
+			<xs:enumeration value="Keno"/>
+			<xs:enumeration value="Poker"/>
+			<xs:enumeration value="Reel"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ChooserCategoryList">
+		<xs:annotation>
+			<xs:documentation>A list of app identifiers.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Category" type="F2XAppRegistryVer1:ChooserCategory"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChooserContent">
+		<xs:annotation>
+			<xs:documentation>All content for displaying this app in a Chooser.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NameKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Key used to resolve the localized app name, used for display purposes as assigned by game designer.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IconKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Image resource containing an icon used for app selection (e.g. Chooser).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LogoKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Image resource containing a logo used for larger display areas (e.g. the top box).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PromoKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Image resource used to promote the app to the player in the Chooser (e.g. advertises major game features).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LoadingDisplayKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Image resource to be used while the app is loading.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AttractKey" type="F2XRegistryTypesVer1:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>Movie resource to be used for attract (on the top box).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChooserCategories" type="F2XAppRegistryVer1:ChooserCategoryList" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The tab(s) if any on the Chooser where the app should appear.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CustomChooserCategories" type="F2XRegistryTypesVer1:LocalizationKeyList" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The custom tab(s) if any on the Chooser where the app should appear.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TargetRegistry">
+		<xs:annotation>
+			<xs:documentation>The target shell or theme registry this app wraps.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="Shell" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Relative path from the package root to a shell registry (.xshellreg).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Theme" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>Relative path from the package root to a theme registry (.xthemereg).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

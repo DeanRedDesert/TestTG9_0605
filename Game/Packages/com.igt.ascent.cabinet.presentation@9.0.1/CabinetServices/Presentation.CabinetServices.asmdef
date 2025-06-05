@@ -1,0 +1,16 @@
+{
+  "name": "IGT.Game.Core.Presentation.CabinetServices",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Cabinet",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas",
+    "IGT.Game.Core.Presentation"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

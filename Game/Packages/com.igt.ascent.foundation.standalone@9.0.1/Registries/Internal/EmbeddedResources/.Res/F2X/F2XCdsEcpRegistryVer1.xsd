@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by Regan Snyder (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XCdsEcpRegistryVer1="F2XCdsEcpRegistryVer1.xsd" targetNamespace="F2XCdsEcpRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:element name="CdsEcpRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing the information to allow a theme to support the Cds ECP protocol.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ThemeRegistry" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Relative path to theme registry to which this Cds ECP information belongs. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PercentageOffsetFromBottom" default="15.00" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The percentage offset from the bottom of the main screen at which the UI control will be placed by the host content.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PermittedBetLevelTable" type="F2XCdsEcpRegistryVer1:PermittedBetLevelTable">
+					<xs:annotation>
+						<xs:documentation>The list of permittable bet levels that associate the current bet with the PrizeSet ID defined in the math file.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PayvarProgressiveGameLevelIndexTable" type="F2XCdsEcpRegistryVer1:PayvarProgressiveGameLevelIndexTable">
+					<xs:annotation>
+						<xs:documentation>The list of progressive game level indexes and how they relate to the AwardID and other info defined in the math file.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PermittedBetLevelTable">
+		<xs:annotation>
+			<xs:documentation>The list of permittable bet levels that associate the current bet with the PrizeSet ID defined in the math file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PermittedBetLevelEntry" type="F2XCdsEcpRegistryVer1:PermittedBetLevelEntry" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PermittedBetLevelEntry">
+		<xs:annotation>
+			<xs:documentation>An entry in the PermittedBetLevelTable</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="BetCredits" type="xs:unsignedInt" use="required"/>
+		<xs:attribute name="BetId" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:maxLength value="255"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="PrizeSetId" type="xs:unsignedInt" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="PayvarProgressiveGameLevelIndexTable">
+		<xs:annotation>
+			<xs:documentation>The list of progressive game level indexes and how they relate to the AwardID and other info defined in the math file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProgressiveGameLevelIndexEntry" type="F2XCdsEcpRegistryVer1:ProgressiveGameLevelIndexEntry" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProgressiveGameLevelIndexEntry">
+		<xs:annotation>
+			<xs:documentation>An entry in the ProgressiveGameLevelIndexTable</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="GameLevelIndex" type="xs:unsignedShort" use="required"/>
+		<xs:attribute name="AwardId" type="xs:unsignedInt" use="required"/>
+		<xs:attribute name="OwnerId" type="xs:int" use="required"/>
+		<xs:attribute name="Type" type="F2XCdsEcpRegistryVer1:ProgressiveGameLevelIndexEntryType" use="required"/>
+		<xs:attribute name="ResetCredits" type="xs:long" use="required"/>
+		<xs:attribute name="Metadata" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="ProgressiveGameLevelIndexEntryType">
+		<xs:annotation>
+			<xs:documentation>The type of the progressive being hit.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PARIGRESSIVE">
+				<xs:annotation>
+					<xs:documentation>A Parigressive award is unique to pari-mutuel wagering systems.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PROGRESSIVE">
+				<xs:annotation>
+					<xs:documentation>
+						Progressives awards are funds set aside from each wager that are won when a certain condition or conditions are met.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

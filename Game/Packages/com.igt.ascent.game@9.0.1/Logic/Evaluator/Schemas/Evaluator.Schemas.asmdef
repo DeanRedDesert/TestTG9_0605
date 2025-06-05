@@ -1,0 +1,17 @@
+{
+  "name": "IGT.Game.Core.Logic.Evaluator.Schemas",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Logging",
+    "IGT.Game.Core.Timing"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by Regan Snyder (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" targetNamespace="F2XRegistryTypesVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.15">
+	<!-- Minor revision 1.3, Added various types for the progressive concept usage: DenomType, CultureStringType, AuthorityIdentifierType, PrecisionDecimalType, ProgressiveConceptIdentifierType, ProgressiveConceptCodeType, LinkMapIdentifierType, ProgressiveLinkMapNameIdType, SpcGroupIdentifierType, and SpcGroupTemplateIdentifierType. -->
+	<!-- Minor revision 1.4, Constraint SpcGroupIdentifierType, SpcGroupTemplateIdentifierType, AuthorityIdentifierType length to match implementation needs. -->
+	<!-- Minor revision 1.5: Added Percentage, WagerCategories -->
+	<!-- Minor revision 1.6: Modified ExtensionId to specify a GUID/UUID. -->
+	<!-- Minor revision 1.7: Added LocalizationKeyList -->
+	<!-- Minor revision 1.8: Added optional ability to specify a NotTransferable option for CustomConfigItemsType/ConfigItem. -->
+	<!-- Minor revision 1.9: Added type for progressive concepts: NetProgressiveControllerGroupIdentifierType. -->
+	<!-- Minor revision 1.12: Added type for progressive concepts: eWapControllerGroupIdentifierType. This is used for wap levels only. -->
+	<!-- Minor revision 1.13: Added generic group identifier type: GroupIdentifierType. -->
+	<!-- Minor revision 1.14, Removing eIpp support from linkmap1. -->
+	<!-- Minor revision 1.15, Removed pattern restriction for CultureStringType.-->
+	<xs:simpleType name="ExtensionId">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for a specific extension.  Must be a GUID/UUID using an 8-4-4-4-12 hex format. e.g. f14f3ca2-ff44-4911-b570-6f5fac8241af</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="36"/>
+			<xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>
+			<!-- A GUID/UUID is a 16-octet (128-bit) number. Encoded as 8-4-4-4-12 hex characters. -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExtensionLinkBehavior">
+		<xs:annotation>
+			<xs:documentation>Specifies the type of linking to perform when importing an extension interface definition.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SingleInstance">
+				<xs:annotation>
+					<xs:documentation>When linked at runtime, only one extension provider will be instantiated to provide the interface.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MultipleInstance">
+				<xs:annotation>
+					<xs:documentation>When linked at runtime, one or more extension provider(s) may be instantiated to provide the interface.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExtensionName">
+		<xs:annotation>
+			<xs:documentation>Human-readable name for a specific extension.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="48"/>
+			<xs:pattern value="([-_0-9A-Za-z])+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ExtensionVersion">
+		<xs:annotation>
+			<xs:documentation>Version number that identifies the interface and behavior that is supported/expected for a particular major, minor, and patch version of the extension.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MajorVersion" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>The major version.  A new major version is required for incompatible API changes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinorVersion" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>The minor version.  A minor version is backwards-compatible API changes to a major version.  A higher minor version implies support for the lower minor versions of the same major version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PatchVersion" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>The patch version.  The patch version is for backwards-compatible bug fixes to a minor version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Version">
+		<xs:annotation>
+			<xs:documentation>Version number that identifies the major and minor revision of a product.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="MajorVersion" type="xs:unsignedInt">
+			<xs:annotation>
+				<xs:documentation>The major version.  A new major version is required for incompatible API changes.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="MinorVersion" type="xs:unsignedInt">
+			<xs:annotation>
+				<xs:documentation>The minor version.  A minor version is backwards-compatible API changes to a major version.  A higher minor version implies support for the lower minor versions of the same major version.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="ExtensionVersionString">
+		<xs:annotation>
+			<xs:documentation>The type used to define an extension version as a string.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d+\.\d+\.\d+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ExtensionVersionList">
+		<xs:annotation>
+			<xs:documentation>List of extension versions the import client supports.  Only one instance of each major version may be listed.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExtensionVersion" type="F2XRegistryTypesVer1:ExtensionVersion" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An extension version the import client supports.  The specified minor and patch version are the minimum the import client requires for the major version.
+					Note: For Interface Definitions, the maximum version is defined by the highest version of the interface included within the same package.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExtensionImportList">
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>List of optional or required extensions to be linked at runtime.</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="ExtensionImport" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Declare an optional or required extension to be linked at runtime.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ExtensionName" type="F2XRegistryTypesVer1:ExtensionName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Human-readable name for a specific extension.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ExtensionId" type="F2XRegistryTypesVer1:ExtensionId">
+								<xs:annotation>
+									<xs:documentation>Specify the unique extension identifier provided by this registry configuration.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="RequiredExtension" type="xs:boolean">
+								<xs:annotation>
+									<xs:documentation>Indicates if this extension is required to be present.  True if it is required; false if it is optional.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ExtensionVersionList" type="F2XRegistryTypesVer1:ExtensionVersionList">
+								<xs:annotation>
+									<xs:documentation>List of extension versions the import client supports.  Only one instance of each major version may be listed.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="UniqueExtensionId">
+			<xs:selector xpath="F2XRegistryTypesVer1:ExtensionImport"/>
+			<xs:field xpath="F2XRegistryTypesVer1:ExtensionId"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="CommandLineArguments">
+		<xs:annotation>
+			<xs:documentation>Collection of arguments to be used as references in a CommandLineType element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Argument" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="name" type="xs:string" use="required">
+								<xs:annotation>
+									<xs:documentation>Required name of argument to be used as a reference in a CommandLineType element.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="CommandLine">
+		<xs:annotation>
+			<xs:documentation>Named arguments can be used to compose the command line used to launch the executable. They should be prefixed with “-g” flag to be distinguished from Foundation side arguments.  For example, an argument named "Arg1" with a value of "ArgOne", and "Arg2" with a value of "ArgTwo" can be referenced in this element as "-g1$(Arg1) –g2$(Arg2)", such that the executable will be launched as  "absolute_path/client.exe –g1ArgOne –g2ArgTwo".
+The Foundation will also provide the variable "PackageRoot" so files may be referenced relative to the package root, For example, "$(PackageRoot)/relative_path/client.dll"
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="TagDataFileType">
+		<xs:annotation>
+			<xs:documentation>Custom component-related file for use by the component.  Passed to the component during startup.  Opaque to the Foundation.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:anyURI">
+				<xs:attribute name="Tag" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Custom component-related data for use by the executable.  Passed to the component during startup.  Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="LocalizationKey">
+		<xs:annotation>
+			<xs:documentation>A localized resource key, used to find a matching resource id within a specific culture to retrieve a resource.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="LocalizationKeyList">
+		<xs:annotation>
+			<xs:documentation>A list of localization keys.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Key" type="F2XRegistryTypesVer1:LocalizationKey"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AmountType">
+		<xs:annotation>
+			<xs:documentation> Amount data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:long">
+				<xs:attribute name="Min" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Minimum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Max" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Maximum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="BooleanType">
+		<xs:annotation>
+			<xs:documentation> Boolean data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+	<xs:complexType name="EnumerationType">
+		<xs:annotation>
+			<xs:documentation> Enumeration data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Enumeration" maxOccurs="64">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FlagListType">
+		<xs:annotation>
+			<xs:documentation>Flag list data type used in configuration. Contains subset of the elements defined in EnumReferenceList</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Element" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="EnumReferenceList" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="FloatType">
+		<xs:annotation>
+			<xs:documentation>Float data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="Min" type="xs:float">
+					<xs:annotation>
+						<xs:documentation>Minimum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Max" type="xs:float">
+					<xs:annotation>
+						<xs:documentation>Maximum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Int64Type">
+		<xs:annotation>
+			<xs:documentation>Int64 data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:long">
+				<xs:attribute name="Min" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Minimum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Max" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Maximum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ItemType">
+		<xs:annotation>
+			<xs:documentation>Item data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="EnumReferenceList" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="StringType">
+		<xs:annotation>
+			<xs:documentation>String data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="MinLen" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Minimum length of the string</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MaxLen" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Maximum length of the string</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CustomConfigItemsType">
+		<xs:annotation>
+			<xs:documentation>Custom configuration items data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigItem" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="xs:string"/>
+						<xs:element name="Persistent" type="xs:boolean" default="false" minOccurs="0" maxOccurs="1">
+							<xs:annotation>
+								<xs:documentation>If true, the config item information will persist over a safe storage clear (master reset).</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ReadOnly" type="xs:boolean" default="false" minOccurs="0" maxOccurs="1">
+							<xs:annotation>
+								<xs:documentation>If true, the config item will have a fixed value that is not modifiable at runtime.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NotTransferable" type="xs:boolean" default="false" minOccurs="0" maxOccurs="1">
+							<xs:annotation>
+								<xs:documentation>If true, the config item will not be considered for exporting to another gaming machine, due do it's affiliation to the current hardware.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Data">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="AmountData" type="F2XRegistryTypesVer1:AmountType"/>
+									<xs:element name="BooleanData" type="F2XRegistryTypesVer1:BooleanType"/>
+									<xs:element name="EnumerationData" type="F2XRegistryTypesVer1:EnumerationType"/>
+									<xs:element name="FlagListData" type="F2XRegistryTypesVer1:FlagListType"/>
+									<xs:element name="FloatData" type="F2XRegistryTypesVer1:FloatType"/>
+									<xs:element name="Int64Data" type="F2XRegistryTypesVer1:Int64Type"/>
+									<xs:element name="ItemData" type="F2XRegistryTypesVer1:ItemType"/>
+									<xs:element name="StringData" type="F2XRegistryTypesVer1:StringType"/>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PropertiesType">
+		<xs:annotation>
+			<xs:documentation>This type will organize the properties</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Section" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Property" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Name">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="256"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="Value">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="256"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="Name" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:maxLength value="256"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="DenomType">
+		<xs:annotation>
+			<xs:documentation>The denomination as restricted by enumeration.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:unsignedInt">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="25"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="50"/>
+			<xs:enumeration value="100"/>
+			<xs:enumeration value="200"/>
+			<xs:enumeration value="250"/>
+			<xs:enumeration value="500"/>
+			<xs:enumeration value="1000"/>
+			<xs:enumeration value="2000"/>
+			<xs:enumeration value="2500"/>
+			<xs:enumeration value="5000"/>
+			<xs:enumeration value="10000"/>
+			<xs:enumeration value="20000"/>
+			<xs:enumeration value="25000"/>
+			<xs:enumeration value="50000"/>
+			<xs:enumeration value="100000"/>
+			<xs:enumeration value="200000"/>
+			<xs:enumeration value="250000"/>
+			<xs:enumeration value="500000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BankSynchronizedConfigType">
+		<xs:annotation>
+			<xs:documentation>The BankSynchronizedConfiguration type as restricted by enumeration. Enforced means the game set must be available on the host, NotAllowed means the game set cannot be available on the host for synchronization of the bank of EGMs.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Enforced"/>
+			<xs:enumeration value="NotAllowed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CultureStringType">
+		<xs:annotation>
+			<xs:documentation>Culture Format:It should follow Windows OS locale format((LCID) Reference: https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f). Language code should follow ISO 639-1; Region Code should follow the ISO 3166-1.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="AuthorityIdentifierType">
+		<xs:annotation>
+			<xs:documentation>The authority (such as a studio, or department) that issued an identifier.  Must be composed of alphanumeric values and/or "-" and "_" separators. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+			<xs:pattern value="([-_0-9A-Za-z])+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PrecisionDecimalType">
+		<xs:annotation>
+			<xs:documentation>The type for numeric values with specified decimal precision (ex. 98.600 indicates that the precision is known to the thousandths.) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d+\.?"/>
+			<xs:pattern value="\d*\.\d+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ProgressiveConceptIdentifierType">
+		<xs:annotation>
+			<xs:documentation>The progressive concept identifier</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProgressiveConceptCode" type="F2XRegistryTypesVer1:ProgressiveConceptCodeType">
+				<xs:annotation>
+					<xs:documentation>The Progressive Concept Code (PCC) is a unique hash for a mathematical representation of the progressive concept.  The PCC must be unique as maintained by the issuing authority (e.g. a game studio).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Authority" type="F2XRegistryTypesVer1:AuthorityIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The authority (such as a game studio) that issued the PCC (Progressive Concept Code).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ProgressiveConceptCodeType">
+		<xs:annotation>
+			<xs:documentation>The Progressive Concept Code (PCC) is a unique hash for a mathematical representation of the progressive concept.  The PCC must be unique as maintained by the issuing authority (e.g. a game studio).  Must be composed of alphanumeric values and/or "-" and "_" separators.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+			<xs:pattern value="([-_0-9A-Za-z])+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="LinkMapIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for a link map.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LinkId" type="F2XRegistryTypesVer1:ProgressiveLinkMapNameIdType">
+				<xs:annotation>
+					<xs:documentation>Link identifier as a string based name used for display purposes as assigned by the game designer (e.g. SPHINX3D_SPC).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Authority" type="F2XRegistryTypesVer1:AuthorityIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The authority (such as a game studio) that issued the LinkId.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ProgressiveLinkMapNameIdType">
+		<xs:annotation>
+			<xs:documentation>Link identifier as a string based name used for display purposes as assigned by the game designer (e.g. SPHINX3D_SPC).   Must be composed of alphanumeric values and/or "-" and "_" separators.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+			<xs:pattern value="([-_0-9A-Za-z])+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SpcGroupIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Standalone Progressive Controller group identifier.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SpcGroupId">
+				<xs:annotation>
+					<xs:documentation>String name/identifier used for display purposes as assigned by the game designer (e.g. SPHINX3D_SPCG).  This string must be unique (as issued by the Authority).  Must be composed of alphanumeric values and/or "-" and "_" separators.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="19"/>
+						<xs:pattern value="([-_0-9A-Za-z])+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Authority" type="F2XRegistryTypesVer1:AuthorityIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The authority (such as a game studio) that issued the identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpcGroupTemplateIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Standalone Progressive Controller group template identifier.  When the template is instantiated (e.g. at a denomination) this template identifier is used as the base to form a SPC group identifier.  </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SpcGroupTemplateId">
+				<xs:annotation>
+					<xs:documentation>String name/identifier as assigned by the game designer (e.g. SPHINX3D_SPC). When the template is instantiated (e.g. at a denomination) this template id to used as the base (string) to create a unique identifier for the controller group.   This string must be unique (as issued by the Authority).  Must be composed of alphanumeric values and/or "-" and "_" separators.   The pattern used for representation is "base_string-xxx". The xxx will be replaced by the denomination value or an unique combination.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="15"/>
+						<xs:pattern value="([-_0-9A-Za-z])+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Authority" type="F2XRegistryTypesVer1:AuthorityIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The authority (such as a game studio) that issued the identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NetProgressiveControllerGroupIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier to map the game levels to levels within a Net Progressive Controller group (aka "Progressive ID X").</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupCode">
+				<xs:annotation>
+					<xs:documentation>String name/identifier used for display purposes as assigned by the game designer (e.g. SPHINX3D_UCG).  This string must be unique (as issued by the Authority).  Must be composed of alphanumeric values and/or "-" and "_" separators.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="19"/>
+						<xs:pattern value="([-_0-9A-Za-z])+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Authority" type="F2XRegistryTypesVer1:AuthorityIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The authority (such as a game studio) that issued the identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GroupIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier to map the game levels to levels within a controller group (aka "Progressive ID X").</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupCode">
+				<xs:annotation>
+					<xs:documentation>String name/identifier used for display purposes as assigned by the game designer (e.g. SPHINX3D_eWAP).  This string must be unique (as issued by the Authority).  Must be composed of alphanumeric values and/or "-" and "_" separators.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="19"/>
+						<xs:pattern value="([-_0-9A-Za-z])+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Authority" type="F2XRegistryTypesVer1:AuthorityIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The authority (such as a game studio) that issued the identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Percentage">
+		<xs:annotation>
+			<xs:documentation>This is the percentage.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="WagerCategories">
+		<xs:annotation>
+			<xs:documentation>Contains all Wager Category information.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Percentage" type="F2XRegistryTypesVer1:Percentage" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+							Percentage for wager category.
+							The wager category entry is referenced by a zero based index based on the order of entries in this list.
+							The entries are not sorted by the foundation.
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Jurisdiction">
+		<xs:annotation>
+			<xs:documentation>Jurisdiction string. Warning: Jurisdiction strings are defined in the boot. Jurisdiction values are not enumerated in this schema; the values may change over time, and without notice.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+</xs:schema>

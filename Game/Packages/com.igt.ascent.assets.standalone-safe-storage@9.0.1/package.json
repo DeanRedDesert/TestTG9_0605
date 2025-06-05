@@ -1,0 +1,10 @@
+{
+  "name": "com.igt.ascent.assets.standalone-safe-storage",
+  "displayName": "Ascent Assets Standalone Safe Storage",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "The settings and the tool allowing users to save, load, and/or pick which safe storage file to use when running the game in Standalone mode.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "com.igt.interface-extensions.runtime-game-events",
+  "displayName": "Ascent RuntimeGameEvents Extensions",
+  "version": "7.0.0-dev.22.1582513",
+  "author": "Ascent SDK Team",
+  "description": "RuntimeGameEvents is a feature for Australia specific protocols to be notified when particular game actions are taken.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation": "7.0.0-dev.22.1582513",
+    "com.igt.ascent.game": "7.0.0-dev.22.1582513",
+    "com.igt.ascent.sdk-essentials": "7.0.0-dev.22.1582513"
+  }
+}

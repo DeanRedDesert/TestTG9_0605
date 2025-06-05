@@ -1,0 +1,15 @@
+{
+  "name": "IGT.Ascent.OutcomeList",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.OutcomeList.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

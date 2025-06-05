@@ -1,0 +1,15 @@
+{
+  "name": "IGT.Game.Core.Presentation.CabinetServiceDiscovery",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Linq",
+    "IGT.Game.Core.Presentation.CabinetServices"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

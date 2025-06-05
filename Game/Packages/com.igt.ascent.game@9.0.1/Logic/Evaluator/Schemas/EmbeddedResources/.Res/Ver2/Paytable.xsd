@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="2.1">
+	<xs:include schemaLocation="StripList.xsd"/>
+	<xs:include schemaLocation="CellPopulation.xsd"/>
+	<xs:include schemaLocation="PatternList.xsd"/>
+	<xs:include schemaLocation="SlotPrizeScale.xsd"/>
+	<xs:include schemaLocation="SymbolList.xsd"/>
+	<xs:include schemaLocation="GameConfiguration.xsd"/>
+	<xs:include schemaLocation="ProgressiveLevel.xsd"/>
+	<xs:include schemaLocation="Pick.xsd"/>
+	<xs:include schemaLocation="PokerPaytableSection.xsd"/>
+	<xs:include schemaLocation="PaytableSection.xsd"/>
+  <xs:include schemaLocation="PaytableAbstract.xsd"/>
+	<xs:element name="Paytable">
+		<xs:annotation>
+			<xs:documentation>A paytable is  a container for all of the data required for evaluation by a game. It is divided into sections which may be used to represent base games, bonuses, and features.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="Abstract" type="PaytableAbstract"/>
+        <xs:element name="ProgressiveLevels" type="ProgressiveLevels" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A list of the progressive levels which are available to win in this paytable.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SlotPaytableSection" type="SlotPaytableSection" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>List of slot paytable sections available within this paytable.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PickPaytableSection" type="PickPaytableSection" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>List of pick sections available within this paytable.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="PokerPaytableSection" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SlotPaytableSection">
+		<xs:annotation>
+			<xs:documentation>SlotPaytableSections contain common data required accross a wide variety of slot paytable types.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PaytableSection">
+				<xs:sequence>
+					<xs:element name="StripList" type="StripList">
+						<xs:annotation>
+							<xs:documentation>A list of strips which are used in this section. These are typically reel strips.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SymbolWindow" type="CellPopulation">
+						<xs:annotation>
+							<xs:documentation>The window definition for this section. This typically represents the visible symbol window available for evaluation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LinePatternList" type="PatternList" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Optiional line pattern list for this section. This list defines the llines to evaluate in the symbol window.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LinePrizeScale" type="SlotPrizeScale" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Optional line prize scale for this section. The prizes in this scale are evaluated over the line pattern list.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ScatterPatternList" type="PatternList" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Optional scatter pattern list for this section. Typically scatters consist of a single pattern which covers all cells in the symbol window.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ScatterPrizeScale" type="SlotPrizeScale" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Optional scatter prize scale for this section. The prizes in this scale are evaluated over the scatter pattern list.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MultiwayPatternList" type="PatternList" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Optional multiway pattern list for this section. Each pattern should represent a multiway mask available for betting.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MultiwayPrizeScale" type="SlotPrizeScale" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Optional multiway prize scale for this section. The prizes in this scale are evaluated over the multiway pattern list.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PickPaytableSection">
+		<xs:annotation>
+			<xs:documentation>Pick paytable sections provide data commonly needed for picks.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PaytableSection">
+				<xs:sequence>
+					<xs:element name="Pick" type="Pick" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Picks available in this section.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			        <xs:attribute name="ReplacementStrategy" use="optional">
+			          <xs:annotation>
+			            <xs:documentation>
+                        There are three strategies to select a pick from the pick paytable section:
+                        1. With Replacement: Once selected each pick is returned back to the pool from where a pick is selected.
+                        2. Without Replacement: Once selected a pick doesn't go back to the original pool of picks.
+                        3. Exhaustive: Once selected each pick is returned to the pool of picks by decrementing the pick's weight by one.
+                           Once the weight becomes 0 the pick is removed from the pool.
+                        </xs:documentation>
+			          </xs:annotation>
+			          <xs:simpleType>
+			            <xs:restriction base="xs:string">
+			              <xs:enumeration value="WithReplacement"/>
+			              <xs:enumeration value="WithoutReplacement"/>
+			              <xs:enumeration value="Exhaustive"/>
+			            </xs:restriction>
+			          </xs:simpleType>
+			        </xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="UserString" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Element to use when making a string UserData</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

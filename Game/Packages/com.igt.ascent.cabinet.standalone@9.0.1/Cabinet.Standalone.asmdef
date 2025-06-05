@@ -1,0 +1,21 @@
+{
+  "name": "IGT.Game.Core.Communication.Cabinet.Standalone",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Timing",
+    "IGT.Game.Core.Communication",
+    "IGT.Game.Core.Communication.Standalone",
+    "IGT.Game.Core.Communication.Standalone.Schemas",
+    "IGT.Game.Core.Communication.Cabinet",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas",
+    "IGT.Game.Core.Communication.Cabinet.Standalone.Devices"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

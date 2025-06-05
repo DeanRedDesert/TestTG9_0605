@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 sp2 (http://www.altova.com) by Renjith Ramachandran (International Game Technology) -->
+<xs:schema xmlns:F2XGameSetDataRegistryVer2="F2XGameSetDataRegistryVer2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" targetNamespace="F2XGameSetDataRegistryVer2.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="2.2">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<!-- Initial version 2.0, Support Game Set Data Files. Major revision 2 moves the max bet lists beneath the RTP options, to allow for per RTP settings. Add PerDenomRtpConfig and PerDenomMaxBetConfig flags to DenomSets. -->
+	<!-- Minor revision 2.1, Add the optional IsBankSynchronizedConfiguration flag-->
+	<!-- Minor revision 2.2, LinkMapGroup paramters are set optional to add support to Non-Progressive Gameset-->
+	<xs:element name="GameSetData">
+		<xs:annotation>
+			<xs:documentation>Theme details for a game set. This maps general values from the GameSetInterface file to values for this theme (e.g. "87%" = AVV001234).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="VersionedGameSetDataSections" type="F2XGameSetDataRegistryVer2:VersionedGameSetDataSections">
+							<xs:annotation>
+								<xs:documentation>Contains the game set data sections in any available versions.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="VersionedGameSetDataSections">
+		<xs:annotation>
+			<xs:documentation>Versioned sections</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="VersionedSection" type="F2XGameSetDataRegistryVer2:VersionedSection" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains the game set data by version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VersionedSection">
+		<xs:sequence>
+			<xs:element name="GameSet" type="F2XGameSetDataRegistryVer2:GameSet">
+				<xs:annotation>
+					<xs:documentation>The details of the game set specific to this theme.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required"/>
+		<xs:attribute name="SectionHash" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="GameSet">
+		<xs:annotation>
+			<xs:documentation>The details of the game set specific to this theme. This contains any number of denom sets that will include the further details for each entry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DenomSet" type="F2XGameSetDataRegistryVer2:DenomSet" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A set of 1-6 denominations that are part of a single denom set. A denom set is enabled all at once, with various settings for each specific denom.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="GameSetName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the game set. This will be displayed to operators during setup. This must match the value in the Interface file.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ThemeRegistry" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The theme registry that this game set controls configuration for.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="BankSynchronizedConfigurationType" type="F2XRegistryTypesVer1:BankSynchronizedConfigType" use="optional" default="Enforced">
+			<xs:annotation>
+				<xs:documentation>An optional flag which indicates if this game set configuration is sync'd across a bank of EGMs.  If the flag is omitted or set to Enforced, the game set configuration is applied to all EGMs in the bank, which requires an active host connection to enable the game set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DenomSet">
+		<xs:annotation>
+			<xs:documentation>A set of 1-6 denominations that are part of a single denom set. A denom set is enabled all at once, with various settings for each specific denom. This set must match a set in the Game Set Interface Registry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Denom" type="F2XGameSetDataRegistryVer2:Denom" maxOccurs="6">
+				<xs:annotation>
+					<xs:documentation>A denom contains the specific mapping of payvar and link map values for that denom. These denoms must match a denom in the Game Set Interface Registry.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="PerDenomRtpConfig" type="xs:boolean" default="true">
+			<xs:annotation>
+				<xs:documentation>Sets if the RTPs in this denom set should be configured by the operator on a per denom basis, or if the selection should adjust the values for all denoms at once. Defaults to per denomination configuration.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="PerDenomMaxBetConfig" type="xs:boolean" default="true">
+			<xs:annotation>
+				<xs:documentation>Sets if the Max Bets in this denom set should be configured by the operator on a per denom basis, or if the selection should adjust the values for all denoms at once. Defaults to per denomination configuration.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Denom">
+		<xs:annotation>
+			<xs:documentation>A denom contains the specific mapping of payvar and link map values for that denom. These denoms must match a denom in the Game Set Interface registry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PayvarMapList" type="F2XGameSetDataRegistryVer2:PayvarMapList">
+				<xs:annotation>
+					<xs:documentation>The list of available Payvars for configuration in this denom. These values provide details for the values specified in the Game Set Interface registry.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Value" type="F2XRegistryTypesVer1:DenomType" use="required">
+			<xs:annotation>
+				<xs:documentation>The denom being defined. This denom must match a denom in the Game Set Interface Registry.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PayvarMapList">
+		<xs:annotation>
+			<xs:documentation>A list of all available payvar map definitions. The payvar maps links </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PayvarMap" type="F2XGameSetDataRegistryVer2:PayvarMap" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The PayvarMap links the GameSetInterface's general values (e.g. RTP = "95%") to a specific paytable for this theme (e.g. Payvar = "AVV001234").</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayvarMap">
+		<xs:annotation>
+			<xs:documentation>The PayvarMap links the GameSetInterface's general values (e.g. RTP = "95%") to a specific paytable for this theme (e.g. Payvar = "AVV001234").</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Payvar" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The case sensitive name of a payvar to use for the generic RTP string.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LinkMapGroup" type="F2XGameSetDataRegistryVer2:LinkMapGroup" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The Link Map Group maps the GameSetInterface's general value (e.g. "LinkMapGroup 1") to this theme's specific link map for that group (e.g. LinkMap000001001). It is an optional field. This field is not available for Non-Progressive gamesets.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxBetList" type="F2XGameSetDataRegistryVer2:MaxBetList">
+				<xs:annotation>
+					<xs:documentation>The list of max bets available for configuration with this Payvar.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DefaultMaxBet" type="F2XGameSetDataRegistryVer2:MaxBet" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>An optional field to set the default maximum bet value that is selected for this payvar. This value should exist in the MaxBetList, this is only the setting for which value is the default. If no default is provided then the lowest value will be used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="RTP" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The generic RTP string specified in the GameSetInterface file that this PayvarMap is describing. This RTP must match an RTP in the Game Set Interface Registry.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="MaxBetList">
+		<xs:annotation>
+			<xs:documentation>A list of available max bets.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MaxBet" type="F2XGameSetDataRegistryVer2:MaxBet" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A max bet value to be used for a game set. This value is the final value. That is to say, it is not resolved by the theme to a more specific value, but used directly. All themes using the denom set for this game set must have these values as available settings for the denom or an error will be raised.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MaxBet">
+		<xs:annotation>
+			<xs:documentation>A max bet amount.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Value" type="xs:long" use="required">
+			<xs:annotation>
+				<xs:documentation>A max bet value to be used for a game set. This value is the final value. That is to say, it is not resolved by the theme to a more specific value, but used directly. All themes using the denom set for this game set must have these values as available settings for the denom or an error will be raised.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LinkMapGroup">
+		<xs:annotation>
+			<xs:documentation>A list of link map group names to map to specific link maps.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LinkMapId" type="F2XRegistryTypesVer1:LinkMapIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The link map identifier to use. This should map a link map available to the theme.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The generic link map group name that is being mapped here.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

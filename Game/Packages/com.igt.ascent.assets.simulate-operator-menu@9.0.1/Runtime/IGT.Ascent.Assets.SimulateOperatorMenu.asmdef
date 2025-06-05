@@ -1,0 +1,16 @@
+{
+    "name": "IGT.Ascent.Assets.SimulateOperatorMenu",
+    "rootNamespace": "",
+    "references": [
+        "IGT.Ascent.Communication.Platform.Interfaces"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

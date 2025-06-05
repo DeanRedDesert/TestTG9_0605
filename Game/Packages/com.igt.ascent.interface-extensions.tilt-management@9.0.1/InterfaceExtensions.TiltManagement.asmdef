@@ -1,0 +1,23 @@
+{
+  "name": "InterfaceExtensions.TiltManagement",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.Communication.Foundation.F2L",
+    "IGT.Game.Core.Communication.Foundation.F2L.Schemas",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Tilts",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "Foundation.InterfaceExtensions",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

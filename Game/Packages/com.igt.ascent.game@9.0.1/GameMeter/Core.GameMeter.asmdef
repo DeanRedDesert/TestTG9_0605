@@ -1,0 +1,16 @@
+{
+  "name": "IGT.Game.Core.GameMeter",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

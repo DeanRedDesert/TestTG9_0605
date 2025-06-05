@@ -1,0 +1,25 @@
+{
+    "name": "Midas.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "Midas.Core",
+        "Midas.Core.StateMachine",
+        "Midas.Logging",
+        "Midas.Tools",
+        "Midas.Logic",
+        "Midas.LogicToPresentation",
+        "Unity.TextMeshPro",
+        "Unity.Localization",
+        "Unity.ResourceManager",
+        "InterfaceExtensions.GameFunctionStatus"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

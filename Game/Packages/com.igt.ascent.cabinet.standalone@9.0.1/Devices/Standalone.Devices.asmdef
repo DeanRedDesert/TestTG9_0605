@@ -1,0 +1,19 @@
+{
+  "name": "IGT.Game.Core.Communication.Cabinet.Standalone.Devices",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Logging",
+    "IGT.Game.Core.Presentation.PeripheralLights",
+    "IGT.Game.Core.Presentation.PeripheralLights.Streaming",
+    "IGT.Game.Core.Communication.Cabinet",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

@@ -1,0 +1,13 @@
+{
+  "name": "com.igt.ascent.assets.standalone-foundation-configurator",
+  "displayName": "Ascent Assets Standalone Foundation Configurator",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "An Editor tool to help generate and modify SystemConfig.xml file, which is used to simulate F2X messages from Foundation in Standalone mode.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.assets.standalone-safe-storage": "9.0.1",
+    "com.igt.ascent.foundation.standalone": "9.0.1"
+  }
+}

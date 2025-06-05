@@ -1,0 +1,24 @@
+{
+  "name": "IGT.Ascent.Communication.Platform.Standard",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Money",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Ascent.Restricted.EventManagement",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces",
+    "IGT.Game.Core.Communication.Foundation.F2XCallbacks",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "IGT.Game.Core.Communication.Foundation.F2X",
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas",
+    "IGT.Ascent.Communication.Platform",
+    "IGT.Ascent.Communication.Platform.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

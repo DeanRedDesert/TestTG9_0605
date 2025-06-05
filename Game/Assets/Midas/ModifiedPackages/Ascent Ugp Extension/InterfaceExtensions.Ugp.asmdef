@@ -1,0 +1,23 @@
+{
+  "name": "InterfaceExtensions.Ugp",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Communication",
+    "IGT.Game.Core.Communication.Foundation.F2L.Schemas",
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas",
+    "Foundation.InterfaceExtensions",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "IGT.Game.Core.Communication.Foundation.F2X",
+    "IGT.Ascent.Communication.Platform.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

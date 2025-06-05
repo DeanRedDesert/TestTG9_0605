@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:F2XMarketRestrictionVer1="F2XMarketRestrictionVer1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" targetNamespace="F2XMarketRestrictionVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!-- Minor revision 1.1, Added Denomination Restriction support, and DecimalRange type -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="MarketRestriction">
+		<xs:annotation>
+			<xs:documentation>Define the market restrictions to be applied to the Market Configuration Data File (MCDF).  The extension interface definition is used to search associate with MCD Files.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="VersionedRestrictionSections" type="F2XMarketRestrictionVer1:VersionedRestrictionSections"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AnyOf">
+		<xs:annotation>
+			<xs:documentation>Match any element in the linked property data</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="StringList" type="F2XMarketRestrictionVer1:StringList">
+				<xs:annotation>
+					<xs:documentation>A list of case sensitive string items to be used during market restriction evaluation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecimalRange" type="F2XMarketRestrictionVer1:DecimalRange">
+				<xs:annotation>
+					<xs:documentation>A range of decimal values to be used during market restriction evaluation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="Property" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A case sensitve named property and the associated data used during market restriction evaluation.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NoneOf">
+		<xs:annotation>
+			<xs:documentation>Match no element in the linked property data</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="StringList" type="F2XMarketRestrictionVer1:StringList">
+				<xs:annotation>
+					<xs:documentation>A list of case sensitive string items to be used during market restriction evaluation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecimalRange" type="F2XMarketRestrictionVer1:DecimalRange">
+				<xs:annotation>
+					<xs:documentation>A range of decimal values to be used during market restriction evaluation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="Property" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A case sensitve named property and the associated data used during market restriction evaluation.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PayvarRestriction">
+		<xs:annotation>
+			<xs:documentation>Define the restriction elements to be checked against the linked property data</xs:documentation>
+		</xs:annotation>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="AnyOf" type="F2XMarketRestrictionVer1:AnyOf">
+				<xs:annotation>
+					<xs:documentation>Defines an AnyOf operation that verifies that at least one of the defined values are contained in the associated named payvar property.  The data types must be comparable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NoneOf" type="F2XMarketRestrictionVer1:NoneOf">
+				<xs:annotation>
+					<xs:documentation>Defines a NoneOf operation that verifies that none of the defined values are contained in the associated named payvar property.  The data types must be comparable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Enable" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Defines a rule operation which always results in a pass (true) or a fail (false)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="DenomRestriction">
+		<xs:annotation>
+			<xs:documentation>Define the restriction elements to be checked against the linked property data for the purposes of restricting a payvar's denomination.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XMarketRestrictionVer1:PayvarRestriction">
+				<xs:attribute name="Denom" type="F2XRegistryTypesVer1:DenomType" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VersionedSection">
+		<xs:annotation>
+			<xs:documentation>Contains a list of restriction definitions that must be provided to meet the interface definition's requirements for a specific version</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PayvarRestriction" type="F2XMarketRestrictionVer1:PayvarRestriction">
+				<xs:annotation>
+					<xs:documentation>Defines a market restriction to be applied to payvars.  The payvar properties defined in the market configuration data file(s) are used during evaluation given this restriction definition.  The defined operations must all evaluate 'true' for the result to be 'true'.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DenomRestriction" type="F2XMarketRestrictionVer1:DenomRestriction" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Defines a market restriction to be applied to supported denominations of a payvar.  The payvar properties defined in the market configuration data file(s) are used during evaluation given this restriction definition.  The defined operations must all evaluate 'true' for the result to be 'true'.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DefaultDenomRestriction" type="F2XMarketRestrictionVer1:PayvarRestriction" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Defines a market restriction to be applied to supported denominations of a payvar.  The default denomination restriction is applied to all denominations where a denom specific restriction does not exist.  If the DefaultDenominationRestriction is not present, and other DenomRestrictions exist, all denominations without specific restrictions are automatically disabled.  The payvar properties defined in the market configuration data file(s) are used during evaluation given this restriction definition.  The defined operations must all evaluate 'true' for the result to be 'true'.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required"/>
+		<xs:attribute name="InterfaceHash" type="xs:string" use="required"/>
+		<xs:attribute name="SectionHash" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="StringList">
+		<xs:annotation>
+			<xs:documentation>List of strings</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="String" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A case sensitive string element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="RestrictedDecimal">
+		<xs:annotation>
+			<xs:documentation>Decimal type with a restricted number of fraction digits to improve accuracy of comparisons.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DecimalRange">
+		<xs:annotation>
+			<xs:documentation>Inclusive Range of Decimal values</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Min" type="F2XMarketRestrictionVer1:RestrictedDecimal">
+				<xs:annotation>
+					<xs:documentation>Minimum of the range</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Max" type="F2XMarketRestrictionVer1:RestrictedDecimal">
+				<xs:annotation>
+					<xs:documentation>Maximum of the range</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VersionedRestrictionSections">
+		<xs:annotation>
+			<xs:documentation>Versioned sections</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="VersionedSection" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="F2XMarketRestrictionVer1:VersionedSection"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Tyrell Atterberry (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" targetNamespace="F2XConfigurationExtensionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!-- Version 1.1: Added optional ability to specify a NotTransferable option for CustomConfigItemsType/ConfigItem. -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="ConfigurationExtensionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a configuration extension provider.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="VersionedConfigSections" type="F2XConfigurationExtensionRegistryVer1:VersionedConfigSections">
+							<xs:annotation>
+								<xs:documentation>Contains all configuration items being declared for this scope. Custom config items are items stored by the Config Extension, but are not otherwise interpreted or configured at this time.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="SettingsGroups" type="F2XConfigurationExtensionRegistryVer1:ConfigSettingsGroups" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Contains a collection of custom config items grouped by name, that can be applied to the configuration extension.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- Config Item Definitions with values. -->
+	<xs:complexType name="VersionedConfigSection">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="ConfigItems" type="F2XRegistryTypesVer1:CustomConfigItemsType">
+				<xs:annotation>
+					<xs:documentation>Contains all custom configuration items being declared for this scope. Custom config items are items stored by the Config Extension, but are not otherwise interpreted or configured at this time.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Overrides" type="F2XConfigurationExtensionRegistryVer1:ConfigItemValueOverrides" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Sets of configuration item values to override based on Jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required">
+			<xs:annotation>
+				<xs:documentation>Version of the section. Minor version must be sequential with previous section, and starting with 1.0.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Hash" use="required">
+			<xs:annotation>
+				<xs:documentation>Checksum of configuration data within the section.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="VersionedConfigSections">
+		<xs:sequence>
+			<xs:element name="VersionedSection" type="F2XConfigurationExtensionRegistryVer1:VersionedConfigSection" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains the configuration item definitions by version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Config Item Values -->
+	<xs:complexType name="FlagListValue">
+		<xs:annotation>
+			<xs:documentation>Flag list data type used in configuration. Contains subset of the elements defined in EnumReferenceList</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Element" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>String value from the reference list, to set to True in the FlagList.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConfigItemValue">
+		<xs:annotation>
+			<xs:documentation>Configuration item value.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="Amount" type="xs:long"/>
+			<xs:element name="Boolean" type="xs:boolean"/>
+			<xs:element name="FlagList" type="F2XConfigurationExtensionRegistryVer1:FlagListValue"/>
+			<xs:element name="Float" type="xs:float"/>
+			<xs:element name="Int64" type="xs:long"/>
+			<xs:element name="Item" type="xs:string"/>
+			<xs:element name="String" type="xs:string"/>
+		</xs:choice>
+		<xs:attribute name="Name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Configuration item name.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ConfigItemValues">
+		<xs:annotation>
+			<xs:documentation>Contains a set of typed configuration item values by name.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigItemValue" type="F2XConfigurationExtensionRegistryVer1:ConfigItemValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Config Item Value Groups -->
+	<xs:complexType name="ConfigSettingsGroup">
+		<xs:annotation>
+			<xs:documentation>Config settings group provides a grouping of settings that can be applied as a whole unit, and supports jurisdictional overrides.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigItemValues" type="F2XConfigurationExtensionRegistryVer1:ConfigItemValues">
+				<xs:annotation>
+					<xs:documentation>Contains a set of typed configuration item values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Overrides" type="F2XConfigurationExtensionRegistryVer1:ConfigItemValueOverrides" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Sets of configuration item values to override based on Jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Name" use="required">
+			<xs:annotation>
+				<xs:documentation>Name of the grouping of configuration item values.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ConfigSettingsGroups">
+		<xs:sequence>
+			<xs:element name="SettingsGroup" type="F2XConfigurationExtensionRegistryVer1:ConfigSettingsGroup" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Provides a named group of values that can be applied to the configuration items defined in the extension.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConfigItemValueOverride">
+		<xs:sequence>
+			<xs:element name="Jurisdictions" type="F2XConfigurationExtensionRegistryVer1:JurisdictionList">
+				<xs:annotation>
+					<xs:documentation>Specifies a list of jurisdiction strings for this override.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConfigItemValues" type="F2XConfigurationExtensionRegistryVer1:ConfigItemValues">
+				<xs:annotation>
+					<xs:documentation>Contains a set of typed configuration item values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JurisdictionList">
+		<xs:annotation>
+			<xs:documentation>List of jurisdictions.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Jurisdiction" type="F2XRegistryTypesVer1:Jurisdiction" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConfigItemValueOverrides">
+		<xs:annotation>
+			<xs:documentation>Contains a set of typed configuration item values to overridden per jurisdiction.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigItemValueOverride" type="F2XConfigurationExtensionRegistryVer1:ConfigItemValueOverride" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

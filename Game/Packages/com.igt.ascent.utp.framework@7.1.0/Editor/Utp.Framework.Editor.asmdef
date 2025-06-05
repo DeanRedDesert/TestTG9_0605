@@ -1,0 +1,18 @@
+{
+    "name": "IGT.Ascent.Utp.Framework.Editor",
+    "rootNamespace": "IGT.Ascent.Utp.Framework.Editor",
+    "references": [
+        "IGT.Ascent.Utp.Framework"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

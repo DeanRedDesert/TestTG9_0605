@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="2.1">
+  <xs:include schemaLocation="PaytableSection.xsd"/>
+  <xs:complexType name="WinLevel">
+    <xs:annotation>
+      <xs:documentation>
+        A Win Level is an outcome defined in the paytable that is associated with a prize.  Every win level has a fixed
+        probability of occurring, as it is associated with a fixed set of events.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="index" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>
+          The 0-based index for this win level.  Each win level in a paytable has a unique index.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="description" use="optional">
+      <xs:annotation>
+        <xs:documentation>A short description of this win level.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+			  <xs:restriction base="xs:string">
+				  <xs:maxLength value="32"/>
+			  </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="hits" use="required" type="xs:double">
+        <xs:annotation>
+          <xs:documentation>
+            The number of discrete events associated with this win level.
+          </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="pullsPerHit" use="required" type="xs:double">
+      <xs:annotation>
+        <xs:documentation>
+          The inverse of the probability.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="PaytableAbstract">
+    <xs:annotation>
+      <xs:documentation>
+        The paytable abstract contains a summary of the paytable, including its ID and important statistics.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MinPaybackPercentage">
+        <xs:annotation>
+          <xs:documentation>The minimum payback percentage possible for this paytable.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:minInclusive value="0.00"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MinPaybackPercentageWithoutProgressiveContributions" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            (optional) The minimum payback percentage possible for this paytable excluding any contributions from any progressive wins.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:minInclusive value="0.00"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MaxPaybackPercentage">
+        <xs:annotation>
+          <xs:documentation>The maximum payback percentage possible for this paytable.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:minInclusive value="0.00"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WinLevels" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            A listing of the win levels that are present in this paytable.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+              <xs:element name="WinLevel" type="WinLevel" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  	<xs:attribute name="gameID" type="xs:string" use="required">
+		<xs:annotation>
+			<xs:documentation>An identiifier which is associated with this paytable.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+  </xs:complexType>
+</xs:schema>

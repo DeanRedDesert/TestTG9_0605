@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:include schemaLocation="Cell.xsd"/>
+	<xs:complexType name="Cluster">
+		<xs:annotation>
+			<xs:documentation>A cluster is a ordered group of cells that represent the win.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Cells" type="Cell" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An ordered unique list of cells that define a win. 
+A cell is a name and unique indexes. The index model is composed of a layer, column and row.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A unique name that can be used to reference a specific instance.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="Cluster" type="Cluster"/>
+</xs:schema>

@@ -1,0 +1,20 @@
+{
+  "name": "IGT.Ascent.Communication.Platform.ShellLib",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Tilts",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Ascent.Communication.Platform",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Ascent.Communication.Platform.ShellLib.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

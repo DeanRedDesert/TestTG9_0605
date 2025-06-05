@@ -1,0 +1,12 @@
+{
+  "name": "com.igt.ascent.assets.game-report-activator",
+  "displayName": "Ascent Assets Game Report Activator",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "This package provides a standalone game report activator application that is used to collect game performance data report.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation.standalone": "9.0.1"
+  }
+}

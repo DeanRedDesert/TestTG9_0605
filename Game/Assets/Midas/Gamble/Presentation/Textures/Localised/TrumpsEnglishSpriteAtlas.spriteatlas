@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TrumpsEnglishSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: e7078eeae7d6613499ebad99c2ce4e9b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 01da5c71109a3d04c884657fe3c9f3e7, type: 3}
+  - {fileID: 21300000, guid: 1283cea1d3bafc34897d4547cc13af82, type: 3}
+  - {fileID: 21300000, guid: 526cb1e4151a6d14a87d919941ed99d4, type: 3}
+  - {fileID: 21300000, guid: d4c6fcd61ec5c5a498801893492a1103, type: 3}
+  - {fileID: 21300000, guid: 34886599e4b929348801e2d1a908beb7, type: 3}
+  - {fileID: 21300000, guid: c8b9672a089f13847845a8189f28b2bd, type: 3}
+  - {fileID: 21300000, guid: e7a8530be8e021b4f98cfd3f6ca89828, type: 3}
+  - {fileID: 21300000, guid: 6ed1728ba8af24647acbf56af4e9e697, type: 3}
+  - {fileID: 21300002, guid: f3ff6c0c610f7cc4a9b6400265d513ff, type: 3}
+  - {fileID: 21300000, guid: f3ff6c0c610f7cc4a9b6400265d513ff, type: 3}
+  - {fileID: 21300004, guid: f3ff6c0c610f7cc4a9b6400265d513ff, type: 3}
+  - {fileID: 21300000, guid: c714523cfa1b8964e84ede6f95328e70, type: 3}
+  - {fileID: 21300000, guid: a441b53ccda6cf64a88f6c82a59c962b, type: 3}
+  - {fileID: 21300000, guid: 5dd4254cbb855a34fb16eff13a6574c6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - RedUp
+  - RedDown
+  - BlackDown
+  - REDx2
+  - SPADEx4
+  - DIAMONDx4
+  - HEARTx4
+  - CLUBx4
+  - card take win
+  - card history
+  - card history back
+  - BLACKx2
+  - Gamble
+  - BlackUp
+  m_RenderDataMap: {}
+  m_Tag: TrumpsEnglishSpriteAtlas
+  m_IsVariant: 0

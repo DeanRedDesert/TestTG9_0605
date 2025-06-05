@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:element name="GameConfiguration" type="GameConfigurationType">
+		<xs:annotation>
+			<xs:documentation>Game Configuration including Game Stage Model and Paytable Data.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="GameConfigurationType">
+		<xs:sequence>
+			<xs:element name="GameID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>A unique ID for the game. This is also the name of the phyiscal directory that contains the game assets</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WagerCategoryType">
+		<xs:sequence>
+			<xs:element name="PaybackPercent" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The payback percentage for the wager</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BetOnAPattern" type="WagerBetType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The amount of credits that can be bet on a single pattern</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TotalBet" type="WagerBetType" minOccurs="0"/>
+			<xs:element name="WagerCategoryPatterns" type="WagerPatternRequirementType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Category:
+  Percent: 90
+    WagerCategoryPatterns: 
+        Patterns:                                                      PatternListName: “Lines”
+           AllPatterns: True
+         Patterns:                                         
+           PatternListName: “Ways”                             WagerPatterns:                                              PatternName: “Way 1”                                PatternName: “Way 2”</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RangeType">
+		<xs:sequence>
+			<xs:element name="Min" type="xs:unsignedInt"/>
+			<xs:element name="Max" type="xs:unsignedInt"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WagerPatternsType">
+		<xs:sequence>
+			<xs:element name="PatternName" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WagerPatternRequirementType">
+		<xs:annotation>
+			<xs:documentation>Example:
+PatternList=”Lines”
+   AnyPattern = True
+PatternList=”Ways”
+   PatternName=”Way 1”
+   PatternName=”Way 2”
+</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Patterns" type="PatternsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WagerBetType">
+		<xs:choice>
+			<xs:element name="BetRange" type="RangeType" minOccurs="0"/>
+			<xs:element name="Max" type="xs:boolean"/>
+			<xs:element name="All" type="xs:boolean"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="BetOnAPatternType">
+		<xs:sequence>
+			<xs:element name="BetRange" type="RangeType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PatternsType">
+		<xs:choice>
+			<xs:element name="WagerPatterns" type="WagerPatternsType"/>
+			<xs:element name="AnyPattern" type="xs:boolean"/>
+			<xs:element name="AllPatterns" type="xs:boolean"/>
+		</xs:choice>
+		<xs:attribute name="PatternListName" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

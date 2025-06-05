@@ -1,0 +1,320 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6279fa92149344f8416884c37ab7d1, type: 3}
+  m_Name: AnzWinSounds
+  m_EditorClassIdentifier: 
+  soundDefinitionsList:
+  - id: TopAward
+    clip: {fileID: 8300000, guid: 982b26bdd7f171c458ced99a815a08b3, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup1A
+    clip: {fileID: 8300000, guid: 35e1630a2d1071447b03f0cfcfaa5791, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup1B
+    clip: {fileID: 8300000, guid: ff2ac400dd8f9c84fb58fec8bbd9b1ab, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup1C
+    clip: {fileID: 8300000, guid: b2ad5e81df3d89e46ac459eebfc3f555, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup1D
+    clip: {fileID: 8300000, guid: 70f5fe5cbe609e24696e55deb772fdb1, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup2A
+    clip: {fileID: 8300000, guid: 559cab4ae9eadbb4e849eaa78620175b, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup2B
+    clip: {fileID: 8300000, guid: e06fb822f16143c45b99eb8de2436fa3, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup2C
+    clip: {fileID: 8300000, guid: b4903e2e2fb23be42bd4bd9d0cef9173, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup2D
+    clip: {fileID: 8300000, guid: b350d4adaf0e7cb4794942172bf7cc72, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup3A
+    clip: {fileID: 8300000, guid: ecdd1e0d3eeb64d499fcb2743be66de4, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup3B
+    clip: {fileID: 8300000, guid: 1e64c48a69b3b5246ae4c3f616fca930, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup3C
+    clip: {fileID: 8300000, guid: cb483a7295286624d98df323f0a8e8e1, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup3D
+    clip: {fileID: 8300000, guid: 932fe4fcccd31af4e99fa939909d08d5, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup4A
+    clip: {fileID: 8300000, guid: f487a94ff1aec0f4aba918abcb4f5878, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup4B
+    clip: {fileID: 8300000, guid: 28ae56e650c1dda4894603041625a0b8, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup4C
+    clip: {fileID: 8300000, guid: 999bf279c0ed1eb4eb524dac6d9a0184, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup4D
+    clip: {fileID: 8300000, guid: 513d2b32547649f4286b5a91b8cf36cf, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup5A
+    clip: {fileID: 8300000, guid: 4404985c4f695d542affdefdfbbd5db5, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup5B
+    clip: {fileID: 8300000, guid: 486a2541f8c11b1488a1dd23d1a53d48, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup5C
+    clip: {fileID: 8300000, guid: 58d57230194cc024b919b7d145a49fd1, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup5D
+    clip: {fileID: 8300000, guid: f14a742b555a8724b8661ee65f63d1cf, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup6A
+    clip: {fileID: 8300000, guid: 30853ef1a0058f4478ba7b0984e3f832, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup6B
+    clip: {fileID: 8300000, guid: f4d3f7fb59732d24ca943f3bb3fd145c, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup6C
+    clip: {fileID: 8300000, guid: 659e0db3984b0274aa5a47cbf9997b89, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup6D
+    clip: {fileID: 8300000, guid: 30be570d0029b674d9733966028eec8c, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup7A
+    clip: {fileID: 8300000, guid: ad33c142196b5bd4bb89b011c97efa52, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup7B
+    clip: {fileID: 8300000, guid: 3d1bd49e714be6649a3af30adfe25188, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup7C
+    clip: {fileID: 8300000, guid: 284a95b770af4674cbec1a43f309fc77, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup7D
+    clip: {fileID: 8300000, guid: 556b7dcdc0f181a4cbde37cd6429d7a8, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup8A
+    clip: {fileID: 8300000, guid: 8e978335444d4f941b144eb12987436b, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup8B
+    clip: {fileID: 8300000, guid: d4285aa45e620eb4a95f69b1bef765ca, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup8C
+    clip: {fileID: 8300000, guid: 9216d759d4b13284086207e5ed5fc6d9, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup8D
+    clip: {fileID: 8300000, guid: 15e5c5f33003a284da648394d637aaab, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup9A
+    clip: {fileID: 8300000, guid: 81d69cf479af8df40b344e8e8bfd2954, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup9B
+    clip: {fileID: 8300000, guid: 5e46c738fa2d193489725af661cfff80, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup9C
+    clip: {fileID: 8300000, guid: 98a9091124e703e45b22345c6b9adff2, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup9D
+    clip: {fileID: 8300000, guid: dd133c40251f3a44b9d9a290d2f82f15, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup10A
+    clip: {fileID: 8300000, guid: 588dc2ee11b38344989255d9f94f866b, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup10B
+    clip: {fileID: 8300000, guid: d9e187db81cc2284b9b192c69fbb4d47, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup10C
+    clip: {fileID: 8300000, guid: 237f65fcc3873ec4f9a04ec28f8d2001, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup10D
+    clip: {fileID: 8300000, guid: 57c987de27df9234194e95c188323b53, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup11A
+    clip: {fileID: 8300000, guid: 4ee79fe01713cfa498d44c064bcfef89, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup11B
+    clip: {fileID: 8300000, guid: 239c5e8ad7c9a254fa593ef3a4257202, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup11C
+    clip: {fileID: 8300000, guid: f206c537f4a73544eaf95c27d408044d, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup11D
+    clip: {fileID: 8300000, guid: dcb17cba6267c594b96bbb909b2d762b, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup12A
+    clip: {fileID: 8300000, guid: b0ca00e61f286904a82c5e035e836208, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup12B
+    clip: {fileID: 8300000, guid: 44c8de546661eb74f9331a5053ff9a17, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup12C
+    clip: {fileID: 8300000, guid: 05fe6b6e17d8a914b9ccf6a9ad3b3414, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup13A
+    clip: {fileID: 8300000, guid: a18a3a3228d2160418bed4aa183c835e, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup13B
+    clip: {fileID: 8300000, guid: 08e121e5f0082f74fa854af4d351b444, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup13C
+    clip: {fileID: 8300000, guid: 7031a71787bc02a4db7405b39c393eb2, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup14A
+    clip: {fileID: 8300000, guid: 34b33c7623452b84ab2f58b88107fc31, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup14B
+    clip: {fileID: 8300000, guid: 291c7e57c3d6747438fc750c96592ff7, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup14C
+    clip: {fileID: 8300000, guid: f14a15f2906d27e41bdd3ecdfb340810, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup14D
+    clip: {fileID: 8300000, guid: 08280515e9166764680e88ebbc8b4b3d, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup15A
+    clip: {fileID: 8300000, guid: aa797e63de344b9418a6dce8de22b1ab, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup16A
+    clip: {fileID: 8300000, guid: ccc5c796f4ec17943a6b2ec2b1be5ebd, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup17A
+    clip: {fileID: 8300000, guid: c5d8e934f8955c24198095d83acc9e0b, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup18A
+    clip: {fileID: 8300000, guid: c01bfbca2148f4c4b9177a0a2e738c0c, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup19A
+    clip: {fileID: 8300000, guid: 13b505f1639c8c44da950f1421cde024, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Rollup20A
+    clip: {fileID: 8300000, guid: 7228364422285ee498989b1788df8564, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8831075868853174894, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}

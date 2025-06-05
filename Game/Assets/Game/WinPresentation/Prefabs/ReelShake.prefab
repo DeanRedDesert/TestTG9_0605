@@ -1,0 +1,279 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &169319460101676538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5196095467916196547}
+  - component: {fileID: 4316335319947291723}
+  - component: {fileID: 3978453389355409462}
+  m_Layer: 6
+  m_Name: ReelShake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5196095467916196547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169319460101676538}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5282929148383308542}
+  - {fileID: 7558566126926249208}
+  - {fileID: 3410661347087412911}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4316335319947291723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169319460101676538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 092566d7816f4580b370f4adabb87017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceEventPair:
+    sequenceName: GameWin/WinPres
+    eventNameA: ReelScreenShakeSound
+    eventIdA: 5
+    eventNameB: WinSequenceComplete
+    eventIdB: 15
+  swallowInterrupt: 0
+  canBeInterrupted: 0
+  interruptPrio: 250
+  requiredIntensity:
+    intensity: -1
+  soundOnEnterId:
+    id: 
+    definitionsName: 
+  blockingSoundId:
+    id: ShakeWithTerm
+    definitionsName: WinPres
+  soundOnExitId:
+    id: 
+    definitionsName: 
+--- !u!114 &3978453389355409462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169319460101676538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b54843623447a5a554ac6aac17ec94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceEventPair:
+    sequenceNames:
+    - GameWin/WinPres
+    eventNameA: ReelScreenShake
+    eventIdA: 4
+    eventNameB: ReelScreenShakeSound
+    eventIdB: 5
+  action: 0
+  activateOffsetMs: 0
+  resetProviderBehaviour: {fileID: 0}
+  canBeInterrupted: 0
+  interruptPrio: 250
+  components:
+  - intensity: 1
+    component: {fileID: 3675095048936411789}
+    durationOverride: 0
+    duration: 0
+    animationComponentClipIndex: 0
+    animationComponentClipName: StartShake
+  - intensity: 2
+    component: {fileID: 4301326148731800365}
+    durationOverride: 0
+    duration: 0
+    animationComponentClipIndex: 0
+    animationComponentClipName: StartShake
+  - intensity: 3
+    component: {fileID: 8510546143888280983}
+    durationOverride: 0
+    duration: 0
+    animationComponentClipIndex: 0
+    animationComponentClipName: StartShake
+  activateEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
+  resetEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &2904861841122684233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3410661347087412911}
+  - component: {fileID: 8510546143888280983}
+  m_Layer: 6
+  m_Name: L6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3410661347087412911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2904861841122684233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5196095467916196547}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8510546143888280983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2904861841122684233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d781dadb7774adbba641e3e2fc79269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTime: 2
+  shakePosition: {x: 0.2, y: 0.2, z: 0}
+  shakeRotation: {x: 0, y: 0, z: 0.5}
+  vibrato: 20
+  randomness: 90
+  objectsToShakeList:
+  - {fileID: 0}
+  particlesSystemsToStartList: []
+--- !u!1 &2953579556093307932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5282929148383308542}
+  - component: {fileID: 3675095048936411789}
+  m_Layer: 6
+  m_Name: L4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5282929148383308542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953579556093307932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5196095467916196547}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3675095048936411789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953579556093307932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d781dadb7774adbba641e3e2fc79269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTime: 2
+  shakePosition: {x: 0.1, y: 0.1, z: 0}
+  shakeRotation: {x: 0, y: 0, z: 1}
+  vibrato: 10
+  randomness: 90
+  objectsToShakeList:
+  - {fileID: 0}
+  particlesSystemsToStartList: []
+--- !u!1 &8451197292488943403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7558566126926249208}
+  - component: {fileID: 4301326148731800365}
+  m_Layer: 6
+  m_Name: L5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7558566126926249208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451197292488943403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5196095467916196547}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4301326148731800365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451197292488943403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d781dadb7774adbba641e3e2fc79269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTime: 2
+  shakePosition: {x: 0.15, y: 0.15, z: 0}
+  shakeRotation: {x: 0, y: 0, z: 15}
+  vibrato: 15
+  randomness: 90
+  objectsToShakeList:
+  - {fileID: 0}
+  particlesSystemsToStartList: []

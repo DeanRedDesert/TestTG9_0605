@@ -1,0 +1,22 @@
+{
+    "name": "IGT.Ascent.Assets.StandaloneDeviceConfiguration.Editor",
+    "rootNamespace": "",
+    "references": [
+        "IGT.Ascent.Assets.StandaloneDeviceConfiguration",
+        "IGT.Game.Core.Communication.Cabinet",
+        "IGT.Game.Core.Communication.Cabinet.Standalone",
+        "IGT.Game.Core.Presentation.BankSynchronization",
+        "IGT.Game.Core.Communication.Cabinet.CSI.Schemas"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

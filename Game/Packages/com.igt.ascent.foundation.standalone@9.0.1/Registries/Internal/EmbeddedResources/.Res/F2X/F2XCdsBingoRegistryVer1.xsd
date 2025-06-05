@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XCdsBingoRegistryVer1="F2XCdsBingoRegistryVer1.xsd" targetNamespace="F2XCdsBingoRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+   <xs:element name="CdsBingoRegistry">
+      <xs:annotation>
+         <xs:documentation>Registry for describing the information to allow a theme to support the CDS Bingo environment.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="ThemeRegistry" type="xs:anyURI">
+               <xs:annotation>
+                  <xs:documentation>Relative path to the theme registry that is associated with this Bingo specific theme registry (i.e. this registry provides extended theme information related to Bingo).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+            <xs:element name="BingoGameThemeID" type="xs:unsignedShort">
+               <xs:annotation>
+                  <xs:documentation>The Bingo protocol's "Game Theme ID" field.  This ID must be unique across ALL themes in ALL packages to satisfy uniqueness in the Bingo protocol domain.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+            <xs:element name="ExtendedDataFile" minOccurs="1">
+               <xs:annotation>
+                  <xs:documentation>Relative path to a custom theme related file for use with the game theme.  The file at this path is not parsed by the Foundation.  This file path is passed to the Bingo Protocol executable extension to provide extended (protocol config) information related to the theme.</xs:documentation>
+               </xs:annotation>
+               <xs:complexType>
+                  <xs:simpleContent>
+                     <xs:extension base="xs:anyURI">
+                        <xs:attribute name="Tag" type="xs:string">
+                           <xs:annotation>
+                              <xs:documentation>Custom theme related data string.  Passed to the Bingo Protocol executable extension.  Opaque to the Foundation.</xs:documentation>
+                           </xs:annotation>
+                        </xs:attribute>
+                     </xs:extension>
+                  </xs:simpleContent>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

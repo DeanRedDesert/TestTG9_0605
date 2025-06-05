@@ -1,0 +1,17 @@
+{
+  "name": "IGT.Game.Core.Communication.Cabinet.CsiTransport",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Threading",
+    "IGT.Game.Core.Tracing",
+    "IGT.Game.Core.Communication.Foundation.Transport",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": true,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

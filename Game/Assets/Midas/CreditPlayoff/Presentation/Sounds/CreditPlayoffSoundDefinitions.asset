@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6279fa92149344f8416884c37ab7d1, type: 3}
+  m_Name: CreditPlayoffSoundDefinitions
+  m_EditorClassIdentifier: 
+  soundDefinitionsList:
+  - id: CreditPlayoffLoseSnd
+    clip: {fileID: 8300000, guid: 84d31a65ad7bb6642b4352e57a0b430c, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 572020621119688288, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: CreditPlayoffPlayButtonSnd
+    clip: {fileID: 8300000, guid: 8f5f47861e01e014c8b51cbaf0332553, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 572020621119688288, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: CreditPlayoffSpinningSnd
+    clip: {fileID: 8300000, guid: f58a377d07d614d43920a0b70f3944f9, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 572020621119688288, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: CreditPlayoffAppearSnd
+    clip: {fileID: 8300000, guid: 7dec6506172573b4687b38266b9b6b6e, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 572020621119688288, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: CreditPlayoffWheelEntersSnd
+    clip: {fileID: 8300000, guid: 0ef4f8e31b7b1474a82797dcd4ea6140, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 572020621119688288, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: CreditPlayoffWheelExitsSnd
+    clip: {fileID: 8300000, guid: 071feda985c8d0c40b038f5a22a6dec9, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 572020621119688288, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: CreditPlayoffWinSnd
+    clip: {fileID: 8300000, guid: dbbcb8afb31252b4c837462bafd839e2, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 572020621119688288, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}

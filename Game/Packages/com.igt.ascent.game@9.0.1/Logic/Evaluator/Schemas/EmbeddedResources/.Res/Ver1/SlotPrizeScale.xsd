@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:include schemaLocation="Trigger.xsd"/>
+	<xs:complexType name="SlotPrizeScale">
+		<xs:sequence>
+			<xs:element name="Prize" type="SlotPrize" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Defines a single prize in terms of the pay strategy, pay amounts per symbol count, and the symbols needed for the win.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="SlotPrize">
+		<xs:sequence>
+			<xs:element name="PrizeSymbol" type="PrizeSymbol" maxOccurs="unbounded"/>
+			<xs:element name="PrizePay" type="PrizePay" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A set of payout values for a particular symbol count.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="PayStrategy" use="required">
+			<xs:annotation>
+				<xs:documentation>The pay strategy for use in the evaluators and processors. One of: PayLeft, PayRight, PayAny, PayBoth, PayGroup</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="PayLeft"/>
+					<xs:enumeration value="PayRight"/>
+					<xs:enumeration value="PayBoth"/>
+					<xs:enumeration value="PayGroup"/>
+					<xs:enumeration value="PayAny"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="OrderStrategy" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines if the strategy used to determine the requirement of order on the associcated symbol list. Unordered, Ordered</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Ordered"/>
+					<xs:enumeration value="Unordered"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="AmountModificationStrategy" use="required">
+			<xs:annotation>
+				<xs:documentation>Enumeration which determines any modifications which are to be made to the amount specified in the prize. This includes strategies such as multiplying the win by the total bet.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="None"/>
+					<xs:enumeration value="TimesTotalBet"/>
+					<xs:enumeration value="TimesBetOnPattern"/>
+					<xs:enumeration value="TimesMultiplierTimesBetOnPattern"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="EligiblePattern" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Specify which pattern this prize is eligible on. It can be a reference to a pattern or the special value of ALL. If it is all, then all patterns are eligible.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PrizePay">
+		<xs:sequence>
+			<xs:element name="WinAmount" type="WinAmount" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>These win amounts need to be in order from highest bet requirement to lowest.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="count" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of symbols required to win the value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PrizeSymbol">
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A reference of the symbol ID from the SymbolList</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="requiredCount" type="xs:unsignedInt">
+			<xs:annotation>
+				<xs:documentation>Specifies that this number of this symbol must be present in a win. For instance if this symbol was TT and the required count was 3, then at least 3 TT symbols must be in the win.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="index" type="xs:unsignedInt">
+			<xs:annotation>
+				<xs:documentation>This is the index into a pattern. For instance if a normal line had 5 cells, then index 0 would be the first cell on that line. This is so that secific cells may be skipped.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="WinAmount">
+		<xs:sequence>
+			<xs:element name="ProgressiveLevel" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A list of progressive level names from the schema type ProgressLevelType</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RequiredPatterns" type="RequiredPattern" maxOccurs="unbounded"/>
+			<xs:element name="RequiredBetOnPattern" type="xs:unsignedInt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The bet amount required on the pattern on which the prize is present.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Trigger" type="Trigger" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="value" type="xs:long"/>
+		<xs:attribute name="requiredTotalBet" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The total bet required for this win amount. ALL, MAX, or numeric amount.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="averageBonusPay" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>This is the average bonus pay from initiating the prizePayFlowID. It is used to prioritize the flow ids.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="winLevelIndex" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>The winLevelIndex is used by the foundation for reporting purposes. Games should avoid using this attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RequiredPattern">
+		<xs:sequence>
+			<xs:element name="BetAmountRequired" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>ALL, MAX or numeric amount</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RequiredActivePattern" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Either "Any" or a bet definition name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SlotPrizeScale" type="SlotPrizeScale"/>
+</xs:schema>

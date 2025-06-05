@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Registry xmlns="F2XRegistryVer1.xsd" xmlns:F2XRegistryVer1="F2XRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" F2XRegistryVer1:RegistryType="ConfigurationExtension" F2XRegistryVer1:Version="1.0" xsi:schemaLocation="F2XRegistryVer1.xsd F2XRegistryVer1.xsd">
+	<Body>
+		<ConfigurationExtensionRegistry xmlns="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XConfigurationExtensionRegistryVer1.xsd F2XConfigurationExtensionRegistryVer1.xsd">
+			<F2XBaseExtensionRegistryVer1:Name>ButtonConfiguration</F2XBaseExtensionRegistryVer1:Name>
+			<F2XBaseExtensionRegistryVer1:Description>This Button configuration is used to flip the top and the bottom buttons row </F2XBaseExtensionRegistryVer1:Description>
+			<F2XBaseExtensionRegistryVer1:Identifier>3DD6FEB1-AADB-4C7B-8942-D78068384DD6</F2XBaseExtensionRegistryVer1:Identifier>
+			<F2XBaseExtensionRegistryVer1:Version>
+				<F2XRegistryTypesVer1:MajorVersion>3</F2XRegistryTypesVer1:MajorVersion>
+				<F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+				<F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+			</F2XBaseExtensionRegistryVer1:Version>
+			<F2XBaseExtensionRegistryVer1:InterfaceDefinition>
+				<F2XBaseExtensionRegistryVer1:InterfaceIdentifier>185ED5CE-B38A-4F37-936B-4188D6181C51</F2XBaseExtensionRegistryVer1:InterfaceIdentifier>
+				<F2XBaseExtensionRegistryVer1:InterfaceVersion>
+					<F2XRegistryTypesVer1:MajorVersion>2</F2XRegistryTypesVer1:MajorVersion>
+					<F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+					<F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+				</F2XBaseExtensionRegistryVer1:InterfaceVersion>
+			</F2XBaseExtensionRegistryVer1:InterfaceDefinition>
+			<F2XBaseExtensionRegistryVer1:Signature>MC0CFQDEUXWNmwXXpsoi/VofXRZ2BKChygIUDgg7jkfY1FuA+TuUh7Z75LoqvXY=</F2XBaseExtensionRegistryVer1:Signature>
+			<VersionedConfigSections>
+				<VersionedSection F2XConfigurationExtensionRegistryVer1:Version="3.0.0" F2XConfigurationExtensionRegistryVer1:Hash="SHA1:D1176090DFA95BA0FDC212E8F7912F45ED617D3E">
+					<ConfigItems>
+						<F2XRegistryTypesVer1:ConfigItem>
+							<F2XRegistryTypesVer1:Name>ButtonsLayoutConfiguration</F2XRegistryTypesVer1:Name>
+							<F2XRegistryTypesVer1:Data>
+								<F2XRegistryTypesVer1:EnumerationData>
+									<F2XRegistryTypesVer1:Enumeration>LINES top row, BET MULTIPLIER bottom row</F2XRegistryTypesVer1:Enumeration>
+									<F2XRegistryTypesVer1:Enumeration>BET MULTIPLIER top row, LINES bottom row</F2XRegistryTypesVer1:Enumeration>
+								</F2XRegistryTypesVer1:EnumerationData>
+							</F2XRegistryTypesVer1:Data>
+						</F2XRegistryTypesVer1:ConfigItem>
+						<F2XRegistryTypesVer1:ConfigItem>
+							<F2XRegistryTypesVer1:Name>ButtonsLayout</F2XRegistryTypesVer1:Name>
+							<F2XRegistryTypesVer1:Data>
+								<F2XRegistryTypesVer1:ItemData F2XRegistryTypesVer1:EnumReferenceList="ButtonsLayoutConfiguration">LINES top row, BET MULTIPLIER bottom row</F2XRegistryTypesVer1:ItemData>
+							</F2XRegistryTypesVer1:Data>
+						</F2XRegistryTypesVer1:ConfigItem>
+					</ConfigItems>
+					<Overrides>
+						<ConfigItemValueOverride>
+							<Jurisdictions>
+								<Jurisdiction>MCAU</Jurisdiction>
+								<Jurisdiction>SING</Jurisdiction>
+								<Jurisdiction>NSWC</Jurisdiction>
+								<Jurisdiction>NSWS</Jurisdiction>
+							</Jurisdictions>
+							<ConfigItemValues>
+								<ConfigItemValue F2XConfigurationExtensionRegistryVer1:Name="ButtonsLayout">
+									<Item>BET MULTIPLIER top row, LINES bottom row</Item>
+								</ConfigItemValue>
+							</ConfigItemValues>
+						</ConfigItemValueOverride>
+					</Overrides>
+				</VersionedSection>
+			</VersionedConfigSections>
+		</ConfigurationExtensionRegistry>
+	</Body>
+</Registry>

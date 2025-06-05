@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Tyrell Atterberry (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryMetadataVer1="F2XRegistryMetadataVer1.xsd" xmlns:F2XRegistryVer1="F2XRegistryVer1.xsd" targetNamespace="F2XRegistryMetadataVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryVer1.xsd" schemaLocation="F2XRegistryVer1.xsd"/>
+	<xs:element name="RegistryMetadata">
+		<xs:annotation>
+			<xs:documentation>Provides metadata about specific registry types, and data on how to update or extract certain information from those registries.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RegistryTypes" type="F2XRegistryMetadataVer1:RegistryTypeList" minOccurs="0"/>
+				<xs:element name="Keys" type="F2XRegistryMetadataVer1:KeyList" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Functions -->
+	<xs:complexType name="FunctionList">
+		<xs:annotation>
+			<xs:documentation>Providers a list of functions that can be performed on a registry.</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Information" type="F2XRegistryMetadataVer1:InformationFunction"/>
+			<xs:element name="InterfaceHash" type="F2XRegistryMetadataVer1:InterfaceHashFunction"/>
+			<xs:element name="ProviderHash" type="F2XRegistryMetadataVer1:ProviderHashFunction"/>
+			<xs:element name="Sign" type="F2XRegistryMetadataVer1:SignFunction"/>
+			<xs:element name="CreateInterface" type="F2XRegistryMetadataVer1:CreateInterfaceFunction"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="InformationFunction">
+		<xs:annotation>
+			<xs:documentation>Query common information from the registry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Operations" type="F2XRegistryMetadataVer1:OperationList"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InterfaceHashFunction">
+		<xs:annotation>
+			<xs:documentation>Perform a hash operation on the target registry, generating interface hash values by version.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Operations" type="F2XRegistryMetadataVer1:OperationList"/>
+		</xs:sequence>
+		<xs:attribute name="SourceSelect" type="F2XRegistryMetadataVer1:XPathExpression" use="required">
+			<xs:annotation>
+				<xs:documentation>Query used to select a initial node set for hasing.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ProviderHashFunction">
+		<xs:annotation>
+			<xs:documentation>Perform a hash operation on the target registry, generating provider hash values by version.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Operations" type="F2XRegistryMetadataVer1:OperationList"/>
+		</xs:sequence>
+		<xs:attribute name="SourceSelect" type="F2XRegistryMetadataVer1:XPathExpression" use="required">
+			<xs:annotation>
+				<xs:documentation>Query used to select a initial node set for hasing.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SignFunction">
+		<xs:annotation>
+			<xs:documentation>Perform a signature operation on the target registry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Operations" type="F2XRegistryMetadataVer1:OperationList"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CreateInterfaceFunction">
+		<xs:annotation>
+			<xs:documentation>Given a Provider registry, generating a matching interface registry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Operations" type="F2XRegistryMetadataVer1:OperationList"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Operations -->
+	<xs:complexType name="OperationList">
+		<xs:annotation>
+			<xs:documentation>Contains a set of operations to perform on an registry.</xs:documentation>
+		</xs:annotation>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="Hash" type="F2XRegistryMetadataVer1:HashOperation"/>
+			<xs:element name="Sign" type="F2XRegistryMetadataVer1:SignOperation"/>
+			<xs:element name="Value" type="F2XRegistryMetadataVer1:ValueOperation"/>
+			<xs:element name="File" type="F2XRegistryMetadataVer1:FileOperation"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="OperationBase" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Base class of operations for common attributes. Allows common behavior for defining the input and output of an operation.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="SourceSelect" type="F2XRegistryMetadataVer1:XPathExpression" use="optional">
+			<xs:annotation>
+				<xs:documentation>Query used to select a single node or set of nodes (depending on the operation), that the operation will be performed on.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TargetSelect" type="F2XRegistryMetadataVer1:XPathExpression" use="optional">
+			<xs:annotation>
+				<xs:documentation>Query used to select a single node to store the result of the operation in.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TargetVariable" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Save the output of the operation into a named variable.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="HashOperation">
+		<xs:annotation>
+			<xs:documentation>Specifies information for generating a hash over a portion of a registry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XRegistryMetadataVer1:OperationBase">
+				<xs:sequence>
+					<xs:element name="Transform" type="F2XRegistryMetadataVer1:Transform"/>
+				</xs:sequence>
+				<xs:attribute name="HashType" type="F2XRegistryMetadataVer1:HashType" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SignOperation">
+		<xs:annotation>
+			<xs:documentation>Specifies information for generating a registry signature.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XRegistryMetadataVer1:OperationBase">
+				<xs:sequence>
+					<xs:element name="Transform" type="F2XRegistryMetadataVer1:Transform"/>
+				</xs:sequence>
+				<xs:attribute name="HashType" type="F2XRegistryMetadataVer1:HashType" use="required"/>
+				<xs:attribute name="SignatureType" type="F2XRegistryMetadataVer1:SignatureType" use="required"/>
+				<xs:attribute name="Bits" type="xs:unsignedInt" use="required"/>
+				<xs:attribute name="Key" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ValueOperation">
+		<xs:annotation>
+			<xs:documentation>Specifies information for querying a value from the input registry.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XRegistryMetadataVer1:OperationBase">
+				<xs:sequence>
+					<xs:element name="Transform" type="F2XRegistryMetadataVer1:Transform" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>An optional transform to extract a value from the schema.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FileOperation">
+		<xs:annotation>
+			<xs:documentation>Specifies information for generating file data.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XRegistryMetadataVer1:OperationBase">
+				<xs:sequence>
+					<xs:element name="FileName">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Value" type="F2XRegistryMetadataVer1:ValueOperation" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Optional value to use as a filename, otherwise the file extension will be used with the original file name.</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="FileExtension" type="xs:string" use="required"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Transform" type="F2XRegistryMetadataVer1:Transform">
+						<xs:annotation>
+							<xs:documentation>A transform to perform and then store in the output file name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Data Types -->
+	<xs:simpleType name="HashType">
+		<xs:annotation>
+			<xs:documentation>Specifies the hash (or digest) algorithm.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MD5"/>
+			<xs:enumeration value="SHA-1"/>
+			<xs:enumeration value="SHA-256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SignatureType">
+		<xs:annotation>
+			<xs:documentation>Specifies the signature algorithm.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DSA"/>
+			<xs:enumeration value="ECDSA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Types for XML data. -->
+	<xs:complexType name="NamespaceList">
+		<xs:annotation>
+			<xs:documentation>Specifies a list of XML namespaces for the target registry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Namespace" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="Prefix" type="xs:NCName">
+						<xs:annotation>
+							<xs:documentation>Specifies the namespace prefix that will be used inside of transforms and xpath select statements.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Uri" type="xs:anyURI" use="required">
+						<xs:annotation>
+							<xs:documentation>Specifies the target namespace, associated with the prefix, that will be used inside of transforms and xpath select statements.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Transform">
+		<xs:annotation>
+			<xs:documentation>Contains an XSLT stylesheet used to transform the source element tree into data for an operation.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:any processContents="lax"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="XPathExpression">
+		<xs:annotation>
+			<xs:documentation>An xpath expression.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value=".+"/>
+		</xs:restriction>
+		<!-- XPath expression definition borrowed from the xslt schema. -->
+	</xs:simpleType>
+	<xs:complexType name="RegistryTypeList">
+		<xs:annotation>
+			<xs:documentation>Provides a list of RegistryTypes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RegistryType" type="F2XRegistryMetadataVer1:Registry" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Registry">
+		<xs:sequence>
+			<xs:element name="Namespaces" type="F2XRegistryMetadataVer1:NamespaceList">
+				<xs:annotation>
+					<xs:documentation>Provides a list of namespaces for interacting with the target registry.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BodyQuery" type="F2XRegistryMetadataVer1:XPathExpression" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Query used to select the root element of the inner content of a registry.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Functions" type="F2XRegistryMetadataVer1:FunctionList">
+				<xs:annotation>
+					<xs:documentation>Provides a list of functions that can be performed on this registry type.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="RegistryType" type="F2XRegistryVer1:RegistryType" use="required"/>
+		<xs:attribute name="RegistryVersion" type="F2XRegistryVer1:Version" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="KeyList">
+		<xs:annotation>
+			<xs:documentation>Provides a list of RegistryTypes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Key" type="F2XRegistryMetadataVer1:Key" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Key">
+		<xs:annotation>
+			<xs:documentation>Provides a list of keys that can be used to verify registries.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PublicKey" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Provides the public key portion of the key.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PrivateKey" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Provides the private key portion of the key.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Name" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

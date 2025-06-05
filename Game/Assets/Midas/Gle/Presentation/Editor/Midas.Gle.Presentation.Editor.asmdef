@@ -1,0 +1,25 @@
+{
+    "name": "Midas.Gle.Presentation.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GleLogic",
+        "Midas.Gle.Logic",
+        "Midas.Gle.LogicToPresentation",
+        "Midas.Gle.Presentation",
+        "Midas.Logic",
+        "Midas.LogicToPresentation",
+        "Midas.Presentation",
+        "Midas.Presentation.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

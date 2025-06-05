@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6279fa92149344f8416884c37ab7d1, type: 3}
+  m_Name: VolumeSounds
+  m_EditorClassIdentifier: 
+  soundDefinitionsList:
+  - id: Vol1
+    clip: {fileID: 8300000, guid: d28caf84a8dc157468026039ee7b9be2, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Vol2
+    clip: {fileID: 8300000, guid: 21aff525b05e04443bb0a6437a009ca6, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Vol3
+    clip: {fileID: 8300000, guid: 6e4ace514ff1da14380c46d8b6a2f687, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Vol4
+    clip: {fileID: 8300000, guid: 1787f815736124a4d916db0a382027bc, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Vol5
+    clip: {fileID: 8300000, guid: d78e2bbbda8018243a29c596dc3d2d04, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: VolumePing
+    clip: {fileID: 8300000, guid: 77e70f2e7e8e2784b811e6e41572b86a, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}

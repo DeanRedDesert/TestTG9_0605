@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<r1:Registry r1:RegistryType="SpcGroup" r1:Version="1.0" xmlns:r1="F2XRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XRegistryVer1.xsd">
+  <r1:Body>
+    <SpcGroupRegistry xmlns="F2XSpcGroupRegistryVer1.xsd">
+      <SpcGroups>
+        <SpcGroup>
+          <SpcGroupIdentifier>
+            <SpcGroupId xmlns="F2XRegistryTypesVer1.xsd">ProgTheme_PCC02</SpcGroupId>
+            <Authority xmlns="F2XRegistryTypesVer1.xsd">Q</Authority>
+          </SpcGroupIdentifier>
+          <ControllerLevels>
+            <ControllerLevel>
+              <LevelDescription>
+                <sgr1:DescriptionLocalization sgr1:Culture="en-US" xmlns:sgr1="F2XSpcGroupRegistryVer1.xsd">
+                  <sgr1:Description>GRAND</sgr1:Description>
+                </sgr1:DescriptionLocalization>
+              </LevelDescription>
+              <ControllerLevelAmountPool>
+                <ContributionLevelSettings>
+                  <StartValue>
+                    <StartAmount>780000</StartAmount>
+                  </StartValue>
+                  <BetContributionPercentage>0.100</BetContributionPercentage>
+                  <MaxLimit>
+                    <MaxLimitAmount>1000000</MaxLimitAmount>
+                  </MaxLimit>
+                </ContributionLevelSettings>
+              </ControllerLevelAmountPool>
+            </ControllerLevel>
+            <ControllerLevel>
+              <LevelDescription>
+                <sgr1:DescriptionLocalization sgr1:Culture="en-US" xmlns:sgr1="F2XSpcGroupRegistryVer1.xsd">
+                  <sgr1:Description>MAJOR</sgr1:Description>
+                </sgr1:DescriptionLocalization>
+              </LevelDescription>
+              <ControllerLevelAmountPool>
+                <ContributionLevelSettings>
+                  <StartValue>
+                    <StartAmount>50000</StartAmount>
+                  </StartValue>
+                  <BetContributionPercentage>0.400</BetContributionPercentage>
+                  <MaxLimit>
+                    <MaxLimitAmount>100000</MaxLimitAmount>
+                  </MaxLimit>
+                </ContributionLevelSettings>
+              </ControllerLevelAmountPool>
+            </ControllerLevel>
+          </ControllerLevels>
+        </SpcGroup>
+      </SpcGroups>
+    </SpcGroupRegistry>
+  </r1:Body>
+</r1:Registry>

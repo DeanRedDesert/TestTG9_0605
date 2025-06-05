@@ -1,0 +1,6 @@
+{
+	"name" : "graphy",
+	"version" : "2.1.3",
+	"license": "License.md",
+	"notice" : "This product includes ${name} v ${version}, which is distributed in accordance with the following terms:"
+}

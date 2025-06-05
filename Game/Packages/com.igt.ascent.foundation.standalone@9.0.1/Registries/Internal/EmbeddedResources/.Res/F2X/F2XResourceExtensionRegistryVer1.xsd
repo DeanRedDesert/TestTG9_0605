@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XResourceExtensionRegistryVer1="F2XResourceExtensionRegistryVer1.xsd" targetNamespace="F2XResourceExtensionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="ResourceExtensionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a resource extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="ResourceDirectoryBase" type="xs:anyURI">
+							<xs:annotation>
+								<xs:documentation>Directory path, relative to the package mount point, to be used by extension clients as the top directory for locating extension resources.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

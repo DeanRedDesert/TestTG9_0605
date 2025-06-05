@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db626ad063b13545924a9839ac5fa83, type: 3}
+  m_Name: CreditPlayoffAssets
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 4c89c0268ccb33c40b3d24b06a52ae04, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 0aec52a9a56233044a9aa2fa9bae2979, type: 2}
+  - {fileID: 11400000, guid: 8fb33e9c0cfa5e647bed3294d8baca75, type: 2}
+  - {fileID: 11400000, guid: 00f93767bb4a4044b9fdd66421bb9555, type: 2}
+  m_Extensions: []
+  m_Group: Asset Table
+  references:
+    version: 1

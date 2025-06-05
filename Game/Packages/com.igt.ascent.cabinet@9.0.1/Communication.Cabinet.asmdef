@@ -1,0 +1,19 @@
+{
+  "name": "IGT.Game.Core.Communication.Cabinet",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Timing",
+    "IGT.Game.Core.Communication",
+    "IGT.Game.Core.Communication.Foundation.Transport",
+    "IGT.Game.Core.Threading",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

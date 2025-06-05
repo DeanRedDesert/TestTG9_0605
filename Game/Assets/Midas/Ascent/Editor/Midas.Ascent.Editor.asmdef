@@ -1,0 +1,31 @@
+{
+  "name": "Midas.Ascent.Editor",
+  "rootNamespace": "",
+  "references": [
+    "Midas.Ascent",
+    "Midas.Core",
+    "Midas.Presentation", 
+    "Midas.Tools.Editor",
+    "IGT.Game.Core.Communication.Standalone.Schemas",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas",
+    "InterfaceExtensions.Ugp",
+    "IGT.Ascent.Assets.StandaloneSafeStorage",
+    "IGT.Ascent.Assets.StandaloneSafeStorage.Editor",
+    "IGT.Ascent.Assets.BuildSettings",
+    "IGT.Ascent.Assets.BuildSettings.Editor",
+    "InterfaceExtensions.GameFunctionStatus"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

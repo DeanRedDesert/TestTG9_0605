@@ -1,0 +1,13 @@
+{
+  "name": "com.igt.ascent.cabinet.presentation",
+  "displayName": "Ascent Cabinet Presentation",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Provides a set of presentation components that run on the Cabinet.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.cabinet": "9.0.1",
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

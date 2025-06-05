@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1e09f8fd9cfc4e84284ca29662a7322d
+  m_SerializeEntries:
+  - m_GUID: 1bc8ee1ccdddd614f9def01e6bc88114
+    m_Address: Assets/Localization/Tables/DashboardAssets Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c89c0268ccb33c40b3d24b06a52ae04
+    m_Address: Assets/Localization/Tables/CreditPlayoffAssets Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82b0fbf6f47e72e4c85a8a2273cc617b
+    m_Address: Assets/Localization/Tables/DppStrings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bba104d21ca49d1469d3ccfa488659d0
+    m_Address: Assets/Localization/Tables/TrumpsAssets Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccfe663a2e2e6154eb0654d5ed8969ad
+    m_Address: Assets/Localization/Tables/CreditPlayoffStrings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d44240554be1f1043b5864c6273f7a3d
+    m_Address: Assets/Localization/Tables/TrumpsStrings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d84d433232fddf14b950a8fdc834217d
+    m_Address: Logo-enUS
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-es-ES
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: edef3e2288e04a8498fe7024dd2d6212
+    m_Address: Assets/Localization/Tables/DashboardStrings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f71a8e170d331194fa63e9ac5ed3bcb5
+    m_Address: MoreGameDenomTop_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-es-ES
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: d37bab0924226c34a9489cf784e07f32, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1474dbc4cdd2fd24c9692ac83888ab9d, type: 2}
+    - {fileID: 11400000, guid: 431a486447774714c9cacfe26fec9724, type: 2}

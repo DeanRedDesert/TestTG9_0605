@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DppSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: aa9b3cda9722a52438e31f6a24b0f698, type: 3}
+    - {fileID: 2800000, guid: 75012a0de73659b4aa7282a5eb9f9517, type: 3}
+    - {fileID: 2800000, guid: 5220235dfbedf1f4b882fc9258875493, type: 3}
+    - {fileID: 2800000, guid: d99e14a201b8fa345be4d874508f6692, type: 3}
+    - {fileID: 2800000, guid: bafe103e8d7445441948f26d875c7691, type: 3}
+    - {fileID: 2800000, guid: d54311ad25b15b44294e838b9041f89e, type: 3}
+    - {fileID: 2800000, guid: 5ee9014f172b4fe4e81083b4df4105bb, type: 3}
+    - {fileID: 2800000, guid: 2cde3ac9fbf9bca438cd184b51cca2dd, type: 3}
+    - {fileID: 2800000, guid: 458d9d9831c77004ebcba49ea0a6da74, type: 3}
+    - {fileID: 2800000, guid: bb161aa4876f1374f95957ce6ea785f3, type: 3}
+    - {fileID: 2800000, guid: b510381ffff7be44088e9a3dc0fb8206, type: 3}
+    - {fileID: 2800000, guid: 8cae69a07d06aa943994189933c1324c, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8cae69a07d06aa943994189933c1324c, type: 3}
+  - {fileID: 21300000, guid: d99e14a201b8fa345be4d874508f6692, type: 3}
+  - {fileID: 21300000, guid: bb161aa4876f1374f95957ce6ea785f3, type: 3}
+  - {fileID: 21300000, guid: 458d9d9831c77004ebcba49ea0a6da74, type: 3}
+  - {fileID: 21300000, guid: 2cde3ac9fbf9bca438cd184b51cca2dd, type: 3}
+  - {fileID: 21300000, guid: aa9b3cda9722a52438e31f6a24b0f698, type: 3}
+  - {fileID: 21300000, guid: 75012a0de73659b4aa7282a5eb9f9517, type: 3}
+  - {fileID: 21300000, guid: 5220235dfbedf1f4b882fc9258875493, type: 3}
+  - {fileID: 21300000, guid: d54311ad25b15b44294e838b9041f89e, type: 3}
+  - {fileID: 21300000, guid: bafe103e8d7445441948f26d875c7691, type: 3}
+  - {fileID: 21300000, guid: b510381ffff7be44088e9a3dc0fb8206, type: 3}
+  - {fileID: 21300000, guid: 5ee9014f172b4fe4e81083b4df4105bb, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TakeWinTextEnabled
+  - Gamble
+  - UIFrame
+  - TakeWin
+  - PlayShortSelected
+  - BetAvailable
+  - BetDisabled
+  - BetSelected
+  - PlayShortAvailable
+  - logo
+  - GambleTextEnabled
+  - PlayShortDisabled
+  m_RenderDataMap: {}
+  m_Tag: DppSpriteAtlas
+  m_IsVariant: 0

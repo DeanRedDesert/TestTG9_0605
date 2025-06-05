@@ -1,0 +1,22 @@
+{
+  "name": "IGT.Game.Core.Communication.Foundation.F2L",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.OutcomeList.Interfaces",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "IGT.Game.Core.Communication.Foundation.Transport",
+    "IGT.Game.Core.Timing",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.Communication.Foundation.F2L.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

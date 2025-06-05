@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ThemeRegistry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2LThemeRegistryVer5.xsd" xmlns="F2LThemeRegistryVer5.xsd">
+  <ThemeNameKey>THEME_NAME</ThemeNameKey>
+  <BinRegistry>Registries/G001TMP.xbinreg</BinRegistry>
+  <ReportRegistry>Registries/R001TMP.xreportreg</ReportRegistry>
+  <G2SThemeId>Game020001TMPR00</G2SThemeId>
+  <Type>Slot</Type>
+  <ResourceDirectory>EGMResources/LocalizedThemeContent</ResourceDirectory>
+  <ThemeSelectionMenu>
+    <ThemeIconKey>TSM:THEME_ICON</ThemeIconKey>
+  </ThemeSelectionMenu>
+  <tr5:TagDataFile tr5:Tag="PlaceHolderValue" xmlns:tr5="F2LThemeRegistryVer5.xsd">PlaceHolderValue</tr5:TagDataFile>
+  <CustomConfigItems>
+    <rt2:ConfigItem xmlns:rt2="F2LRegistryTypeVer2.xsd">
+      <rt2:Name>GameBankSyncThemeId</rt2:Name>
+      <rt2:Data>
+        <rt2:StringData>ProgThemeBank</rt2:StringData>
+      </rt2:Data>
+    </rt2:ConfigItem>
+  </CustomConfigItems>
+  <MaxBetResolution>PerPayvarDenomination</MaxBetResolution>
+  <MaxBetButtonBehaviorSupported>BetMaxCreditsOnly</MaxBetButtonBehaviorSupported>
+  <EnableRestriction>None</EnableRestriction>
+  <MaxNumberOfEnabledDenominations>7</MaxNumberOfEnabledDenominations>
+  <AutoPlaySupported>true</AutoPlaySupported>
+  <AutoPlayConfirmationSupported>true</AutoPlayConfirmationSupported>
+  <HandpayOverrideSoundKey>THEME_HANDPAY_OVERRIDE</HandpayOverrideSoundKey>
+  <SupportedCultures>
+    <Culture>en-US</Culture>
+    <Culture>es-ES</Culture>
+    <Culture>zh-CN</Culture>
+  </SupportedCultures>
+  <MaxNumberOfEnabledCultures>3</MaxNumberOfEnabledCultures>
+  <RoundWagerUpPlayoffSupported>true</RoundWagerUpPlayoffSupported>
+  <UtilityModeSupported>true</UtilityModeSupported>
+</ThemeRegistry>

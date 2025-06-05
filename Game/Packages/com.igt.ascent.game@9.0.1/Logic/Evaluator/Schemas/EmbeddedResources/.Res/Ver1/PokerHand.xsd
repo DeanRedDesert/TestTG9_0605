@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns="http://www.igt.com/worldgame/common/xml/gamedata" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:element name="Hand">
+		<xs:annotation>
+			<xs:documentation>The set of cards held by the player for one game. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DealtCardList" type="DealtCardType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DrawnCardList" type="DrawnCardType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="handIndex" type="xs:unsignedInt" use="required"/>
+			<xs:attribute name="numberOfCardsToDeal" type="xs:unsignedInt" use="required"/>
+			<xs:attribute name="numberOfCardsToDraw" type="xs:unsignedInt" use="required"/>
+			<xs:attribute name="numberOfCardsToEvaluate" type="xs:unsignedInt" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HandList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Hand" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="DealtCardType">
+		<xs:attribute name="index" type="xs:unsignedInt" use="required"/>
+		<xs:attribute name="isHeld" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DrawnCardType">
+		<xs:attribute name="index" type="xs:unsignedInt" use="required"/>
+	</xs:complexType>
+</xs:schema>

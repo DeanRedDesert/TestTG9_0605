@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 sp2 (http://www.altova.com) by Wei Yang (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XProgressiveLinkRegistryVer1="F2XProgressiveLinkRegistryVer1.xsd" targetNamespace="F2XProgressiveLinkRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.8">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<!-- Initial version 1.0, Support progressive concepts. -->
+	<!-- Minor version 1.1, Adding Ipp MLP Controller specification. -->
+	<!-- Minor version 1.2, Adding Boot Constraint support. -->
+	<!-- Minor version 1.3, Adding Net Progressive Controller specification. -->
+	<!-- Minor version 1.4, Adding Legacy Level specification. -->
+	<!-- Minor version 1.5, Adding Event Based Contribution options.-->
+	<!-- Minor version 1.6, Adding eWap Controller specification. -->
+	<!-- Minor version 1.7, Adding Progressive Event Based option. -->
+	<!-- Minor version 1.8, Adding Net Progressive Event Based support. -->
+	<!-- Minor version 1.9, Removing WapLevelConnectionConstraint, StartValueConstraint, and ContributionPercentConstraint from eWap Controller Specification. -->
+	<!-- Minor version 1.10, Removing eIpp support from linkmap1. -->
+	<xs:element name="ProgressiveLinkRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing progressive linking of game levels to controller levels. The file extension will be called: .xlinkreg.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LinkMaps" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of link maps.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LinkMap" type="F2XProgressiveLinkRegistryVer1:LinkMapType" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Progressive link map that specifies the linking of payvar game-levels to controller-levels and includes related validation rules and attributes.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="LinkMapType">
+		<xs:annotation>
+			<xs:documentation>Progressive linking map that specifies the linking of payvar game levels to controller levels.  Includes attributes that specify when the link map may be applied.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LinkMapIdentifier" type="F2XRegistryTypesVer1:LinkMapIdentifierType">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of the link map.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OperatorPrompt">
+				<xs:annotation>
+					<xs:documentation>Text description to be displayed to the Operator explaining the intended use and/or limitations of the link map.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DescriptionLocalization" type="F2XProgressiveLinkRegistryVer1:OperatorDescriptionLocalizationType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Localized text description to be displayed to the Operator explaining the intended use and/or limitations of the link map.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ProgressiveConceptIdentifier" type="F2XRegistryTypesVer1:ProgressiveConceptIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The progressive concept identifier supported by the link map.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DenominationConstraint" type="F2XProgressiveLinkRegistryVer1:DenominationConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Denomination constraint.  If omitted, the link map is not constrained by denomination.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BootConfigurationConstraint" type="F2XProgressiveLinkRegistryVer1:BootConfigurationConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Boot configuration constraint.  If omitted, the configuration is allowed for all boots.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerSpecifications" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List of controller specifications.  Controller specifications are "demands" of a specific controller (or controller type) that must be satisfy for the "slot" (i.e. payvar+denom) to be playable.  Note that the specified setting are NOT always enforceable due to information limitations that vary by controller, the protocol backing an external controller, or controller protocol version.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SpcControllerSpecification" type="F2XProgressiveLinkRegistryVer1:SpcControllerSpecificationType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Standalone Progressive Controller specification.  Specifies a controller configuration and/or attributes required to satisfy this link map. This element type is specific to Standalone Progressive Controller types.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IppMLPControllerSpecification" type="F2XProgressiveLinkRegistryVer1:IppMLPControllerSpecificationType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>IPP MLP controller specification.  Specifies a controller configuration and/or attributes required to satisfy this link map. MLP refers to non-zero bonus WAP, sometimes called bonus IPP.  The controller specification applies only to the IPP Protocol v8.2.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NetProgressiveControllerSpecification" type="F2XProgressiveLinkRegistryVer1:NetProgressiveControllerSpecificationType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>NetProgressive controller specification.  Specifies a controller configuration and/or attributes required to satisfy this link map. This element is specific to Net Progressive Controller types.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ProgressiveLinks">
+				<xs:annotation>
+					<xs:documentation>The list of game-level to controller-level linking to be applied and/or validated.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ProgressiveLink" type="F2XProgressiveLinkRegistryVer1:ProgressiveLinkType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Specifies the linking of a payvar game level to a controller level.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControllerLevelSpecificationType">
+		<xs:annotation>
+			<xs:documentation>The controller endpoint as specified by a controller specification and specification level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ControllerSpecName" type="F2XProgressiveLinkRegistryVer1:ControllerSpecNameType">
+				<xs:annotation>
+					<xs:documentation>A reference to a controller specification element in this link map.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SpecLevel" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>A reference to the level in the ControllerSpecification (zero base index).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProgressiveLinkType">
+		<xs:annotation>
+			<xs:documentation>The specification of linking of a payvar game level to a controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GameLevelEndpoint" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>Payvar progressive game-level (zero based index.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IncrementType" type="F2XProgressiveLinkRegistryVer1:LevelIncrementType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Type of increment for the game-level.  The type of increment determines whether the progressive level is feed automatically on every bet placed, or will be feed externally by game messaging that specifies contribution values/amounts based on qualifying events determined by the game.   The selection must be in accordance with the controller "IncrementType" otherwise this LinkMap is deemed incorrect.   In case this element is obmitted a WagerBased progressive is assumed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerLevelSpecification" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A reference to a ControllerSpecification element and level in this link map.  Omission of this element specifies either LegacyLevelSpecification is required or the game-level must NOT be linked to any controller level.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="F2XProgressiveLinkRegistryVer1:ControllerLevelSpecificationType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LegacyLevelSpecification" type="F2XProgressiveLinkRegistryVer1:LegacyLevelSpecificationType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specificiation for this level to be allowed to be linked using legacy (manual) linking.  There is no validation for these levels other than they are connected to one of the specified controllers.  Omission of this element specifies either ControllerLevelSpecification is required or the game-level must NOT be linked to any controller level.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OperatorDescriptionLocalizationType">
+		<xs:annotation>
+			<xs:documentation>Localized text description to be displayed to the Operator explaining the intended use and/or limitations of the link map.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Description">
+				<xs:annotation>
+					<xs:documentation>Description associated with the culture.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="240"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Culture" type="F2XRegistryTypesVer1:CultureStringType" use="required">
+			<xs:annotation>
+				<xs:documentation>The culture associated with the localized description.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="ControllerSpecNameType">
+		<xs:annotation>
+			<xs:documentation>Symbolic name of this controller specification element, for use as a reference by ProgressiveLink elements within this link map (i.e. the scope of this symbol name is local to the link map element only).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GameLevelAndControllerLevelEnforcementOptionsType">
+		<xs:annotation>
+			<xs:documentation>Specifies what is to be done if there is missing information on the game-level or the controller-level.  Strict - Both the game-level specification and the controller-level values must be known and the check must pass.   RelaxedController - if the controller value is not known, the check will pass.  RelaxedGameLevel - If the game-level specification is not known (e.g. it is not provided in the payvar file) then the check will pass.  RelaxedControllerAndGameLevel - If either the controller level or the game level value is not known, the check will pass.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Strict"/>
+			<xs:enumeration value="RelaxedController"/>
+			<xs:enumeration value="RelaxedGameLevel"/>
+			<xs:enumeration value="RelaxedControllerAndGameLevel"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ControllerRangeEnforcementType">
+		<xs:annotation>
+			<xs:documentation>Specifies how strict the range is to be enforced as either ControllerAmountExactMatch or ControllerAmountGreaterThanOrEqual.  If this setting is ControllerGreaterThanOrEqual then the check will pass if the controller amount is greater than or equal to the specified value.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ControllerAmountExactMatch"/>
+			<xs:enumeration value="ControllerAmountGreaterThanOrEqual"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ControllerSettingsEnforcementOptionsType">
+		<xs:annotation>
+			<xs:documentation>Specifies what is to be done if there is missing information on the controller level.  Strict - The controller level values must be known and the check must pass.   Relaxed - If the controller level is not known, the check will pass.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Strict"/>
+			<xs:enumeration value="Relaxed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SpcControllerSpecLevelType">
+		<xs:annotation>
+			<xs:documentation>Specifications required of a controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LevelName">
+				<xs:annotation>
+					<xs:documentation>A descriptive name for the level specification.  This name field is effectively nothing more than a comment.  It is not displayed to the operator, and it is not used in string matching against SPC level names (as instantiated by the F2XSpcGroup registry).  It is useful in that it describes what the link map ASSUMES the controller level is used for and can (perhaps) assist the link map designer in identifying the level when providing constraints and assigning game-levels to controller-levels via ProgressiveLink elements. </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="StartValueConstraint" type="F2XProgressiveLinkRegistryVer1:StartValueConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies start/reset value constraints on the controller level.  If omitted the controller level start/reset value is not checked and is always considered valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContributionPercentConstraint" type="F2XProgressiveLinkRegistryVer1:ContributionPercentConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies contribution percentage constraints on the controller level.  If omitted the controller level contribution percentage is not checked and is always considered valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IppMLPControllerSpecLevelType">
+		<xs:annotation>
+			<xs:documentation>Specifications required of a controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LevelName">
+				<xs:annotation>
+					<xs:documentation>A descriptive name for the level specification.  This name field is effectively nothing more than a comment.  It is useful in that it describes what the link map ASSUMES the controller level is used for and can (perhaps) assist the link map designer in identifying the level when providing constraints and assigning game-levels to controller-levels via ProgressiveLink elements. </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="WapLevelConnectionConstraint" type="F2XProgressiveLinkRegistryVer1:WapLevelConnectionOptionType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies whether or not this level must be connected to a WAP level.  This element is IGNORED when connected to a non-WAP controller (i.e. a connected controller is using the non-WAP id value of 40), which may only validly occur when the AllowNonWap attribute is also "true".   WapOnly - The controller level must be a WAP level.   NonWapOnly - The controller level must NOT be a WAP level.  WapOrNonWap - This controller level may be WAP or non-WAP.  If this element is omitted the default is WapOrNonWap.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartValueConstraint" type="F2XProgressiveLinkRegistryVer1:StartValueConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies start/reset value constraints on the controller level.  If omitted the controller level start/reset value is not checked and is always considered valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContributionPercentConstraint" type="F2XProgressiveLinkRegistryVer1:ContributionPercentConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies contribution percentage constraints on the controller level.  If omitted the controller level contribution percentage is not checked and is always considered valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NetProgressiveControllerSpecLevelType">
+		<xs:annotation>
+			<xs:documentation>Specifications required of a controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LevelName">
+				<xs:annotation>
+					<xs:documentation>A descriptive name for the level specification.  This name field is effectively nothing more than a comment.  It is useful in that it describes what the link map ASSUMES the controller level is used for and can (perhaps) assist the link map designer in identifying the level when providing constraints and assigning game-levels to controller-levels via ProgressiveLink elements. </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="WapLevelConnectionConstraint" type="F2XProgressiveLinkRegistryVer1:WapLevelConnectionOptionType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies whether or not this level must be connected to a WAP level.  This element is IGNORED when connected to a non-WAP controller (i.e. a connected controller is using the non-WAP id value of 40), which may only validly occur when the AllowNonWap attribute is also "true".   WapOnly - The controller level must be a WAP level.   NonWapOnly - The controller level must NOT be a WAP level.  WapOrNonWap - This controller level may be WAP or non-WAP.  If this element is omitted the default is WapOrNonWap.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartValueConstraint" type="F2XProgressiveLinkRegistryVer1:StartValueConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies start/reset value constraints on the controller level.  If omitted the controller level start/reset value is not checked and is always considered valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContributionPercentConstraint" type="F2XProgressiveLinkRegistryVer1:ContributionPercentConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies contribution percentage constraints on the controller level.  If omitted the controller level contribution percentage is not checked and is always considered valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StartValueConstraintType">
+		<xs:annotation>
+			<xs:documentation>Specifies start/reset value constraints on a controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="GameLevelStartCreditsScaledByDenom">
+				<xs:annotation>
+					<xs:documentation>Indicates the value from the game-level in the payvar is to be used (scaled by denomination) for comparing to the controller-level value.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="EnforcementOptions" type="F2XProgressiveLinkRegistryVer1:GameLevelAndControllerLevelEnforcementOptionsType" use="required">
+						<xs:annotation>
+							<xs:documentation>Specifies what is to be done if there is missing information on the game-level or the controller-level.  Strict - Both the game-level specification and the controller-level start values must be known and the check must pass.   RelaxedController - if the controller start/reset value is not known, the check will pass (e.g. custom GCP logic for start values).  RelaxedGameLevel - If the game-level specification is not known (e.g. it is not provided in the payvar file) then the check will pass.  RelaxedControllerAndGameLevel - If either the controller level or the game level value is not known, the check will pass.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="RangeEnforcement" type="F2XProgressiveLinkRegistryVer1:ControllerRangeEnforcementType" use="optional">
+						<xs:annotation>
+							<xs:documentation>Specifies how strict the range is to be enforced as either ControllerAmountExactMatch or ControllerAmountGreaterThanOrEqual.  If this setting is ControllerGreaterThanOrEqual then the check will pass if the controller amount is greater than or equal to the specified value.  If omitted, the default value is ControllerAmountExactMatch. </xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartCreditsScaledByDenom">
+				<xs:annotation>
+					<xs:documentation>Directly specifies the expected start value of the controller level as credits.  If present, the controller start amount  is expected to be this elements value as scaled by the denomination, effectively ignoring the game-level start credits in the payvar (if any).</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:unsignedLong">
+							<xs:attribute name="EnforcementOptions" type="F2XProgressiveLinkRegistryVer1:ControllerSettingsEnforcementOptionsType" use="required">
+								<xs:annotation>
+									<xs:documentation>Specifies what is to be done if there is missing information on the controller level.  Strict - The controller level start values must be known and the check must pass.   Relaxed - If the controller level is not known, the check will pass  (e.g. custom GCP logic for start values).</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="RangeEnforcement" type="F2XProgressiveLinkRegistryVer1:ControllerRangeEnforcementType" use="optional">
+								<xs:annotation>
+									<xs:documentation>Specifies how strict the range is to be enforced as either ControllerAmountExactMatch or ControllerAmountGreaterThanOrEqual.  If this setting is ControllerGreaterThanOrEqual then the check will pass if the controller amount is greater than or equal to the specified value.  If omitted, the default value is ControllerAmountExactMatch. </xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartAmount">
+				<xs:annotation>
+					<xs:documentation>Directly specifies the expected start value of the controller level as an amount, effectively ignoring the game-level value in the payvar (if any).  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:unsignedLong">
+							<xs:attribute name="EnforcementOptions" type="F2XProgressiveLinkRegistryVer1:ControllerSettingsEnforcementOptionsType" use="required">
+								<xs:annotation>
+									<xs:documentation>Specifies what is to be done if there is missing information on the controller-level.  Strict - The controller-level start values must be known and the check must pass.   Relaxed - If the controller-level value is not known, the check will pass  (e.g. custom GCP logic for start values).</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="RangeEnforcement" type="F2XProgressiveLinkRegistryVer1:ControllerRangeEnforcementType" use="optional">
+								<xs:annotation>
+									<xs:documentation>Specifies how strict the range is to be enforced as either ControllerAmountExactMatch or ControllerAmountGreaterThanOrEqual.  If this setting is ControllerGreaterThanOrEqual then the check will pass if the controller amount is greater than or equal to the specified value.  If omitted, the default value is ControllerAmountExactMatch. </xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ContributionPercentConstraintType">
+		<xs:annotation>
+			<xs:documentation>Specifies contribution percentage constraints on a controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="GameLevelContribution">
+				<xs:annotation>
+					<xs:documentation>Indicates the value for the game level in the payvar is to be used for comparing to the controller level value.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="EnforcementOptions" type="F2XProgressiveLinkRegistryVer1:GameLevelAndControllerLevelEnforcementOptionsType" use="required">
+						<xs:annotation>
+							<xs:documentation>Specifies what is to be done if there is missing information on the game-level or the controller-level.  Strict - Both the game-level and the controller-level contribution percentages must be known and the check must pass.   RelaxedController - if the controller contribution percent is not known, the check will pass (e.g. custom GCP logic/"event driven" contributions).  RelaxedGameLevel - If the game-level specification is not known (e.g. it is not provided in the payvar file) then the check will pass.  RelaxedControllerAndGameLevel - If either the controller level or the game level value is not known, the check will pass.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="ControllerGreaterTolerance" type="F2XRegistryTypesVer1:PrecisionDecimalType" use="required">
+						<xs:annotation>
+							<xs:documentation>The controller contribution percent may be greater than the game-level percent by no more than this value or the check will fail.  This value must be specified as a non-negative number.   Example: If game-level contribution is 1.07%, and the tolerance is 0.01 then a controller-level of 1.08 will pass, but anything greater than 1.08 will fail.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="ControllerLesserTolerance" type="F2XRegistryTypesVer1:PrecisionDecimalType" use="required">
+						<xs:annotation>
+							<xs:documentation>The controller contribution percent may be less than the game-level percent by no more than this value or the check will fail.  This value must be specified as a non-negative number.  Example: If game-level contribution is 1.07%, and the tolerance is 0.01 then a controller-level of 1.07 will pass, but anything less than 1.07 will fail.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ContributionPercent">
+				<xs:annotation>
+					<xs:documentation>Directly specifies the expected contribution percentage of the controller level.  If present, the controller's contribution percentage is expected to be within the maximum and minimum attributes of this element.  Effectively, the ForcedContribution in the payvar (if any) is ignored.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="EnforcementOptions" type="F2XProgressiveLinkRegistryVer1:ControllerSettingsEnforcementOptionsType" use="required">
+						<xs:annotation>
+							<xs:documentation>Specifies what is to be done if there is missing information on the controller level.  Strict - The controller level contribution percent must be known and the check must pass.   Relaxed - If the controller level is not known, the check will pass  (e.g. custom GCP logic/"event driven" contributions).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="MinimumPercent" type="F2XRegistryTypesVer1:PrecisionDecimalType" use="required">
+						<xs:annotation>
+							<xs:documentation>Minimum contribution percent (inclusive).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="MaximumPercent" type="F2XRegistryTypesVer1:PrecisionDecimalType" use="required">
+						<xs:annotation>
+							<xs:documentation>Maximum contribution percent (inclusive).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="SpcControllerSpecificationType">
+		<xs:annotation>
+			<xs:documentation>Standalone Progressive Controller specification.  Specifies a controller configuration and/or attributes required to satisfy a link map.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ControllerSpecName" type="F2XProgressiveLinkRegistryVer1:ControllerSpecNameType">
+				<xs:annotation>
+					<xs:documentation>Symbolic name of this controller specification element, for use as a reference by ProgressiveLink elements within this link map (i.e. the scope of this symbol name is local to the link map element only).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IncrementType" type="F2XProgressiveLinkRegistryVer1:LevelIncrementType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Type of increment for the controller.  The type of increment determines whether the progressive controller is feed automatically on every bet placed, or will be feed externally by game messaging that specifies contribution values/amounts based on qualifying events determined by the game.   In case "EventBased" is selected, there will be no WapConfigurationRequirements allowed for the controller specification.   Note: Either the entire controller is "EventBased" or the controller is "WagerBased".   In case this element is obmitted a WagerBased progressive controller is assumed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SpcTarget" type="F2XProgressiveLinkRegistryVer1:SpcTargetType">
+				<xs:annotation>
+					<xs:documentation>This element identifies the Standalone Progressive Controller group that is to be compared against the controller specifications.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SpcControllerSpecLevels" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The list of specifications/requirements for controller levels.  Elements are referenced by a zero based index and correspond index-to-index to SPC controller levels.  Some applications may require "placeholder" elements containing no constraints.  For example, if validation is needed for controller levels 0 and 2 (but not level 1), three SpcControllerSpecLevel elements would still be required with the second element representing controller level 1 and serving as a placeholder (i.e. the second element would have no constraints).  Note that the existence of a placeholder element is, of itself, a constraint in that it specifies that the level must exist on the controller.  For example, if four SpcControllerSpecLevel elements are present, then the referenced SPC group must contain at least four levels, even if all the SpcControllerSpecLevel elements are just placeholders.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SpcControllerSpecLevel" type="F2XProgressiveLinkRegistryVer1:SpcControllerSpecLevelType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Specifications required of a controller level.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IppMLPControllerSpecificationType">
+		<xs:annotation>
+			<xs:documentation>IPP MLP controller specification.  Specifies a controller configuration and/or attributes required to satisfy this link map. MLP refers to non-zero bonus WAP, sometimes called bonus IPP.  The controller specification applies only to the IPP Protocol v8.2.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ControllerSpecName" type="F2XProgressiveLinkRegistryVer1:ControllerSpecNameType">
+				<xs:annotation>
+					<xs:documentation>Symbolic name of this controller specification element, for use as a reference by ProgressiveLink elements within this link map (i.e. the scope of this symbol name is local to the link map element only).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BonusType">
+				<xs:annotation>
+					<xs:documentation>The bonus type (e.g. the "IPC theme code") expressed in 2 digit hex notation (e.g. enter "0x0B" for "Indiana Jones" bonus type as per IPP/IPC Protocol Version 8.2 protoocol documentation).  This value is validated against the values sent by the external controller. A bonus code is currently needed for any IPP connection.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="0x[0-9A-Fa-f][1-9A-Fa-f]|0x[1-9A-Fa-f][0-9A-Fa-f]"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="WapConfigurationRequirements" type="F2XProgressiveLinkRegistryVer1:WapConfigurationRequirementsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The list of acceptable WAP configurations.  If the requirements of all WapConfigurationRequirement elements are met, then the configuration is considered acceptable and presented to the operator.  If this element is omitted, then the link map is not valid for a WAP configured controller (i.e. if the game is allowed to be linked to a WAP level, this element must be present). In order to prevent misconfiguration, the range evaluation just determines the possible WapSystemIDs. In case more than one WapSystemID would be allowed, the operator has to pick the intended one within the operator menu before starting the IPP enrollment. In case only one WapSystemID would be applicable throughout the entire EGM, the selection will be done for the operator.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IppMLPControllerSpecLevels" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The list of specifications/requirements for controller levels.  Elements are referenced by a zero based index when used by the ProgressiveLink elements.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IppMLPControllerSpecLevel" type="F2XProgressiveLinkRegistryVer1:IppMLPControllerSpecLevelType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Specifications required of a controller level.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NetProgressiveControllerSpecificationType">
+		<xs:annotation>
+			<xs:documentation>NetProgressive controller specification.  Specifies a controller configuration and/or attributes required to satisfy this link map. This element is specific to Net Progressive Controller types.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ControllerSpecName" type="F2XProgressiveLinkRegistryVer1:ControllerSpecNameType">
+				<xs:annotation>
+					<xs:documentation>Symbolic name of this controller specification element, for use as a reference by ProgressiveLink elements within this link map (i.e. the scope of this symbol name is local to the link map element only).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GroupIdentifier" type="F2XRegistryTypesVer1:NetProgressiveControllerGroupIdentifierType">
+				<xs:annotation>
+					<xs:documentation>Unique identifier to map the game levels to levels within a Net Progressive Controller group (aka "Progressive ID X").</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WapConfigurationRequirements" type="F2XProgressiveLinkRegistryVer1:WapConfigurationRequirementsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The list of acceptable WAP configurations.  If the requirements of all WapConfigurationRequirement elements are met, then the configuration is considered acceptable and presented to the operator.  If this element is omitted, then the link map is not valid for a WAP configured controller (i.e. if the game is allowed to be linked to a WAP level, this element must be present). In order to prevent misconfiguration, the range evaluation just determines the possible WapSystemIDs. In case more than one WapSystemID would be allowed, the operator has to pick the intended one within the operator menu before starting the protocol enrollment process. In case only one WapSystemID would be applicable throughout the entire EGM, the selection will be done for the operator.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IncrementType" type="F2XProgressiveLinkRegistryVer1:LevelIncrementType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Type of increment for the controller levels. Default is WagerBased.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetProgressiveControllerSpecLevels" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The list of specifications/requirements for controller levels.  Elements are referenced by a zero based index when used by the ProgressiveLink elements.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="NetProgressiveControllerSpecLevel" type="F2XProgressiveLinkRegistryVer1:NetProgressiveControllerSpecLevelType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Specifications required of a controller level.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DenominationConstraintType">
+		<xs:annotation>
+			<xs:documentation>Denomination constraint.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DenomRequirement" type="F2XRegistryTypesVer1:DenomType" maxOccurs="26">
+				<xs:annotation>
+					<xs:documentation>Valid denominations for which the link map may be used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BootConfigurationConstraintType">
+		<xs:annotation>
+			<xs:documentation>Boot Configuration constraint.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BootConfigurationRequirement" type="F2XProgressiveLinkRegistryVer1:BootConfigurationOptionType">
+				<xs:annotation>
+					<xs:documentation>Valid boot configuration requirement for which the link map may be used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpcTargetType">
+		<xs:annotation>
+			<xs:documentation>This element identifies the Standalone Progressive Controller group that is to be compared against the controller specifications.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="SpcGroupIdentifier" type="F2XRegistryTypesVer1:SpcGroupIdentifierType">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of the Standalone Progressive Controller group.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SpcGroupTemplateIdentifier" type="F2XRegistryTypesVer1:SpcGroupTemplateIdentifierType">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of the SPC group template.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="WapConfigurationRequirementType">
+		<xs:annotation>
+			<xs:documentation>A progressive concept requirement.  Note that ALL constraint sub-elements must be met for this ProgressiveConceptRequirement to be met.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="WapIdConstraint">
+				<xs:annotation>
+					<xs:documentation>List of valid WAP Ids for this WapConfigurationRequirement.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="F2XProgressiveLinkRegistryVer1:WapIdConstraintType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WapConfigurationRequirementsType">
+		<xs:annotation>
+			<xs:documentation>The list of acceptable WAP configurations.  If the requirements of any one of the WapConfigurationRequirement elements are met, then the configuration is considered acceptable and presented to the operator.  If this element is omitted, then the link map is not valid for a WAP configured controller (i.e. if the game is allowed to be linked to a WAP level, this element must be present). In order to prevent misconfiguration, the range evaluation just determines the possible WapSystemIDs. In case more than one WapSystemID would be allowed, the operator has to pick the intended one within the operator menu before starting the protocol enrollment process. In case only one WapSystemID would be applicable throughout the entire EGM, the selection will be done for the operator.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="WapConfigurationRequirement" type="F2XProgressiveLinkRegistryVer1:WapConfigurationRequirementType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A WAP configuration requirement.  Note that ALL constraint sub-elements must be met for this WapConfigurationRequirement to be met.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="AllowNonWap" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>If true then a non-WAP configuration is also valid. If false then at least one level must be WAP.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="WapIdConstraintType">
+		<xs:annotation>
+			<xs:documentation>List of valid Wap ids for this progressive concept requirement.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="WapSystemId" type="xs:unsignedInt" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The valid WAP Id(s) as validated against the controller provided WAP id.  If this element is omitted, then any WAP Id is valid (except the non-WAP id value of 40).  To indicate that all WAP Ids are allowed, plus the special non-WAP Id of 40, this element is omitted and the "AllowNonWap" attribute should be set to "true" in the WapConstraint element. If "MinimumWapSystemId" and/or "MaximumWapSystemId" is provided (without a list of enumerated WAP ids) then all WAP Ids within this range are valid (except 40, which may be include via the "AllowNonWap" attribute).  If a range AND a list are provided, they are considered as an or conjunction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="MinimumWapSystemId" type="xs:unsignedInt" use="optional">
+			<xs:annotation>
+				<xs:documentation>The lower bound of the WapSystemId. Any value less than the given one is not considered valid.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="MaximumWapSystemId" type="xs:unsignedInt" use="optional">
+			<xs:annotation>
+				<xs:documentation>The upper bound of the WapSystemId. Any value greater than the given one is not considered valid.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="LevelIncrementType">
+		<xs:annotation>
+			<xs:documentation>Specifies how the particular level is getting incremented.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WagerBased">
+				<xs:annotation>
+					<xs:documentation>The level is increment on each bet of the payvar x denomination.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EventBased">
+				<xs:annotation>
+					<xs:documentation>The level increment is controlled by the Game Client thru the event of adding qualified contribution, the progressive hits are paid and metered as paytable win.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProgressiveEventBased">
+				<xs:annotation>
+					<xs:documentation>The level increment is controlled by the Game Client thru the event of adding qualified contribution, the progressive hits are paid and metered as progressive win.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WapLevelConnectionOptionType">
+		<xs:annotation>
+			<xs:documentation>Specifies whether or not this level must be connected to a WAP level.  WapOnly - The controller level must be a WAP level.   NonWapOnly - The controller level must NOT be a WAP level.  WapOrNonWap - This controller level may be WAP or non-WAP.  If this element is omitted the default is WapOrNonWap.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WapOnly"/>
+			<xs:enumeration value="NonWapOnly"/>
+			<xs:enumeration value="WapOrNonWap"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BootConfigurationOptionType">
+		<xs:annotation>
+			<xs:documentation>Specifies the particular boot configuration this linkmap is allowed for.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ShowAndRelease">
+				<xs:annotation>
+					<xs:documentation>Includes show, release, test, and development boots.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShowOnly">
+				<xs:annotation>
+					<xs:documentation>Includes show and development boots. Excludes test and release boots.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ReleaseOnly">
+				<xs:annotation>
+					<xs:documentation>Includes release boots, test boots and development boots. Excludes show boots.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LegacyLevelControllerType">
+		<xs:annotation>
+			<xs:documentation>Specifies which type of controller this level must be connected to using legacy linking.  The Foundation will validate that this type is connected to this level.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SAS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="LegacyLevelSpecificationType">
+		<xs:annotation>
+			<xs:documentation>List of controller types allowed for the level to be linked to using legacy linking.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Controller" type="F2XProgressiveLinkRegistryVer1:LegacyLevelControllerType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

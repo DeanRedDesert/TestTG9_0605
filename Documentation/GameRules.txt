@@ -1,0 +1,33 @@
+Group	Type	Rule
+	General	All wins shown in credits, except bonuses and progressives.
+	PayDirection	All wins left to right only except <SCAT1>, <SCAT2>, <MINI>, <MINOR>, <MAJOR> and <GRAND> which pay any.
+	Substitute	<WILD> substitutes for <PIC1>, <PIC2>, <PIC3>, <PIC4>, <PIC5>, <K>, <Q>, <J>, <10> and <9>.
+	General	Line wins multiplied by credits bet per line.
+	General	Scatter wins are multiplied by total credits bet.
+	General	All wins on lit lines only except <SCAT1>, <SCAT2> prizes, bonuses and  jackpot.
+	General	Scatter wins, <SCAT2> Prizes, Bonuses and Progressives are added to line wins.
+	General	Wins on different lines are added.
+	General	Coinciding wins on each line are added.
+	Substitute	<WILD> appears on reels 2, 3, 4 and 5 only.
+Respins	OtherFeatureTrigger	5 or more scattered <SCAT2> triggers the Cash Ching Feature.
+Respins	OtherFeatures	<SCAT2> values that triggered the Hold N Spin Feature are awarded to the FEATURE WIN meter and the positions are marked with <Frame>.
+Respins	OtherFeatures	<SCAT2> values that triggered the Hold N Spin Feature are credit prizes (1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15 or 30 credits), multiplied by total credits bet <MINI> or <MINOR>.
+Respins	OtherFeatures	All 15 positions turn into individual spinning reels and 3 FREE SPINS are awarded.
+Respins	OtherFeatures	Pay table prizes are not awarded during the Cash Ching Feature.
+Respins	OtherFeatures	If one or more additional <SCAT2> spin up the number of FREE SPINS remaining resets to 3.
+Respins	OtherFeatures	During the FREE SPINS <SCAT2> values are credit prizes (1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15 or 30 credits,) multiplied by total credits bet, <MINI>, <MINOR>, <MAJOR>, <GRAND> or <Frame>.
+Respins	OtherFeatures	Any <Frame> that lands will be held on the position for the remaining of the feature.
+Respins	OtherFeatures	<MAJOR> or <GRAND> that land are immediately awarded to the credit meter.
+Respins	OtherFeatures	<MAJOR> and <GRAND> do not appear on reels containing <Frame>.
+Respins	OtherFeatures	Any <SCAT2> that lands inside a <Frame> will be awarded to the FEATURE WIN meter.
+Respins	OtherFeatures	Any <SCAT2> that lands but not inside a <Frame> will be held on the position for the remaining of the feature.
+Respins	OtherFeatures	The feature ends after 100 spins or when FREE SPINS remaining are 0.
+Respins	OtherFeatures	At the end of the feature, held prizes except jackpots will be awarded to the FEATURE WIN meter.
+Respins	OtherFeatures	Total credits bet is the same as the game that triggered the Cash Ching Feature.
+Respins	OtherFeatures	MINI BONUS and MINOR BONUS values are based on denomination selected.
+FreeGames	FreeGameTrigger	3 or more <SCAT1> triggers 8 free games.
+FreeGames	FreeGames	Every <WILD> that substitutes in a win doubles the pay for that win.
+FreeGames	FreeGames	Bonus reels are in played during the Free Games Feature.
+FreeGames	FreeGames	Hold N Spin Feature can be triggered during the Free Games Feature.
+FreeGames	FreeGames	Free Games Feature can be triggered again during the Free Games Feature.
+FreeGames	FreeGames	Total credits bet is the same as the game that triggered the Free Games Feature.

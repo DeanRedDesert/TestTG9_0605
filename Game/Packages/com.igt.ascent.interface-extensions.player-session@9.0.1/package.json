@@ -1,0 +1,14 @@
+{
+  "name": "com.igt.ascent.interface-extensions.player-session",
+  "displayName": "Ascent PlayerSession Extension",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Support for retrieving and getting notified of player session status.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation": "9.0.1",
+    "com.igt.ascent.game": "9.0.1",
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

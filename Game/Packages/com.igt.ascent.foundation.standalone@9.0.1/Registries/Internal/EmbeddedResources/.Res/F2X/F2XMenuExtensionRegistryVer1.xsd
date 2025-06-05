@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XMenuExtensionRegistryVer1="F2XMenuExtensionRegistryVer1.xsd" targetNamespace="F2XMenuExtensionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.2">
+	<!-- Version  1.1: Added additional MenuType enumerations for the new types of the extension menu pages -->
+ 	<!-- Version  1.2: Added additional MenuType enumerations ChooserSetup for chooser extension menu pages -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="MenuExtensionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a menu extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="Type" type="F2XMenuExtensionRegistryVer1:MenuType">
+							<xs:annotation>
+								<xs:documentation>Specifies the type of the menu page. This is used to determine placement in the system menu hierarchy..</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ResourceRoot" type="xs:anyURI">
+							<xs:annotation>
+								<xs:documentation>Specifies the root directory that contains all the resources for the menu page in the menu extension. This root directory is relative to the mount point where the package is mounted.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="InitialPage" type="xs:anyURI">
+							<xs:annotation>
+								<xs:documentation>Specifies the URL pointing to the menu page for the menu extension to load. This menu page URL is relative to the MenuResourceRoot.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ButtonText">
+							<xs:annotation>
+								<xs:documentation>Specifies the text to be displayed on the menu button created for the menu extension.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="ButtonTextValue" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>Specifies the exact button text.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="AccessRequirement" type="F2XMenuExtensionRegistryVer1:MenuAccessRequirement">
+							<xs:annotation>
+								<xs:documentation>Specifies the security requirement for accessing this extension menu page.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RequiredApiVersion" type="F2XRegistryTypesVer1:Version">
+							<xs:annotation>
+								<xs:documentation>Specifies the menu API version required by the menu extension. This is the API provided by the WebSocket server for HTML menu pages to interact with the foundation.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="F2XRegistryTypesVer1:ExtensionImportList" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>List of optional or required extensions to be linked at runtime.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="MenuType">
+		<xs:annotation>
+			<xs:documentation>Enumeration describing the type of the extension menu page.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SystemSetup">
+				<xs:annotation>
+					<xs:documentation>Extension system setup menu. Mounted to root of system menu MainSetup-ExtensionMenuSystem directory.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ThemeSetup">
+				<xs:annotation>
+					<xs:documentation>Extension theme menu. Mounted to root of system menu MainSetup-GameOptions-ExtensionMenuTheme directory.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProtocolSetup">
+				<xs:annotation>
+					<xs:documentation>Extension protocol menu. Mounted to root of system menu MainSetup-Communication directory.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MainSetup">
+				<xs:annotation>
+					<xs:documentation>Extension configuration menu. Mounted to root of system menu MainSetup directory.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MainSupport">
+				<xs:annotation>
+					<xs:documentation>Extension maintenance menu. Mounted to root of system menu MainSupport directory.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MainLogs">
+				<xs:annotation>
+					<xs:documentation>Extension logs page. Mounted to root of system menu MainLogs directory.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ChooserSetup">
+				<xs:annotation>
+					<xs:documentation>Extension chooser menu. Mounted to root of system menu MainSetup-ExtensionMenuSystem directory.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MenuAccessRequirement">
+		<xs:annotation>
+			<xs:documentation>Enumeration describing the security requirement for accessing the extension menu page.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GameInProgress"/>
+			<xs:enumeration value="Attendant"/>
+			<xs:enumeration value="Operator"/>
+			<xs:enumeration value="Ekey"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

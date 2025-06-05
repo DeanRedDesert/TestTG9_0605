@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<Registry xmlns="F2XRegistryVer1.xsd" xmlns:F2XRegistryVer1="F2XRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" F2XRegistryVer1:RegistryType="ConfigurationExtension" F2XRegistryVer1:Version="1.0" xsi:schemaLocation="F2XRegistryVer1.xsd F2XRegistryVer1.xsd">
+  <Body>
+		<ConfigurationExtensionRegistry xmlns="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XConfigurationExtensionRegistryVer1.xsd F2XConfigurationExtensionRegistryVer1.xsd">
+        <F2XBaseExtensionRegistryVer1:Name>RSDConfigProviderV1</F2XBaseExtensionRegistryVer1:Name>
+        <F2XBaseExtensionRegistryVer1:Description>Defines the version 1.0.0 provider of jurisdictional specific configuration items required to control Reel Strip Distortion behavior.  Reel strip distortion is used to change the way symbols are displayed to the player while the reels are spinning, for the purpose of increasing tension during reel spin.  Reel strip distortion has no effect on game outcome.</F2XBaseExtensionRegistryVer1:Description>
+        <F2XBaseExtensionRegistryVer1:Identifier>1f38810d-53ed-4b18-9125-6ffc92de79c8</F2XBaseExtensionRegistryVer1:Identifier>
+        <F2XBaseExtensionRegistryVer1:Version>
+          <F2XRegistryTypesVer1:MajorVersion>1</F2XRegistryTypesVer1:MajorVersion>
+          <F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+          <F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+        </F2XBaseExtensionRegistryVer1:Version>
+        <F2XBaseExtensionRegistryVer1:InterfaceDefinition>
+          <F2XBaseExtensionRegistryVer1:InterfaceIdentifier>6caaed91-36ac-476f-a8c2-f8b50fa3048e</F2XBaseExtensionRegistryVer1:InterfaceIdentifier>
+          <F2XBaseExtensionRegistryVer1:InterfaceVersion>
+            <F2XRegistryTypesVer1:MajorVersion>1</F2XRegistryTypesVer1:MajorVersion>
+            <F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+            <F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+          </F2XBaseExtensionRegistryVer1:InterfaceVersion>
+        </F2XBaseExtensionRegistryVer1:InterfaceDefinition>
+        <F2XBaseExtensionRegistryVer1:Signature>MC0CFQDCwkZI8K+qq0n4uLjkQtaEceA/AAIUMuHju4ptzYZt5Z5eCKpV9NBFrpI=</F2XBaseExtensionRegistryVer1:Signature>
+        <VersionedConfigSections>
+          <VersionedSection F2XConfigurationExtensionRegistryVer1:Version="1.0.0" F2XConfigurationExtensionRegistryVer1:Hash="SHA1:0F6425134C51574D4B08D6C6FF81A313A432F154">
+            <ConfigItems>
+              <!-- Enabled controls whether any reelstrip distortion is enabled. -->
+              <F2XRegistryTypesVer1:ConfigItem>
+                <F2XRegistryTypesVer1:Name>Enabled</F2XRegistryTypesVer1:Name>
+                <F2XRegistryTypesVer1:ReadOnly>true</F2XRegistryTypesVer1:ReadOnly>
+                <F2XRegistryTypesVer1:Data>
+                  <F2XRegistryTypesVer1:BooleanData>true</F2XRegistryTypesVer1:BooleanData>
+                </F2XRegistryTypesVer1:Data>
+              </F2XRegistryTypesVer1:ConfigItem>
+              <!-- Limit sets the frequency distortion limit for reelstrip distortion.  A value of 1 disables frequency distortion. -->
+              <F2XRegistryTypesVer1:ConfigItem>
+                <F2XRegistryTypesVer1:Name>Limit</F2XRegistryTypesVer1:Name>
+                <F2XRegistryTypesVer1:ReadOnly>true</F2XRegistryTypesVer1:ReadOnly>
+                <F2XRegistryTypesVer1:Data>
+                  <F2XRegistryTypesVer1:FloatData F2XRegistryTypesVer1:Min="1.0" F2XRegistryTypesVer1:Max="10000.0">10000.0</F2XRegistryTypesVer1:FloatData>
+                </F2XRegistryTypesVer1:Data>
+              </F2XRegistryTypesVer1:ConfigItem>
+            </ConfigItems>
+            <!-- Jurisdictional Overrides -->
+            <Overrides>
+              <!-- Disable Distortion Overrides -->
+              <ConfigItemValueOverride>
+                <Jurisdictions>
+                  <Jurisdiction>0ONT</Jurisdiction>
+                  <Jurisdiction>SING</Jurisdiction>
+                </Jurisdictions>
+                <ConfigItemValues>
+                  <ConfigItemValue F2XConfigurationExtensionRegistryVer1:Name="Enabled">
+                    <Boolean>false</Boolean>
+                  </ConfigItemValue>
+                  <ConfigItemValue F2XConfigurationExtensionRegistryVer1:Name="Limit">
+                    <Float>1.0</Float>
+                  </ConfigItemValue>
+                </ConfigItemValues>
+              </ConfigItemValueOverride>
+              <!-- Frequency Distortion Not Allowed Overrides -->
+              <ConfigItemValueOverride>
+                <Jurisdictions>
+                  <Jurisdiction>USDM</Jurisdiction>
+                  <Jurisdiction>00FL</Jurisdiction>
+                  <Jurisdiction>00IL</Jurisdiction>
+                  <Jurisdiction>00NJ</Jurisdiction>
+                  <Jurisdiction>00OH</Jurisdiction>
+                  <Jurisdiction>0DEL</Jurisdiction>
+                  <Jurisdiction>0PEN</Jurisdiction>
+                  <Jurisdiction>0RIL</Jurisdiction>
+                  <Jurisdiction>0WAI</Jurisdiction>
+                  <Jurisdiction>0WVL</Jurisdiction>
+                  <Jurisdiction>0KSL</Jurisdiction>
+                  <Jurisdiction>0MNI</Jurisdiction>
+                </Jurisdictions>
+                <ConfigItemValues>
+                  <ConfigItemValue F2XConfigurationExtensionRegistryVer1:Name="Limit">
+                    <Float>1.0</Float>
+                  </ConfigItemValue>
+                </ConfigItemValues>
+              </ConfigItemValueOverride>
+            </Overrides>
+          </VersionedSection>
+        </VersionedConfigSections>
+      </ConfigurationExtensionRegistry>
+  </Body>
+</Registry>

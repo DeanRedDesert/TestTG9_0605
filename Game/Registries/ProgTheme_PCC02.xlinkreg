@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<r1:Registry r1:RegistryType="ProgressiveLink" r1:Version="1.0" xmlns:r1="F2XRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XRegistryVer1.xsd">
+  <r1:Body>
+    <ProgressiveLinkRegistry xmlns="F2XProgressiveLinkRegistryVer1.xsd">
+      <LinkMaps>
+        <LinkMap>
+          <LinkMapIdentifier>
+            <LinkId xmlns="F2XRegistryTypesVer1.xsd">LM_ProgTheme_PCC02</LinkId>
+            <Authority xmlns="F2XRegistryTypesVer1.xsd">Q</Authority>
+          </LinkMapIdentifier>
+          <OperatorPrompt>
+            <plr1:DescriptionLocalization plr1:Culture="en-US" xmlns:plr1="F2XProgressiveLinkRegistryVer1.xsd">
+              <plr1:Description>ProgTheme - 1,2,5,10,50,100,200</plr1:Description>
+            </plr1:DescriptionLocalization>
+          </OperatorPrompt>
+          <ProgressiveConceptIdentifier>
+            <ProgressiveConceptCode xmlns="F2XRegistryTypesVer1.xsd">ProgTheme_PCC02</ProgressiveConceptCode>
+            <Authority xmlns="F2XRegistryTypesVer1.xsd">Q</Authority>
+          </ProgressiveConceptIdentifier>
+          <ControllerSpecifications>
+            <SpcControllerSpecification>
+              <ControllerSpecName>SPC_ProgTheme_PCC02</ControllerSpecName>
+              <SpcTarget>
+                <SpcGroupIdentifier>
+                  <SpcGroupId xmlns="F2XRegistryTypesVer1.xsd">ProgTheme_PCC02</SpcGroupId>
+                  <Authority xmlns="F2XRegistryTypesVer1.xsd">Q</Authority>
+                </SpcGroupIdentifier>
+              </SpcTarget>
+              <SpcControllerSpecLevels>
+                <SpcControllerSpecLevel>
+                  <LevelName>GRAND</LevelName>
+                </SpcControllerSpecLevel>
+                <SpcControllerSpecLevel>
+                  <LevelName>MAJOR</LevelName>
+                </SpcControllerSpecLevel>
+              </SpcControllerSpecLevels>
+            </SpcControllerSpecification>
+          </ControllerSpecifications>
+          <ProgressiveLinks>
+            <ProgressiveLink>
+              <GameLevelEndpoint>0</GameLevelEndpoint>
+              <ControllerLevelSpecification>
+                <ControllerSpecName>SPC_ProgTheme_PCC02</ControllerSpecName>
+                <SpecLevel>0</SpecLevel>
+              </ControllerLevelSpecification>
+            </ProgressiveLink>
+            <ProgressiveLink>
+              <GameLevelEndpoint>1</GameLevelEndpoint>
+              <ControllerLevelSpecification>
+                <ControllerSpecName>SPC_ProgTheme_PCC02</ControllerSpecName>
+                <SpecLevel>1</SpecLevel>
+              </ControllerLevelSpecification>
+            </ProgressiveLink>
+          </ProgressiveLinks>
+        </LinkMap>
+      </LinkMaps>
+    </ProgressiveLinkRegistry>
+  </r1:Body>
+</r1:Registry>

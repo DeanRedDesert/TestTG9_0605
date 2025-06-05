@@ -1,0 +1,14 @@
+{
+  "name": "IGT.Game.Core.Communication.AutomationServices",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.GL2PInterceptorLib"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

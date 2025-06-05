@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<r1:Registry r1:RegistryType="VideoTopper" r1:Version="1.0" xmlns:r1="F2XRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XRegistryVer1.xsd">
+  <r1:Body>
+    <VideoTopperRegistry p4:EmulatedMediaControllerEnabled="false" xmlns:p4="F2XVideoTopperRegistryVer1.xsd" xmlns="F2XVideoTopperRegistryVer1.xsd">
+      <p4:ThemeRegistry>Registries/T001TMP.xthemereg</p4:ThemeRegistry>
+    </VideoTopperRegistry>
+  </r1:Body>
+</r1:Registry>

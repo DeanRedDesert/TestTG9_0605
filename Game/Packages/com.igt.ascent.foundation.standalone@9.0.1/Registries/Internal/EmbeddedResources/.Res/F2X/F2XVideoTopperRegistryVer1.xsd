@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XVideoTopperRegistryVer1="F2XVideoTopperRegistryVer1.xsd" targetNamespace="F2XVideoTopperRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!--Version 1.1 adds the EmulatedMediaConrtollerEnabled attribute-->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="VideoTopperRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry which defines video topper information and content.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ThemeRegistry" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Relative path to theme registry to which this video topper registry belongs to.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AttractContent" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of content keys to be used for attact. </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AttractItem" type="F2XRegistryTypesVer1:LocalizationKey" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<!--Will handle the default value during pasrsing instead of  here. -->
+			<xs:attribute name="EmulatedMediaControllerEnabled" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Flag indicating whether to use Emulated Media Controller (true/false). If omitted, EMC will be enabled.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

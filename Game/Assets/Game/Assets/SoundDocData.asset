@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27295e1e26647e6b1626b09ff72fd60, type: 3}
+  m_Name: SoundDocData
+  m_EditorClassIdentifier: 
+  sounds:
+  - filename: Assets\Game\Dashboard\Sound\Vol1.wav
+    description: Highlight
+    transcript: NA
+    activationList: When the volume control is pressed and the volume changes from
+      high volume to low volume.
+  - filename: Assets\Game\Dashboard\Sound\Vol2.wav
+    description: Highlight
+    transcript: NA
+    activationList: When the volume control is pressed and the volume changes from
+      low volume to middle volume.
+  - filename: Assets\Game\Dashboard\Sound\Vol3.wav
+    description: Highlight
+    transcript: NA
+    activationList: When the volume control is pressed and the volume changes from
+      middle volume to high volume.
+  - filename: Assets\Game\Dashboard\Sound\VolumePing.ogg
+    description: Highlight
+    transcript: NA
+    activationList: When the volume slider is released.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_1.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_2.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_3.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_4.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_5.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_6.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_7.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_8.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_9.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\DPP\Sounds\BetSounds\Pick_10.wav
+    description: Highlight
+    transcript: NA
+    activationList: When a bet is selected.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\ReelStop1.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 1 stop.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\ReelStop2.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 2 stop.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\ReelStop3.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 3 stop.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\ReelStop4.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 4 stop.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\ReelStop5.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 5 stop.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\smart_1.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 1 stop when a feature trigger symbol is visible with
+      the potential to trigger the feature.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\smart_2.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 2 stop when a feature trigger symbol is visible with
+      the potential to trigger the feature.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\smart_3.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 3 stop when a feature trigger symbol is visible with
+      the potential to trigger the feature.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\smart_4.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 4 stop when a feature trigger symbol is visible with
+      the potential to trigger the feature.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\smart_5.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 5 stop when a feature trigger symbol is visible with
+      the potential to trigger the feature.
+  - filename: Assets\Game\Stages\Common\Reels\Sound\suspend CD.wav
+    description: Highlight
+    transcript: NA
+    activationList: End of reel 1 stop.
+  - filename: Assets\Game\WinPresentation\Sounds\Rollup_0.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 0 is required.
+  - filename: Assets\Game\WinPresentation\Sounds\RollupLoop_1.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 1 is required.
+  - filename: Assets\Game\WinPresentation\Sounds\RollupLoop_2.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 2 is required.
+  - filename: Assets\Game\WinPresentation\Sounds\RollupLoop_3.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 3 is required.
+  - filename: Assets\Game\WinPresentation\Sounds\RollupLoop_4.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 4 is required.
+  - filename: Assets\Game\WinPresentation\Sounds\RollupLoop_5.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 5 is required.
+  - filename: Assets\Game\WinPresentation\Sounds\RollupTerm_1.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 1 is stopped.
+  - filename: Assets\Game\WinPresentation\Sounds\RollupTerm_2.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 2 is stopped
+  - filename: Assets\Game\WinPresentation\Sounds\RollupTerm_3.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 3 is stopped
+  - filename: Assets\Game\WinPresentation\Sounds\RollupTerm_4.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 4 is stopped
+  - filename: Assets\Game\WinPresentation\Sounds\RollupTerm_5.wav
+    description: Highlight
+    transcript: NA
+    activationList: Played when the win celebration level 5 is stopped
+  - filename: Assets\Midas\CreditPlayoff\Presentation\CreditPlayoff\Sounds\Lose.ogg
+    description: Highlight
+    transcript: NA
+    activationList: Plays at the end of credit playoff feature when the result is
+      negative.
+  - filename: Assets\Midas\CreditPlayoff\Presentation\CreditPlayoff\Sounds\Play_ButtonPress.ogg
+    description: Highlight
+    transcript: NA
+    activationList: Plays when the 'Play' button for the Credit Playoff is pressed.
+  - filename: Assets\Midas\CreditPlayoff\Presentation\CreditPlayoff\Sounds\spinning.ogg
+    description: Highlight
+    transcript: NA
+    activationList: Plays during the credit playoff as the dial is spinning.
+  - filename: Assets\Midas\CreditPlayoff\Presentation\CreditPlayoff\Sounds\Text_Appears.ogg
+    description: Highlight
+    transcript: NA
+    activationList: Plays at the start of the Credit Playoff as the text appears
+      during the introduction.
+  - filename: Assets\Midas\CreditPlayoff\Presentation\CreditPlayoff\Sounds\Wheel_Enters.ogg
+    description: Highlight
+    transcript: NA
+    activationList: Plays when the Credit Playoff is activated.
+  - filename: Assets\Midas\CreditPlayoff\Presentation\CreditPlayoff\Sounds\Wheel_Exits.ogg
+    description: Highlight
+    transcript: NA
+    activationList: Plays when the Credit Playoff is deactivated.
+  - filename: Assets\Midas\CreditPlayoff\Presentation\CreditPlayoff\Sounds\Win.ogg
+    description: Highlight
+    transcript: NA
+    activationList: Plays at the end of credit playoff feature when the result is
+      positive.

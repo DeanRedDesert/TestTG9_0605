@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by IGT (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:complexType name="UserData">
+		<xs:sequence>
+			<xs:any/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>	
+	<xs:complexType name="PaytableSection">
+		<xs:annotation>
+			<xs:documentation>Base type for paytable sections.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="UserData" type="UserData" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>User data allows for the  addition of game specific data to the paytable. Each user data item may be one of the types available to the paytable, or a simple string.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A unique name to associate with this paytable section.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

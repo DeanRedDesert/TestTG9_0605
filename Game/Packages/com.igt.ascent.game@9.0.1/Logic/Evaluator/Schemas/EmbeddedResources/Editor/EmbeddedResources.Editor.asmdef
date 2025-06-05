@@ -1,0 +1,16 @@
+{
+  "name": "IGT.Game.Core.Logic.Evaluator.Schemas.EmbeddedResources.Editor",
+  "rootNamespace": "IGT.Game.Core.Logic.Evaluator.Schemas.EmbeddedResources.Editor",
+  "references": [],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

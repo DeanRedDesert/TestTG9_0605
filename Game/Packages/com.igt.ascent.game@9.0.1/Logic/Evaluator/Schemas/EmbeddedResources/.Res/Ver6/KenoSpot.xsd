@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata"
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:complexType name="KenoSpot">
+		<xs:annotation>
+			<xs:documentation>Defines a keno spot with attributes as required for its representation in a paytable.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="index" type="xs:unsignedInt" use="required"/>
+		<xs:attribute name="isPicked" type="xs:boolean" use="required"/>
+		<xs:attribute name="isHit" type="xs:boolean" use="required"/>
+		<xs:attribute name="isDrawn" type="xs:boolean" use="required"/>
+		<xs:attribute name="isWild" type="xs:boolean" use="required"/>
+		<xs:attribute name="isBonus" type="xs:boolean" use="required"/>
+		<xs:attribute name="displayAttribute" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

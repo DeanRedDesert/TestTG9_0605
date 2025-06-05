@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
+  <Import Condition="Exists('$(SolutionDir)IGT.Game.Core.SharedProjectSettings')" Project="$(SolutionDir)IGT.Game.Core.SharedProjectSettings" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <ProjectGuid>{BCC7E881-4654-405A-BC0B-E3176C0F0C91}</ProjectGuid>
+    <RootNamespace>IGT.Game.Core.Communication.Foundation.InterfaceExtensions.GameFunctionStatus</RootNamespace>
+    <AssemblyName>InterfaceExtensions.GameFunctionStatus</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>bin\Debug\InterfaceExtensions.GameFunctionStatus.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bin\Release\InterfaceExtensions.GameFunctionStatus.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DenominationPlayableStatus.cs" />
+    <Compile Include="DenominationPlayableStatusChangeEventArgs.cs" />
+    <Compile Include="GameButtonBehavior.cs" />
+    <Compile Include="GameButtonBehaviorTypeChangeEventArgs.cs" />
+    <Compile Include="GameButtonStatus.cs" />
+    <Compile Include="GameButtonTypeEnum.cs" />
+    <Compile Include="GameFunctionStatusInterfaceConfiguration.cs" />
+    <Compile Include="GameFunctionStatusCallbackHandler.cs" />
+    <Compile Include="F2XGameFunctionStatus.cs" />
+    <Compile Include="IGameFunctionStatus.cs" />
+    <Compile Include="IStandaloneGameFunctionStatusHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandaloneGameFunctionStatus.cs" />
+    <Compile Include="TypeConverters.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Cabinet\Communication.Cabinet.csproj">
+      <Project>{9D96BCB0-4D4D-48B6-9C34-3947E6D51614}</Project>
+      <Name>Communication.Cabinet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Communication\Communication.csproj">
+      <Project>{d1196ef5-e7ae-4fc7-a839-f66521bc8806}</Project>
+      <Name>Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\CompactSerialization\Core.CompactSerialization.csproj">
+      <Project>{8e15ac8f-4e7b-49a8-883d-d7633f03c7ca}</Project>
+      <Name>Core.CompactSerialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Communication.Foundation.csproj">
+      <Project>{5544a02d-11c6-40f0-8c18-6dc26d498ca2}</Project>
+      <Name>Communication.Foundation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\F2XCallbacks\Foundation.F2XCallbacks.csproj">
+      <Project>{13a64c70-63da-4abf-aef4-bc6c073dbc65}</Project>
+      <Name>Foundation.F2XCallbacks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\F2XTransport\Foundation.F2XTransport.csproj">
+      <Project>{D0E61038-040F-42CC-A81E-010A1E3642F4}</Project>
+      <Name>Foundation.F2XTransport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\F2X\Foundation.F2X.csproj">
+      <Project>{DFDF4C8F-5511-4B2D-99CC-2FA4D9E16507}</Project>
+      <Name>Foundation.F2X</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\F2X\Schemas\F2X.Schemas.csproj">
+      <Project>{6c03f850-a7ab-4b0d-b24d-9f12eec8da7a}</Project>
+      <Name>F2X.Schemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation.InterfaceExtensions.csproj">
+      <Project>{36c27919-a090-48ab-94ef-86664be8bc79}</Project>
+      <Name>Foundation.InterfaceExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\InterfaceExtensions.Interfaces.csproj">
+      <Project>{5F67EF94-F91D-44ED-96BF-7A8A3CC8EF57}</Project>
+      <Name>InterfaceExtensions.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Restricted\EventManagement\Interfaces\EventManagement.Interfaces.csproj">
+      <Project>{4AFD000B-F702-4280-8C2F-86637A399FE2}</Project>
+      <Name>EventManagement.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="Exists('$(SolutionDir)IGT.Game.Core.BuildEvents')" Project="$(SolutionDir)IGT.Game.Core.BuildEvents" />
+</Project>

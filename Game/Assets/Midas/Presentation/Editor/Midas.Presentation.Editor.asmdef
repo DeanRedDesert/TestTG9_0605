@@ -1,0 +1,28 @@
+{
+    "name": "Midas.Presentation.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Midas.Presentation",
+        "Midas.Core",
+        "Midas.Logging",
+        "Midas.Logic",
+		"Midas.LogicToPresentation",
+        "Midas.Tools.Editor",
+        "Midas.Tools",
+		"IGT.Ascent.Assets.BuildSettings",
+		"IGT.Ascent.Assets.BuildSettings.Editor",
+		"IGT.Game.Core.Communication"
+		
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

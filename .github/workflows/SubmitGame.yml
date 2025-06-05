@@ -1,0 +1,27 @@
+name: "Submit Game"
+on:
+  push:
+    tags:
+      - rel-v*
+      - dev-v*
+
+jobs:
+  submit-game:
+    name: "Submit Game"
+    uses: igt-ApacStudios/midas-wfs-Submit/.github/workflows/SubmitGame.yml@main
+    secrets: inherit
+    with:
+      # Refer to the table below for the field information.
+      # +-----------------+----------------------------------------------------+ 
+      # | Field           | Legend                                             |
+      # +-----------------+----------------------------------------------------+
+      # | IsAnzSubmission | true for ANZ market, false for the global market   |
+      # | RunGameCheck    | true to run game check, false to skip game check   |
+      # +-----------------+----------------------------------------------------+
+      #
+      # Example for ANZ market and skip game check
+      # IsAnzSubmission: true
+      # RunGameCheck: false
+
+      IsAnzSubmission: 
+      RunGameCheck: 

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 sp1 (x64) (http://www.altova.com) by Tyrell Atterberry (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XRestApiExtensionRegistryVer1="F2XRestApiExtensionRegistryVer1.xsd" targetNamespace="F2XRestApiExtensionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="RestApiExtensionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a Rest API extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="RestEndpointType" type="F2XRestApiExtensionRegistryVer1:RestApiAddressType">
+							<xs:annotation>
+								<xs:documentation>Sets the type of rest api endpoint this extension defines.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="StaticRestApiAddress" type="xs:anyURI" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Defines the API endpoint address if the rest api extension type has a fixed address.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ApiVersions" type="F2XRestApiExtensionRegistryVer1:ApiVersions">
+							<xs:annotation>
+								<xs:documentation>Defines the individual version history of this rest api service</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApiVersion">
+		<xs:annotation>
+			<xs:documentation>Defines an individual version history of this rest api service</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Description">
+					<xs:annotation>
+						<xs:documentation>Description of the Api change or addition.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required">
+				<xs:annotation>
+					<xs:documentation>Version of Rest API. Minor version must be sequential with previous version, and using with the same major version as the overall extension.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="InterfaceVersion" type="F2XRegistryTypesVer1:ExtensionVersionString" use="optional">
+				<xs:annotation>
+					<xs:documentation>Version of the matching interface. Optional; Omit for changes that do not require an interface update.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Hash" use="required">
+				<xs:annotation>
+					<xs:documentation>Checksum of data for this api version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ApiVersions">
+		<xs:sequence>
+			<xs:element ref="F2XRestApiExtensionRegistryVer1:ApiVersion" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Defines the individual version history of this rest api service</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="RestApiAddressType">
+		<xs:annotation>
+			<xs:documentation>Defines the type of address associated with the rest api extension.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RuntimeDynamic">
+				<xs:annotation>
+					<xs:documentation>The APIs base address will be set at runtime.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Static">
+				<xs:annotation>
+					<xs:documentation>The APIs base address is static, and will be defined in this extension registry.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

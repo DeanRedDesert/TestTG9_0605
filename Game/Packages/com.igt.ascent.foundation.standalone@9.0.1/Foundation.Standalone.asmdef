@@ -1,0 +1,32 @@
+{
+  "name": "IGT.Game.Core.Communication.Foundation.Standalone",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.GameReport.Interfaces",
+    "IGT.Game.Core.Logging",
+    "IGT.Ascent.Communication.Platform.ExtensionLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.ReportLib.Interfaces",
+    "IGT.Game.Core.Money",
+    "IGT.Ascent.OutcomeList",
+    "IGT.Ascent.OutcomeList.Interfaces",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Threading",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Ascent.Communication.Progressive.Interfaces",
+    "IGT.Game.Core.Communication.Standalone",
+    "IGT.Game.Core.Communication.Standalone.Schemas",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces",
+    "IGT.Game.Core.Communication.Foundation.Standalone.Registries"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

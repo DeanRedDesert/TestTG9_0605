@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2023 sp1 (x64) (http://www.altova.com) by Warren Antes (IGT) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2LRegistryTypeVer2="F2LRegistryTypeVer2.xsd" targetNamespace="F2LRegistryTypeVer2.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="2.1">
+	<!-- Minor revision 2.1, Added Persistent flag to CustomConfigItemsType.-->
+	<!--Minor revision 2.2, Added CustomConfig and CustomMenuSections for exposing config items to the Custom Menu Page and FLM.-->
+	<xs:complexType name="AmountType">
+		<xs:annotation>
+			<xs:documentation> Amount data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:long">
+				<xs:attribute name="Min" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Minimum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Max" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Maximum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="BooleanType">
+		<xs:annotation>
+			<xs:documentation> Boolean data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+	<xs:complexType name="EnumerationType">
+		<xs:annotation>
+			<xs:documentation> Enumeration data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Enumeration" maxOccurs="64">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FlagListType">
+		<xs:annotation>
+			<xs:documentation>Flag list data type used in configuration. Contains subset of the elements defined in EnumReferenceList</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Element" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="EnumReferenceList" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="FloatType">
+		<xs:annotation>
+			<xs:documentation>Float data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="Min" type="xs:float">
+					<xs:annotation>
+						<xs:documentation>Minimum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Max" type="xs:float">
+					<xs:annotation>
+						<xs:documentation>Maximum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Int64Type">
+		<xs:annotation>
+			<xs:documentation>Int64 data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:long">
+				<xs:attribute name="Min" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Minimum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Max" type="xs:long">
+					<xs:annotation>
+						<xs:documentation>Maximum inclusive value</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ItemType">
+		<xs:annotation>
+			<xs:documentation>Item data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="EnumReferenceList" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="StringType">
+		<xs:annotation>
+			<xs:documentation>String data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="MinLen" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Minimum length of the string</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MaxLen" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Maximum length of the string</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CustomConfigItemsType">
+		<xs:annotation>
+			<xs:documentation>Custom configuration items data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigItem" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="xs:string"/>
+						<xs:element name="Persistent" type="xs:boolean" minOccurs="0" maxOccurs="1">
+							<xs:annotation>
+								<xs:documentation>If true, the config item information will persist over a safe storage clear (master reset).</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Data">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="AmountData" type="F2LRegistryTypeVer2:AmountType"/>
+									<xs:element name="BooleanData" type="F2LRegistryTypeVer2:BooleanType"/>
+									<xs:element name="EnumerationData" type="F2LRegistryTypeVer2:EnumerationType"/>
+									<xs:element name="FlagListData" type="F2LRegistryTypeVer2:FlagListType"/>
+									<xs:element name="FloatData" type="F2LRegistryTypeVer2:FloatType"/>
+									<xs:element name="Int64Data" type="F2LRegistryTypeVer2:Int64Type"/>
+									<xs:element name="ItemData" type="F2LRegistryTypeVer2:ItemType"/>
+									<xs:element name="StringData" type="F2LRegistryTypeVer2:StringType"/>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Modifiability" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Optionally declares that this config item should be exposed to the Custom Config Menu Page and to FloorManager.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="Description" type="xs:string" use="required">
+									<xs:annotation>
+										<xs:documentation>xlocalization entry name for a description string to display to the operator for the config item's usage.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="CanModLocal" type="xs:boolean" use="required">
+									<xs:annotation>
+										<xs:documentation>Flag indicating whether an operator can change this config item locally on the Custom Config Menu Page.  Setting to false will cause this item to be "read only."</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="CanModRemote" type="xs:boolean" use="required">
+									<xs:annotation>
+										<xs:documentation>Flag indicating whether an operator can change this config item on FloorManager.  Setting to false will cause this item to be "read only."</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="SectionName" type="xs:string" use="optional">
+									<xs:annotation>
+										<xs:documentation>Optionally declares the OrderIdentifier of the section that this config item should display in.  Use if ConfigMenuSections are in use.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="OrderInSection" type="xs:unsignedInt" use="optional">
+									<xs:annotation>
+										<xs:documentation>Optionally declares the order that this config item should appear in its section where lower values appear higher on the menu page.  If left unassigned, this value appears after other entries in the order they are defined in the registry.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ConfigMenuSections" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Optionally defines sub-lists of config items to display in different sections of the Custom Config Menu Page and in the FloorManager UI.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ConfigMenuSection" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="Description" type="xs:string" use="required">
+									<xs:annotation>
+										<xs:documentation>xlocalization entry name for a description string to display to the operator for the menu section.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="NameIdentifier" type="xs:string" use="required">
+									<xs:annotation>
+										<xs:documentation>A unique key that the section can be referred to via the Modifiability values of ConfigItems.  This is not the string displayed to the operator. </xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PropertiesType">
+		<xs:annotation>
+			<xs:documentation>This type will organize the properties</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Section" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Property" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Name">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="256"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="Value">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="256"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="Name" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:maxLength value="256"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="DenomType">
+		<xs:annotation>
+			<xs:documentation>This type is for the denomination in cents. it restrains the values with enumaration. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:unsignedInt">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="25"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="50"/>
+			<xs:enumeration value="100"/>
+			<xs:enumeration value="200"/>
+			<xs:enumeration value="250"/>
+			<xs:enumeration value="500"/>
+			<xs:enumeration value="1000"/>
+			<xs:enumeration value="2000"/>
+			<xs:enumeration value="2500"/>
+			<xs:enumeration value="5000"/>
+			<xs:enumeration value="10000"/>
+			<xs:enumeration value="20000"/>
+			<xs:enumeration value="25000"/>
+			<xs:enumeration value="50000"/>
+			<xs:enumeration value="100000"/>
+			<xs:enumeration value="200000"/>
+			<xs:enumeration value="250000"/>
+			<xs:enumeration value="500000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MaxBetType">
+		<xs:annotation>
+			<xs:documentation>This type will organize max bet value that comes from a range and max bet value that comes from a list. It can accomodate multiple maxbet values to represent denom specific maxbets.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ValuePool">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="Range">
+							<xs:complexType>
+								<xs:attribute name="Min" type="xs:unsignedLong" use="required"/>
+								<xs:attribute name="Max" type="xs:unsignedLong" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="List">
+							<xs:annotation>
+								<xs:documentation>The enumerated list of values that may be chosen by the Operator.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Enumeration" type="xs:unsignedLong" maxOccurs="64">
+										<xs:annotation>
+											<xs:documentation>Enumerated list of max bets.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Value" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:unsignedLong">
+							<xs:attribute name="Denom" type="F2LRegistryTypeVer2:DenomType" default="0">
+								<xs:annotation>
+									<xs:documentation>Defined when when the value is denom specific</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

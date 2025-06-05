@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 (x64) (http://www.altova.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XExecutableExtensionBinRegistryVer1="F2XExecutableExtensionBinRegistryVer1.xsd" targetNamespace="F2XExecutableExtensionBinRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!-- Version  1.1: Added the support to constraint the startup for jurisdictions. Add max capture size defintion -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="ExecutableExtensionBinRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing an extension bin/executable.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ExtensionClient" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>The relative path, from the package root directory, to the extension executable.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CommandLineArguments" type="F2XRegistryTypesVer1:CommandLineArguments" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Collection of arguments to be used as references in a CommandLineType element.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CommandLine" type="F2XRegistryTypesVer1:CommandLine">
+					<xs:annotation>
+						<xs:documentation>Named arguments can be used to compose the command line used to launch the executable. They should be prefixed with “-g” flag to be distinguished from Foundation side arguments.  For example, an argument named "Arg1" with a value of "ArgOne", and "Arg2" with a value of "ArgTwo" can be referenced in this element as "-g1$(Arg1) –g2$(Arg2)", such that the executable will be launched as  "absolute_path/client.exe –g1ArgOne –g2ArgTwo".</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TagDataFile" type="F2XRegistryTypesVer1:TagDataFileType">
+					<xs:annotation>
+						<xs:documentation>Custom executable-related file for use with the executable.  Passed to the executable during startup.  Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="JurisdictionalStartupConstraint" type="F2XExecutableExtensionBinRegistryVer1:JurisdictionList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Provides the ability to restrict the bin startup to a subset of jurisdictions. In case the element is obmitted no restrictions apply.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MaxCaptureDirectorySize" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The maximum capture size needed by the extension. The final word on capping the size is at the foundation side. The foundation provides the capture_size to the bin on startup. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="JurisdictionList">
+		<xs:annotation>
+			<xs:documentation>List of jurisdictions.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Jurisdiction" type="F2XRegistryTypesVer1:Jurisdiction" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

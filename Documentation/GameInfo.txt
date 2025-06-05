@@ -1,0 +1,6 @@
+AnteBetType:None
+AnteBetTheme:
+ReelCount:0
+Theme:None
+JackpotTheme:ProgTheme
+IsDenomUserSelectable:True

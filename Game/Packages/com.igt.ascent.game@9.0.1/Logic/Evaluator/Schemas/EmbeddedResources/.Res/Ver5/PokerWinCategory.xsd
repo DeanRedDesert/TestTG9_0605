@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by IGT (International Game Technology) -->
+<xs:schema xmlns="http://www.igt.com/worldgame/common/xml/gamedata" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:include schemaLocation="Trigger.xsd"/>
+	<xs:element name="PokerWinCategory">
+		<xs:annotation>
+			<xs:documentation>Fully describes a winning poker hand.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Win" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ProgressiveLevel" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A list of progressive level names from the schema type ProgressLevelType</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Trigger" type="Trigger" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="winLevelIndex" type="xs:unsignedInt" use="required"/>
+						<xs:attribute name="multiplier" type="xs:unsignedInt" use="required"/>
+						<xs:attribute name="betRange" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="max"/>
+									<xs:enumeration value="all"/>
+									<xs:enumeration value="any"/>
+									<xs:enumeration value="useSpecifiedBoundaries"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="betBoundaryLower" type="xs:unsignedInt" use="required"/>
+						<xs:attribute name="betBoundaryUpper" type="xs:unsignedInt" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OddsList" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="odds" type="xs:float" use="required"/>
+						<xs:attribute name="betRange" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="max"/>
+									<xs:enumeration value="all"/>
+									<xs:enumeration value="any"/>
+									<xs:enumeration value="useSpecifiedBoundaries"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="betBoundaryLower" type="xs:unsignedInt" use="required"/>
+						<xs:attribute name="betBoundaryUpper" type="xs:unsignedInt" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

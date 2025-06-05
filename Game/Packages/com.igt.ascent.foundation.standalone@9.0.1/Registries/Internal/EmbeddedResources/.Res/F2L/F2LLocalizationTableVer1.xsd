@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by IGT (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2LLocalizationTableVer1="F2LLocalizationTableVer1.xsd" targetNamespace="F2LLocalizationTableVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+        <!-- Minor revision 1.1, Removed pattern restriction for CultureStringType.-->
+	<xs:element name="LocalizationTable">
+		<xs:annotation>
+			<xs:documentation>Localized table of resources for a specified Culture.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Resource" type="F2LLocalizationTableVer1:LocalizedResource" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="Culture" type="F2LLocalizationTableVer1:CultureStringType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="CultureStringType">
+		<xs:annotation>
+			<xs:documentation>Culture Format:It should follow Windows OS locale format((LCID) Reference: https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f). Language code should follow ISO 639-1; Region Code should follow the ISO 3166-1.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="LocalizedResource">
+		<xs:annotation>
+			<xs:documentation>A localized resource identified by id. The resource can be of type String, File, Image, Movie or Sound.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="String" type="xs:string"/>
+			<xs:element name="File" type="F2LLocalizationTableVer1:FileAsset"/>
+			<xs:element name="Image" type="F2LLocalizationTableVer1:ImageAsset"/>
+			<xs:element name="Movie" type="F2LLocalizationTableVer1:MovieAsset"/>
+			<xs:element name="Sound" type="F2LLocalizationTableVer1:SoundAsset"/>
+		</xs:choice>
+		<xs:attribute name="Id" use="required">
+			<xs:annotation>
+				<xs:documentation>Specifies the resource identifier.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="255"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FileAsset">
+		<xs:annotation>
+			<xs:documentation>File resource. The type of this file is not limited to a specific extension.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Path" type="xs:anyURI" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ImageAsset">
+		<xs:annotation>
+			<xs:documentation>Image resource. This resource must be of type png.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="F2LLocalizationTableVer1:FileAsset">
+				<xs:attribute name="Path" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:anyURI">
+							<xs:pattern value=".+\.png"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MovieAsset">
+		<xs:annotation>
+			<xs:documentation>Movie resource. This resource must be of type bik.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="F2LLocalizationTableVer1:FileAsset">
+				<xs:attribute name="Path" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:anyURI">
+							<xs:pattern value=".+\.bik"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SoundAsset">
+		<xs:annotation>
+			<xs:documentation>Sound resource. This resource must be of type wav.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="F2LLocalizationTableVer1:FileAsset">
+				<xs:attribute name="Path" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:anyURI">
+							<xs:pattern value=".+\.wav"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

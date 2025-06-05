@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c824eb362f1a45e28ccda6d4176e1763, type: 3}
+  m_Name: 5x3SpinTimings
+  m_EditorClassIdentifier: 
+  AnzSpinTimings: {fileID: 11400000, guid: 59a76a24c7f3fdf49aa8abbd3a7f7a21, type: 2}
+  NormalSpinTimings: {fileID: 11400000, guid: 1f28e2d7540420a48be7cc0ae6608bbe, type: 2}
+  FastSpinTimings: {fileID: 11400000, guid: 99e8c8b67a47c8f478b17691503c4b75, type: 2}
+  SuperFastSpinTimings: {fileID: 11400000, guid: 3104a9384f0d7f045ac2a54389350a8e, type: 2}

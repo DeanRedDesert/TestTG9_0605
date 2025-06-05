@@ -1,0 +1,14 @@
+{
+  "name": "com.igt.gga.graphy_ultimate_fps_counter",
+  "version": "2.0.0",
+  "displayName": "GGA-3rdparty Graphy - Ultimate FPS Counter (3.0.2)",
+  "description": "This is the Graphy Ultimate FPS Counter (3.0.2) package provided for Unity created by the GGA team.",
+  "homepage": "https://github.com/Tayx94/graphy",
+  "author": {
+    "name": "GGA",
+    "url": "https://developers.confluence.igt.com/display/GGA"
+  },
+  "publishConfig": {
+    "registry": "http://gears.insideigt.com:9099/npm/ggamf-npm"
+  }
+}

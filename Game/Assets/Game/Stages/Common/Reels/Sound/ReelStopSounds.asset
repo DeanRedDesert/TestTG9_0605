@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6279fa92149344f8416884c37ab7d1, type: 3}
+  m_Name: ReelStopSounds
+  m_EditorClassIdentifier: 
+  soundDefinitionsList:
+  - id: ReelStop1
+    clip: {fileID: 8300000, guid: b5f2ec22ad015604e9c2452a996758d4, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: ReelStop2
+    clip: {fileID: 8300000, guid: e9ff7e33d8958334ab3ec9ab52f92a5f, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: ReelStop3
+    clip: {fileID: 8300000, guid: 9b5d8773d0d0c1c4d9d8ae4a05de69ee, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: ReelStop4
+    clip: {fileID: 8300000, guid: 8e22c5b56b0c94342b2557698cb95cbe, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: ReelStop5
+    clip: {fileID: 8300000, guid: 940031c87415fd849a5bad230705f6c0, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: smart_1
+    clip: {fileID: 8300000, guid: 04f62f593c5d5504db67bfcac75cf2bb, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: smart_2
+    clip: {fileID: 8300000, guid: b5dcb62d3d194ef4882d90d50125ae43, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: smart_3
+    clip: {fileID: 8300000, guid: e63490eb99f361a4bb921fc95e353fd1, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: smart_4
+    clip: {fileID: 8300000, guid: f0fc5ccb091425b4b9b51813c5de523e, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: smart_5
+    clip: {fileID: 8300000, guid: b3c93abe4338c494d94d81fdd0c184d4, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: suspend CD
+    clip: {fileID: 8300000, guid: fb2ac6c5371a8ae44bef1e2f2514b804, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}

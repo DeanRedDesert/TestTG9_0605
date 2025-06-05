@@ -1,0 +1,14 @@
+{
+  "name": "IGT.Game.Core.Communication",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Logging"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

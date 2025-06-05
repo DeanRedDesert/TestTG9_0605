@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by Steve LeMay (International Game Technology) -->
+<xs:schema xmlns:F2XMarketConfigurationDataVer1="F2XMarketConfigurationDataVer1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" targetNamespace="F2XMarketConfigurationDataVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!-- Minor Revision 1.1, Added Decimal and DecimalRange property support, and support for Payvar References -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="MarketConfigurationData">
+		<xs:annotation>
+			<xs:documentation>Data block for associating parvar meta-data</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:sequence>
+						<xs:element name="VersionedPropertySections" type="F2XMarketConfigurationDataVer1:VersionedPropertySections">
+							<xs:annotation>
+								<xs:documentation>Contains a list of property definitions that must be provided to meet the interface definition's requirements for a specific version</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="VersionedSection">
+		<xs:sequence>
+			<xs:element name="PayvarPropertyList" type="F2XMarketConfigurationDataVer1:PayvarPropertyList" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A list of data provided for each payvar that is subject to market restriction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required"/>
+		<xs:attribute name="InterfaceHash" type="xs:string" use="required"/>
+		<xs:attribute name="SectionHash" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Property">
+		<xs:annotation>
+			<xs:documentation>Property definitions used for market restriction</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="StringList" type="F2XMarketConfigurationDataVer1:StringList">
+				<xs:annotation>
+					<xs:documentation>A list of case sensitive string items to be used during market restriction evaluation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecimalRange" type="F2XMarketConfigurationDataVer1:DecimalRange">
+				<xs:annotation>
+					<xs:documentation>A range of decimal values to be used during market restriction evaluation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Decimal" type="F2XMarketConfigurationDataVer1:RestrictedDecimal">
+				<xs:annotation>
+					<xs:documentation>A single decimal value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PayvarReference" type="F2XMarketConfigurationDataVer1:PayvarReference">
+				<xs:annotation>
+					<xs:documentation>A reference to payvar data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="Name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Property name.  A case sensitive key or tag to associate data for evaluation.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PayvarPropertyList">
+		<xs:annotation>
+			<xs:documentation>A list of property definitions that must be provided to meet the interface definition's requirements for a specific version</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Property" type="F2XMarketConfigurationDataVer1:Property" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A case sensitive named property and the associated data used during market restriction evaluation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Payvar" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The case sensitive name of a payvar that is subject to market restriction.  For example, "AVV015123"</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="StringList">
+		<xs:annotation>
+			<xs:documentation>List of strings</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="String" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A case sensitive single string element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="RestrictedDecimal">
+		<xs:annotation>
+			<xs:documentation>Decimal type with a restricted number of fraction digits to improve accuracy of comparisons.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DecimalRange">
+		<xs:annotation>
+			<xs:documentation>Inclusive Range of Decimal values</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Min" type="F2XMarketConfigurationDataVer1:RestrictedDecimal">
+				<xs:annotation>
+					<xs:documentation>Minimum of the range</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Max" type="F2XMarketConfigurationDataVer1:RestrictedDecimal">
+				<xs:annotation>
+					<xs:documentation>Maximum of the range</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayvarReference">
+		<xs:annotation>
+			<xs:documentation>A reference to a value supplied by the Payvar.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Field" type="F2XMarketConfigurationDataVer1:PayvarReferenceField" use="required" />
+	</xs:complexType>
+	<xs:simpleType name="PayvarReferenceField">
+		<xs:annotation>
+			<xs:documentation>Field names available for PayvarReference.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PaybackPercentage">
+				<xs:annotation>
+					<xs:documentation>Provides the Decimal value from the associated Payvar's PaybackPercentage field.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MinimumPaybackPercentage">
+				<xs:annotation>
+					<xs:documentation>Provides the Decimal value from the associated Payvar's MinimumPaybackPercentage field.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MinimumPaybackPercentageWithoutProgressives">
+				<xs:annotation>
+					<xs:documentation>Provides the Decimal value from the associated Payvar's MinimumPaybackPercentageWithoutProgressives field.  If the MinimumPaybackPercentageWithoutProgressives field is not included in the payvar, the value for the MinimumPaybackPercentage field is provided instead.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VersionedPropertySections">
+		<xs:annotation>
+			<xs:documentation>Versioned sections</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="VersionedSection" type="F2XMarketConfigurationDataVer1:VersionedSection" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains the property definitions by version</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

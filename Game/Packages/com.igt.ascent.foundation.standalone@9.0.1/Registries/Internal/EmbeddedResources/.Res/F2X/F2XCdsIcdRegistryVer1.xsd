@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 sp2 (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XCdsIcdRegistryVer1="F2XCdsIcdRegistryVer1.xsd" targetNamespace="F2XCdsIcdRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+<!-- Minor revision 1.1, Added Paytable Index Set support -->
+	<xs:element name="CdsIcdRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing the information to allow a theme to support the Cds ICD protocol. Some of this data is aggregated into a string that is sent to the host that is used to configure active games on the EGM. Using an example of a UPCNumber of 1777, two enabled paytable indicies of 10001 and 10002, and a game configuration option of 300: The string sent would be "1777|10001|10002:300". It is very important to note that the resulting string may NOT exceed 255 characters, per the protocol's limits.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UPCNumber" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>The ICD number that identifies the game theme to the host. ("GameUPCNumbers are assigned in blocks by MGAM for the use of vendors.")</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ThemeRegistry" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Relative path to the (main) theme registry that this registry is supporting.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="GameConfigurationOption" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The default value of game-specific option data (after game installation or ICD configuration reset). The meaning of this data is opaque to the Foundation.  This field must NOT contain the "|" character.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SupportedPaytableConfigurations" type="F2XCdsIcdRegistryVer1:SupportedPaytableConfigurations">
+					<xs:annotation>
+						<xs:documentation>List of paytable configurations supported by the theme for use in the ICD protocol.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SupportedPaytableConfigurations">
+		<xs:annotation>
+			<xs:documentation>List of paytable configurations supported by the theme for use in the ICD protocol.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PaytableConfiguration" type="F2XCdsIcdRegistryVer1:PaytableConfigurationData" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Identifies an ICD paytable configuration supported by the game theme.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaytableConfigurationSet" type="F2XCdsIcdRegistryVer1:PaytableConfigurationSetData" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Identifies an ICD paytable configuration set supported by the game theme. If sets are not used the old method of using explicit paytable configurations will be used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaytableConfigurationData">
+		<xs:annotation>
+			<xs:documentation>Identifies an ICD paytable configuration supported by the game theme.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PaytableIndex" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>ICD PaytableIndex, an ID that identifies the paytable being used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaytableDescription">
+				<xs:annotation>
+					<xs:documentation>PaytableIndex description (e.g. "Line 1 Bet 1"). This string must be no longer than 255 characters, per the protocol.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NumberOfCredits" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>The number of credits bet for the Paytable Index.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="OfferableByDefault" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>If "true" this PaytableIndex is offerable by default (after game installation or ICD configuration reset).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PaytableConfigurationSetData">
+		<xs:annotation>
+			<xs:documentation>Identifies an ICD paytable set and defines an associated list of paytable configurations.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PaytableConfigurationSetIdentifier">
+				<xs:annotation>
+					<xs:documentation>Identifies an ICD paytable configuration set. The restriction ensures that the string has at least 1 letter somewhere in it.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="233"/>
+						<xs:pattern value="(\p{N})*[\p{L}](\p{L}|\p{N})*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PaytableConfigurationIndex" type="xs:int" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Identifies an ICD paytable configuration supported by the game theme.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="OfferableByDefault" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>If "true" this paytable set is offerable by default (after game installation or ICD configuration reset).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

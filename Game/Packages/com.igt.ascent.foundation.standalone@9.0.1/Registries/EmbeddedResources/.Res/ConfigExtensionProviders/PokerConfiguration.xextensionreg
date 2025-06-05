@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<F2XRegistryVer1:Registry xsi:schemaLocation="F2XRegistryVer1.xsd F2XRegistryVerO1.xsd" xmlns:F2XRegistryVer1="F2XRegistryVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" F2XRegistryVer1:RegistryType="ConfigurationExtension" F2XRegistryVer1:Version="1.0">
+	<F2XRegistryVer1:Body>
+		<F2XConfigurationExtensionRegistryVer1:ConfigurationExtensionRegistry xmlns="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XConfigurationExtensionRegistryVer1.xsd F2XConfigurationExtensionRegistryVer1.xsd">
+			<Name>PokerConfiguration</Name>
+			<Identifier>306CB4A4-DA06-40B4-BE1D-4A35823E97DB</Identifier>
+			<Version>
+				<F2XRegistryTypesVer1:MajorVersion>1</F2XRegistryTypesVer1:MajorVersion>
+				<F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+				<F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+			</Version>
+			<InterfaceDefinition>
+				<InterfaceIdentifier>B9BD1C17-4222-487B-82B0-2AF3A2A36DC1</InterfaceIdentifier>
+				<InterfaceVersion>
+					<F2XRegistryTypesVer1:MajorVersion>1</F2XRegistryTypesVer1:MajorVersion>
+					<F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+					<F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+				</InterfaceVersion>
+			</InterfaceDefinition>
+			<Signature>MCwCFHOPEEno8GwAVniSKwVXSlDb5hjWAhR108ohpbQW+9QdosfmxskDO6ZkYQ==</Signature>
+            <F2XConfigurationExtensionRegistryVer1:VersionedConfigSections>
+                <F2XConfigurationExtensionRegistryVer1:VersionedSection F2XConfigurationExtensionRegistryVer1:Version="1.0.0" F2XConfigurationExtensionRegistryVer1:Hash="SHA1:B610CFEC57EB0CC48E33FEA123B4CC373331659E">
+                    <F2XConfigurationExtensionRegistryVer1:ConfigItems>
+                        <F2XRegistryTypesVer1:ConfigItem>
+                            <F2XRegistryTypesVer1:Name>AutoholdSupported</F2XRegistryTypesVer1:Name>
+                            <F2XRegistryTypesVer1:Data>
+                                <F2XRegistryTypesVer1:BooleanData>false</F2XRegistryTypesVer1:BooleanData>
+                            </F2XRegistryTypesVer1:Data>
+                        </F2XRegistryTypesVer1:ConfigItem>
+                        <F2XRegistryTypesVer1:ConfigItem>
+                            <F2XRegistryTypesVer1:Name>AutoholdEnabled</F2XRegistryTypesVer1:Name>
+                            <F2XRegistryTypesVer1:Data>
+                                <F2XRegistryTypesVer1:BooleanData>false</F2XRegistryTypesVer1:BooleanData>
+                            </F2XRegistryTypesVer1:Data>
+                        </F2XRegistryTypesVer1:ConfigItem>
+                    </F2XConfigurationExtensionRegistryVer1:ConfigItems>
+                </F2XConfigurationExtensionRegistryVer1:VersionedSection>
+            </F2XConfigurationExtensionRegistryVer1:VersionedConfigSections>
+		</F2XConfigurationExtensionRegistryVer1:ConfigurationExtensionRegistry>
+	</F2XRegistryVer1:Body>
+</F2XRegistryVer1:Registry>

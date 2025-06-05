@@ -1,0 +1,10 @@
+{
+  "name": "com.igt.ascent.sdk-essentials",
+  "displayName": "Ascent SDK Essentials",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Set of commonly used SDK assemblies.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {}
+}

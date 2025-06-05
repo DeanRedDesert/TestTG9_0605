@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: DashboardStrings_es-ES
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es-ES
+  m_SharedData: {fileID: 11400000, guid: edef3e2288e04a8498fe7024dd2d6212, type: 2}
+  m_Metadata:
+    m_Items:
+    - id: 0
+  m_TableData:
+  - m_Id: 818056134656
+    m_Localized: "JUGANDO {0} L\xCDNEAS CON UN MULTIPLICADOR DE APUESTA DE {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 856132026368
+    m_Localized: "JUGANDO {0} L\xCDNEAS CON UN MULTIPLICADOR DE APUESTA DE {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4784240328704
+    m_Localized: "L\xCDNEA {0} PAGA {1}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4786836602880
+    m_Localized: "S\xCDMBOLO PAGA {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4788170391552
+    m_Localized: "S\xCDMBOLO PAGA {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4785469259776
+    m_Localized: DISPERSO PAGA {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4780968771584
+    m_Localized: INICIO DE JUEGOS GRATIS PAGA {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4782751350784
+    m_Localized: REINICIO DE JUEGOS GRATIS PAGA {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4789504180224
+    m_Localized: PROGRESIVO PAGA {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4554048536576
+    m_Localized: "APOSTAR CR\xC9DITOS RESIDUALES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4560411295744
+    m_Localized: "APOSTAR CR\xC9DITOS RESIDUALES O CAMBIAR APUESTA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4563045318656
+    m_Localized: PLAYING PLAYOFF WITH {0} CREDITS ({1})
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4565880668160
+    m_Localized: "PRESIONAR \"DOBLAR\" O APOSTAR CR\xC9DITOS RESIDUALES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4568279810048
+    m_Localized: "PRESIONAR \"DOBLAR\", APOSTAR CR\xC9DITOS RESIDUALES O CAMBIAR
+      APUESTA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4426277453824
+    m_Localized: JUGANDO {0} FORMAS CON UN MULTIPLICADOR DE APUESTA DE {1}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4450352758784
+    m_Localized: ES - PLAYING BONUS GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4468287602688
+    m_Localized: ES - PLAYING BONUS GAME... {0} LINE WITH A BET MULTIPLIER OF {1}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4489993125888
+    m_Localized: ES - PLAYING BONUS GAME... {0} LINES WITH A BET MULTIPLIER OF {1}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4523518197760
+    m_Localized: ES  - PLAYING BONUS GAME... {0} WAYS WITH A BET MULTIPLIER OF {1}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11914531962880
+    m_Localized: "\xA1BUENA SUERTE!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11912787132416
+    m_Localized: Fin Del Juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11916268404736
+    m_Localized: JUEGO PAGA {0} - FIN DEL JUEGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11917933543424
+    m_Localized: JUEGO PAGA {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14998544973824
+    m_Localized: "M\xC1S JUEGOS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15002030440448
+    m_Localized: REGLAS DE JUEGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15005914365952
+    m_Localized: VELOCIDAD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15009987035136
+    m_Localized: "CR\xC9DITO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15029305999360
+    m_Localized: ACEPTAR GANANCIA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15020254691328
+    m_Localized: GANANCIA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15024390275072
+    m_Localized: PAGADO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15033483526144
+    m_Localized: APUESTA TOTAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15047907737600
+    m_Localized: ELEGIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15051242209280
+    m_Localized: "APUESTA M\xCDN. {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20424472788992
+    m_Localized: IDIOMAS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20422576963584
+    m_Localized: VOLUMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40543864992329728
+    m_Localized: "CR\xC9DITO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42002566324711424
+    m_Localized: ES Press Take Win To Finish Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42002952926294016
+    m_Localized: ES Gamble Available
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42079863945850880
+    m_Localized: ES {0} {0:p:Credit|Credits} Per Line and Multiway
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 42088150686789632
+    m_Localized: ES {0} {0:p:Credit|Credits} Per Line
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 42088338646134784
+    m_Localized: ES {0} {0:p:Credit|Credits} Per Multiway
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 42358019042865152
+    m_Localized: ES {0} = {1} {1:p:Credit|Credits}
+    m_Metadata:
+      m_Items:
+      - id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 42079863945850880
+        - id: 42088150686789632
+        - id: 42088338646134784
+        - id: 42358019042865152

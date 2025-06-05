@@ -1,0 +1,13 @@
+{
+  "name": "com.igt.ascent.foundation.standalone",
+  "displayName": "Ascent Foundation Standalone",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Provides support for running a game on standalone foundation.",
+  "documentation": "https://igt-developer-docs.atlassian.net/wiki/spaces/SDKDocumentationTip/pages/53027319/Getting+Started+with+Ascent+SDK+Packages",
+  "bugReporting": "https://igt-developer-docs.atlassian.net/wiki/spaces/internaldocumentation/pages/63963512/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation": "9.0.1",
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

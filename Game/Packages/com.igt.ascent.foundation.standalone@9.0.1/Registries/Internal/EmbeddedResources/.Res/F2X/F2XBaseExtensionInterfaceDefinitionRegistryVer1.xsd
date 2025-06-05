@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionInterfaceDefinitionRegistryVer1="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" targetNamespace="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:complexType name="ExtensionInterfaceDefinitionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry base for an extension interface definition.  An extension definition is used to describe the interface of an extension.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="F2XRegistryTypesVer1:ExtensionName">
+				<xs:annotation>
+					<xs:documentation>Human-readable name for this extension interface definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A short description of the purpose of this extension interface definition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Identifier" type="F2XRegistryTypesVer1:ExtensionId">
+				<xs:annotation>
+					<xs:documentation>Specify the unique definition identifier provided by this registry configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Version" type="F2XRegistryTypesVer1:ExtensionVersion">
+				<xs:annotation>
+					<xs:documentation>Specify the extension interface definition version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LinkBehavior" type="F2XRegistryTypesVer1:ExtensionLinkBehavior">
+				<xs:annotation>
+					<xs:documentation>Specify the behavior used when linking against this extension interface definition. Note: Some extension types may only support a subset of link behaviors.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Signature" type="xs:base64Binary" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Binary signature to verify the integrity of this extension interface definition. Not required for Development.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,24 @@
+﻿{
+	"name": "Midas.Gamble.Presentation",
+	"rootNamespace": "",
+	"references": [
+		"Midas.Core",
+		"Midas.Core.StateMachine",
+		"Midas.Logging",
+		"Midas.Tools",
+		"Midas.Logic",
+		"Midas.LogicToPresentation",
+		"Midas.Gamble.LogicToPresentation",
+		"Midas.Presentation",
+		"Unity.TextMeshPro"
+	],
+	"includePlatforms": [],
+	"excludePlatforms": [],
+	"allowUnsafeCode": false,
+	"overrideReferences": false,
+	"precompiledReferences": [],
+	"autoReferenced": true,
+	"defineConstraints": [],
+	"versionDefines": [],
+	"noEngineReferences": false
+}

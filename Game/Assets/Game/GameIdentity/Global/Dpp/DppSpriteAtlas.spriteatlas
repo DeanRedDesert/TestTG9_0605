@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DppSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2bd54204c83272148b56a8629e3a92d1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a187e710363eb4242a1fe257c4d096d0, type: 3}
+  - {fileID: 21300000, guid: 1860cc7168d5d08438d7a536d3cfb8e8, type: 3}
+  - {fileID: 21300000, guid: 06b903a1b125b1644b217a353dc5f4c5, type: 3}
+  - {fileID: 21300000, guid: e4d10d92f575e074cbaeb1a8c34ee89a, type: 3}
+  - {fileID: 21300000, guid: 26c5170305508a74184dff78fcacb3e4, type: 3}
+  - {fileID: 21300000, guid: 7fdca10438c69a74ab87205d37837831, type: 3}
+  - {fileID: 21300000, guid: 12ab8784e7577144f80315d3f9d6e9ca, type: 3}
+  - {fileID: 21300000, guid: 92f6dfa493f00914e8a2546b7d29fde8, type: 3}
+  - {fileID: 21300000, guid: 79521f55f3b4d8746a4c022a19f183d2, type: 3}
+  - {fileID: 21300000, guid: 7cdd82c58536a6c4c9d4ff1318a4d28a, type: 3}
+  - {fileID: 21300000, guid: d3a54ca774af29f43a826da707d1ac39, type: 3}
+  - {fileID: 21300000, guid: 11686028418759244a723633d2e6f619, type: 3}
+  - {fileID: 21300000, guid: 06b789288aa2d3844b3fbee0af4a4ccb, type: 3}
+  - {fileID: 21300000, guid: 14333d39aae363241af7045ffde8205e, type: 3}
+  - {fileID: 21300000, guid: 1ed8a06af6f4a4940959502482bea04c, type: 3}
+  - {fileID: 21300000, guid: b78ed08b306ac0b40a4a5bbc24854fb5, type: 3}
+  - {fileID: 21300000, guid: f235b5ebdfc944540a6c809896fa810c, type: 3}
+  - {fileID: 21300000, guid: 66b6dafb3a1af9446812826d80a7c791, type: 3}
+  - {fileID: 21300000, guid: ecf07ced3e3ab6647b470dc732b95d52, type: 3}
+  - {fileID: 21300000, guid: ca72d1be1f77792428ba27612373e084, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - AutoPlayBox
+  - YesAndNoShadow
+  - LightRayAutoPlay
+  - YesButton
+  - MoreGamesButtonActiveRingOnly
+  - AutoPlayButtonActiveRingOnly
+  - MoreGamesButton
+  - Shadow
+  - ServiceButtonActiveRingOnly
+  - ColorGlow
+  - AutoPlayButton
+  - ColorStrokeB
+  - ServiceButton
+  - NoButton
+  - CashOutButtonActive
+  - LightRay
+  - CashOutButton
+  - ButtonAreaGradient
+  - ColorStrokeA
+  - CashOutBox
+  m_RenderDataMap: {}
+  m_Tag: DppSpriteAtlas
+  m_IsVariant: 0

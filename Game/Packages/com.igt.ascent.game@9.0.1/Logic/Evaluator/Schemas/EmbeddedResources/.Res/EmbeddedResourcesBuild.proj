@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <RootNamespace>IGT.Game.Core.Logic.Evaluator.Schemas</RootNamespace>
+    <AssemblyName>IGT.Game.Core.Logic.Evaluator.Schemas.Resources</AssemblyName>
+    <!-- This project is built by MSBuild tool. However, the output assembly will be loaded
+             by Unity mono runtime. As a result, we must make sure the assembly's .net version
+             and CPU type is compatible with Unity 2020 .net 4.x mono runtime.
+             -->
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputType>Library</OutputType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildConfigFiles Include="$(MSBuildProjectFile)" />
+    <BuildConfigFiles Include="Directory.Build.targets" />
+    <BuildConfigFiles Include="Directory.Build.props" />
+    <EmbeddedResource Include="**/*.*" Exclude="@(BuildConfigFiles)" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

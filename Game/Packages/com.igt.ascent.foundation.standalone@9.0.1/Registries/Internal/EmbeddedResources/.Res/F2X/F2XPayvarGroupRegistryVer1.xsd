@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd"
+			xmlns:F2XPayvarGroupRegistryVer1="F2XPayvarGroupRegistryVer1.xsd"
+			targetNamespace="F2XPayvarGroupRegistryVer1.xsd"
+			elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="PayvarGroupRegistry">
+		<!-- Initial revision V1.0, Initial payvar group definition. -->
+		<xs:annotation>
+			<xs:documentation>
+				Game discovery registry for describing one ore more payvar(s) (short for "pay variation").
+				Contains data related to a payvar template and the initial state of paytable related configuration.
+				Payvar from a payvar group derives all elements from referenced payvar template and/or overwrites specific vales or each specific payvar in the group.
+				As payvar template the standard payvar registy is used, where the payvar type is set to payvar group template.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PayvarRegistry" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Relative path to payvar template registry to which this payvar group payvar belongs to. Required.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PayvarGroup" type="F2XPayvarGroupRegistryVer1:PayvarGroup">
+					<xs:annotation>
+						<xs:documentation>Definition of 1-64 payvars in a payvar group. Required</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PayvarGroup">
+		<xs:annotation>
+			<xs:documentation>Definition of one or more payvar(s) within a payvar group.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Payvar" type="F2XPayvarGroupRegistryVer1:Payvar" minOccurs="1" maxOccurs="64">
+				<xs:annotation>
+					<xs:documentation>Definition of one payvar within the payvar group.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Payvar">
+		<xs:annotation>
+			<xs:documentation>Definition of one payvar and its overloaded elements from payvar template.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PaytableName" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Paytable name used for display purposes as assigned by game designer. Required.
+						Follows the same rules as the paytable name from the payvar template with an additional "-" followed by a number like -01.
+						Foundation GameIdentifer is derived from the paytable name. Unique 
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="64"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="GroupTagDataFile" type="F2XRegistryTypesVer1:TagDataFileType">
+				<xs:annotation>
+					<xs:documentation>
+						Paytable group tag. Passed to the game during startup. Opaque to the Foundation
+						Required.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaybackPercentage" type="F2XRegistryTypesVer1:Percentage" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+							This is the theoretical maximum payback percentage (including progressive contributions where applicable).
+							Optional, if not specified, value is taken from payvar template.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinimumPaybackPercentage" type="F2XRegistryTypesVer1:Percentage" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+							This is the theoretical minimum payback percentage.
+							Optional, if not specified, value is taken from payvar template.
+					</xs:documentation>
+			</xs:annotation>
+			</xs:element>
+			<xs:element name="WagerCategories" type="F2XRegistryTypesVer1:WagerCategories">
+				<xs:annotation>
+					<xs:documentation>
+						Contains all Wager Category information. 
+						The index is derived from the payvar template by matching the percentage value.
+						Only percentages are allowed which are defined in the payvar template.
+						Multiple declations are allowed over more payvar game within a game group.
+					    Required.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxBetMapping" type="F2XPayvarGroupRegistryVer1:MaxBetMapping">
+				<xs:annotation>
+					<xs:documentation>
+						Max bet mapping in credits. Values need to match with values from payvar template. Required.
+						Only enumerated pool values list allowed.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MaxBetRedefinition">
+		<xs:annotation>
+			<xs:documentation>Redefinition of a max bet value, for payvar group handling.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedLong">
+				<xs:attribute name="Enumeration" type="xs:unsignedLong" use="required">
+					<xs:annotation>
+						<xs:documentation>Enumerated max bet value from the enumarated max bet value pool list</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>	
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EnumerationMapping">
+		<xs:annotation>
+			<xs:documentation>Mapping of maxbet values from enumerated max bet value pool list to a specific maxbet value.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MaxBetRedefinition" type="F2XPayvarGroupRegistryVer1:MaxBetRedefinition" minOccurs="1" maxOccurs="64"> 
+				<xs:annotation>
+					<xs:documentation>Max bet value, form max bet value pool list</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MaxBetMapping">
+		<xs:annotation>
+			<xs:documentation>Mapping of maxbet values to a specific maxbet value.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="EnumerationMapping" type="F2XPayvarGroupRegistryVer1:EnumerationMapping"> 
+				<xs:annotation>
+					<xs:documentation>Mapping for max bet value, form max bet value pool list</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

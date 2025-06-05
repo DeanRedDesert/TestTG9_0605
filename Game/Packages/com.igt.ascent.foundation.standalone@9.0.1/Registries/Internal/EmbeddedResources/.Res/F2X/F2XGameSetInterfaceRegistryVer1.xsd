@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:F2XGameSetInterfaceRegistryVer1="F2XGameSetInterfaceRegistryVer1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionInterfaceDefinitionRegistryVer1="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" targetNamespace="F2XGameSetInterfaceRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd"/>
+	<xs:element name="GameSetInterfaceRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing the interface for the game set extension. This interface is used to associate the Game Set Configuration Data File(s) (GSCDF) with a Game Set Definition File (GSDF).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionInterfaceDefinitionRegistryVer1:ExtensionInterfaceDefinitionRegistry">
+					<xs:sequence>
+						<xs:element name="VersionedGameSetSections" type="F2XGameSetInterfaceRegistryVer1:VersionedGameSetSections">
+							<xs:annotation>
+								<xs:documentation>Contains a list of game set definitions that must be provided to meet the interface definition's requirements for a specific version</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="VersionedGameSetSections">
+		<xs:sequence>
+			<xs:element name="VersionedSection" type="F2XGameSetInterfaceRegistryVer1:VersionedSection" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains the game set definitions by version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VersionedSection">
+		<xs:annotation>
+			<xs:documentation>Contains a list of game set definitions that must be provided to meet the interface definition's requirements for a specific version.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GameSet" type="F2XGameSetInterfaceRegistryVer1:GameSet">
+				<xs:annotation>
+					<xs:documentation>A Game Set is a shared (across themes) configuration that is built of sets of denominations that have individual RTP and max bet values.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required">
+			<xs:annotation>
+				<xs:documentation>Version of the section. Minor version must be sequential with previous section, and starting with 1.0</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Hash" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Checksum of configuration data within the section</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="GameSet">
+		<xs:annotation>
+			<xs:documentation>A Game Set is a shared (across themes) configuration that is built of sets of denominations that have individual RTP and max bet values.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DenomSetList" type="F2XGameSetInterfaceRegistryVer1:DenomSetList">
+				<xs:annotation>
+					<xs:documentation>A list of available sets of denominations. The denom sets will have a list of avialable denoms with specific settings for each.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LinkMapGroupList" type="F2XGameSetInterfaceRegistryVer1:LinkMapGroupList">
+				<xs:annotation>
+					<xs:documentation>A list of available Link Map Group names for use with the Game Set. The group name is an identifier that the operator will see, as well as an identifier used by the GameSetConfigData to define which specific link map to enable for each configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="GameSetName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The name of the game set this interface file creates. This will be displayed to operators during setup.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DenomSetList">
+		<xs:annotation>
+			<xs:documentation>A list of available sets of denominations.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DenomSet" type="F2XGameSetInterfaceRegistryVer1:DenomSet" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes a denomination set. A denom set will include between 1 and 6 available denoms, and describe the settings for each denom within the set. That data is matched to the GameSetConfigData file, to match configurations between the extension and themes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LinkMapGroupList">
+		<xs:annotation>
+			<xs:documentation>A list of available Link Map Group names for use with the Game Set. The group name is an identifier that the operator will see, as well as an identifier used by the GameSetConfigData to define which specific link map to enable for each configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LinkMapGroup" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The Link Map Group name is an identifier that the operator will see, as well as an identifier used by the GameSetConfigData to define which specific link map to enable for each configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DenomSet">
+		<xs:annotation>
+			<xs:documentation>A set of 1 to 6 denoms for use together.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Denom" type="F2XGameSetInterfaceRegistryVer1:Denom" maxOccurs="6">
+				<xs:annotation>
+					<xs:documentation>The values available for configuration for a specific denomination in a denom set. This entry will associate the denom value with available options for RTP and Max Bet values. Currently we restrict the number of denoms in a DenomSet to 1 minimum, and 6 maximum per the feature's requirements. It is possible this will be expanded in the future to more than 6.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Denom">
+		<xs:annotation>
+			<xs:documentation>The values available for configuration for a specific denomination in a denom set. This entry will associate the denom value with available options for RTP and Max Bet values.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RTPList" type="F2XGameSetInterfaceRegistryVer1:RTPList">
+				<xs:annotation>
+					<xs:documentation>A list of RTPs that will be selectable by the operator. Each RTP is a generalized value (e.g. "98%", not "97.89%") as this is for the entire game set. This generic form will be displayed to operators during setup directly. The GameSetConfigurationData file will associate this general value with a specific payvar for that theme.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxBetList" type="F2XGameSetInterfaceRegistryVer1:MaxBetList">
+				<xs:annotation>
+					<xs:documentation>A max bet value to be used for a game set. This value is the final value. That is to say, it is not resolved by the theme to a more specific value, but used directly.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Value" type="F2XRegistryTypesVer1:DenomType" use="required">
+			<xs:annotation>
+				<xs:documentation>The value of the denom being defined.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RTPList">
+		<xs:annotation>
+			<xs:documentation>A list of RTPs that will be selectable by the operator. Each RTP is a generalized value (e.g. "98%", not "97.89%") as this is for the entire game set. This generic form will be displayed to operators during setup directly. The GameSetConfigurationData file will associate this general value with a specific payvar for that theme.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RTP" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An RTP that is available for configuration. RTPs are a generalized value (e.g. "98%", not "97.89%") as this is for the entire game set. This generic form will be displayed to operators during setup directly. The GameSetConfigurationData file will associate this general value with a specific payvar for that theme.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MaxBetList">
+		<xs:annotation>
+			<xs:documentation>A list of max bets that are available for configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MaxBet" type="xs:long" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A max bet value to be used for a game set. This value is the final value. That is to say, it is not resolved by the theme to a more specific value, but used directly.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

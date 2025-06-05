@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by IGT (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:include schemaLocation="KenoWinCategory.xsd"/>
+	<xs:include schemaLocation="PaytableSection.xsd"/>
+	<xs:element name="KenoPaytableSection">
+		<xs:annotation>
+			<xs:documentation>A container for Keno paytable types.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="PaytableSection">
+					<xs:sequence>
+						<xs:element ref="KenoWinCategory" maxOccurs="unbounded"/>
+						<xs:element name="wagerCategoryIndexes" type="xs:unsignedInt" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="wagerCategorySpotsMarked" type="xs:unsignedInt" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="kenoName" type="xs:string" use="required"/>
+					<xs:attribute name="creditDivisor" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="numberOfSpotsPerCard" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="maxMarksPerCard" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="numberOfSpotsToDraw" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="minNumberOfSpotsMarkedPays" type="xs:unsignedInt" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

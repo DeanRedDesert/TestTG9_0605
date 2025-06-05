@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XEZSetupSetDataRegistryVer1="F2XEZSetupSetDataRegistryVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" targetNamespace="F2XEZSetupSetDataRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" vc:minVersion="1.1">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:import namespace="F2XConfigurationExtensionRegistryVer1.xsd" schemaLocation="F2XConfigurationExtensionRegistryVer1.xsd"/>
+	<xs:element name="EZSetupSetDataRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for providing data associated with EZ setup configuration sets.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:choice>
+						<xs:element name="LabelConfiguration" type="F2XEZSetupSetDataRegistryVer1:LabelConfiguration">
+							<xs:annotation>
+								<xs:documentation>Label Configuration: for each set we may provide labels in multiple languages.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="FoundationConfiguration" type="F2XEZSetupSetDataRegistryVer1:FoundationConfiguration">
+							<xs:annotation>
+								<xs:documentation>Foundation Configuration: for each set we may provide a selection of Foundation configuration options.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ThemeConfiguration" type="F2XEZSetupSetDataRegistryVer1:ThemeConfiguration">
+							<xs:annotation>
+								<xs:documentation>Theme Configuration: for each set we may provide a selection of Theme configuration options.  Requires the G2S Theme Identifier which the configuration options will be applied to.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ConfigExtensionConfiguration" type="F2XEZSetupSetDataRegistryVer1:ConfigExtensionConfiguration">
+							<xs:annotation>
+								<xs:documentation>Config Extension Configuration: for each set we may provide a selection of Configuration Extension options.  Requires the Config Extension Interface Definition for which the data is applied to.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BaseSetInterface">
+		<xs:annotation>
+			<xs:documentation>Base type representing a single set interface.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required"/>
+		<xs:attribute name="Hash" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="BaseSet">
+		<xs:annotation>
+			<xs:documentation>Base type representing set data.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="SetName" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="LabelConfiguration">
+		<xs:annotation>
+			<xs:documentation>Label Configuration: for each set we may provide labels in multiple languages.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LabelSetInterfaces" type="F2XEZSetupSetDataRegistryVer1:LabelSetInterfaces">
+				<xs:annotation>
+					<xs:documentation>Collection of set interfaces for label configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LabelSetInterfaces">
+		<xs:annotation>
+			<xs:documentation>Collection of set interfaces for label configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LabelSetInterface" type="F2XEZSetupSetDataRegistryVer1:LabelSetInterface" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Set Interface for Label Configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LabelSetInterface">
+		<xs:annotation>
+			<xs:documentation>Set Interface type for Label configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSetInterface">
+				<xs:sequence>
+					<xs:element name="LabelSet" type="F2XEZSetupSetDataRegistryVer1:LabelSet" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Set containing Label information.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LabelSet">
+		<xs:annotation>
+			<xs:documentation>Set type for containing Label information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSet">
+				<xs:sequence>
+					<xs:element name="LabelData" type="F2XEZSetupSetDataRegistryVer1:LabelData">
+						<xs:annotation>
+							<xs:documentation>Element containing a collection of Labels.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LabelData">
+		<xs:annotation>
+			<xs:documentation>Data type containing a collection of Labels.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Label" type="F2XEZSetupSetDataRegistryVer1:Label" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Label to use for displaying this set option in the EZ setup menu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Label">
+		<xs:annotation>
+			<xs:documentation>Label to use for displaying this set option in the EZ setup menu.  Language attribute states which language this label should be used for.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="Language" type="xs:string" default="en-US"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="FoundationConfiguration">
+		<xs:annotation>
+			<xs:documentation>Foundation Configuration: for each set we may provide a selection of Foundation configuration options.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FoundationSetInterfaces" type="F2XEZSetupSetDataRegistryVer1:FoundationSetInterfaces">
+				<xs:annotation>
+					<xs:documentation>Set Interfaces collection for Foundation configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FoundationSetInterfaces">
+		<xs:annotation>
+			<xs:documentation>Set Interfaces collection type for Foundation configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FoundationSetInterface" type="F2XEZSetupSetDataRegistryVer1:FoundationSetInterface" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Set Interface for Foundation configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FoundationSetInterface">
+		<xs:annotation>
+			<xs:documentation>Set Interface type for Foundation configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSetInterface">
+				<xs:sequence>
+					<xs:element name="FoundationSet" type="F2XEZSetupSetDataRegistryVer1:FoundationSet" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Set for containing Foundation configuration such as double up and attract settings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FoundationSet">
+		<xs:annotation>
+			<xs:documentation>Set type for containing Foundation configuration such as double up and attract settings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSet">
+				<xs:sequence>
+					<xs:element name="Attract" type="F2XEZSetupSetDataRegistryVer1:Attract" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Element controlling Attract settings on the EGM.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DoubleUp" type="F2XEZSetupSetDataRegistryVer1:DoubleUp" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Element controlling the Double Up settings on the EGM.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Attract">
+		<xs:annotation>
+			<xs:documentation>Type for controlling Attract settings on the Foundation.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MenuCycleBehavior" type="F2XEZSetupSetDataRegistryVer1:MenuCycleBehavior" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Enumeration describing the menu cycling behavior.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MenuTime" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Duration in minutes of the Game Selection Menu Attract.  Will be clamped at runtime to the EGM's minimum and maximum time for the jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GameTime" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Duration in minutes of the Game Attract.  Will be clamped at runtime to the EGM's minimum and maximum time for the jurisdiction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="MenuCycleBehavior">
+		<xs:annotation>
+			<xs:documentation>Enumeration describing the Game Selection Attract behavior.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CycleEnabledThemes">
+				<xs:annotation>
+					<xs:documentation>Cycle enabled themes.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ReturnToDefault">
+				<xs:annotation>
+					<xs:documentation>Return to the default theme.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ReturnToLast">
+				<xs:annotation>
+					<xs:documentation>Return to the last active theme.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DoubleUp">
+		<xs:annotation>
+			<xs:documentation>Type for controlling Double Up settings on the Foundation.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Enabled" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Control whether Double Up is enabled on the EGM.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxCycles" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Maximum number of cycles Double Up may occur.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ThemeConfiguration">
+		<xs:annotation>
+			<xs:documentation>Theme Configuration: for each set we may provide a selection of Theme configuration options.  Requires the G2S Theme Identifier which the configuration options will be applied to.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ThemeSetInterfaces" type="F2XEZSetupSetDataRegistryVer1:ThemeSetInterfaces">
+				<xs:annotation>
+					<xs:documentation>Set Interfaces for Theme configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="G2SThemeId" type="F2XEZSetupSetDataRegistryVer1:G2SThemeIdentifier" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="G2SThemeIdentifier">
+		<xs:annotation>
+			<xs:documentation>Identifies a theme.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="ThemeSetInterfaces">
+		<xs:annotation>
+			<xs:documentation>Set Interfaces collection type for Theme configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ThemeSetInterface" type="F2XEZSetupSetDataRegistryVer1:ThemeSetInterface" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Set Interface for Theme configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ThemeSetInterface">
+		<xs:annotation>
+			<xs:documentation>Set Interface type for Theme configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSetInterface">
+				<xs:sequence>
+					<xs:element name="ThemeSet" type="F2XEZSetupSetDataRegistryVer1:ThemeSet" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Set containing Theme configuration data.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ThemeSet">
+		<xs:annotation>
+			<xs:documentation>Set type for containing Theme configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSet">
+				<xs:sequence>
+					<xs:element name="ThemeSettings" type="F2XEZSetupSetDataRegistryVer1:ThemeSettings" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Element for Theme-specific settings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PayvarSettings" type="F2XEZSetupSetDataRegistryVer1:PayvarSettings" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Element for Payvar-specific settings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DenomSettings" type="F2XEZSetupSetDataRegistryVer1:DenomSettings" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Element for Denom-specific settings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ThemeSettings">
+		<xs:annotation>
+			<xs:documentation>Container type for Theme-specific settings (e.g. Theme specific max bet)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MaxBet" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Theme-level max bet setting for this theme.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayvarSettings">
+		<xs:annotation>
+			<xs:documentation>Container type for all payvar settings within this theme.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Payvar" type="F2XEZSetupSetDataRegistryVer1:PayvarSettingsPayvar" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Element containing configuration information for a specific Payvar.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayvarSettingsPayvar">
+		<xs:annotation>
+			<xs:documentation>Container for the Payvar specific settings (e.g. Per-payvar max bet)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MaxBet" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Max bet configuration for this payvar (ignored if payvar-specific max bet is not allowed for this theme).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="PayvarName" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DenomSettings">
+		<xs:annotation>
+			<xs:documentation>Container type for all Denom settings within this theme.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Denom" type="F2XEZSetupSetDataRegistryVer1:DenomSettingsDenom" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Element containing configuration information for a specific Denom.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DenomSettingsDenom">
+		<xs:annotation>
+			<xs:documentation>Container for the denom-specific settings in this theme (e.g. Per-denom max bet, enabled payvar)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="EnabledPayvar" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The name of the payvar in this theme to enable at this denom.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxBet" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Max bet configuration for this denom.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Denom" type="F2XRegistryTypesVer1:DenomType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ConfigExtensionConfiguration">
+		<xs:annotation>
+			<xs:documentation>Config Extension Configuration: for each set we may provide a selection of Configuration Extension options.  Requires the Config Extension Interface Definition for which the data is applied to.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigInterfaceDefinition" type="F2XEZSetupSetDataRegistryVer1:ConfigInterfaceDefinition">
+				<xs:annotation>
+					<xs:documentation>Element containing the Config Interface Definition to provide values for.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConfigExtensionSetInterfaces" type="F2XEZSetupSetDataRegistryVer1:ConfigExtensionSetInterfaces">
+				<xs:annotation>
+					<xs:documentation>Set Interfaces for Config Extension configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConfigExtensionSetInterfaces">
+		<xs:annotation>
+			<xs:documentation>Set Interfaces collection type for Config Extension configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigExtensionSetInterface" type="F2XEZSetupSetDataRegistryVer1:ConfigExtensionSetInterface" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Set Interface for Config Extension configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConfigExtensionSetInterface">
+		<xs:annotation>
+			<xs:documentation>Set Interface type for Config Extension configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSetInterface">
+				<xs:sequence>
+					<xs:element name="ConfigExtensionSet" type="F2XEZSetupSetDataRegistryVer1:ConfigExtensionSet" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Set containing Config Extension configuration.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConfigExtensionSet">
+		<xs:annotation>
+			<xs:documentation>Set type for containing Config Extension configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="F2XEZSetupSetDataRegistryVer1:BaseSet">
+				<xs:sequence>
+					<xs:element name="ConfigItems" type="F2XRegistryTypesVer1:CustomConfigItemsType">
+						<xs:annotation>
+							<xs:documentation>Collection of config items.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConfigInterfaceDefinition">
+		<xs:annotation>
+			<xs:documentation>Type containing the Config Extension Interface to link against.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="InterfaceName" type="F2XRegistryTypesVer1:ExtensionName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Optional element containing a human readable name for the Config Interface Extension.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterfaceIdentifier" type="F2XRegistryTypesVer1:ExtensionId">
+				<xs:annotation>
+					<xs:documentation>Element containing the Extension Id of the Config Interface Extension.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterfaceVersion" type="F2XRegistryTypesVer1:ExtensionVersion">
+				<xs:annotation>
+					<xs:documentation>Element containing the version of the Config Interface Extension.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

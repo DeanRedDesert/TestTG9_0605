@@ -1,0 +1,24 @@
+{
+  "name": "IGT.Game.Core.Logic.Evaluator",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Logging",
+    "IGT.Ascent.OutcomeList",
+    "IGT.Ascent.OutcomeList.Interfaces",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Progressive.Interfaces",
+    "IGT.Game.Core.Logic.PaytableLoader.Interfaces",
+    "IGT.Game.Core.Logic.ProgressiveController",
+    "IGT.Game.Core.Logic.Evaluator.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:complexType name="Cell">
+		<xs:annotation>
+			<xs:documentation>Defines a cell in terms of name and unique indexes. The index model is composed of a layer, column and row.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="layer" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>Zero based layer index</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="column" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>Zero based column index</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="row" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>Zero based row index</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

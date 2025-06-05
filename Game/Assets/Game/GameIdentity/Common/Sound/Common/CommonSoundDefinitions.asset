@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6279fa92149344f8416884c37ab7d1, type: 3}
+  m_Name: CommonSoundDefinitions
+  m_EditorClassIdentifier: 
+  soundDefinitionsList:
+  - id: ButtonClickSound
+    clip: {fileID: 8300000, guid: e7e980cf8dc046043bd461f888376ebc, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: CashIn
+    clip: {fileID: 8300000, guid: df487e9d2cb67c040894d56dd9d31660, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Tyrell Atterberry (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionInterfaceDefinitionRegistryVer1="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" xmlns:F2XConfigurationExtensionInterfaceDefinitionRegistryVer1="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1.xsd" targetNamespace="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd"/>
+	<xs:element name="ConfigurationExtensionInterfaceDefinitionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a configuration extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionInterfaceDefinitionRegistryVer1:ExtensionInterfaceDefinitionRegistry">
+					<xs:sequence>
+						<xs:element name="VersionedConfigSections" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:VersionedConfigSections">
+							<xs:annotation>
+								<xs:documentation>Contains a list of configuration items that must be provided to meet the interface definition's requirements for a specific version.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="VersionedConfigSection">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="ConfigItems" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:ConfigItemDefinitions">
+				<xs:annotation>
+					<xs:documentation>Contains a list of configuration items that must be provided to meet the interface definition's requirements for a specific version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required">
+			<xs:annotation>
+				<xs:documentation>Version of the section. Minor version must be sequential with previous section, and starting with 1.0.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Hash" use="required">
+			<xs:annotation>
+				<xs:documentation>Checksum of configuration data within the section.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="VersionedConfigSections">
+		<xs:sequence>
+			<xs:element name="VersionedSection" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:VersionedConfigSection" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains the configuration item definitions by version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Configuration Item Definitions -->
+	<xs:complexType name="AmountType">
+		<xs:annotation>
+			<xs:documentation> Amount data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Min" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>Minimum inclusive value</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Max" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>Maximum inclusive value</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BooleanType">
+		<xs:annotation>
+			<xs:documentation> Boolean data type used in configuration</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="EnumerationType">
+		<xs:annotation>
+			<xs:documentation> Enumeration data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Enumeration" maxOccurs="64">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FlagListType">
+		<xs:annotation>
+			<xs:documentation>Flag list data type used in configuration. Contains subset of the elements defined in EnumReferenceList</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="EnumReferenceList" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="FloatType">
+		<xs:annotation>
+			<xs:documentation>Float data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Min" type="xs:float">
+			<xs:annotation>
+				<xs:documentation>Minimum inclusive value</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Max" type="xs:float">
+			<xs:annotation>
+				<xs:documentation>Maximum inclusive value</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Int64Type">
+		<xs:annotation>
+			<xs:documentation>Int64 data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Min" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>Minimum inclusive value</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Max" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>Maximum inclusive value</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ItemType">
+		<xs:annotation>
+			<xs:documentation>Item data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="EnumReferenceList" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="StringType">
+		<xs:annotation>
+			<xs:documentation>String data type used in configuration</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="MinLen" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Minimum length of the string</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="MaxLen" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>Maximum length of the string</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ConfigItemDefinitionType">
+		<xs:choice>
+			<xs:element name="AmountType" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:AmountType"/>
+			<xs:element name="BooleanType" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:BooleanType"/>
+			<xs:element name="EnumerationType" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:EnumerationType"/>
+			<xs:element name="FlagListType" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:FlagListType"/>
+			<xs:element name="FloatType" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:FloatType"/>
+			<xs:element name="Int64Type" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:Int64Type"/>
+			<xs:element name="ItemType" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:ItemType"/>
+			<xs:element name="StringType" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:StringType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ConfigItemDefinitions">
+		<xs:annotation>
+			<xs:documentation>Sequence of configuration item definitions.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConfigItemDefinition" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Type" type="F2XConfigurationExtensionInterfaceDefinitionRegistryVer1:ConfigItemDefinitionType"/>
+					</xs:sequence>
+					<xs:attribute name="Name" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>Configuration item name.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

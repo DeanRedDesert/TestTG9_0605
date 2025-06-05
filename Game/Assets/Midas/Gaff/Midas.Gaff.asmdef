@@ -1,0 +1,26 @@
+{
+    "name": "Midas.Gaff",
+	"rootNamespace": "",
+	"references": [
+		"Midas.Core",
+		"Midas.Logging",
+		"Midas.Presentation",
+		"IGT.Ascent.Utp.Framework",
+		"GleLogic",
+		"Midas.Gle.Logic",
+		"Midas.Logic",
+		"Midas.LogicToPresentation",
+		"Midas.Gle.LogicToPresentation",
+		"Midas.Gle.Presentation",
+		"Unity.TextMeshPro"
+	],
+	"includePlatforms": [],
+	"excludePlatforms": [],
+	"allowUnsafeCode": false,
+	"overrideReferences": false,
+	"precompiledReferences": [],
+	"autoReferenced": true,
+	"defineConstraints": [],
+	"versionDefines": [],
+	"noEngineReferences": false
+}

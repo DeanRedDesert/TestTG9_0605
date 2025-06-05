@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<!-- edited with XML Spy v4.1 U (http://www.xmlspy.com) by Vince Bruzzese (private) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:complexType name="Strip">
+		<xs:sequence>
+			<xs:element name="Stop" type="StopType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of stops on this strip.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Name of this strip. This value is used when mapping strips to population entries in the symbol window.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="StopType">
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Symbol id for this stop. This would normally be a symbol.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="weight" type="xs:int" use="required">
+			<xs:annotation>
+				<xs:documentation>Weight associated with this stop. Typically used when selecting from a list of weighted stops.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="StripList">
+		<xs:sequence>
+			<xs:element name="Strip" type="Strip" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of strips contained in this list.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name">
+			<xs:annotation>
+				<xs:documentation>Name of this strip list.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="StripList" type="StripList"/>
+</xs:schema>

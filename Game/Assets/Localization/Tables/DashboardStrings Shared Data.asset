@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: DashboardStrings Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: DashboardStrings
+  m_TableCollectionNameGuidString: edef3e2288e04a8498fe7024dd2d6212
+  m_Entries:
+  - m_Id: 818056134656
+    m_Key: LinePlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 856132026368
+    m_Key: LinesPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4426277453824
+    m_Key: MultiwayPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4450352758784
+    m_Key: BonsuPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4468287602688
+    m_Key: BonsuLinePlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4489993125888
+    m_Key: BonusLinesPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4523518197760
+    m_Key: BonusMultiwayPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4554048536576
+    m_Key: StartPlayoff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4560411295744
+    m_Key: StartPlayoffOrChangeBet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4563045318656
+    m_Key: PlayingPlayoffWithCredits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4565880668160
+    m_Key: PressGambleOrStartPlayoff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4568279810048
+    m_Key: PressGambleOrStartPlayoffOrChangeBet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4780968771584
+    m_Key: FreeGamesTriggerPays
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4782751350784
+    m_Key: FreeGamesReTriggerPays
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4784240328704
+    m_Key: LinePay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4785469259776
+    m_Key: ScatterPay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4786836602880
+    m_Key: MultiwayPay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4788170391552
+    m_Key: MultiwayPays
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4789504180224
+    m_Key: ProgressivePays
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11912787132416
+    m_Key: GameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11914531962880
+    m_Key: GoodLuck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11916268404736
+    m_Key: GamePaysGameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11917933543424
+    m_Key: GamePays
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14998544973824
+    m_Key: MoreGames
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15002030440448
+    m_Key: GameRules
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15005914365952
+    m_Key: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15009987035136
+    m_Key: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15020254691328
+    m_Key: Win
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15024390275072
+    m_Key: Paid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15029305999360
+    m_Key: TakeWin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15033483526144
+    m_Key: Bet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15047907737600
+    m_Key: Choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15051242209280
+    m_Key: MinBet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20422576963584
+    m_Key: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20424472788992
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40543864992329728
+    m_Key: Credit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42002566324711424
+    m_Key: PressTakeWin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42002952926294016
+    m_Key: GambleAvailable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42079863945850880
+    m_Key: BetLinesAndMultiway
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42088150686789632
+    m_Key: BetLines
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42088338646134784
+    m_Key: BetMultiway
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42358019042865152
+    m_Key: Tokenization
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1738296769600

@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2LRegistryTypeVer2="F2LRegistryTypeVer2.xsd" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2LThemeRegistryVer5="F2LThemeRegistryVer5.xsd" targetNamespace="F2LThemeRegistryVer5.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="5.28">
+	<!-- Minor revision 5.14: Added WinCappingSupported boolean flag. -->
+	<!-- Minor revision 5.15: Deprecate StaticPaytableDigitalGlassEnabled from G2SCustomConfigItemMapping. Added EnableRestriction. -->
+	<!-- Minor revision 5.16: Added MenuInterfaceVersion 1.4 (button panel min bet) and SAPThemeId element. -->
+	<!-- Minor revision 5.17: Added the support of shell registry by modifying the BinRegistry to be optional, and adding an optional ShellRegistry. -->
+	<!-- Minor revision 5.18: Deprecate SerialIPPConfiguration/WapSystemId in favor of Progressive Concept elements and Link Maps. -->
+	<!-- Minor revision 5.19: Added to support Nevada Boot. -->
+	<!-- Minor revision 5.20: Added support for hierarchy of custom menu tabs -->
+	<!-- Minor revision 5.21: Added to support Netherlands Boot by incrementing MenuInterfaceVersion to 1.6. -->
+	<!-- Minor revision 5.22: Added ExtensionImportList to ThemeSpecificMenuPages for use with Rest API extensions. -->
+	<!-- Minor revision 5.23: Added LineSelectionConfiguration -->
+	<!-- Minor revision 5.24: Added GameType VideoKingBingo -->
+	<!-- Minor revision 5.25: Added AccountingType attribute -->
+	<!-- Minor revision 5.26: Deprecate BetStepsPage from ThemeSpecificMenuPages.  Added SetupPages to allow any number of generic theme specific menus to be defined. -->
+	<!-- Minor revision 5.27: Added the ability for themes to specify the hardware requirement for cashout and service buttons. -->
+	<!-- Minor revision 5.28, Removed pattern restriction for CultureStringType.-->
+	<xs:import namespace="F2LRegistryTypeVer2.xsd" schemaLocation="F2LRegistryTypeVer2.xsd"/>
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="ThemeRegistry">
+		<xs:annotation>
+			<xs:documentation>Game discovery registry for describing a theme and the initial state of theme related configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ThemeNameKey" type="F2LThemeRegistryVer5:LocalizationKey">
+					<xs:annotation>
+						<xs:documentation>Key used to resolve the localized Theme Name, used for display purposes as assigned by game designer.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BinRegistry" type="xs:anyURI" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>
+							Relative path to a bin registry to which this theme belongs.
+							Optional, if specified, indicate that this theme registry is pointing to a game Bin.
+							NOTE: Must have either BinRegistry or ShellRegistry (and ONLY one) shall be existing.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ShellRegistry" type="xs:anyURI" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>
+							Relative path to a shell registry to which this theme belongs.
+							Optional, if specified, indicate that this theme registry is pointing to a game Shell.
+							NOTE: Must have either BinRegistry or ShellRegistry (and ONLY one) shall be existing.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ReportRegistry" type="xs:anyURI" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Relative path to report registry that will handle reporting functions for the theme. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="G2SThemeId">
+					<xs:annotation>
+						<xs:documentation>Unique G2S theme identifier.  This ID must be unique across ALL themes in ALL packages to satisfy uniqueness in the G2S domain.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="27"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SAPThemeId" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Unique SAP theme identifier with fixed length of 3 characters. This ID must be unique across all themes period.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="3"/>
+							<xs:maxLength value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Type">
+					<xs:annotation>
+						<xs:documentation>Theme type (e.g. Slot, Poker, Keno, etc.).  Used in grouping themes for Operator menus.  Restricted by enumeration.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Slot"/>
+							<xs:enumeration value="Keno"/>
+							<xs:enumeration value="Poker"/>
+							<xs:enumeration value="Blackjack"/>
+							<xs:enumeration value="Bingo"/>
+							<xs:enumeration value="Other"/>
+							<xs:enumeration value="VideoKingBingo"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+            <xs:element name="AccountingType" default="LegacyCasinoGame" minOccurs="0">
+               <xs:annotation>
+                  <xs:documentation>Used in hybrid accounting to differentiate between live table vs legacy slot games.  Restricted by enumeration.</xs:documentation>
+               </xs:annotation>
+               <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                     <xs:enumeration value="LegacyCasinoGame">
+								<xs:annotation>
+									<xs:documentation>Currently, all RNG games are considered LegacyCasinoGame.</xs:documentation>
+								</xs:annotation>
+                     </xs:enumeration>
+                     <xs:enumeration value="LiveTableGame"/>
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:element>
+            <xs:element name="ResourceDirectory" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Specifies the resource directory relative to the package root containing resources and localization tables.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ThemeSelectionMenu">
+					<xs:annotation>
+						<xs:documentation>Information and resources required to present the theme to the player.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ThemeIconKey" type="F2LThemeRegistryVer5:LocalizationKey">
+								<xs:annotation>
+									<xs:documentation>Image resource containing an icon used for theme selection (e.g. theme selection menu). This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ThemeLogoKey" type="F2LThemeRegistryVer5:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Image resource containing a logo used for larger display areas (e.g. the top box). This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ThemePromoKey" type="F2LThemeRegistryVer5:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Image resource used to promote the theme to the player in the Theme Selection Menu (e.g. advertises major game features). This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ThemeLoadingDisplayKey" type="F2LThemeRegistryVer5:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Image  resouce to be used while the theme is loading. This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ThemeAttractKey" type="F2LThemeRegistryVer5:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Movie resource to be used for attract (on the top box). This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="MenuTabs" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The tab(s) on the theme selection menu where the theme should appear.  If this optional element is missing it indicates that the theme will only show up on the "All Games" tab (and any custom tabs as defined elsewhere).</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="MenuTab" minOccurs="1" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Theme selection menu tab.  Restricted by enumeration.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Blackjack"/>
+													<xs:enumeration value="iGame"/>
+													<xs:enumeration value="Keno"/>
+													<xs:enumeration value="Poker"/>
+													<xs:enumeration value="Reel"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="CustomMenuTabs" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The tab(s) on the theme selection menu where the theme should appear.  This is a custom tab that is not part of the standard enumerated list.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CustomMenuTabKey" type="F2LThemeRegistryVer5:LocalizationKey" minOccurs="1" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Source resource resolving to a custom theme selection menu tab.  NOT restricted by enumeration. This is a localized value.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="HierarchicalCustomMenuTabs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The multilayered filtering on the game setup menu page as well as the chooser. Filtering depths beyond 2 are not officially supported within the menu page and filtering depths for custom choosers will be chooser specific. If this and the CustomMenuTabs are present the CustomMenuTabs data will be ignored.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Tabs" type="F2LThemeRegistryVer5:HierarchicalCustomMenuTabNode" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>This is the filtering data for the theme selection menu page.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TagDataFile" minOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Custom theme related file for use with the game.  Passed to the game during startup.  Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="Tag" type="xs:string">
+									<xs:annotation>
+										<xs:documentation>Custom theme related data for use with the game.  Passed to the game during startup.  Opaque to the Foundation.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ConfigurationRuleScript" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Relative path to the configuration rule script.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="F2LThemeRegistryVer5:ConfigurationRuleScriptFileType">
+								<xs:attribute name="ConfigurationRuleInterfaceVersion" type="F2LThemeRegistryVer5:ConfigurationRuleInterfaceVersion" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the version of the interface used by configuration rules.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CustomConfigItems" type="F2LRegistryTypeVer2:CustomConfigItemsType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains all custom configuration items being declared for the theme scope.  Custom config items are items stored for the game by the Foundation, but are not otherwise interpreted or configured except through the use of game specific plug-in menus and config rule scripts.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="G2SCustomConfigItemMapping" type="F2LThemeRegistryVer5:G2SCustomConfigItemMappingType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains a listing of G2S configuration items that need to be mapped to the theme's custom configuration items, if supported.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MaxBetResolution">
+					<xs:annotation>
+						<xs:documentation>Specifies that the max bet is configured as either "per theme", "per payvar", or "per payvar denomination".  If it is "per theme" then the max bet is defined in the theme registry; else it defined in the payvar.  This should be renamed "BetResolution" in the next major release.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="PerTheme"/>
+							<xs:enumeration value="PerPayvar"/>
+							<xs:enumeration value="PerPayvarDenomination"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ButtonPanelMinBet" type="F2LRegistryTypeVer2:MaxBetType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Minimum bet in credits that the button panel is allowed to display. When MaxBetResolution is "per theme" then the ButtonPanelMinBet element must exist in ThemeRegistry or it is defaulted to 0 to indicate there is no button panel min bet, otherwise min bet is setup in the payvar registry.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MaxBet" type="F2LRegistryTypeVer2:MaxBetType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Maximum bet in credits. When MaxBetResolution is "per theme" then the MaxBet element must exist in ThemeRegistry, otherwise max bet is setup in the payvar registry.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MaxBetButtonBehaviorSupported" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Specifies the supported behavior of the max bet button.  "BetMaxCreditsOnly" should be specified if the max bet button can only be used when credits are greater than or equal to max bet.  "BetAvailableCredits" should be specified if the max bet button can be used to bet up to the available credits.  If not present, defaults to "BetMaxCreditsOnly"</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="BetMaxCreditsOnly"/>
+							<xs:enumeration value="BetAvailableCredits"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Properties" type="F2LRegistryTypeVer2:PropertiesType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Provides flexible/loosely coupled way of declaring static properties visible to the AI/Foundation.  Example: An optional AI package may contain a  custom Theme Selection Menu that may use properties to identify games that it is compatible with it.  Properties should be organized under sections and should be viewed as Key, Value pairs.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EnableRestriction" default="None" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Specifies restrictions that must be met for enabling this theme.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="None">
+								<xs:annotation>
+									<xs:documentation>No restrictions from this item will be imposed on enabling the theme.</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="ExclusiveTheme">
+								<xs:annotation>
+									<xs:documentation>The theme must be the only enabled theme on the EGM. No other themes can be enabled at the same time.</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MaxNumberOfEnabledDenominations" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Used to determine up to how many denoms may be enabled for the theme.   If this element is not present then the maximum allowed by the Foundation/jurisdiction will be allowed.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedShort">
+							<xs:minInclusive value="1"/>
+							<xs:maxInclusive value="64"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="WapSystemId" type="xs:unsignedInt" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Use by WAP progressive controllers.  This decimal number (base 10) is sent by the game to the CCOM during communications to ensure that both are configured for the same WAP.  All non-WAP games are, by default, WAMM games and this field will be set to 40 by the foundation if this element is omitted.  DEPRECATED in favor of Progressive Concept elements and Link Maps. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AutoPlaySupported" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>True if this theme supports player autoplay.  This is an optional element with a default value of "false" if not present.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AutoPlayConfirmationSupported" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>True if this theme supports confirmation before honoring a player’s request to start autoplay. Autoplay confirmation requires the player to confirm (via a second touch/command) a request to start autoplay as required by some jurisdictions.  This is an optional element with a default value of "false" if not present. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SyncSation" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Provides configuration information for the SyncSation feature.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Behavior" type="F2LThemeRegistryVer5:SyncSationBehavior" default="OptIn" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Indicates how the SyncSation feature should behave when the theme is active.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SerialIPP" type="F2LThemeRegistryVer5:SerialIPPConfiguration" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>IGT Progressive Protocol configuration data. Required if theme is to support IPP.   DEPRECATED in favor of Progressive Concept elements and Link Maps.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="F2LThemeRegistryVer5:ThemeSpecificMenuPages" minOccurs="0"/>
+				<xs:element name="HandpayOverrideSoundKey" type="F2LThemeRegistryVer5:LocalizationKey" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Localized reosource key to the sound file to be played/looped during a handpay lock up of this theme. This element is optional and if present will be played in place of the Foundation's default handpay sound.  This is a localized value.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SupportedCultures">
+					<xs:annotation>
+						<xs:documentation>The list of cultures supported by the theme.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Culture" type="F2LThemeRegistryVer5:CultureStringType" minOccurs="1" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A culture supported by the theme.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="MaxNumberOfEnabledCultures" type="xs:unsignedByte" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Maximum number of cultures that the foundation is allowed to enable for the theme concurrently.  If not present, defaults to 2.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="VBPConfigurationFile" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Virtual Button Panel configuration file. Used to configure the Virtual Button Panel for themes that do not support the DPP. </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="F2LThemeRegistryVer5:VBPConfigurationFileType">
+								<xs:attribute name="Version" type="F2LThemeRegistryVer5:VBPConfigurationFileVersion" use="required">
+									<xs:annotation>
+										<xs:documentation>VBP Configuration File version.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="HardwareRequirements" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Theme specific hardware requirements.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TopMonitorPortraitRequired" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Indicates the theme requirement for the top monitor to be configured for portrait mode. This element will default to false.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CashoutServiceButtonsRequired" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Indicates the theme requirement for the EGM to have either physical or emulated cashout and service buttons. This element will default to true.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DaysToDisplayAsNew" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The initial number of days to display as a "new" theme, from the install date.  0 indicates never display as "new."  If not present, defaults to 60.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="180"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="AttractConfiguration" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Attract related configuration items.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AttractSupportedPlayListGroups" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>List of attract group identifiers supported by the game theme.  This may be used to support synchronized attracts/lighting for a bank of machines.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PlayListGroupId" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>The play list group identifier that defines the attract requirements (e.g. lighting patterns and synchronization).</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:unsignedShort">
+													<xs:minInclusive value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="F2XRegistryTypesVer1:ExtensionImportList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines extensions (i.e. add-on content) that may be linked to this theme.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="RoundWagerUpPlayoffSupported" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>True if this theme supports round wager up playoff.  This is an optional element with a default value of "false" if not present.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="UtilityModeSupported" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>True if this theme supports utility mode (e.g. game evaluation diagnostic).  This is an optional element with a default value of "true" if not present.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="WinCappingSupported" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>True if this theme supports win capping.  This is an optional element with a default value of "false" if not present.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LineSelectionConfiguration" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Line selection configuration.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DefaultLineSelection" type="F2LThemeRegistryVer5:LineSelection">
+								<xs:annotation>
+									<xs:documentation>Specifies the type of default line selection.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AvailableLineSelections">
+								<xs:annotation>
+									<xs:documentation>The list of available line selection configurations supported by theme.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="LineSelection" type="F2LThemeRegistryVer5:LineSelection" minOccurs="1" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="SyncSationBehavior">
+		<xs:annotation>
+			<xs:documentation>Type describing the SyncSation feature behavior.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OptIn">
+				<xs:annotation>
+					<xs:documentation>Opt in to the SyncSation feature allowing SyncSation to run while the theme is active (Default).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OptOut">
+				<xs:annotation>
+					<xs:documentation>Opt out of the SyncSation feature, preventing SyncSation from running while the theme is active.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TournamentOptOut">
+				<xs:annotation>
+					<xs:documentation>Same behavior as OptIn, but will not allow SyncSation feature if the Theme is activated with a Tournament payvar.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MenuInterfaceVersion">
+		<xs:annotation>
+			<xs:documentation>Type identifying the version of the menu interface.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1.0"/>
+			<xs:enumeration value="1.1"/>
+			<xs:enumeration value="1.2"/>
+			<xs:enumeration value="1.3"/>
+			<xs:enumeration value="1.4"/>
+			<xs:enumeration value="1.5"/>
+			<xs:enumeration value="1.6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VBPConfigurationFileType">
+		<xs:annotation>
+			<xs:documentation>Type used to specify the VBP Configuration File.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI">
+			<xs:pattern value=".+\.xvbpconf"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VBPConfigurationFileVersion">
+		<xs:annotation>
+			<xs:documentation>Type identifying the version of the VBP Configuration File.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([0-9]+\.[0-9]+)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MenuAccessRequirement">
+		<xs:annotation>
+			<xs:documentation>Type describing the access requirement to show a plug-in menu page.  GameInProgressOrGreater is the least restrictive and the menu page will be shown on Ekey, Operator, and Attendant level access even if a game is currently in progress.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Invalid"/>
+			<xs:enumeration value="GameInProgressOrGreater"/>
+			<xs:enumeration value="AttendantOrGreater"/>
+			<xs:enumeration value="OperatorOrGreater"/>
+			<xs:enumeration value="Ekey"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IPPContributionPercent">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3" fixed="false"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SerialIPPConfiguration">
+		<xs:annotation>
+			<xs:documentation>IGT Progressive Protocol configuration data.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BonusType" type="xs:unsignedByte">
+				<xs:annotation>
+					<xs:documentation>The designated IPP identifier for this theme.
+This value is agreed upon between the IPP controller and the theme, and must match in order for the controller to begin communication with the EGM.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllowNonIPPController" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>True if this theme allows non-IPP controllers when "BonusType" is non-zero.  This is an optional element with a default value of "false" if not present.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllowMultipleProgressiveControllers" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>True if this theme allows progressive configuration from controllers in addition to the IPC.
+A false value will cause Serial IPP to validate all progressive links for this theme as being IPP controlled.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MatchContributionLevels" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List of progressive level expected contributions.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Contribution" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The expected contribution percentage for this progressive level.
+If this value and the contribution percentage reported by the IPC do not match, then the progressive configuration for this theme will be reported as invalid.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="F2LThemeRegistryVer5:IPPContributionPercent">
+										<xs:attribute name="Level" type="xs:int" use="required">
+											<xs:annotation>
+												<xs:documentation>Progressive level associated with the contribution.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="CultureStringType">
+		<xs:annotation>
+			<xs:documentation>Culture Format:It should follow Windows OS locale format((LCID) Reference: https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f). Language code should follow ISO 639-1; Region Code should follow the ISO 3166-1.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="LocalizationKey">
+		<xs:annotation>
+			<xs:documentation>A localized resource key, used to find a matching resource id within a specific culture to retrieve a resouce.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ConfigurationRuleScriptFileType">
+		<xs:restriction base="xs:anyURI">
+			<xs:pattern value=".+\.js"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ConfigurationRuleInterfaceVersion">
+		<xs:annotation>
+			<xs:documentation>Type identifying the version of the custom configuration rules interface.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LineSelection">
+		<xs:annotation>
+			<xs:documentation>Enumeration describing the type of the line selections.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Forced">
+				<xs:annotation>
+					<xs:documentation>The player cannot switch the number of lines played. The value is maintained per game.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PlayerSelectable">
+				<xs:annotation>
+					<xs:documentation>Availability of manually selectable number of lines during a game play.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="G2SCustomConfigItemMappingType">
+		<xs:annotation>
+			<xs:documentation>A mapping of named G2S configuration items to the theme's custom configuration items, if supported.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="EasyBetEnabled" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The custom config item that maps to "EASY BET ENABLED" for G2S.  This must be a BooleanData or ItemData configuration item.  This item is used to configure restricting bets to predetermined levels.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StaticPaytableDigitalGlassEnabled" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>*** DEPRECATED in version 5.14; field will be accepted but have no functionality. ***</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HierarchicalCustomMenuTabNode">
+		<xs:annotation>
+			<xs:documentation>An object to hold the filtering hierarchy.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Key" type="F2LThemeRegistryVer5:LocalizationKey">
+				<xs:annotation>
+					<xs:documentation>A localized key representing the current filter level value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Children" type="F2LThemeRegistryVer5:HierarchicalCustomMenuTabNode" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The subtree off of the current tab node.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ThemeSpecificMenuPages">
+		<xs:annotation>
+			<xs:documentation>Provides the theme specific menus pages that may plug into the Attendant/Operator menus.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ThemeSpecificMenuPageRoot" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>ThemeSpecificMenuPageRoot specifies the root directory that shall contain all resources for the theme specific menu pages defined below. This path is relative to the root of the package and is used as the search path to find menu pages as well as resources referenced from within those menu pages.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="F2XRegistryTypesVer1:ExtensionImportList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines extensions (i.e. add-on content) that may be linked to this theme specific menu pages.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AccountingPage" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Menu page URL for theme specific accounting information.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="MenuInterfaceVersion" type="F2LThemeRegistryVer5:MenuInterfaceVersion" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the version of the interface used by the plugin menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="AccessRequirement" type="F2LThemeRegistryVer5:MenuAccessRequirement" use="required">
+									<xs:annotation>
+										<xs:documentation>The minimum Attendant/Operator access requirement to show the menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LogPage" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Menu page URL for theme specific log information.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="MenuInterfaceVersion" type="F2LThemeRegistryVer5:MenuInterfaceVersion" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the version of the interface used by the plugin menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="AccessRequirement" type="F2LThemeRegistryVer5:MenuAccessRequirement" use="required">
+									<xs:annotation>
+										<xs:documentation>The minimum Attendant/Operator access requirement to show the menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SetupPage" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Menu page URL for theme specific configuration.  This is mutually exclusive with the SetupPages collection, and will be enforced at runtime.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="MenuInterfaceVersion" type="F2LThemeRegistryVer5:MenuInterfaceVersion" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the version of the interface used by the plugin menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="AccessRequirement" type="F2LThemeRegistryVer5:MenuAccessRequirement" use="required">
+									<xs:annotation>
+										<xs:documentation>The minimum Attendant/Operator access requirement to show the menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BetStepsPage" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Menu page URL for theme specific bet steps configuration which will be loaded from the Game Setup Page. Security will handled by the game setup page.  DEPRECATED in 5.25 in favor of SetupPages.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="MenuInterfaceVersion" type="F2LThemeRegistryVer5:MenuInterfaceVersion" use="required">
+									<xs:annotation>
+										<xs:documentation>Identifies the version of the interface used by the plugin menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="AccessRequirement" type="F2LThemeRegistryVer5:MenuAccessRequirement" use="required">
+									<xs:annotation>
+										<xs:documentation>The minimum Attendant/Operator access requirement to show the menu page.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SetupPages" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Collection of Menu page URLs for theme specified configurations.  This is mutually exclusive with the SetupPage element, and will be enforced at runtime.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SetupPage" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Menu page URL for theme specific configuration.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:anyURI">
+											<xs:attribute name="LabelKey" type="F2LThemeRegistryVer5:LocalizationKey" use="required">
+												<xs:annotation>
+													<xs:documentation>Identifies the localization key used to translate the button label for display in the operator menus.</xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+											<xs:attribute name="MenuInterfaceVersion" type="F2LThemeRegistryVer5:MenuInterfaceVersion" use="required">
+												<xs:annotation>
+													<xs:documentation>Identifies the version of the interface used by the plugin menu page.</xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+											<xs:attribute name="AccessRequirement" type="F2LThemeRegistryVer5:MenuAccessRequirement" use="required">
+												<xs:annotation>
+													<xs:documentation>The minimum Attendant/Operator access requirement to show the menu page.</xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,18 @@
+{
+  "name": "IGT.Ascent.Communication.Platform.CoplayerLib.Interfaces",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.OutcomeList.Interfaces",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Threading",
+    "IGT.Ascent.Communication.Platform.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

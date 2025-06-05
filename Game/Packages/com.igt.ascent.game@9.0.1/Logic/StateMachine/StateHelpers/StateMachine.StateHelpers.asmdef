@@ -1,0 +1,29 @@
+{
+  "name": "IGT.Game.Core.Logic.StateMachine.StateHelpers",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.Logic.CommServices",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.OutcomeList",
+    "IGT.Ascent.OutcomeList.Interfaces",
+    "IGT.Game.Core.Logic.BetFramework",
+    "IGT.Ascent.Logic.BettingPermit.FoundationBettingPermit",
+    "IGT.Game.Core.Logic.Denomination",
+    "IGT.Game.Core.Logic.Evaluator",
+    "IGT.Game.Core.Logic.Evaluator.Schemas",
+    "IGT.Game.Core.Logic.Foundation.ServiceProviders",
+    "IGT.Game.Core.Logic.Services",
+    "IGT.Game.Core.Logic.StateMachine"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

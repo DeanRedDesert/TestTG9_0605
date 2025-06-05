@@ -1,0 +1,14 @@
+{
+  "name": "IGT.Game.Core.GameReport.Interfaces",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

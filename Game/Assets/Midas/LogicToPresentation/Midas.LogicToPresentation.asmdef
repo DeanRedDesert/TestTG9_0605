@@ -1,0 +1,17 @@
+{
+    "name": "Midas.LogicToPresentation",
+    "rootNamespace": "",
+    "references": [
+        "Midas.Logging",
+        "Midas.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

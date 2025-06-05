@@ -1,0 +1,3 @@
+/r:System.ComponentModel.Composition.dll
+/r:System.Drawing.dll
+/r:System.IO.Compression.FileSystem.dll

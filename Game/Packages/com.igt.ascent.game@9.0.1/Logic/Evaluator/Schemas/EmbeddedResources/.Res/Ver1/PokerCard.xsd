@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns="http://www.igt.com/worldgame/common/xml/gamedata" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:element name="Card">
+		<xs:annotation>
+			<xs:documentation>Defines a card with attributes as required for its representation in a paytable.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="index" type="xs:unsignedInt" use="required"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="suit" type="xs:unsignedInt" use="required"/>
+			<xs:attribute name="rank" type="xs:unsignedInt" use="required"/>
+			<xs:attribute name="isWild" type="xs:boolean" use="required"/>
+			<xs:attribute name="isBonus" type="xs:boolean" use="required"/>
+			<xs:attribute name="displayAttribute" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

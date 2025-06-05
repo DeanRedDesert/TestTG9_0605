@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XPlatformPackageDescriptorVer1="F2XPlatformPackageDescriptorVer1.xsd" targetNamespace="F2XPlatformPackageDescriptorVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<!-- Minor revision 1.1, Added PackageType SystemExtension -->
+	<xs:element name="PlatformPackageDescriptor">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a platform package.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Non-localized user friendly name or description.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PackageName">
+					<xs:annotation>
+						<xs:documentation>The name of the ASGB package this PPD is associated with.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="ASGB[0-9A-Z]+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Type" type="F2XPlatformPackageDescriptorVer1:PackageType">
+					<xs:annotation>
+						<xs:documentation>Specifies the type of the platform package.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ResourceDirectory" type="xs:anyURI" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Optional resource directory relative to the package root containing resources and localization tables.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NameKey" type="F2XRegistryTypesVer1:LocalizationKey" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Optional localization key for the user friendly name.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="PackageType">
+		<xs:annotation>
+			<xs:documentation>Enumeration containing the different types of platform packages.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Foundation">
+				<xs:annotation>
+					<xs:documentation>A Foundation package must be installed with the accompanying Ascent Foundation, and must remain installed with that Foundation.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SystemExtension">
+				<xs:annotation>
+					<xs:documentation>A System Extension bundle must at least have one System Extension package,  and must remain installed with the gaming machine.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

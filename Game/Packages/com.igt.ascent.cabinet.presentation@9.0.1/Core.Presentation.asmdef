@@ -1,0 +1,14 @@
+{
+  "name": "IGT.Game.Core.Presentation",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Cabinet"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

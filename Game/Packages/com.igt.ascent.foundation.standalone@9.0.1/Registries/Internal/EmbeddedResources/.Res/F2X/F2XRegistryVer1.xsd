@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 (x64) (http://www.altova.com) by Steve LeMay (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryVer1="F2XRegistryVer1.xsd" targetNamespace="F2XRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.20">
+	<!-- Minor revision 1.4, Added Progressive Concepts support. xspcreg, xlinkreg-->
+	<!-- Minor revision 1.5, Added  Add PayvarGroup support.  File type is *.xpayvargroupreg-->
+	<!-- Minor revision 1.6, Added CDS Bingo support. File type is *.xcdsbingoreg-->
+	<!-- Minor revision 1.7, Added ResourceExtension registry type.  File type is *.xextensionreg-->
+	<!-- Minor revision 1.8, Added ConfigurationExtensionInterfaceDefinition registry type.  File type is *xextinterfacedefreg -->
+	<!-- Minor revision 1.8, Added RegistryMetadata registry type. Used internal to the foundation. -->
+	<!-- Minor revision 1.9, Added CDS ICD support. File type is *.xcdsicdreg-->
+	<!-- Minor revision 1.10, Added Shell support. File type is *.xshellreg-->
+	<!-- Minor revision 1.11, Added App support. File type is *.xappreg-->
+	<!-- Minor revision 1.12, Added MarketRestriction extension support. File types are *xextinterfacedefreg, *.extensionreg -->
+	<!-- Minor revision 1.13, Added configurable BetStep support. File type is *.xbetstepreg -->
+	<!-- Minor revision 1.14, Added configurable PlatformPackageDescriptor support. File type is *.xppdreg -->
+	<!-- Minor revision 1.15, Added PatchExtension support. File type is *.xpatchreg -->
+	<!-- Minor revision 1.16, Added Rest API Extension and Rest API Extension Interface. -->
+	<!-- Minor revision 1.17, Added Net Progressive controller group support. File type is *.xnpcreg -->
+	<!-- Minor revision 1.18, Added game set extension support. File types are *.xextinterfacedefreg, *.xdataextensionreg -->
+	<!-- Minor revision 1.19, Added EZ Setup extension support.  File types are *.xextinterfacedefreg, *.xdataextensionreg -->
+	<!-- Minor revision 1.20, Added configurable BundleRegistry support.  File type is *.xbundlereg -->
+	<!-- Minor revision 1.21, Add CdsECP registry type. File type is *.xcdsecpreg -->
+	<xs:element name="Registry">
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>
+					Container class for F2X registries.  This container helps determine which parser to use for registry content.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="Body">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:any>
+								<xs:annotation>
+									<xs:documentation>The actual contents of the registry.</xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="RegistryType" type="F2XRegistryVer1:RegistryType" use="required"/>
+			<xs:attribute name="Version" type="F2XRegistryVer1:Version" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="RegistryType">
+		<xs:annotation>
+			<xs:documentation>Type describing the type of registry parser to use for this registry.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Report">
+				<xs:annotation>
+					<xs:documentation>A Report registry (*.xreportreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ExecutableExtension">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type that requires an executable component (*.xextensionreg).  Note: More than one ExecutableExtension may share the same ExecutableExtensionBin (i.e. share the same executable).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VideoTopper">
+				<xs:annotation>
+					<xs:documentation>A VideoTopper registry (*.xvideotopperreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CdsECP">
+				<xs:annotation>
+					<xs:documentation>A CdsECP registry (*.xcdsecpreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CdsPullTab">
+				<xs:annotation>
+					<xs:documentation>A CdsPullTab registry (*.xcdspulltabreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CdsICD">
+				<xs:annotation>
+					<xs:documentation>A CdsICD registry (*.xcdsicdreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Chooser">
+				<xs:annotation>
+					<xs:documentation>A Chooser registry (*.xchooserreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ExecutableExtensionBin">
+				<xs:annotation>
+					<xs:documentation>A registry describing the executable supporting one or more ExecutableExtensions (*.xextbinreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ConfigurationExtension">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type containing custom configuration items (*.xextensionreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ConfigurationExtensionInterfaceDefinition">
+				<xs:annotation>
+					<xs:documentation>A registry describing the interface of a configuration extension (*xextinterfacedefreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MenuExtension">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type that supports a custom operator menu (*.xextensionreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ResourceExtension">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type containing resources (*.xextensionreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProgressiveLink">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type that supports a progressive concept link setup (*.xlinkreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SpcGroup">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type that supports a stand-alone progressive group (SPC) link setup (*.xspcreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PayvarGroup">
+				<xs:annotation>
+					<xs:documentation>A registry describing additional games based on .payvarreg with overloaded specific values (.xpayvargroupreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CdsBingo">
+				<xs:annotation>
+					<xs:documentation>A CdsBingo registry (*.xcdsbingoreg), containing Bingo specific items per theme.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RegistryMetadata">
+				<xs:annotation>
+					<xs:documentation>A metadata registry used internal to the foundation.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Shell">
+				<xs:annotation>
+					<xs:documentation>A Shell registry (*.xshellreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="App">
+				<xs:annotation>
+					<xs:documentation>An App registry (*.xappreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MarketRestriction">
+				<xs:annotation>
+					<xs:documentation>Market Restriction File (MRF) which contains simple rules to apply to a game's Market Restriction Data File (MRDF) used to restrict access to payvars</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MarketConfigurationData">
+				<xs:annotation>
+					<xs:documentation>Market Restriction Data File (MRDF) which contains data consumed by the MarketRestriction feature to restrict access to payvars</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MarketRestrictionInterfaceDefinition">
+				<xs:annotation>
+					<xs:documentation>A registry describing the interface of a market restriction extension (*xextinterfacedefreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BetSteps">
+				<xs:annotation>
+					<xs:documentation>A registry describing the available bet step options for a payvar (.xbetstepsreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PlatformPackageDescriptor">
+				<xs:annotation>
+					<xs:documentation>Registry for describing a platform package (.xppdreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PatchExtension">
+				<xs:annotation>
+					<xs:documentation>Registry for describing executable patches (.xpatchreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RestApiExtension">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type for defining rest api endpoints (*.xextensionreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RestApiExtensionInterface">
+				<xs:annotation>
+					<xs:documentation>A registry describing the interface of a rest api endpoint (*xextinterfacedefreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NetProgressiveControllerGroup">
+				<xs:annotation>
+					<xs:documentation>Registry for describing a Net Progressive controller group (.xnpcreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GameSetData">
+				<xs:annotation>
+					<xs:documentation>A registry describing an extension type for defining a collection of themes that share configuration via a host system. (.xdataextensionreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GameSetInterface">
+				<xs:annotation>
+					<xs:documentation>A registry describing the interface of a game set (.xextinterfacedefreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EZSetupSetInterface">
+				<xs:annotation>
+					<xs:documentation>Registry for defining the sets available for EZ Setup. (.xextinterfacedefreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EZSetupSetData">
+				<xs:annotation>
+					<xs:documentation>Registry for providing data associated with EZ setup configuration sets. (.xdataextensionreg)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BundleRegistryDescriptor">
+				<xs:annotation>
+					<xs:documentation>Registry for describing a bundle (.xbundlereg))</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Group">
+				<xs:annotation>
+					<xs:documentation>A registry describing a progressive group link setup (*.xgroupreg).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Version">
+		<xs:annotation>
+			<xs:documentation>Version number that identifies the major and minor version of the registry.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(0|([1-9][0-9]*))\.(0|([1-9][0-9]*))"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

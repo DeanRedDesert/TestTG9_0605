@@ -1,0 +1,12 @@
+{
+  "name": "com.igt.ascent.assets.standalone-csi-configurator",
+  "displayName": "Ascent Assets Standalone CSI Configurator",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "An Editor tool to help generate and modify CsiConfig.xml file, which is used to simulate CSI messages from Foundation in Standalone mode.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation.standalone": "9.0.1"
+  }
+}

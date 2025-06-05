@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SystemRequirements Version="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Game%20System%20Requirements.xsd">
+  <Storage />
+  <Hardware>
+    <Monitors />
+    <VideoCard />
+    <BrainBox />
+    <Peripherals />
+  </Hardware>
+</SystemRequirements>

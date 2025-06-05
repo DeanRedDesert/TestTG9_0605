@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xs:element name="CsiConfigurations">
+      <xs:annotation>
+         <xs:documentation>Configurations for the Standalone CSI Lib.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="VolumeSettings" type="VolumeSettingsConfig" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="MachineActivity" type="MachineActivityConfig" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="MonitorSettings" type="MonitorSettingsConfig" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ButtonPanelSettings" type="ButtonPanelSettingsConfig" minOccurs="0" maxOccurs="1"/>
+	    <xs:element name="ServiceSettings" type="ServiceSettingsConfig" minOccurs="0" maxOccurs="1"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:complexType name="VolumeSettingsConfig">
+      <xs:annotation>
+         <xs:documentation>Volume related settings.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="VolumePlayerSelectable" type="xs:boolean" minOccurs="0" default="true"/>
+         <xs:element name="VolumePlayerMuteSelectable" type="xs:boolean" minOccurs="0" default="true"/>
+         <xs:element name="MuteAll" type="xs:boolean" minOccurs="0" default="false"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="MachineActivityConfig">
+      <xs:annotation>
+          <xs:documentation>Machine Activity related settings.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="NewGame" type="xs:boolean"/>
+         <xs:element name="AttractInterval" type="xs:unsignedInt"/>
+         <xs:element name="InActivityDelay" type="xs:unsignedInt"/>
+         <xs:element name="AttractsEnabled" type="xs:boolean"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="MonitorSettingsConfig">
+      <xs:annotation>
+          <xs:documentation>Settings for multiple monitors.</xs:documentation>
+      </xs:annotation>
+	     <xs:sequence>
+	        <xs:element name="Monitors">
+			 <xs:complexType>
+			    <xs:sequence>	
+				   <xs:element name="Monitor" type="MonitorType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			 </xs:complexType>
+	     </xs:element>
+		 </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="MonitorType">
+      <xs:annotation>
+          <xs:documentation>Settings for a single monitor.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="DeviceId" type="xs:string"/>
+         <xs:element name="Role" type="MonitorRoleType"/>
+         <xs:element name="Style" type="MonitorStyleType"/>
+         <xs:element name="Aspect" type="MonitorAspectType"/>
+         <xs:element name="Model" type="MonitorModelType"/>
+         <xs:element name="DesktopCoordinates" type="DesktopRectangleType"/>
+         <xs:element name="VirtualX" type="xs:float"/>
+         <xs:element name="VirtualY" type="xs:float"/>
+         <xs:element name="ColorProfileId" type="xs:int"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="MonitorRoleType">
+      <xs:annotation>
+         <xs:documentation>Monitor role type.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Main"/>
+         <xs:enumeration value="Top"/>
+         <xs:enumeration value="BellyGlass"/>
+         <xs:enumeration value="ButtonPanel"/>
+         <xs:enumeration value="Topper"/>
+         <xs:enumeration value="VideoWall"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="MonitorStyleType">
+      <xs:annotation>
+         <xs:documentation>Monitor style type.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Normal"/>
+         <xs:enumeration value="RoundTop"/>
+         <xs:enumeration value="PureDepth"/>
+         <xs:enumeration value="ExtendedTouchscreen"/>
+         <xs:enumeration value="Stereoscopic"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="MonitorAspectType">
+      <xs:annotation>
+         <xs:documentation>Monitor aspect type.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Standard"/>
+         <xs:enumeration value="Widescreen"/>
+         <xs:enumeration value="Ultrawide"/>
+         <xs:enumeration value="Portrait"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="MonitorModelType">
+      <xs:annotation>
+         <xs:documentation>Monitor model type.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="Manufacturer" type="xs:string"/>
+         <xs:element name="Model" type="xs:string"/>
+         <xs:element name="Version" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="DesktopRectangleType">
+      <xs:annotation>
+         <xs:documentation>Basic rectangle.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="x" type="xs:int"/>
+         <xs:element name="y" type="xs:int"/>
+         <xs:element name="w" type="xs:int"/>
+         <xs:element name="h" type="xs:int"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ButtonPanelSettingsConfig">
+    <xs:annotation>
+      <xs:documentation>Settings for multiple button panels.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ButtonPanels">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ButtonPanel" type="ButtonPanel" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ButtonPanel">
+    <xs:annotation>
+      <xs:documentation>Settings for a single button panel.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PanelID" type="xs:unsignedInt" minOccurs="0"/>
+      <xs:element name="PanelLocation" type="PanelLocation"/>
+      <xs:element name="PanelType" type="PanelType"/>
+      <xs:element name="DeviceId" type="xs:string"/>
+      <xs:element name="Buttons">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Button" type="Button" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+   </xs:complexType>
+	<xs:complexType name="ServiceSettingsConfig">
+		<xs:annotation>
+			<xs:documentation>Service Settings.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PromptPlayerOnCashout" type="xs:boolean" default="true"/>
+			<xs:element name="EmulatableButtons">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EmulatableButton" minOccurs="0" maxOccurs="unbounded">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Cashout"/>
+									<xs:enumeration value="Service"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>	
+   <xs:simpleType name="PanelLocation">
+    <xs:annotation>
+      <xs:documentation>Location of a panel</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown"/>
+      <xs:enumeration value="Main"/>
+      <xs:enumeration value="Secondary"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="PanelType">
+    <xs:annotation>
+      <xs:documentation>Type of the button panel</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown"/>
+      <xs:enumeration value="Static"/>
+      <xs:enumeration value="Dynamic"/>
+      <xs:enumeration value="StaticDynamic"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="Button">
+    <xs:sequence>
+      <xs:element name="ButtonId" type="ButtonId">
+        <xs:annotation>
+          <xs:documentation>Unique integer identifier for the button</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ButtonType" type="ButtonType">
+        <xs:annotation>
+          <xs:documentation>Type of the button</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HasDynamicDisplay" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Boolean indicating if the panel has dynamic display.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ButtonFunctions" type="ButtonFunction" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>List of functions this button supports. This list should never be empty; it is only optional for backwards compatibility.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ButtonId">
+    <xs:annotation>
+      <xs:documentation>Unique button identifier.  The value of 255 indicates "all buttons".</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedByte">
+        <xs:attribute name="DeviceId" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>The device the button id belongs to</xs:documentation>
+            <xs:documentation>If DeviceId is not specified all the requests will go to the button panel with PanelLocation::Main</xs:documentation>
+            <xs:documentation>If DeviceId is not specified in a request and PanelLocation::Main is not available then CLIENT_DOES_NOT_OWN_RESOURCE error code will be returned</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="ButtonType">
+    <xs:annotation>
+      <xs:documentation>Type of the button</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Static"/>
+      <xs:enumeration value="Dynamic"/>
+      <xs:enumeration value="Super"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="ButtonFunction">
+    <xs:annotation>
+      <xs:documentation>Collection of functions for attached buttons</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>The foundation is unable to discern the button's functionality</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoFunction">
+        <xs:annotation>
+          <xs:documentation>Button does nothing (no button insert)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Accept">
+        <xs:annotation>
+          <xs:documentation>Accept relevant action or information</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AutoPlay">
+        <xs:annotation>
+          <xs:documentation>Start autoplay</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetOne">
+        <xs:annotation>
+          <xs:documentation>Increase current bet by one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetPerLine1">
+        <xs:annotation>
+          <xs:documentation>Bet n per line button 1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetPerLine2">
+        <xs:annotation>
+          <xs:documentation>Bet n per line button 2</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetPerLine3">
+        <xs:annotation>
+          <xs:documentation>Bet n per line button 3</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetPerLine4">
+        <xs:annotation>
+          <xs:documentation>Bet n per line button 4</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetPerLine5">
+        <xs:annotation>
+          <xs:documentation>Bet n per line button 5</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetPlus">
+        <xs:annotation>
+          <xs:documentation>Increase lines or bet</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BetMinus">
+        <xs:annotation>
+          <xs:documentation>Decrease lines or bet</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Black">
+        <xs:annotation>
+          <xs:documentation>Choose black while playing gamble feature</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CashOut">
+        <xs:annotation>
+          <xs:documentation>Cash out the player</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HandleSwitch">
+        <xs:annotation>
+          <xs:documentation>Normal game start (initiated by handle)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Gamble">
+        <xs:annotation>
+          <xs:documentation>Start gamble feature</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GameRules">
+        <xs:annotation>
+          <xs:documentation>Open the game rules window</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Info">
+        <xs:annotation>
+          <xs:documentation>Service button for Australia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MaxBet">
+        <xs:annotation>
+          <xs:documentation>Start a game with maximum bet</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MoreGames">
+        <xs:annotation>
+          <xs:documentation>Open the theme selection menu</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Red">
+        <xs:annotation>
+          <xs:documentation>Choose red while playing gamble feature</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Reject">
+        <xs:annotation>
+          <xs:documentation>Reject relevant action or information</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RepeatBet">
+        <xs:annotation>
+          <xs:documentation>Start a game with the bet of the last game</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SelectLines1">
+        <xs:annotation>
+          <xs:documentation>Select n lines button 1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SelectLines2">
+        <xs:annotation>
+          <xs:documentation>Select n lines button 2</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SelectLines3">
+        <xs:annotation>
+          <xs:documentation>Select n lines button 3</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SelectLines4">
+        <xs:annotation>
+          <xs:documentation>Select n lines button 4</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SelectLines5">
+        <xs:annotation>
+          <xs:documentation>Select n lines button 5</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Service">
+        <xs:annotation>
+          <xs:documentation>Signal for service</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ShowGaff">
+        <xs:annotation>
+          <xs:documentation>Open the game's gaff menu</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start">
+        <xs:annotation>
+          <xs:documentation>Normal game start</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TakeWin">
+        <xs:annotation>
+          <xs:documentation>Take win when playing the gamble feature</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TournamentMenu">
+        <xs:annotation>
+          <xs:documentation>Open the tournament menu (if applicable)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

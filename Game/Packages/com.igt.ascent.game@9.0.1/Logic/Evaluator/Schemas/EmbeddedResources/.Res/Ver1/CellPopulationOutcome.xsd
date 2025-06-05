@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:include schemaLocation="Cell.xsd"/>
+	<xs:complexType name="CellPopulationOutcome">
+		<xs:sequence>
+			<xs:element name="PopulationEntryList" type="PopulationEntry" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A list of cell population instances for this outcome.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="PopulationEntry">
+		<xs:sequence>
+			<xs:element name="OutcomeCellList" type="OutcomeCell" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="OutcomeCell">
+		<xs:sequence>
+			<xs:element name="Cell" type="Cell"/>
+		</xs:sequence>
+		<xs:attribute name="symbolID" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>A reference to a Symbol from the SymbolList.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="stop" type="xs:unsignedInt">
+			<xs:annotation>
+				<xs:documentation>The stop assocated with the symbol for this cell.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="CellPopulationOutcomeListType">
+		<xs:sequence>
+			<xs:element name="CellPopulationOutcome" type="CellPopulationOutcome" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CellPopulationOutcome" type="CellPopulationOutcome"/>
+</xs:schema>

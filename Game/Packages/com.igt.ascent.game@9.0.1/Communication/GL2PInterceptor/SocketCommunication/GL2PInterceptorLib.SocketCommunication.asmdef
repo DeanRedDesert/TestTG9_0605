@@ -1,0 +1,22 @@
+{
+  "name": "IGT.Game.Core.Communication.GL2PInterceptorLib.SocketCommunication",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Logging",
+    "IGT.Game.Core.Logic.Evaluator.Schemas",
+    "IGT.Game.Core.Tilts",
+    "IGT.Game.Core.Communication.CommunicationLib",
+    "IGT.Game.Core.Communication.GL2PInterceptorLib",
+    "IGT.Game.Core.Communication.Logic.CommServices",
+    "IGT.Game.Core.Communication.Presentation.CommServices"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

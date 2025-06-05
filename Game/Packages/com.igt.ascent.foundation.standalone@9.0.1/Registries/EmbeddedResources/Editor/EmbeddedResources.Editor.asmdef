@@ -1,0 +1,16 @@
+{
+  "name": "IGT.Game.Core.Communication.Foundation.Standalone.Registries.EmbeddedResources.Editor",
+  "rootNamespace": "IGT.Game.Core.Communication.Foundation.Standalone.Registries.EmbeddedResources.Editor",
+  "references": [],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

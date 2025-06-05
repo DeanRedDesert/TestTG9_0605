@@ -1,0 +1,25 @@
+{
+    "name": "Midas.Gle.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "Midas.Logging",
+        "Midas.Core",
+        "Midas.Core.StateMachine",
+        "Midas.Tools",
+        "Midas.Logic",
+        "Midas.LogicToPresentation",
+        "Midas.Presentation",
+        "Midas.Gle.Logic",
+        "Midas.Gle.LogicToPresentation",
+        "GleLogic"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

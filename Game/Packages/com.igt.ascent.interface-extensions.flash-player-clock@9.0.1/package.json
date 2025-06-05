@@ -1,0 +1,14 @@
+{
+  "name": "com.igt.ascent.interface-extensions.flash-player-clock",
+  "displayName": "Ascent Flash Player Clock Extensions",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Support for games to display the flash player clock.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation": "9.0.1",
+    "com.igt.ascent.game": "9.0.1",
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6279fa92149344f8416884c37ab7d1, type: 3}
+  m_Name: BetSounds
+  m_EditorClassIdentifier: 
+  soundDefinitionsList:
+  - id: Pick_1
+    clip: {fileID: 8300000, guid: 6690fb6627973894ab6605030ac900ed, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_2
+    clip: {fileID: 8300000, guid: d3a52ba9b4193d641abee0e0b07ad43b, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_3
+    clip: {fileID: 8300000, guid: 23d36506d6058ca40904498120b5038f, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_4
+    clip: {fileID: 8300000, guid: cb609eee63d07234d9a1e6aecd222cbd, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_5
+    clip: {fileID: 8300000, guid: 163393defb7f51e49af33dc3c7d4ebcb, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_6
+    clip: {fileID: 8300000, guid: 61cd87d0e0910444e802c3446a756bee, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_7
+    clip: {fileID: 8300000, guid: e5d2d6dfc696f504982dc7af403d2284, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_8
+    clip: {fileID: 8300000, guid: 4e32fc90c962eba469b35823cfde3636, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_9
+    clip: {fileID: 8300000, guid: 4df217c4d2d16be4db461449c734f175, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: Pick_10
+    clip: {fileID: 8300000, guid: c649885c8c43bb1479abd68396c4d2b0, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: -8893029141417945509, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}

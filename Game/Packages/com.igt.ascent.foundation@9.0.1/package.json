@@ -1,0 +1,12 @@
+{
+  "name": "com.igt.ascent.foundation",
+  "displayName": "Ascent Foundation",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Provides an abstraction of the Foundation.",
+  "documentation": "https://igt-developer-docs.atlassian.net/wiki/spaces/SDKDocumentationTip/pages/53027319/Getting+Started+with+Ascent+SDK+Packages",
+  "bugReporting": "https://igt-developer-docs.atlassian.net/wiki/spaces/internaldocumentation/pages/63963512/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

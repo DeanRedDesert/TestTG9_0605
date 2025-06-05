@@ -1,0 +1,26 @@
+﻿{
+  "name": "Midas.CreditPlayoff.Presentation",
+  "rootNamespace": "",
+  "references": [
+    "Midas.Logging",
+    "Midas.Core",
+    "Midas.Core.StateMachine",
+    "Midas.Tools",
+    "Midas.Logic",
+    "Midas.LogicToPresentation",
+    "Midas.Presentation",
+    "Midas.CreditPlayoff.Logic",
+    "Midas.CreditPlayoff.LogicToPresentation", 
+    "Unity.TextMeshPro",
+    "DOTween.Modules"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

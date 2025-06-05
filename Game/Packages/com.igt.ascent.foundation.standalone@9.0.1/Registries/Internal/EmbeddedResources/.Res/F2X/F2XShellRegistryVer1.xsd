@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XShellRegistryVer1="F2XShellRegistryVer1.xsd" targetNamespace="F2XShellRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!-- Minor revision 1.1: Added localized resources. -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="ShellRegistry">
+		<xs:annotation>
+			<xs:documentation>Game discovery registry for describing a shell and the initial state of shell related configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ShellNameKey" type="F2XShellRegistryVer1:LocalizationKey">
+					<xs:annotation>
+						<xs:documentation>Key used to resolve the localized shell name, used for display purposes as assigned by game designer.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BinRegistry" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Relative path to the bin registry to which this shell belongs.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TagDataFile" type="F2XRegistryTypesVer1:TagDataFileType">
+					<xs:annotation>
+						<xs:documentation>Custom shell related file for use with the game. Passed to the game during startup. Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="F2XRegistryTypesVer1:ExtensionImportList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines extensions (i.e. add-on content) that may be linked to this shell.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ResourceDirectory" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Specifies the resource directory relative to the package root containing resources and localization tables.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Chooser">
+					<xs:annotation>
+						<xs:documentation>Information and resources required to present the theme to the player.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="IconKey" type="F2XShellRegistryVer1:LocalizationKey">
+								<xs:annotation>
+									<xs:documentation>Image resource containing an icon used for the chooser (e.g. theme selection menu). This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LogoKey" type="F2XShellRegistryVer1:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Image resource containing a logo used for larger display areas (e.g. the top box). This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PromoKey" type="F2XShellRegistryVer1:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Image resource used to promote the shell to the player in the chooser. This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LoadingDisplayKey" type="F2XShellRegistryVer1:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Image resource to be used while the shell is loading. This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AttractKey" type="F2XShellRegistryVer1:LocalizationKey" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Movie resource to be used for attract (on the top box). This is a localized value.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="LocalizationKey">
+		<xs:annotation>
+			<xs:documentation>A localized resource key, used to find a matching resource id within a specific culture to retrieve a resource.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

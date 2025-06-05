@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301599211f9bcd745817995c48d69088, type: 3}
+  m_Name: SoundDefinitionsDatabase
+  m_EditorClassIdentifier: 
+  audioMixers:
+  - {fileID: 24100000, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  defaultAudioMixerGroup: {fileID: -3158694529447525210, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  soundDefinitions:
+    keys:
+    - BetChange
+    - WinPres
+    - Dashboard
+    - Reels
+    - CreditPlayoff
+    - WinPresSequences
+    - AutoPlay
+    - Common
+    - WinPresAnz
+    values:
+    - {fileID: 11400000, guid: 7a414885c6c2b024baae6e7b27ff9f14, type: 2}
+    - {fileID: 11400000, guid: e807b64844266624cbc4ee4175d0c7b0, type: 2}
+    - {fileID: 11400000, guid: 9bc928bd4f23d6a4b8ec15fdf2638963, type: 2}
+    - {fileID: 11400000, guid: 86e10905bf07cb9469f62e9fc0bb137f, type: 2}
+    - {fileID: 11400000, guid: 8ad2617b25c85824eba88aa2f1dc3362, type: 2}
+    - {fileID: 11400000, guid: 0bb873491437d734892387db494f035e, type: 2}
+    - {fileID: 11400000, guid: cfa3cb09f7d7dbd4bb038aa4361aee04, type: 2}
+    - {fileID: 11400000, guid: c3d4660b67a73284999414a049585383, type: 2}
+    - {fileID: 11400000, guid: 0d77b06b55eb57d4f9809fec5780be54, type: 2}

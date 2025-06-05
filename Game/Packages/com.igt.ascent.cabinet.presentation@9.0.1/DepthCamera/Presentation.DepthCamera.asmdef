@@ -1,0 +1,15 @@
+{
+  "name": "IGT.Game.Core.Presentation.DepthCamera",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Cabinet",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

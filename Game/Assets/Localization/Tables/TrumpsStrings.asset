@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: TrumpsStrings
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: d44240554be1f1043b5864c6273f7a3d, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 3055a8cf1acae4449a924a1e551c7486, type: 2}
+  - {fileID: 11400000, guid: 59319d17a7c151d4098b65d0e96e8a16, type: 2}
+  - {fileID: 11400000, guid: facb7c593dac3714ea527f3a889b0d2b, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 1

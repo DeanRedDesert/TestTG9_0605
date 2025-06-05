@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionInterfaceDefinitionRegistryVer1="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" xmlns:F2XEZSetupSetInterfaceRegistryVer1="F2XEZSetupSetInterfaceRegistryVer1.xsd" targetNamespace="F2XEZSetupSetInterfaceRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" vc:minVersion="1.1">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd"/>
+	<xs:element name="EZSetupSetInterfaceRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for defining the sets available for EZ Setup.  A set represents a single option or button in the EZ setup menu.  When a set is selected from the EZ setup menu, all configuration data associated with the set is applied to the EGM configuration where appropriate.  Configuration Data for each set is defined by corresponding EZ Setup extensions linked to this interface.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionInterfaceDefinitionRegistryVer1:ExtensionInterfaceDefinitionRegistry">
+					<xs:sequence>
+						<xs:element name="SetInterfaces" type="F2XEZSetupSetInterfaceRegistryVer1:SetInterfaces">
+							<xs:annotation>
+								<xs:documentation>Collection of Set Interfaces.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SetInterfaces">
+		<xs:annotation>
+			<xs:documentation>Container Type containing the Set Interfaces by version.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SetInterface" type="F2XEZSetupSetInterfaceRegistryVer1:SetInterface" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains the Sets required by this interface by Version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SetInterface">
+		<xs:annotation>
+			<xs:documentation>Contains a list of Sets which may have specific configuration data attached.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Set" type="F2XEZSetupSetInterfaceRegistryVer1:Set" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes a set representing a single button or option in the EZ setup menu.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required"/>
+		<xs:attribute name="Hash" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Set">
+		<xs:annotation>
+			<xs:documentation>Describes a set representing a single button or option in the EZ setup menu.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="SetName" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

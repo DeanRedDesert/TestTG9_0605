@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2a0c71f61d154405a2c8f71c3f9c5c90
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - standardPaylines: {instanceID: 0}
+  - colorSelector: {instanceID: 0}
+  - paylinePrefab: {fileID: 2942347250814352743, guid: 66f40c4e0cdf0b74384d17dfe11e6450, type: 3}
+  - winBoxPrefab: {fileID: 5248592748696948301, guid: 28d9ddc062dce5f4c827a3623afc7876, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

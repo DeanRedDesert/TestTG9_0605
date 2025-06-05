@@ -1,0 +1,3 @@
+[submodule "Logic"]
+	path = Logic
+	url = https://github.com/igt-ApacStudios/midas-support-logic-default

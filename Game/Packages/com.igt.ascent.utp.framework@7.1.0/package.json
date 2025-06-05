@@ -1,0 +1,10 @@
+{
+  "name": "com.igt.ascent.utp.framework",
+  "displayName": "Ascent Unity Test Portal Framework",
+  "version": "7.1.0",
+  "author": "Ascent SDK Team",
+  "description": "Framework and core modules for Unity Test Portal. UTP provides a common way for Developers and SDETs to provide information, test scenarios, interact with scene objects, and validate behavior from within the Unity platform itself.",
+  "documentation": "https://developers.confluence.igt.com/display/UTP/Unity+Test+Portal",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {}
+}

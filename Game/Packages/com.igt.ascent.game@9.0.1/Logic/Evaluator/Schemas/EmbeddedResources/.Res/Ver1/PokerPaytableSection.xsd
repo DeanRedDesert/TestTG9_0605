@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by IGT (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:include schemaLocation="PokerWinCategory.xsd"/>
+	<xs:include schemaLocation="PokerCard.xsd"/>
+	<xs:include schemaLocation="PaytableSection.xsd"/>
+	<xs:element name="PokerPaytableSection">
+		<xs:annotation>
+			<xs:documentation>PokerPaytableSections contain common data required accross a wide variety of poker paytable types.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="PaytableSection">
+					<xs:sequence>
+						<xs:element name="ColdStartHand">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CardIndex" type="xs:unsignedInt" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Deck">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="Card" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="PokerWinCategory" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="pokerName" type="xs:string" use="required"/>
+					<xs:attribute name="creditDivisor" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="numberOfCardsToDeal" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="numberOfCardsToDraw" type="xs:unsignedInt" use="required"/>
+					<xs:attribute name="numberOfCardsToEvaluate" type="xs:unsignedInt" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

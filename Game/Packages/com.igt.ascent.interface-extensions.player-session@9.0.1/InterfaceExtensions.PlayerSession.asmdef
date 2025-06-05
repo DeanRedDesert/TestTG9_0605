@@ -1,0 +1,24 @@
+{
+  "name": "InterfaceExtensions.PlayerSession",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Game.Core.Logic.Services",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Communication",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "IGT.Game.Core.Communication.Foundation.F2X",
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas",
+    "Foundation.InterfaceExtensions",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

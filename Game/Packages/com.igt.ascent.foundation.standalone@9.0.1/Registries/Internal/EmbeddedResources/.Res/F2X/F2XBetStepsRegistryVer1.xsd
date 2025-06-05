@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:F2XRegistryTypeVer1="F2XRegistryTypesVer1.xsd"
+           xmlns:F2XBetStepsRegistryVer1="F2XBetStepsRegistryVer1.xsd" targetNamespace="F2XBetStepsRegistryVer1.xsd"
+           version="1.0">
+  <xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+  <xs:element name="BetStepsRegistry" type="F2XBetStepsRegistryVer1:BetStepsRegistry" />
+  <xs:complexType name="BetStepsRegistry">
+    <xs:sequence>
+      <xs:element name="PayvarRegistry" type="xs:anyURI">
+        <xs:annotation>
+          <xs:documentation>Relative path to payvar registry the bet steps are defined for.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BetStepsLabelKey" type="F2XRegistryTypeVer1:LocalizationKey">
+        <xs:annotation>
+          <xs:documentation>Key for localized text to label the bet steps information in the game setup page.  For example, "Available Bet Multipliers."</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PreconfiguredBetSteps">
+        <xs:annotation>
+          <xs:documentation>Game configured bet step options for each maximum bet.  If an option is not provided, no further information will be given in the setup menu.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="BetStepSpecification" type="F2XBetStepsRegistryVer1:BetStepSpecification">
+              <xs:annotation>
+                <xs:documentation>For a given maximum bet, defines the classic and advanced configurations as strings.  The strings are used as additional information in the game setup menu page and are not parsed or used by the foundation.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BetStepSpecification">
+    <xs:sequence>
+      <xs:element name="ClassicBetSteps">
+        <xs:annotation>
+          <xs:documentation>Classic bet step configuration - usually contains five bet options.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AdvancedBetSteps">
+        <xs:annotation>
+          <xs:documentation>Advanced bet step configuration - usually contains a minimum of six bet options.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="MaxBet" type="xs:unsignedLong" use="required" />
+  </xs:complexType>
+</xs:schema>

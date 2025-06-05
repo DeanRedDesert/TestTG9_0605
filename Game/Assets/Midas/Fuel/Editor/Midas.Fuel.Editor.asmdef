@@ -1,0 +1,24 @@
+{
+    "name": "Midas.Fuel.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Localization",
+        "Unity.ResourceManager",
+        "Unity.TextMeshPro",
+        "Midas.Fuel",
+        "Midas.Tools",
+        "Midas.Tools.Editor",
+        "Midas.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

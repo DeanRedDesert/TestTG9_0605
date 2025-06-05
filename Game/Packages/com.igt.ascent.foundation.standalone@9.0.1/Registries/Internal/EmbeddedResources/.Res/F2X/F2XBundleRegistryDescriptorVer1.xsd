@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBundleRegistryDescriptorVer1="F2XBundleRegistryDescriptorVer1.xsd" targetNamespace="F2XBundleRegistryDescriptorVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="BundleRegistryDescriptor">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a ASGB bundle configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Non-localized user friendly name or description.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Executable" type="F2XBundleRegistryDescriptorVer1:ExecutableType" default="NonExecutable">
+					<xs:annotation>
+						<xs:documentation>Specifies the type of the bundle. A bundle registry marked with an "Executable" attribute is required if there are any exe-extensions (system exe-extensions or theme-linked exe-extensions) in the bundle.  If there is an exe-extension in the bundle without the "Executable" attribute being present, then this in a validation error and the bundle will system error in a development build, and be discarded in release builds.  The attribute defaults to "NonExecutable" if the attribute is missing.  (Note that exe-extensions should only be present in Ex-packages.  Also note that an Ex-package is used to contain extensions of many types; often Ex-packages do NOT need to contain exe-extensions.)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LifeTime" type="F2XBundleRegistryDescriptorVer1:LifteTimeType" default="MachineLifetime">
+					<xs:annotation>
+						<xs:documentation>This attribute controls the lifetime of the automatic removal of the bundle. The attributes defaults to "MachineLifetime" if the attribute is missing.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TargetedRemoval" type="F2XBundleRegistryDescriptorVer1:TargetedRemovalType" default="PermitTargetedRemoval">
+					<xs:annotation>
+						<xs:documentation>This attribute controls whether or not the bundle may be targeted and successfully removed via the Operator menu and/or protocols like G2S. The attributes defaults to "PermitTargetedRemoval" if the attribute is missing.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ResourceDirectory" type="xs:anyURI" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Optional resource directory relative to the package root containing resources and localization tables.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NameKey" type="F2XRegistryTypesVer1:LocalizationKey" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Optional localization key for the user friendly name.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="LifteTimeType">
+		<xs:annotation>
+			<xs:documentation>Enumeration containing the different types of lifetime for automatic removal of the bundle.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MachineLifetime">
+				<xs:annotation>
+					<xs:documentation>Defines a bundle that is installable after the Foundation is running.  The bundle is NOT removed when the ASCENT/Foundation is removed/updated.  </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FoundationSticky">
+				<xs:annotation>
+					<xs:documentation>Defines a bundle that is installable after the Foundation is running, and becomes tied to the ASCENT/Foundation package at the time of installation.  The bundle is automatically removed if/when the ASCENT/Foundation is removed/updated. In case the bundle is removed via the DIAG tool and the Ascent Foundat version is not altered, the Foundation will consider this as an unexpected removal and will force a NVRAM clear on startup. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TargetedRemovalType">
+		<xs:annotation>
+			<xs:documentation>Enumeration containing the different types of targeted removal.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DenyTargetedRemoval">
+				<xs:annotation>
+					<xs:documentation>Defines a bundle that is installable after the Foundation is running. The bundle may NOT be targeted for removal via the Operator menu or G2S (without a NVRAM clear).
+  In case the bundle is removed via the DIAG tool and the Ascent Foundat version is not altered, the Foundation will consider this as an unexpected removal and will force a NVRAM clear on startup. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PermitTargetedRemoval">
+				<xs:annotation>
+					<xs:documentation>Defines a bundle that is installable after the Foundation is running. The bundle may be removed via the Operator menu, DIAG or G2S (without requiring a NVRAM clear).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExecutableType">
+		<xs:annotation>
+			<xs:documentation>Enumeration containing the different types of packages.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Executable">
+				<xs:annotation>
+					<xs:documentation>Defines that the bundle contains at least one package containing an exe-extension.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NonExecutable">
+				<xs:annotation>
+					<xs:documentation>Defines that the bundle must not contain an exe-extension. In case it does the entire ASGB package is denied for installation.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

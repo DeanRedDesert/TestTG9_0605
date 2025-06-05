@@ -1,0 +1,30 @@
+{
+  "name": "IGT.Game.Core.GameReport",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.Communication",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas",
+    "IGT.Game.Core.Communication.Foundation.Standalone",
+    "IGT.Game.Core.Communication.Foundation.Standard",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Logging",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Ascent.Communication.Platform.ReportLib.Interfaces",
+    "IGT.Game.Core.Logic.Evaluator",
+    "IGT.Game.Core.Logic.Evaluator.Schemas",
+    "IGT.Game.Core.Logic.PaytableLoader.Interfaces",
+    "IGT.Game.Core.Money",
+    "IGT.Game.Core.GameReport.GamePerformance",
+    "IGT.Game.Core.GameReport.GamePerformance.Schemas",
+    "IGT.Game.Core.GameReport.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

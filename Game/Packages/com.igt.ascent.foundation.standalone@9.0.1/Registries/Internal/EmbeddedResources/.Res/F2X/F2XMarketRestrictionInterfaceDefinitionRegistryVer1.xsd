@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by Steve LeMay (International Game Technology) -->
+<xs:schema xmlns:F2XMarketRestrictionInterfaceDefinitionRegistryVer1="F2XMarketRestrictionInterfaceDefinitionRegistryVer1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionInterfaceDefinitionRegistryVer1="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" targetNamespace="F2XMarketRestrictionInterfaceDefinitionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!-- Minor Revision 1.1, Added support for Decimal and DecimalRange property types -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd"/>
+	<xs:element name="MarketRestrictionInterfaceDefinitionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing the market restriction extension. This interface is used to associate the Market Configuration Data File(s) (MCDF) with a Market Restriction File (MCF).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionInterfaceDefinitionRegistryVer1:ExtensionInterfaceDefinitionRegistry">
+					<xs:sequence>
+						<xs:element name="VersionedPropertySections" type="F2XMarketRestrictionInterfaceDefinitionRegistryVer1:VersionedPropertySections">
+							<xs:annotation>
+								<xs:documentation>Contains a list of property definitions that must be provided to meet the interface definition's requirements for a specific version</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Property">
+		<xs:annotation>
+			<xs:documentation>Payvar property definitions.  The market restriction data should contain a key or tag represented by Name, and data in the form of the defined Type.  For instance, a StringList type would provide a list of string data to be used during market restriction evaluation.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Property name.  A case sensitive key or tag to associate data for evaluation.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Type" use="required">
+			<xs:annotation>
+				<xs:documentation>Property data type.  An enumeration of  the type of data associated with the name and understood by the market restriction definition.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="StringList"/>
+					<xs:enumeration value="Decimal"/>
+					<xs:enumeration value="DecimalRange"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="VersionedSection">
+		<xs:annotation>
+			<xs:documentation>Contains a list of property definitions that must be provided to meet the interface definition's requirements for a specific version</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PayvarPropertyList">
+				<xs:annotation>
+					<xs:documentation>Contains a list of payvar property definitions that are required to meet the interface definition's requirements for market restriction configuration data. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Property" type="F2XMarketRestrictionInterfaceDefinitionRegistryVer1:Property" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Describes a payvar property definition. There is expected to be at least one property entry, for each payvar subject to restriction, in the market configuration data files(s).  The data provided based on this definition is used during the market restriction evaluation.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required">
+			<xs:annotation>
+				<xs:documentation>Version of the section. Minor version must be sequential with previous section, and starting with 1.0</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Hash" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Checksum of configuration data within the section</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="VersionedPropertySections">
+		<xs:sequence>
+			<xs:element name="VersionedSection" type="F2XMarketRestrictionInterfaceDefinitionRegistryVer1:VersionedSection" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Contains the property definitions by version</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,13 @@
+{
+  "name": "com.igt.ascent.assets.build-settings",
+  "displayName": "Ascent Assets Build Settings",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.sdk-essentials": "9.0.1",
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
+  }
+}

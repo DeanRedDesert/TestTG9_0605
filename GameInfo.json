@@ -1,0 +1,43 @@
+{
+  "GameName": "No Name",
+  "UgpGameId": {
+    "GameId": "X0000",
+    "Version": 0
+  },
+  "AscentGameId": {
+    "FamilyNumber": "020",
+    "GameRevision": 0,
+    "PlatformId": "001",
+    "ProgressiveTheme": "ProgTheme",
+    "SapThemeId": "TMP",
+    "StartingPayVarIndex": 50000,
+    "StudioId": "R",
+    "GameSetSharedInterfaceId": ""
+  },
+  "EgmConfiguration": {
+    "BankSyncId": "ProgThemeBank",
+    "CustomGambleName": "",
+    "GambleOptions": "Trumps",
+    "MaxDenoms": 0,
+    "SupportedCultures": [
+      "en-US",
+	  "es-ES",
+	  "zh-CN"
+    ],
+    "SupportsCashoutServiceButtons": false,
+    "SupportsCreditPlayoff": true,
+    "SupportsUtilityMode": true,
+    "UseSasProgressives": false,
+    "VideoTopper": "Unity"
+  },
+  "GameDefinition": {
+    "AnteBetTheme": "",
+    "AnteBetType": "None",
+    "ReelCount": 0,
+    "Theme": "None"
+  },
+  "PidConfiguration": {
+    "PrizeOverrides": {
+    }
+  }
+}

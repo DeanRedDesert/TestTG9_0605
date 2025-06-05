@@ -1,0 +1,31 @@
+{
+  "name": "IGT.Game.Core.Logic.StateMachine",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Game.Core.Communication.CommunicationLib",
+    "IGT.Game.Core.Communication.Foundation",
+    "InterfaceExtensions.TiltManagement",
+    "IGT.Game.Core.Communication.GL2PInterceptorLib",
+    "IGT.Game.Core.Communication.Logic.CommServices",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Threading",
+    "IGT.Game.Core.Tilts",
+    "IGT.Game.Core.Timing",
+    "IGT.Game.Core.Tracing",
+    "IGT.Game.Core.Logic.Evaluator.Schemas",
+    "IGT.Game.Core.Logic.Foundation.ServiceProviders",
+    "IGT.Game.Core.Logic.RandomNumbers",
+    "IGT.Game.Core.Logic.Services",
+    "IGT.Game.Core.Logic.StateMachine.Tracing"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

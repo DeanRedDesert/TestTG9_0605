@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: TrumpsAssets_zh-CN
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: zh-CN
+  m_SharedData: {fileID: 11400000, guid: bba104d21ca49d1469d3ccfa488659d0, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 140613021696
+    m_Localized: c6af35b7374e6ff4689c91812ccf134d[Gamble]
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 348482727936
+    m_Localized: f817a15939870be4e884b7138e6a3272[RedUp]
+    m_Metadata:
+      m_Items:
+      - id: 1
+  - m_Id: 472571211776
+    m_Localized: d8790245801889b4ca32c00ccdfc10e9[RedDown]
+    m_Metadata:
+      m_Items:
+      - id: 2
+  - m_Id: 582394867712
+    m_Localized: 5aa4cb85c9ba48249a69523500f8e843[BlackUp]
+    m_Metadata:
+      m_Items:
+      - id: 3
+  - m_Id: 714817433600
+    m_Localized: bb703576f2ff9904bb6bf635dca9fbb1[BlackDown]
+    m_Metadata:
+      m_Items:
+      - id: 4
+  - m_Id: 253638827077632
+    m_Localized: 6282b9d7009cd90408473d4755c82eeb[BlackX2]
+    m_Metadata:
+      m_Items:
+      - id: 5
+  - m_Id: 262304951201792
+    m_Localized: eda6551b9ab220745b0a1066f6be7bf1[CLUBx4]
+    m_Metadata:
+      m_Items:
+      - id: 6
+  - m_Id: 262263750553600
+    m_Localized: a89e52e52ca92944a923a3e3d302ff29[DIAMONDx4]
+    m_Metadata:
+      m_Items:
+      - id: 7
+  - m_Id: 262170729279488
+    m_Localized: 12a19270747839743b4651b998802b35[HEARTx4]
+    m_Metadata:
+      m_Items:
+      - id: 8
+  - m_Id: 262337985540096
+    m_Localized: 8d261461c097c4e49a36b438cab36882[SPADEx4]
+    m_Metadata:
+      m_Items:
+      - id: 9
+  - m_Id: 253141147742208
+    m_Localized: b81afbe91ed3b3c4fbd43b9e1280e333[RedX2]
+    m_Metadata:
+      m_Items:
+      - id: 10
+  - m_Id: 318944056471552
+    m_Localized: 49f75ab815aa13d4294384a053f76cf4[card history]
+    m_Metadata:
+      m_Items:
+      - id: 11
+  - m_Id: 319172956418048
+    m_Localized: 49f75ab815aa13d4294384a053f76cf4[card take win]
+    m_Metadata:
+      m_Items:
+      - id: 12
+  references:
+    version: 1
+    00000000:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u535A\u53D6"
+    00000001:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u7EA2\u8272"
+    00000002:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u7EA2\u8272"
+    00000003:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u9ED1\u8272"
+    00000004:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u9ED1\u8272"
+    00000005:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u2663 \u6216 \u2660 = 2\u500D\u5956\u91D1"
+    00000006:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u2663 = 4\u500D\u5956\u91D1"
+    00000007:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u2666 = 4\u500D\u5956\u91D1"
+    00000008:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u2665 = 4\u500D\u5956\u91D1"
+    00000009:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u2660 = 4\u500D\u5956\u91D1"
+    0000000A:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u2665 \u6216 \u2666 = 2\u500D\u5956\u91D1"
+    0000000B:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u66FE\u7ECF\u51FA\u73B0\u8FC7\u7684\u6251\u514B\u724C"
+    0000000C:
+      type: {class: TranscriptionMetadata, ns: Midas.Fuel, asm: Midas.Fuel}
+      data:
+        text: "\u9886\u5956"

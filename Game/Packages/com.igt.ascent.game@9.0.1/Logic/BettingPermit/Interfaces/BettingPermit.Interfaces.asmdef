@@ -1,0 +1,15 @@
+{
+  "name": "IGT.Ascent.Logic.BettingPermit.Interfaces",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Ascent.LogicalOperations",
+    "IGT.Game.Core.Money"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

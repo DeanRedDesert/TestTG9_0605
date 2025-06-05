@@ -1,0 +1,16 @@
+{
+  "name": "IGT.Game.Core.Logic.BetFramework",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.Logic.BettingPermit.Interfaces",
+    "IGT.Game.Core.Logic.Services"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<br2:BinRegistry xmlns:br2="F2LBinRegistryVer2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2LBinRegistryVer2.xsd">
+  <br2:BinLoader>F2L 1.00</br2:BinLoader>
+  <br2:GameClient>Game020-001TMP</br2:GameClient>
+  <br2:TagDataFile br2:Tag="PlaceHolderValue">PlaceHolderValue</br2:TagDataFile>
+</br2:BinRegistry>

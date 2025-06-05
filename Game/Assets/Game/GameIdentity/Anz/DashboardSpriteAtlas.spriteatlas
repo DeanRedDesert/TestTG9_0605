@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DashboardSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 206d84e31862a2942ac2f9b52b31263c, type: 3}
+    - {fileID: 2800000, guid: d1ff18978cd77e14b9d93152ac3ad8d9, type: 3}
+    - {fileID: 2800000, guid: 197eb1c0282a03843bb4c6cc251a9c50, type: 3}
+    - {fileID: 2800000, guid: eff8096c850181c418f91b88470fe7d2, type: 3}
+    - {fileID: 2800000, guid: 105768db4ce0f574e81093db654e4183, type: 3}
+    - {fileID: 2800000, guid: 65123d3c276e8584282d709d0f1b1fae, type: 3}
+    - {fileID: 2800000, guid: 0159223dfe3d32146894e557ddf77cea, type: 3}
+    - {fileID: 2800000, guid: d716679695d7a104e82a6fb7f075c77e, type: 3}
+    - {fileID: 2800000, guid: 15fb7a79db923c944965a58a9e50d1da, type: 3}
+    - {fileID: 2800000, guid: aaf8a963618edea4ab7100658f7b6f4d, type: 3}
+    - {fileID: 2800000, guid: a8169ce6578076d4e9b626b9c0ae572a, type: 3}
+    - {fileID: 2800000, guid: 2e12adcf570902b4887c2f1767c7c53e, type: 3}
+    - {fileID: 2800000, guid: 2985a334823e94547b62d404e1cb8735, type: 3}
+    - {fileID: 2800000, guid: 102edcfb628d14b41931a53e89762eba, type: 3}
+    - {fileID: 2800000, guid: f8cc1bd1b6a572b41aafc368c2236bd3, type: 3}
+    - {fileID: 2800000, guid: 60fe4350f14bcce4d873d16e9eb4c99d, type: 3}
+    - {fileID: 2800000, guid: d6a1c9eff7291c74ea2d57549745279a, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 60fe4350f14bcce4d873d16e9eb4c99d, type: 3}
+  - {fileID: 21300000, guid: 197eb1c0282a03843bb4c6cc251a9c50, type: 3}
+  - {fileID: 21300000, guid: f8cc1bd1b6a572b41aafc368c2236bd3, type: 3}
+  - {fileID: 21300000, guid: aaf8a963618edea4ab7100658f7b6f4d, type: 3}
+  - {fileID: 21300000, guid: 206d84e31862a2942ac2f9b52b31263c, type: 3}
+  - {fileID: 21300000, guid: 2985a334823e94547b62d404e1cb8735, type: 3}
+  - {fileID: 21300000, guid: d716679695d7a104e82a6fb7f075c77e, type: 3}
+  - {fileID: 21300000, guid: a8169ce6578076d4e9b626b9c0ae572a, type: 3}
+  - {fileID: 21300000, guid: d1ff18978cd77e14b9d93152ac3ad8d9, type: 3}
+  - {fileID: 21300000, guid: 15fb7a79db923c944965a58a9e50d1da, type: 3}
+  - {fileID: 21300000, guid: 105768db4ce0f574e81093db654e4183, type: 3}
+  - {fileID: 21300000, guid: 102edcfb628d14b41931a53e89762eba, type: 3}
+  - {fileID: 21300000, guid: 65123d3c276e8584282d709d0f1b1fae, type: 3}
+  - {fileID: 21300000, guid: eff8096c850181c418f91b88470fe7d2, type: 3}
+  - {fileID: 21300000, guid: 0159223dfe3d32146894e557ddf77cea, type: 3}
+  - {fileID: 21300000, guid: 2e12adcf570902b4887c2f1767c7c53e, type: 3}
+  - {fileID: 21300000, guid: d6a1c9eff7291c74ea2d57549745279a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Vol5
+  - CBWBack
+  - Vol4
+  - WinLabel
+  - BetLabel
+  - Vol2
+  - JackpotIcon
+  - Vol0
+  - ButtonStatic
+  - MoreGameDenomTop_en
+  - Collect
+  - Vol3
+  - CreditLabel
+  - ChangeDenomTop_en
+  - i
+  - Vol1
+  - VolumePill
+  m_RenderDataMap: {}
+  m_Tag: DashboardSpriteAtlas
+  m_IsVariant: 0

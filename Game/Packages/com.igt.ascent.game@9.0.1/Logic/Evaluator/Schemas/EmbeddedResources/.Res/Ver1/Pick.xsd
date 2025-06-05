@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:include schemaLocation="SlotPrizeScale.xsd"/>
+	<xs:complexType name="Pick">
+		<xs:annotation>
+			<xs:documentation>Weighted pick item. Typically pick items will be placed in a list and then selected by weight.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Win" type="PickWin" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Optional win associated with this pick.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Name of the pick.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="weight" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>Weight associated with the pick.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PickWin">
+		<xs:annotation>
+			<xs:documentation>Win which may be associated with a pick.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProgressiveLevel" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Progressive levels awarded by this pick.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Trigger" type="Trigger" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Triggers awarded by this pick.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="value" type="xs:long">
+			<xs:annotation>
+				<xs:documentation>Monetary value associated with this pick.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="winLevelIndex" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>The winLevelIndex is used by the foundation for reporting purposes. Games should avoid using this attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="Pick" type="Pick"/>
+</xs:schema>

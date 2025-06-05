@@ -1,0 +1,15 @@
+{
+  "name": "com.igt.ascent.cabinet.standalone",
+  "displayName": "Ascent Cabinet Standalone",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Provides simulated Cabinet functionality when game is not running with a Foundation.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.cabinet": "9.0.1",
+    "com.igt.ascent.cabinet.presentation": "9.0.1",
+    "com.igt.ascent.foundation.standalone": "9.0.1",
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

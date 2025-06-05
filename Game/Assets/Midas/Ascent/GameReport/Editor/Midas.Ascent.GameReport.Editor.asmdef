@@ -1,0 +1,31 @@
+{
+    "name": "Midas.Ascent.GameReport.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Midas.Core",
+        "Midas.Logic",
+        "Midas.Logging",
+		"IGT.Game.Core.Communication.Foundation.F2L.Schemas",
+		"IGT.Ascent.Communication.Platform.Interfaces",
+		"IGT.Ascent.Communication.Platform.ReportLib.Interfaces",
+		"IGT.Ascent.Assets.GameReportActivator.Editor",
+		"IGT.Game.Core.Logic.PaytableLoader.Interfaces",
+		"IGT.Game.Core.Communication",
+		"IGT.Game.Core.Communication.Foundation",
+		"IGT.Game.Core.GameReport",
+		"IGT.Game.Core.GameReport.Interfaces",
+		"IGT.Game.Core.Logging",
+		"Midas.GameReport"
+    ],
+	"includePlatforms": [
+		"Editor"
+	],
+	"excludePlatforms": [],
+	"allowUnsafeCode": false,
+	"overrideReferences": false,
+	"precompiledReferences": [],
+	"autoReferenced": true,
+	"defineConstraints": [],
+	"versionDefines": [],
+	"noEngineReferences": false
+}

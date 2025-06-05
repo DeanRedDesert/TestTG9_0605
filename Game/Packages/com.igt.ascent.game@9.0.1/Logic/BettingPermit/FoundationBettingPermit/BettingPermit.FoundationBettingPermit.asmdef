@@ -1,0 +1,21 @@
+{
+  "name": "IGT.Ascent.Logic.BettingPermit.FoundationBettingPermit",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Ascent.LogicalOperations",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Money",
+    "IGT.Game.Core.Logic.BetFramework",
+    "IGT.Game.Core.Logic.Services",
+    "IGT.Ascent.Logic.BettingPermit.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: TrumpsAssets Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: TrumpsAssets
+  m_TableCollectionNameGuidString: bba104d21ca49d1469d3ccfa488659d0
+  m_Entries:
+  - m_Id: 140613021696
+    m_Key: GambleTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348482727936
+    m_Key: RedButtonUp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 472571211776
+    m_Key: RedButtonDown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 582394867712
+    m_Key: BlackButtonUp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 714817433600
+    m_Key: BlackButtonDown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253141147742208
+    m_Key: Redx2Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253638827077632
+    m_Key: Blackx2Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 262170729279488
+    m_Key: Heartx4Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 262263750553600
+    m_Key: Diamondx4Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 262304951201792
+    m_Key: Clubx4Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 262337985540096
+    m_Key: Spadex4Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 318944056471552
+    m_Key: CardHistory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 319172956418048
+    m_Key: CardTakeWin
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - id: 0
+  m_KeyGenerator:
+    id: 1
+  references:
+    version: 1
+    00000000:
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 140613021696
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 348482727936
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 472571211776
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 582394867712
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 714817433600
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 253141147742208
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 253638827077632
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 262170729279488
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 262263750553600
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 262304951201792
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 262337985540096
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 318944056471552
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        - m_KeyId: 319172956418048
+          m_TableCodes:
+          - en
+          - es-ES
+          - zh-CN
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    00000001:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1738046465238

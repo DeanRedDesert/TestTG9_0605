@@ -1,0 +1,23 @@
+{
+  "name": "IGT.Game.Core.Communication.LogicPresentationBridge",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Ascent.Logic.Concurrent.Interfaces",
+    "IGT.Game.Core.Tilts",
+    "IGT.Game.Core.Tracing",
+    "IGT.Game.Core.Communication.CommunicationLib",
+    "IGT.Game.Core.Communication.GL2PInterceptorLib",
+    "IGT.Game.Core.Communication.Logic.CommServices",
+    "IGT.Game.Core.Communication.Presentation.CommServices"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XSpcGroupRegistryVer1="F2XSpcGroupRegistryVer1.xsd" targetNamespace="F2XSpcGroupRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<!-- Initial version 1.0, Support progressive concepts. -->
+	<xs:element name="SpcGroupRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for instantiating a group of Standalone Progressive Controller levels. The file extension will be called: xspcreg.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SpcGroups">
+					<xs:annotation>
+						<xs:documentation>List of Standalone Progressive Controller groups that may be instantiated.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SpcGroupTemplateByDenom" type="F2XSpcGroupRegistryVer1:SpcGroupTemplateByDenomType" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Template for instantiating a Standalone Progressive Controller group of levels, based on a denomination parameter.  Includes attributes that restrict when the template may be instantiated.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="SpcGroup" type="F2XSpcGroupRegistryVer1:SpcGroupType" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Standalone Progressive Controller group that may be instantiated when needed.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SpcGroupTemplateByDenomType">
+		<xs:annotation>
+			<xs:documentation>Template for instantiating a Standalone Progressive Controller group of levels, based on a denomination parameter.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SpcGroupTemplateIdentifier" type="F2XRegistryTypesVer1:SpcGroupTemplateIdentifierType">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of the template.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WarnOperatorIfMultipleInstances" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If "true", the operator is to be warned (where practical) if/when this template has been selected to create a new instance but an instance of this template (at another denomination) already exists.  If omitted, the default is "false".  This warning may be helpful to the operator in a case where the game designer wishes the SPC levels to be scaled by denomination, but the designer expects games to consistently use the SPC group at a single denomination (presumably the denomination first selected by the operator).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DenominationConstraint" type="F2XSpcGroupRegistryVer1:DenominationConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List of valid denominations for which this template may be instantiated.  If this element is omitted than ALL denominations are considered valid.  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerLevels">
+				<xs:annotation>
+					<xs:documentation>List of controller levels.  The controller level entry is referenced by a zero based index based on the order of entries in this list.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ControllerLevel" type="F2XSpcGroupRegistryVer1:ControllerLevelCreditsType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Element that describes a controller level to be instantiated.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpcGroupType">
+		<xs:annotation>
+			<xs:documentation>Template for instantiating a Standalone Progressive Controller group of levels, based on a denomination parameter.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SpcGroupIdentifier" type="F2XRegistryTypesVer1:SpcGroupIdentifierType">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of the Standalone Progressive Controller group when instantiated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DenominationConstraint" type="F2XSpcGroupRegistryVer1:DenominationConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List of denominations that are considered valid to allow the SPC group to be instantiated. If this element is omitted than ALL denominations are considered valid. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerLevels">
+				<xs:annotation>
+					<xs:documentation>List of controller levels.  The controller level entry is referenced by a zero based index based on the order of entries in this list.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ControllerLevel" type="F2XSpcGroupRegistryVer1:ControllerLevelAmountType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Element that describes a controller level to be instantiated.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControllerContributionLevelSettingsCreditsType">
+		<xs:annotation>
+			<xs:documentation>Type that describes a set of level settings to be instantiated based on credits scaled by denomination.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="StartValue" type="F2XSpcGroupRegistryVer1:StartValueCreditChoiceType">
+				<xs:annotation>
+					<xs:documentation>The start/reset amount as expressed as credits scaled by the denomination or as an unscaled amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BetContributionPercentage">
+				<xs:annotation>
+					<xs:documentation>Bet contribution percentage to three decimal places.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="F2XSpcGroupRegistryVer1:ThreeDigitDecimalType">
+							<xs:attribute name="Modifiability" type="F2XSpcGroupRegistryVer1:SettingModifiableType">
+								<xs:annotation>
+									<xs:documentation>This option controls  the modifiability of the settings value. Immutable - the percentage is fixed as per the registry and may never be changed.  Mutable - there is some way of setting/changing the percentage  - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="MaxLimit" type="F2XSpcGroupRegistryVer1:MaxLimitCreditChoiceType">
+				<xs:annotation>
+					<xs:documentation>The maximum progressive value expressed as credits scaled by the denomination or as an unscaled amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControllerContributionLevelSettingsAmountType">
+		<xs:annotation>
+			<xs:documentation>Type that describes a set of level settings to be instantiated based on amounts.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="StartValue" type="F2XSpcGroupRegistryVer1:StartValueAmountChoiceType">
+				<xs:annotation>
+					<xs:documentation>The start/reset amount as expressed as an amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BetContributionPercentage">
+				<xs:annotation>
+					<xs:documentation>Bet contribution percentage to three decimal places.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="F2XSpcGroupRegistryVer1:ThreeDigitDecimalType">
+							<xs:attribute name="Modifiability" type="F2XSpcGroupRegistryVer1:SettingModifiableType">
+								<xs:annotation>
+									<xs:documentation>This option controls  the modifiability of the settings value.  Immutable - the percentage is fixed as per the registry and may never be changed.  Mutable - there is some way of setting/changing the percentage  - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="MaxLimit" type="F2XSpcGroupRegistryVer1:MaxLimitAmountChoiceType">
+				<xs:annotation>
+					<xs:documentation>The maximum progressive value expressed as an amount.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControllerLevelCreditsType">
+		<xs:annotation>
+			<xs:documentation>Type that describes a controller level to be instantiated based on credits scaled by denomination.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LevelDescription" type="F2XSpcGroupRegistryVer1:LevelDescriptionType">
+				<xs:annotation>
+					<xs:documentation>Localized text description of the controller level. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerLevelCreditsPool" type="F2XSpcGroupRegistryVer1:ControllerLevelCreditsPoolType">
+				<xs:annotation>
+					<xs:documentation>The value of the pool as either a jackpot prize string or an accumulating value from bet contributions.  Instantiated settings may be scaled by denomination.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControllerLevelAmountType">
+		<xs:annotation>
+			<xs:documentation>Type that describes a controller level to be instantiated based on amounts.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LevelDescription" type="F2XSpcGroupRegistryVer1:LevelDescriptionType">
+				<xs:annotation>
+					<xs:documentation>Localized text description of the controller level. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerLevelAmountPool" type="F2XSpcGroupRegistryVer1:ControllerLevelAmountPoolType">
+				<xs:annotation>
+					<xs:documentation>The value of the pool as either a jackpot prize string or an accumulating value from bet contributions.  Instantiated settings are specified in amounts.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DenominationConstraintType">
+		<xs:annotation>
+			<xs:documentation>List of valid denominations.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DenomRequirement" type="F2XRegistryTypesVer1:DenomType" maxOccurs="26">
+				<xs:annotation>
+					<xs:documentation>Valid denomination for the denomination constraint.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControllerLevelDescriptionLocalizationType">
+		<xs:annotation>
+			<xs:documentation>Localized descriptive name of the controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Description">
+				<xs:annotation>
+					<xs:documentation>Description associated with the culture.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Culture" type="F2XRegistryTypesVer1:CultureStringType" use="required">
+			<xs:annotation>
+				<xs:documentation>The culture associated with the localized description.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LevelDescriptionType">
+		<xs:annotation>
+			<xs:documentation>Localized text description of the controller level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DescriptionLocalization" type="F2XSpcGroupRegistryVer1:ControllerLevelDescriptionLocalizationType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Descriptive name of the controller level.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PrizeDescriptionType">
+		<xs:annotation>
+			<xs:documentation>Localized text description of a prize.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DescriptionLocalization" type="F2XSpcGroupRegistryVer1:PrizeDescriptionLocalizationType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Descriptive name of the prize. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PrizeDescriptionLocalizationType">
+		<xs:annotation>
+			<xs:documentation>Localized text description of a prize string.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Description">
+				<xs:annotation>
+					<xs:documentation>Description associated with the culture.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="63"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Culture" type="F2XRegistryTypesVer1:CultureStringType" use="required">
+			<xs:annotation>
+				<xs:documentation>The culture associated with the localized description.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="PrizeSelectionOptionType">
+		<xs:annotation>
+			<xs:documentation>This setting determines how the prize string may be modified.  MutablePrize - The prize string is always used as the value of the level, and there is some means of (the operator) changing the prize string (but it may never be set to an empty string).  The ContributionLevelSettings element must NOT be present. ImmutablePrize - The prize string must be used as the value of the level and the prize string is fixed as per the registry (and may not be empty).  The ContributionLevelSettings element must NOT be present.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ImmutablePrize"/>
+			<xs:enumeration value="MutablePrize"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="JackpotPrizeType">
+		<xs:annotation>
+			<xs:documentation>The prize string settings for a controller level.  If this element is omitted  a ContributionLevelSettings element must be present.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PrizeDescription" type="F2XSpcGroupRegistryVer1:PrizeDescriptionType">
+				<xs:annotation>
+					<xs:documentation>The localized description of the jackpot prize string.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="PrizeSelectionOption" type="F2XSpcGroupRegistryVer1:PrizeSelectionOptionType" use="required">
+			<xs:annotation>
+				<xs:documentation>This setting determines how the prize string may be modified.  MutablePrize - The prize string is always used as the value of the level, and there is some means of (the operator) changing the prize string (but it may never be set to an empty string).  The ContributionLevelSettings element must NOT be present. ImmutablePrize - The prize string must be used as the value of the level and the prize string is fixed as per the registry (and may not be empty).  The ContributionLevelSettings element must NOT be present.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="ThreeDigitDecimalType">
+		<xs:annotation>
+			<xs:documentation>The type for numeric values with three decimal digits (ex. 98.600 is valid 98.60 is not) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d*\.\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SettingModifiableType">
+		<xs:annotation>
+			<xs:documentation> This option controls  the modifiability of the settings value.  Immutable - The value is fixed, as per the registry.  Mutable - There is some way of setting/changing the value - e.g. an operator menu or exposed protocol setting.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Immutable"/>
+			<xs:enumeration value="Mutable"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ControllerLevelCreditsPoolType">
+		<xs:annotation>
+			<xs:documentation>Type where the value of the pool is either a jackpot prize string or an accumulating value from bet contributions.  Instantiated settings are specified in credits.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="JackpotPrize" type="F2XSpcGroupRegistryVer1:JackpotPrizeType">
+				<xs:annotation>
+					<xs:documentation>The prize string settings for a controller level.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContributionLevelSettings" type="F2XSpcGroupRegistryVer1:ControllerContributionLevelSettingsCreditsType">
+				<xs:annotation>
+					<xs:documentation>The settings for a controller level.  Instantiated settings may be scaled by denomination.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ControllerLevelAmountPoolType">
+		<xs:annotation>
+			<xs:documentation>Type where the value of the pool is either a jackpot prize string or an accumulating value from bet contributions.  Instantiated settings are specified in amounts.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="JackpotPrize" type="F2XSpcGroupRegistryVer1:JackpotPrizeType">
+				<xs:annotation>
+					<xs:documentation>The prize string settings for a controller level.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContributionLevelSettings" type="F2XSpcGroupRegistryVer1:ControllerContributionLevelSettingsAmountType">
+				<xs:annotation>
+					<xs:documentation>The settings for a controller level as specified as amounts.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="MaxLimitCreditChoiceType">
+		<xs:annotation>
+			<xs:documentation>The maximum progressive value expressed as credits scaled by the denomination or as an unscaled amount.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="MaxLimitCredits" type="F2XSpcGroupRegistryVer1:MaxLimitCreditsType">
+				<xs:annotation>
+					<xs:documentation>Maximum number of credits for this controller-level. This limit will be scaled by denomination when the controller group is instantiated. The Foundation will (automatically) manage contributions that exceed the maximum amount by putting the excess in the levels "overflow" meter.  This value must be greater than or equal to the StartCredit value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxLimitAmount" type="F2XSpcGroupRegistryVer1:MaxLimitAmountType">
+				<xs:annotation>
+					<xs:documentation>Maximum amount for this controller-level. The Foundation will (automatically) manage contributions that exceed the maximum amount by putting the excess in the levels "overflow" meter.  This value must be greater than or equal to the StartAmount value.  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="MaxLimitAmountChoiceType">
+		<xs:annotation>
+			<xs:documentation>The maximum progressive value expressed as an amount.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="MaxLimitAmount" type="F2XSpcGroupRegistryVer1:MaxLimitAmountType">
+				<xs:annotation>
+					<xs:documentation>Maximum amount for this controller-level. The Foundation will (automatically) manage contributions that exceed the maximum amount by putting the excess in the levels "overflow" meter.  This value must be greater than or equal to the StartAmount value.  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="StartValueCreditChoiceType">
+		<xs:annotation>
+			<xs:documentation>The start/reset amount as expressed as credits scaled by the denomination or as an unscaled amount.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="StartCredits" type="F2XSpcGroupRegistryVer1:StartCreditsType">
+				<xs:annotation>
+					<xs:documentation>Number of start credits for the progressive level.  This value will be scaled by denomination when the controller group is instantiated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartAmount" type="F2XSpcGroupRegistryVer1:StartAmountType">
+				<xs:annotation>
+					<xs:documentation>The starting amount for the progressive level.  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="StartValueAmountChoiceType">
+		<xs:annotation>
+			<xs:documentation>The start/reset amount as expressed as an amount.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="StartAmount" type="F2XSpcGroupRegistryVer1:StartAmountType">
+				<xs:annotation>
+					<xs:documentation>The starting amount for the progressive level.  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="MaxLimitCreditsType">
+		<xs:annotation>
+			<xs:documentation>Maximum number of credits for this controller-level. This limit will be scaled by denomination..</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedLong">
+				<xs:attribute name="Modifiability" type="F2XSpcGroupRegistryVer1:SettingModifiableType">
+					<xs:annotation>
+						<xs:documentation>This option controls the modifiability of the settings value.  Immutable - the limit is fixed, as per the registry.  Mutable - there is some way of setting/changing the limit - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="MaxLimitAmountType">
+		<xs:annotation>
+			<xs:documentation>Maximum amount for this controller-level.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedLong">
+				<xs:attribute name="Modifiability" type="F2XSpcGroupRegistryVer1:SettingModifiableType">
+					<xs:annotation>
+						<xs:documentation>This option controls  the modifiability of the settings value.  Immutable - the limit is fixed, as per the registry.  Mutable - there is some way of setting/changing the limit - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="StartCreditsType">
+		<xs:annotation>
+			<xs:documentation>Number of start credits for the progressive level.  This value will be scaled by denomination.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedLong">
+				<xs:attribute name="Modifiability" type="F2XSpcGroupRegistryVer1:SettingModifiableType">
+					<xs:annotation>
+						<xs:documentation>This option controls  the modifiability of the settings value. Immutable - the start amount is fixed, as per the registry, as the start credits scaled by denomination.  Mutable - there is some way of setting/changing the start credits/amount - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="StartAmountType">
+		<xs:annotation>
+			<xs:documentation>The starting amount for the progressive level.  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedLong">
+				<xs:attribute name="Modifiability" type="F2XSpcGroupRegistryVer1:SettingModifiableType">
+					<xs:annotation>
+						<xs:documentation>This option controls  the modifiability of the settings value.  Immutable - the limit is fixed, as per the registry.  Mutable - there is some way of setting/changing the limit - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

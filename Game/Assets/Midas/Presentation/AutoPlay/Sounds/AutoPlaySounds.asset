@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6279fa92149344f8416884c37ab7d1, type: 3}
+  m_Name: AutoPlaySounds
+  m_EditorClassIdentifier: 
+  soundDefinitionsList:
+  - id: AutoplayOn
+    clip: {fileID: 8300000, guid: a8e12deed96428c4cb00c744aaf462d1, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: AutoplayOff
+    clip: {fileID: 8300000, guid: 926dc6b8a644a05489d10924ec1592be, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: AutoplayOnEs
+    clip: {fileID: 8300000, guid: 123e9595695fce44e81b759d1333950a, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: AutoplayOffEs
+    clip: {fileID: 8300000, guid: 65b3bceb2f1080a45904a347e9ecf038, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: AutoplayOnCh
+    clip: {fileID: 8300000, guid: 8b56b6e7ec7add04fbf6f08f7797048c, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}
+  - id: AutoplayOffCh
+    clip: {fileID: 8300000, guid: 7842b9bc87fb4c3448f180b149220a1c, type: 3}
+    isLooped: 0
+    volume: 1
+    group: {fileID: 8745462798728843822, guid: 1c27cb88e2661ce45bf9b582d5f8d7b9, type: 2}

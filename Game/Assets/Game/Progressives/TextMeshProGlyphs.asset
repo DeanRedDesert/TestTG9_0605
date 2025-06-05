@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fec0c832a4424dac40c7d53a6fe7c2, type: 3}
+  m_Name: TextMeshProGlyphs
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2378526365290394476, guid: 0dccef614564df54ebfb6fa9ed6e254a, type: 3}
+  digitSize: {x: 0.72, y: 1}
+  punctuationSize: {x: 0.3, y: 1}

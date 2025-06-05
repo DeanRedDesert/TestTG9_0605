@@ -1,0 +1,12 @@
+{
+  "name": "IGT.Game.Core.Logic.PaytableLoader.Interfaces",
+  "precompiledReferences": [],
+  "references": [],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": true,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

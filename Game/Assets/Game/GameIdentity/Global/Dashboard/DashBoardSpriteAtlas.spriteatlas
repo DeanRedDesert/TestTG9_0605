@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DashBoardSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 9c0bba5f0bc001949bdee466a68dfc4f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 7c19c8209061b8440b8da5f8c40e4f17, type: 3}
+  - {fileID: 21300000, guid: d7bb6870b784cc14893dc11c14ce4d8f, type: 3}
+  - {fileID: 21300000, guid: dab20061c1c768642b6bfc4c69bb377c, type: 3}
+  - {fileID: 21300000, guid: bace1971d6f36d64f8d0ce329706db26, type: 3}
+  - {fileID: 21300000, guid: d052a703a72db274b92f10666a264600, type: 3}
+  - {fileID: 21300000, guid: dc9f8c33c3f926d4bbc55cf56b10c861, type: 3}
+  - {fileID: 21300000, guid: a5450ed33018fe34299f38ec5716a28c, type: 3}
+  - {fileID: 21300000, guid: 3eca09e3e4b6f9e419cb892818f21366, type: 3}
+  - {fileID: 21300000, guid: 2432a044d6f366e408edfd6b2b7eb849, type: 3}
+  - {fileID: 21300000, guid: 5678bb542add5464887456f0e5f40d63, type: 3}
+  - {fileID: 21300000, guid: 7d475da47f261814c94c137f438241ea, type: 3}
+  - {fileID: 21300000, guid: 7e6e61b5682d18a4ca6cd92cde3e6685, type: 3}
+  - {fileID: 21300000, guid: 90e0fbc52e41f36448ae35c3d7a04e0c, type: 3}
+  - {fileID: 21300000, guid: b0023cc5fac25a84eb091484121aa732, type: 3}
+  - {fileID: 21300000, guid: 96909f065b4947445b9997db6171d022, type: 3}
+  - {fileID: 21300000, guid: df2f84262230e564e95133cce4815e9e, type: 3}
+  - {fileID: 21300000, guid: 6ab20fb65cb46ce46bcd91f0dc37fcd2, type: 3}
+  - {fileID: 21300000, guid: ee134017a93017a43bbad1e48c6318b8, type: 3}
+  - {fileID: 21300000, guid: 72c239473c8277240af0143ef8f2b321, type: 3}
+  - {fileID: 21300000, guid: c7c49d776e46f0546af60171749498d2, type: 3}
+  - {fileID: 21300000, guid: 82a49308e93f88a4ebd0b28fc6bdf6a2, type: 3}
+  - {fileID: 21300000, guid: 2dcfa9289362b4e4a89e33fe6bd9ca1a, type: 3}
+  - {fileID: 21300000, guid: eaf15278091d2fa4facdc1b3fd889dfe, type: 3}
+  - {fileID: 21300000, guid: 11d4c4e8e807b3d40864c1c51c0a6551, type: 3}
+  - {fileID: 21300000, guid: cb0af8f8c37666f4abfe749f38189a46, type: 3}
+  - {fileID: 21300000, guid: 86d4cc597be872c4c9c317ea42bc3987, type: 3}
+  - {fileID: 21300000, guid: 42d9a53aaeb75364a8ecb34960e7fd31, type: 3}
+  - {fileID: 21300000, guid: 0507e4da9763d6e449c981222a1c4671, type: 3}
+  - {fileID: 21300000, guid: 7ac26e6bae45f454ca2fc694d8769aa8, type: 3}
+  - {fileID: 21300000, guid: 420e517bc25dfdb439464996253a1e7e, type: 3}
+  - {fileID: 21300000, guid: 82f36dbb0338996498ed6cc2a76f5b45, type: 3}
+  - {fileID: 21300000, guid: 6208752c21229b64ea236071af19ce8c, type: 3}
+  - {fileID: 21300000, guid: 6852be2c2a908d74f9291750abe6c2e1, type: 3}
+  - {fileID: 21300000, guid: dbf4477c9f0c0e643a9b85f2a913b68d, type: 3}
+  - {fileID: 21300000, guid: 70748b7c3e55a9e43818f2fa7513b94d, type: 3}
+  - {fileID: 21300000, guid: 578cd8dcb2e878946af6b84ba5d00201, type: 3}
+  - {fileID: 21300000, guid: 1eadda9e2d13f0142895a9a0bd46f4ed, type: 3}
+  - {fileID: 21300000, guid: 25655d9e2141b37408e21f9f5b5dfe5d, type: 3}
+  - {fileID: 21300000, guid: 379761fec51f10c45b376e6fbec0b311, type: 3}
+  - {fileID: 21300000, guid: d06df6fe937763c478815c01ebd07010, type: 3}
+  - {fileID: 21300000, guid: fa7729afcea6eb44abb5ae753b5f0b3e, type: 3}
+  - {fileID: 21300000, guid: accfe3bf9ad272a4ab2703bc3789a2bf, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - LanguageButtonUK
+  - Speed2
+  - TakeWin
+  - LanguageButtonRussian
+  - LanguageButtonPortuguese
+  - SpecialButtonSelected
+  - BaseBar
+  - Volume4
+  - Speed3
+  - VolumeGradientDim
+  - SpecialButtonActive
+  - SeparatorsLeft_0
+  - CreditMeter
+  - SquareEdgePopUp
+  - Volume1
+  - VolumePopUp
+  - LanguageButtonChinese
+  - LanguageButtonUnknown
+  - LanguageButtonUSA
+  - VolumeGradient
+  - Speed1
+  - ButtonActive
+  - LanguageButtonFrench
+  - ButtonSelected
+  - SelectedState
+  - DenomTabInActive
+  - PixelBlack
+  - Volume3
+  - ButtonDeactive
+  - DenomBandBg
+  - BonusBG
+  - VolumeSliderHandle
+  - InfoBar
+  - LanguageButtonFrenchQuebec
+  - MeterPanelWinGlass
+  - LanguageButtonSpanish
+  - Volume0
+  - DenomTabActive
+  - SelectionHighlight
+  - SpecialButtonDeactive
+  - LanguageButtonAU
+  - Volume2
+  m_RenderDataMap: {}
+  m_Tag: DashBoardSpriteAtlas
+  m_IsVariant: 0

@@ -1,0 +1,18 @@
+﻿{
+  "name": "Midas.Gamble.LogicToPresentation",
+	"rootNamespace": "",
+	"references": [
+		"Midas.Logging",
+		"Midas.Core",
+		"Midas.LogicToPresentation"
+	],
+	"includePlatforms": [],
+	"excludePlatforms": [],
+	"allowUnsafeCode": false,
+	"overrideReferences": false,
+	"precompiledReferences": [],
+	"autoReferenced": true,
+	"defineConstraints": [],
+	"versionDefines": [],
+	"noEngineReferences": true
+}

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PayvarRegistry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2LPayvarRegistryVer3.xsd" xmlns="F2LPayvarRegistryVer3.xsd">
+  <PaytableName>AVV050030</PaytableName>
+  <PayvarType>Standard</PayvarType>
+  <PaybackPercentage>92.44</PaybackPercentage>
+  <MinimumPaybackPercentage>92.31</MinimumPaybackPercentage>
+  <MinimumPaybackPercentageWithoutProgressives>91.81</MinimumPaybackPercentageWithoutProgressives>
+  <ThemeRegistry>Registries/T001TMP.xthemereg</ThemeRegistry>
+  <pr3:TagDataFile pr3:Tag="AVV050030" xmlns:pr3="F2LPayvarRegistryVer3.xsd">Paytables/Game.zaml</pr3:TagDataFile>
+  <WagerCategories>
+    <Percentage>92.44</Percentage>
+  </WagerCategories>
+  <CustomConfigItems>
+    <ConfigItem xmlns="F2LRegistryTypeVer2.xsd">
+      <Name>MinimumBaseGameRtp</Name>
+      <Data>
+        <StringData>88.969158</StringData>
+      </Data>
+    </ConfigItem>
+    <ConfigItem xmlns="F2LRegistryTypeVer2.xsd">
+      <Name>MaximumBaseGameRtp</Name>
+      <Data>
+        <StringData>89.098027</StringData>
+      </Data>
+    </ConfigItem>
+    <ConfigItem xmlns="F2LRegistryTypeVer2.xsd">
+      <Name>VariationId</Name>
+      <Data>
+        <StringData>40</StringData>
+      </Data>
+    </ConfigItem>
+    <ConfigItem xmlns="F2LRegistryTypeVer2.xsd">
+      <Name>Percentage</Name>
+      <Data>
+        <StringData>CAS02</StringData>
+      </Data>
+    </ConfigItem>
+    <ConfigItem xmlns="F2LRegistryTypeVer2.xsd">
+      <Name>ProgressiveSetId</Name>
+      <Data>
+        <StringData>P2</StringData>
+      </Data>
+    </ConfigItem>
+  </CustomConfigItems>
+  <ProgressiveGameLevels>
+    <ProgressiveGameLevel>
+      <Description>GRAND</Description>
+      <StartCredit>7800</StartCredit>
+    </ProgressiveGameLevel>
+    <ProgressiveGameLevel>
+      <Description>MAJOR</Description>
+      <StartCredit>500</StartCredit>
+    </ProgressiveGameLevel>
+  </ProgressiveGameLevels>
+  <ProgressiveConcepts>
+    <ProgressiveConcept>
+      <ProgressiveConceptIdentifier>
+        <ProgressiveConceptCode xmlns="F2XRegistryTypesVer1.xsd">ProgTheme_PCC02</ProgressiveConceptCode>
+        <Authority xmlns="F2XRegistryTypesVer1.xsd">Q</Authority>
+      </ProgressiveConceptIdentifier>
+    </ProgressiveConcept>
+  </ProgressiveConcepts>
+  <WinLevels>
+    <WinLevel>
+      <Description>GRAND</Description>
+      <ProgressiveSupport>
+        <ProgressiveGameLevelIndex>0</ProgressiveGameLevelIndex>
+        <Odds>666535</Odds>
+      </ProgressiveSupport>
+    </WinLevel>
+    <WinLevel>
+      <Description>MAJOR</Description>
+      <ProgressiveSupport>
+        <ProgressiveGameLevelIndex>1</ProgressiveGameLevelIndex>
+        <Odds>29994</Odds>
+      </ProgressiveSupport>
+    </WinLevel>
+  </WinLevels>
+  <SupportedDenominations>
+    <Denom>100</Denom>
+  </SupportedDenominations>
+  <ButtonPanelMinBet>
+    <ValuePool xmlns="F2LRegistryTypeVer2.xsd">
+      <List>
+        <Enumeration>1</Enumeration>
+      </List>
+    </ValuePool>
+    <rt2:Value rt2:Denom="100" xmlns:rt2="F2LRegistryTypeVer2.xsd">1</rt2:Value>
+  </ButtonPanelMinBet>
+  <MaxBet>
+    <ValuePool xmlns="F2LRegistryTypeVer2.xsd">
+      <List>
+        <Enumeration>50</Enumeration>
+      </List>
+    </ValuePool>
+    <rt2:Value rt2:Denom="100" xmlns:rt2="F2LRegistryTypeVer2.xsd">50</rt2:Value>
+  </MaxBet>
+  <DoubleUpSupported>true</DoubleUpSupported>
+</PayvarRegistry>

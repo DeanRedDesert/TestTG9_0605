@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp2 (http://www.altova.com) by ﻿IGT User (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XChooserRegistryVer1="F2XChooserRegistryVer1.xsd" targetNamespace="F2XChooserRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.5">
+	<!-- Version 1.1: Added optional ChooserName and optional ClientVersion -->
+	<!-- Version 1.2: Added optional ChooserDesignator and optional ChooserDefinition support -->
+	<!-- Version 1.3: Added optional ability to specify a NotTransferable option for CustomConfigItemsType/ConfigItem. -->
+	<!-- Version 1.4: Added optional ability to specify an ExtensionImportList -->
+	<!-- Version 1.5: Added optional ability to specify if the Chooser requires physical/emulated service and Cashout buttons. -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="ChooserRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry which defines chooser information.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequiredVersion" type="F2XRegistryTypesVer1:Version">
+					<xs:annotation>
+						<xs:documentation>The Version of the CTC required for this chooser.  The major version must match, and the minor version must be less than or equal to the CTC minor version.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ClientVersion" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines the chooser version. Displayed in operator menu.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ChooserName" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines the chooser name.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ClientProcessName">
+					<xs:annotation>
+						<xs:documentation>Name of the executable to run in order to launch this chooser</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:anyURI"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CommandLine" type="F2XRegistryTypesVer1:CommandLine" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Named arguments can be used to compose the command line used to launch the executable. They should be prefixed with “-g” flag to be distinguished from Foundation side arguments.  For example, an argument named "Arg1" with a value of "ArgOne", and "Arg2" with a value of "ArgTwo" can be referenced in this element as "-g1$(Arg1) –g2$(Arg2)", such that the executable will be launched as  "absolute_path/client.exe –g1ArgOne –g2ArgTwo". 
+The Foundation will also provide the variable "PackageRoot" so files may be referenced relative to the package root, For example, "$(PackageRoot)/relative_path/client.dll"
+			</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CommandLineArguments" type="F2XRegistryTypesVer1:CommandLineArguments" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Collection of arguments to be used as references in a CommandLineType element.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TagDataFile" type="F2XRegistryTypesVer1:TagDataFileType">
+					<xs:annotation>
+						<xs:documentation>Custom executable-related file for use with the executable.  Passed to the executable during startup.  Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CustomConfigItems" type="F2XRegistryTypesVer1:CustomConfigItemsType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains all custom configuration items being declared for this scope. Custom config items are items stored by the Selection Manager, but are not otherwise interpreted or configured at this time.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="InstallationRestriction" default="OnlyThemesInBundle">
+					<xs:annotation>
+						<xs:documentation>Defines the level of restriction for games that are supported by this chooser configuration.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="OnlyThemesInBundle"/>
+							<xs:enumeration value="AnyThemes"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ChooserDesignator" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Unique Chooser designator with fixed length of 6 characters; the UUUUUU piece of CHFFFUUUUUUSRR from the naming convention for Choosers. This must be unique across all Choosers.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="6"/>
+							<xs:maxLength value="6"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ChooserDefinition" type="F2XChooserRegistryVer1:ChooserDefinitionSupport" default="NotSupported" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines the level of Chooser Definition support for this Chooser.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="F2XRegistryTypesVer1:ExtensionImportList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines extensions (i.e. add-on content) that may be linked to the chooser.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CashoutServiceButtonsRequired" type="xs:boolean" minOccurs="0" default="true">
+					<xs:annotation>
+						<xs:documentation>Indicates the Chooser requirement for the EGM to have either physical or emulated cashout and service buttons. This element will default to true, and if the flag is missing it is presumed that the physical or emulated Cashout and Service buttons are required.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EmulatedMediaControllerEnabled" type="xs:boolean" default="true" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Flag indicating whether to use Emulated Media Controller (true/false). If omitted, EMC will be enabled.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="ChooserDefinitionSupport">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NotSupported">
+				<xs:annotation>
+					<xs:documentation>Chooser does not support Chooser Definition.  No Chooser Definition functionality will be provided.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Optional">
+				<xs:annotation>
+					<xs:documentation>Chooser supports Chooser Definition, but does not require it.  The Chooser will function with or without a linked Chooser Definition.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Required">
+				<xs:annotation>
+					<xs:documentation>Chooser supports Chooser Definition, and it is required.  The Chooser will not function without a linked Chooser Definition.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

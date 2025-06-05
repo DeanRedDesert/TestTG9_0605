@@ -1,0 +1,20 @@
+{
+    "name": "IGT.Ascent.Assets.StandaloneFoundationConfigurator.Editor",
+    "rootNamespace": "",
+    "references": [
+        "IGT.Ascent.Assets.StandaloneSafeStorage.Editor",
+        "IGT.Game.Core.Communication.Foundation.Standalone.Registries",
+        "IGT.Game.Core.Communication.Standalone.Schemas"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

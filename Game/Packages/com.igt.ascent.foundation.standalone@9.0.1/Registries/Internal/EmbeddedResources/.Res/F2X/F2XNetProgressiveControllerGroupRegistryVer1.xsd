@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XNetProgressiveControllerGroupRegistryVer1="F2XNetProgressiveControllerGroupRegistryVer1.xsd" targetNamespace="F2XNetProgressiveControllerGroupRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<!-- Initial version 1.0, Support Net Progressive groups for progressive concepts. -->
+	<!-- Version 1.1, Add support for event-based progressives. -->
+	<xs:element name="NetProgressiveGroupRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for instantiating groups of Net Progressive Controller levels. The file extension will be called: xnpcreg.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Groups">
+					<xs:annotation>
+						<xs:documentation>List of Net Progressive controller groups that may be instantiated.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Group" type="F2XNetProgressiveControllerGroupRegistryVer1:GroupType" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Net Progressive Controller group that may be instantiated by the operator.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GroupType">
+		<xs:annotation>
+			<xs:documentation>Type for instantiating a Net Progressive Controller group of levels.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupIdentifier" type="F2XRegistryTypesVer1:NetProgressiveControllerGroupIdentifierType">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of the Net Progressive Controller group when instantiated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IncrementType" type="F2XNetProgressiveControllerGroupRegistryVer1:LevelIncrementType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Type of increment for the controller levels. Default is WagerBased.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerLevels">
+				<xs:annotation>
+					<xs:documentation>List of controller levels.  The controller level entry is referenced by a zero based index based on the order of entries in this list.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ControllerLevel" type="F2XNetProgressiveControllerGroupRegistryVer1:ControllerLevelType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Element that describes a controller level to be instantiated.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControllerLevelType">
+		<xs:annotation>
+			<xs:documentation>Type that describes a set of level settings to be instantiated.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="StartAmount" type="F2XNetProgressiveControllerGroupRegistryVer1:StartAmountType">
+				<xs:annotation>
+					<xs:documentation>The starting amount for the progressive level.  Must be less than or equal to the max limit amount.  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BetContributionPercentage" type="F2XNetProgressiveControllerGroupRegistryVer1:BetContributionPercentageType">
+				<xs:annotation>
+					<xs:documentation>Bet contribution percentage to three decimal places.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxLimit" type="F2XNetProgressiveControllerGroupRegistryVer1:MaxLimitType">
+				<xs:annotation>
+					<xs:documentation>The max limit for the progressive level.  Must be greater than or equal to the start amount.  The amount is expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="SettingModifiableType">
+		<xs:annotation>
+			<xs:documentation> This option controls the modifiability of the settings value.  Immutable - The value is fixed, as per the registry.  Mutable - There is some way of setting/changing the value - e.g. an operator menu or exposed protocol setting.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Immutable"/>
+			<xs:enumeration value="Mutable"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StartAmountType">
+		<xs:annotation>
+			<xs:documentation>The starting amount range and value for the progressive level.  The amounts are expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Range">
+				<xs:annotation>
+					<xs:documentation>The range for the starting starting amount for the progressive level.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="Min" type="xs:unsignedLong" use="required">
+						<xs:annotation>
+							<xs:documentation>The minimum starting amount value for the progressive level.  Must be less than or equal to max.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Max" type="xs:unsignedLong" use="required">
+						<xs:annotation>
+							<xs:documentation>The maximum starting amount value for the progressive level.  Must be greater than or equal to min.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Value" type="xs:unsignedLong">
+				<xs:annotation>
+					<xs:documentation>The default starting amount value for the progressive level.  Must be greater or equal to min and less than or equal to max.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Modifiability" type="F2XNetProgressiveControllerGroupRegistryVer1:SettingModifiableType">
+			<xs:annotation>
+				<xs:documentation>This option controls the modifiability of the settings value. Immutable - the value is fixed as per the registry and may never be changed.  Mutable - there is some way of setting/changing the value - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BetContributionPercentageType">
+		<xs:annotation>
+			<xs:documentation>The bet contribution percentage range and value for the progressive level.  The percentages are to three decimal places.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Range">
+				<xs:annotation>
+					<xs:documentation>The range for the bet contribution percentage for the progressive level.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="Min" type="F2XRegistryTypesVer1:PrecisionDecimalType" use="required">
+						<xs:annotation>
+							<xs:documentation>The minimum bet contribution percentage value for the progressive level.  Must be less than or equal to max.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Max" type="F2XRegistryTypesVer1:PrecisionDecimalType" use="required">
+						<xs:annotation>
+							<xs:documentation>The maximum bet contribution percentage value for the progressive level.  Must be greater than or equal to min.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Value" type="F2XRegistryTypesVer1:PrecisionDecimalType">
+				<xs:annotation>
+					<xs:documentation>The default bet contribution percentage value for the progressive level.  Must be greater or equal to min and less than or equal to max.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Modifiability" type="F2XNetProgressiveControllerGroupRegistryVer1:SettingModifiableType">
+			<xs:annotation>
+				<xs:documentation>This option controls the modifiability of the settings value. Immutable - the value is fixed as per the registry and may never be changed.  Mutable - there is some way of setting/changing the value  - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="MaxLimitType">
+		<xs:annotation>
+			<xs:documentation>The maximum limit range and value for the progressive level.  The amounts are expressed in "base monetary units" which is the smallest value for the currency in the jurisdiction (e.g. cents, Lira, etc.); for example a value of "1" is equal to one cent for US currency.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Range">
+				<xs:annotation>
+					<xs:documentation>The range for the maximum limit for the progressive level.  Value must be greater than or equal to min and less than or equal to max for the registry to be valid.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="Min" type="xs:unsignedLong" use="required">
+						<xs:annotation>
+							<xs:documentation>The minimum maximum amount value for the progressive level.  Must be less than or equal to max.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Max" type="xs:unsignedLong" use="required">
+						<xs:annotation>
+							<xs:documentation>The maximum maximum amount value for the progressive level.  Must be greater than or equal to min.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Value" type="xs:unsignedLong">
+				<xs:annotation>
+					<xs:documentation>The default maximum amount value for the progressive level.  Must be greater or equal to min and less than or equal to max.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Modifiability" type="F2XNetProgressiveControllerGroupRegistryVer1:SettingModifiableType">
+			<xs:annotation>
+				<xs:documentation>This option controls  the modifiability of the settings value. Immutable - the value is fixed as per the registry and may never be changed.  Mutable - there is some way of setting/changing the value  - e.g. an operator menu or exposed protocol setting. If omitted the default value is "Immutable".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="LevelIncrementType">
+		<xs:annotation>
+			<xs:documentation>Specifies how the particular level is getting incremented.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WagerBased">
+				<xs:annotation>
+					<xs:documentation>The level is increment on each bet of the payvar x denomination.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EventBased">
+				<xs:annotation>
+					<xs:documentation>The level increment is controlled by the Game Client thru the event of adding qualified contribution, the progressive hits are paid and metered as paytable win.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ProgressiveEventBased">
+				<xs:annotation>
+					<xs:documentation>The level increment is controlled by the Game Client thru the event of adding qualified contribution, the progressive hits are paid and metered as progressive win.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,21 @@
+{
+  "name": "InterfaceExtensions.PlayerSessionParams",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Communication",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "IGT.Game.Core.Communication.Foundation.F2X",
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas",
+    "Foundation.InterfaceExtensions",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

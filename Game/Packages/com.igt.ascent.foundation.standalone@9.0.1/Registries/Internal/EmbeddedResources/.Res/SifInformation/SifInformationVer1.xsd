@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (x64) (http://www.altova.com) by IGT (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:SifInformation="SifInformation.xsd" targetNamespace="SifInformation.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+  <xs:element name="SifInformation" type="SifInformation:SifInformation"/>
+  <xs:complexType name="SifInformation">
+    <xs:sequence>
+      <xs:element name="ThemeInformation" type="SifInformation:ThemeInformation" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ThemeInformation">
+    <xs:sequence>
+      <xs:element name="ResourceDirectory" type="xs:anyURI">
+        <xs:annotation>
+          <xs:documentation>Specifies the resource directory relative to the package root containing resources and localization tables.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SbxShortDescriptionKey">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="G2SId" use="required">
+      <xs:annotation>
+        <xs:documentation>The G2S ID of the theme this information relates to.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="22"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>

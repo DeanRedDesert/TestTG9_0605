@@ -1,0 +1,21 @@
+{
+  "name": "IGT.Game.Core.Logic.Foundation.ServiceProviders",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Money",
+    "IGT.Game.Core.Session",
+    "IGT.Game.Core.Logic.Services"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

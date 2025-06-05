@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 sp1 (x64) (http://www.altova.com) by Tamer Uz (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2LRegistryTypeVer2="F2LRegistryTypeVer2.xsd" xmlns:F2LBinRegistryVer2="F2LBinRegistryVer2.xsd" targetNamespace="F2LBinRegistryVer2.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="2.2">
+	<!-- Version  2.1: Added optional ClientVersion -->
+	<!-- Version  2.2: Added the support of F2B type of BinLoader -->
+	<xs:import namespace="F2LRegistryTypeVer2.xsd" schemaLocation="F2LRegistryTypeVer2.xsd"/>
+	<xs:element name="BinRegistry">
+		<xs:annotation>
+			<xs:documentation>Game discovery registry for describing a bin and the initial state of bin related configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BinLoader">
+					<xs:annotation>
+						<xs:documentation>Specifies the bin loader to be used to launch and support this bin/game.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="HNF 1.00"/>
+							<xs:enumeration value="F2L 1.00"/>
+							<xs:enumeration value="F2B 1.00"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+            <xs:element name="ClientVersion" minOccurs="0" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Specifies the version of the bin/game executable. Displayed in operator menu.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="GameClient" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>The relative directory path to the (main) bin/game executable.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TagDataFile" minOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Custom bin related file for use with the game.  Passed to the game during startup.  Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="Tag" type="xs:string">
+									<xs:annotation>
+										<xs:documentation>Custom bin related data for use with the game.  Passed to the game during startup.  Opaque to the Foundation.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Properties" type="F2LRegistryTypeVer2:PropertiesType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Provides flexible/loosely coupled way of declaring static properties visible to the AI/Foundation.  Example: An optional AI package may contain a  custom Game Selection Menu that may use properties to identify games that it is compatible with it.  Properties should be organized under sections and should be viewed as Key, Value pairs.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

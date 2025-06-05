@@ -1,0 +1,17 @@
+{
+  "name": "IGT.Game.Core.Presentation.Portal",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Cabinet",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Tilts"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

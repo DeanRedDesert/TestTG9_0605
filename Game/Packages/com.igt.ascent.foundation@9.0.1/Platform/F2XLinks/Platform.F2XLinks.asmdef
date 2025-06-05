@@ -1,0 +1,30 @@
+{
+  "name": "IGT.Ascent.Communication.Platform.F2XLinks",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Money",
+    "IGT.Game.Core.Threading",
+    "IGT.Game.Core.Communication",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.Communication.Foundation.F2XCallbacks",
+    "IGT.Game.Core.Communication.Foundation.F2XTransport",
+    "IGT.Game.Core.Communication.Foundation.F2X",
+    "IGT.Game.Core.Communication.Foundation.F2X.Schemas",
+    "IGT.Game.Core.Communication.Foundation.Standard",
+    "IGT.Game.Core.Communication.Foundation.Transport",
+    "IGT.Ascent.Communication.Platform",
+    "IGT.Ascent.Communication.Platform.ExtensionBinLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.ExtensionBinLib",
+    "IGT.Ascent.Communication.Platform.ExtensionLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

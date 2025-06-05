@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by International Game Technology (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XReportRegistryVer1="F2XReportRegistryVer1.xsd" targetNamespace="F2XReportRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:element name="ReportRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a report executable and the initial state of the report executable-related configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportClient" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>The relative path, from the root directory, to the main reporting executable.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CommandLineArguments" type="F2XRegistryTypesVer1:CommandLineArguments" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Collection of arguments to be used as references in a CommandLineType element.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CommandLine" type="F2XRegistryTypesVer1:CommandLine">
+					<xs:annotation>
+						<xs:documentation>Named arguments can be used to compose the command line used to launch the executable. They should be prefixed with “-g” flag to be distinguished from Foundation side arguments.  For example, an argument named "Arg1" with a value of "ArgOne", and "Arg2" with a value of "ArgTwo" can be referenced in this element as "-g1$(Arg1) –g2$(Arg2)", such that the executable will be launched as  "absolute_path/client.exe –g1ArgOne –g2ArgTwo".
+The Foundation will also provide the variable "PackageRoot" so files may be referenced relative to the package root, For example, "$(PackageRoot)/relative_path/client.dll"
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TagDataFile" type="F2XRegistryTypesVer1:TagDataFileType">
+					<xs:annotation>
+						<xs:documentation>Custom executable-related file for use with the executable.  Passed to the executable during startup.  Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

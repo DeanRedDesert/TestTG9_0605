@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<r1:Registry r1:RegistryType="Report" r1:Version="2.0" xmlns:r1="F2XRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XRegistryVer1.xsd">
+  <r1:Body>
+    <ReportRegistry xmlns="F2XReportRegistryVer2.xsd">
+      <ReportClient>MonoBleedingEdge/EmbedRuntime/mono-bdwgc</ReportClient>
+      <CommandLineArguments>
+        <rt1:Argument rt1:name="Runtime" xmlns:rt1="F2XRegistryTypesVer1.xsd">v4.0.30319</rt1:Argument>
+        <rt1:Argument rt1:name="Activator" xmlns:rt1="F2XRegistryTypesVer1.xsd">Game020-001TMP_Data/Managed/GameReportActivator.exe</rt1:Argument>
+        <rt1:Argument rt1:name="AssemblyName" xmlns:rt1="F2XRegistryTypesVer1.xsd">Midas.Ascent.GameReport</rt1:Argument>
+        <rt1:Argument rt1:name="TypeName" xmlns:rt1="F2XRegistryTypesVer1.xsd">Midas.Ascent.GameReport.GameReport</rt1:Argument>
+      </CommandLineArguments>
+      <CommandLine>--runtime=$(Runtime) $(PackageRoot)/$(Activator) -g0$(AssemblyName) -g1$(TypeName)</CommandLine>
+      <TagDataFile />
+    </ReportRegistry>
+  </r1:Body>
+</r1:Registry>

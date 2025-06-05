@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TrumpsSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b805053f9b9cbd743850bdb36fff1fc0, type: 3}
+    - {fileID: 102900000, guid: ba2c95fbbb85c954a852debefc835a19, type: 3}
+    - {fileID: 102900000, guid: 23f49a01e87dca548b97db3902bc70cb, type: 3}
+    - {fileID: 102900000, guid: 7066463df7d44d34cbf6bce08ff79a14, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 48adf4f06d2b1bd45af6ae58a98999b1, type: 3}
+  - {fileID: 21300000, guid: 9541e0d1003fd054d90337b8b7f9af34, type: 3}
+  - {fileID: 21300000, guid: 81f4b54216b5a8949b396d38b12a8260, type: 3}
+  - {fileID: 21300000, guid: 60842c33a9bcbb44e875977152638087, type: 3}
+  - {fileID: 21300000, guid: 369792535da11aa4788108daca3a24f8, type: 3}
+  - {fileID: 21300000, guid: 4dba90636a25a7a43abe80cc3c6a63f2, type: 3}
+  - {fileID: 21300000, guid: f461f23425c966b43a10296088c18715, type: 3}
+  - {fileID: 21300000, guid: 4d72dd34b32565e469a24ec6e30b8fdb, type: 3}
+  - {fileID: 21300000, guid: c54b21853d2c8174f875de5598698895, type: 3}
+  - {fileID: 21300000, guid: c35c5947fe9e4234d9c91f5c766d77c0, type: 3}
+  - {fileID: 21300000, guid: 5da11f47985544840a16b38776fc273d, type: 3}
+  - {fileID: 21300000, guid: bdb2bac740033c446a1f167f67d26d18, type: 3}
+  - {fileID: 21300000, guid: 89b6e418a8970dd4cb21d35fd0d7bfbb, type: 3}
+  - {fileID: 21300000, guid: 478b533804eb0a741b6a773ca3e98661, type: 3}
+  - {fileID: 21300000, guid: 771d00b8ab522004096463a9286c4d47, type: 3}
+  - {fileID: 21300000, guid: 102cf17cf3f6c0d43ae22169113f4843, type: 3}
+  - {fileID: 21300000, guid: 1983bc8cfb79fdd48b2750c68d82898d, type: 3}
+  - {fileID: 21300000, guid: aa56df8e42e7c3e46b51133cbd16deb5, type: 3}
+  - {fileID: 21300000, guid: 6d0b14ce97ac4ae409796af3807b1486, type: 3}
+  - {fileID: 21300000, guid: 127283af7e74f694581ee6652c976267, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - HeartUp
+  - FlipCardBack
+  - ButtonStatic
+  - CardShadow
+  - FlipCardClub
+  - FlipCardSpade
+  - ClubDown
+  - DiamondUp
+  - SpadeUp
+  - ClubUp
+  - CardHistoryHeart
+  - HeartDown
+  - FlipCardDiamond
+  - FlipCardHeart
+  - DiamondDown
+  - CardHistoryClub
+  - BackgroundPanel
+  - SpadeDown
+  - CardHistorySpade
+  - CardHistoryDiamond
+  m_RenderDataMap: {}
+  m_Tag: TrumpsSpriteAtlas
+  m_IsVariant: 0

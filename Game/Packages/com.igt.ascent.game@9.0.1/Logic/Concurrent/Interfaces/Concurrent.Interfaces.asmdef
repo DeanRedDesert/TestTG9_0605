@@ -1,0 +1,26 @@
+{
+  "name": "IGT.Ascent.Logic.Concurrent.Interfaces",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Tilts",
+    "IGT.Game.Core.Communication.Foundation.InterfaceExtensions.Interfaces",
+    "IGT.Ascent.Communication.Platform.CoplayerLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.ShellLib.Interfaces",
+    "IGT.Game.Core.Communication.CommunicationLib",
+    "IGT.Game.Core.Communication.Logic.CommServices",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.Presentation.CommServices",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Money",
+    "IGT.Game.Core.Logic.Services"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

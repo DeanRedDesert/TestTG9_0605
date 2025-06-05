@@ -1,0 +1,22 @@
+{
+  "name": "IGT.Game.Core.Presentation.PeripheralLights.Devices",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Communication.Cabinet",
+    "IGT.Game.Core.Communication.Cabinet.CSI.Schemas",
+    "IGT.Game.Core.CompactSerialization",
+    "IGT.Game.Core.Logging",
+    "IGT.Game.Core.Presentation.CabinetServices",
+    "IGT.Game.Core.Presentation",
+    "IGT.Game.Core.Presentation.PeripheralLights.ChromaBlend",
+    "IGT.Game.Core.Presentation.PeripheralLights",
+    "IGT.Game.Core.Presentation.PeripheralLights.Streaming"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

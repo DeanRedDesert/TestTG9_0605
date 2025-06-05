@@ -1,0 +1,14 @@
+{
+  "name": "com.igt.ascent.game",
+  "displayName": "Ascent Game",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "GL2P, State Machine, Betting, Evaluation, Logic Services, Presentation Services, Presentation States and other presentation components that do not have a dependency to Unity.",
+  "documentation": "https://igt-developer-docs.atlassian.net/wiki/spaces/SDKDocumentationTip/pages/53027319/Getting+Started+with+Ascent+SDK+Packages",
+  "bugReporting": "https://igt-developer-docs.atlassian.net/wiki/spaces/internaldocumentation/pages/63963512/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation": "9.0.1",
+    "com.igt.ascent.interface-extensions.tilt-management": "9.0.1",
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

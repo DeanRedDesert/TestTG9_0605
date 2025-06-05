@@ -1,0 +1,15 @@
+{
+  "name": "IGT.Ascent.Communication.Platform.ExtensionLib.Interfaces",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Tilts",
+    "IGT.Ascent.Communication.Platform.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

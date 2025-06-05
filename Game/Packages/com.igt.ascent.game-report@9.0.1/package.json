@@ -1,0 +1,15 @@
+{
+  "name": "com.igt.ascent.game-report",
+  "displayName": "Ascent GameReport",
+  "version": "9.0.1",
+  "author": "Ascent SDK Team",
+  "description": "Provides common Game Report components.",
+  "documentation": "https://developers.confluence.igt.com/display/SDKDocumentationTip/Ascent+SDK+Packages",
+  "bugReporting": "https://developers.confluence.igt.com/display/internaldocumentation/Submitting+a+Support+Request",
+  "dependencies": {
+    "com.igt.ascent.foundation": "9.0.1",
+    "com.igt.ascent.foundation.standalone": "9.0.1",
+    "com.igt.ascent.game": "9.0.1",
+    "com.igt.ascent.sdk-essentials": "9.0.1"
+  }
+}

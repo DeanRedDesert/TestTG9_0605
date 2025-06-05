@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XPatchExtensionRegistryVer1="F2XPatchExtensionRegistryVer1.xsd" targetNamespace="F2XPatchExtensionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<!-- Version  1.1: Added HardwarePlatformRequirement -->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionRegistryVer1.xsd"/>
+	<xs:element name="PatchExtensionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry defining executable patches and requirements that must be met to apply that patch.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionRegistryVer1:BaseExtensionRegistry">
+					<xs:annotation>
+						<xs:documentation>Executable patch registry data.</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="GameExecutablePatch" type="F2XPatchExtensionRegistryVer1:GameExecutablePatch" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>An executable patch and the requirements that must be met to apply it.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GameExecutablePatch">
+		<xs:annotation>
+			<xs:documentation>An executable patch and the requirements that must be met to apply it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Replacement" type="F2XPatchExtensionRegistryVer1:GameReplacementExecutable">
+				<xs:annotation>
+					<xs:documentation>The replacement executable and it's data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Requirements" type="F2XPatchExtensionRegistryVer1:GameRequirementList">
+				<xs:annotation>
+					<xs:documentation>A list of requirements. All requirements in the list must be met in order for the patch to be applied.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GameRequirementList">
+		<xs:annotation>
+			<xs:documentation>A list of requirements. All requirements in the list must be met in order for the patch to be valid.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExecutablePropertyRequirement" type="F2XPatchExtensionRegistryVer1:ExecutablePropertyRequirement" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A requirement based on properties embedded in the original executable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GamePlatformRequirement" type="F2XPatchExtensionRegistryVer1:GamePackagePlatformRequirement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A requirement on the platform defined in a package name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HardwarePlatformRequirement" type="F2XPatchExtensionRegistryVer1:HardwarePlatformVersionRequirement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A requirement on the current hardware platform.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExecutablePropertyRequirement">
+		<xs:annotation>
+			<xs:documentation>A requirement based on properties embedded in the original executable.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PropertyName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The name of the property on the original executable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PropertyValue" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Acceptable values for the executable. When multiple values are specified, only one must match for the requirement to be met.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GamePackagePlatformRequirement">
+		<xs:annotation>
+			<xs:documentation>A requirement on the game platform contained in the package name.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Platform" type="F2XPatchExtensionRegistryVer1:GamePlatform" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Acceptable values for the package platform. When multiple values are specified, only one must match for the requirement to be met.</xs:documentation>
+				</xs:annotation>			
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HardwarePlatformVersionRequirement">
+		<xs:annotation>
+			<xs:documentation>A requirement on the hardware platform.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Platform" type="F2XPatchExtensionRegistryVer1:HardwarePlatformVersion" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Acceptable values for the hardware platform. When multiple values are specified, only one must match for the requirement to be met.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="GamePlatform">
+		<xs:annotation>
+			<xs:documentation>Game package values, derived from the values specified in a package name.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>GAME_PLATFORM_VIDEO</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>GAME_PLATFORM_MLD_ONLY</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>GAME_PLATFORM_STEPPER_ONLY</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>GAME_PLATFORM_MLD_STEPPER_ONLY</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="5">
+				<xs:annotation>
+					<xs:documentation>GAME_PLATFORM_VIDEO_MLD</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HardwarePlatformVersion">
+		<xs:annotation>
+			<xs:documentation>Hardware platform version (brainbox type).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AVP 3.0">
+				<xs:annotation>
+					<xs:documentation>AVP 3.0</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AVP 4.0">
+				<xs:annotation>
+					<xs:documentation>AVP 4.0</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AVP 4.0 ME">
+				<xs:annotation>
+					<xs:documentation>AVP 4.0 ME</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AVP 4.0 MEv2">
+				<xs:annotation>
+					<xs:documentation>AVP 4.0 MEv2</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AVP 4.0 Plus">
+				<xs:annotation>
+					<xs:documentation>AVP 4.0 Plus</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AVP 4.1">
+				<xs:annotation>
+					<xs:documentation>AVP 4.1</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GameReplacementExecutable">
+			<xs:annotation>
+				<xs:documentation>The replacement executable and it's data.</xs:documentation>
+			</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Bin" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The relative path of the replacement executable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommandLineArguments" type="F2XRegistryTypesVer1:CommandLineArguments" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Collection of arguments to be used as references in a CommandLineType element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommandLine" type="F2XRegistryTypesVer1:CommandLine">
+				<xs:annotation>
+					<xs:documentation>Named arguments can be used to compose the command line used to launch the executable. They should be prefixed with “-g” flag to be distinguished from Foundation side arguments.  For example, an argument named "Arg1" with a value of "ArgOne", and "Arg2" with a value of "ArgTwo" can be referenced in this element as "-g1$(Arg1) –g2$(Arg2)", such that the executable will be launched as  "absolute_path/client.exe –g1ArgOne –g2ArgTwo". The Foundation will also provide the following variables: "PackageRoot" so files may be referenced relative to the package root, For example, "$(PackageRoot)/relative_path/client.dll"; "$(GameClient)" which is only valid on Game package types and is the game client name from the xbinreg; "$(ProductVersion)", which is only available on patch commend lines and provides the product version from the executable being replaced. These arguments will be appended to any existing arguments generated by the game bin or foundation.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

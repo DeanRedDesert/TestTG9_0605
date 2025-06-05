@@ -1,0 +1,21 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+  </PropertyGroup>
+  <ItemGroup>
+    <ActivatorProject Include="GameReportActivator.sln">
+      <AdditionalProperties>OutputPath=$(OutputPath)</AdditionalProperties>
+      <AdditionalProperties>IntermediateOutputPath=$(IntermediateOutputPath)</AdditionalProperties>
+	  <AdditionalProperties>DebugSymbols=false;DebugType=None</AdditionalProperties>
+    </ActivatorProject>
+  </ItemGroup>
+  <Target Name="Build">
+    <Error Condition="'$(OutputPath)' == ''" Text="OutputPath is not specified in build command." />
+    <Error Condition="'$(IntermediateOutputPath)' == ''" Text="IntermediateOutputPath is not specified in build command." />
+    <MSBuild Projects="@(ActivatorProject)" Targets="Build" StopOnFirstFailure="True" Properties="Configuration=$(Configuration)"/>
+  </Target>
+  <Target Name="Clean">
+    <MSBuild Projects="@(ActivatorProject)" Targets="Clean" StopOnFirstFailure="True" Properties="Configuration=$(Configuration)"/>
+  </Target>
+  <Target Name="ReBuild" DependsOnTargets="Clean;Build" />
+</Project>

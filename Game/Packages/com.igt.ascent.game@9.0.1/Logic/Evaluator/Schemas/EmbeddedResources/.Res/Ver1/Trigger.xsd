@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns="http://www.igt.com/worldgame/common/xml/gamedata" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified" 
+           version="1.0">
+	<xs:complexType name="Trigger">
+		<xs:sequence>
+			<xs:element name="PlayCount" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>The number of plays to award for this trigger.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxPlayCount" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>The maximum number of plays that may result from this trigger.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MaxRetriggers" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>The maximum number of times that this trigger may be re-triggered.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Multiplier" type="xs:unsignedInt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Multiplier which applies to this trigger.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="executionPriority" type="xs:unsignedInt" use="required">
+			<xs:annotation>
+				<xs:documentation>The execution priority of this trigger. If multiple triggers are awarded, then this is used to determine which will execute first. Larger numbers are higher priority.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="Trigger" type="Trigger"/>
+</xs:schema>

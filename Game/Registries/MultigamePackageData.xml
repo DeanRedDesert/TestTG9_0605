@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MultiGamePackageData Version="1">
+  <Game GameId="X0000_0" GameName="No Name">
+    <ConfigGroup ID="0" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000001" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="1" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="0" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000002" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="2" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="0" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000003" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="3" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="200cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="0" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000004" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="4" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="100cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="0" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000005" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="5" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="20cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="0" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000006" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="6" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="10cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="0" VirtualGameId="X0000_0_6" VirtualGameName="No Name $2" BetDescription="5 Lines" QcomGvn="7" AspGameId="0000007" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="7" />
+      <ConfigItem Name="CreditDenomination" Value="200u" />
+      <ConfigItem Name="MaximumBet" Value="5cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="1" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000008" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="8" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="1" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000009" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="9" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="1" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000010" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="10" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="200cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="1" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000011" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="11" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="100cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="1" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000012" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="12" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="20cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="1" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000013" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="13" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="10cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="1" VirtualGameId="X0000_0_6" VirtualGameName="No Name $2" BetDescription="5 Lines" QcomGvn="7" AspGameId="0000014" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="14" />
+      <ConfigItem Name="CreditDenomination" Value="200u" />
+      <ConfigItem Name="MaximumBet" Value="5cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="2" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000015" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="15" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="2" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000016" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="16" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="2" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000017" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="17" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="200cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="2" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000018" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="18" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="100cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="2" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000019" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="19" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="20cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="2" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000020" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="20" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="10cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="2" VirtualGameId="X0000_0_6" VirtualGameName="No Name $2" BetDescription="5 Lines" QcomGvn="7" AspGameId="0000021" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="21" />
+      <ConfigItem Name="CreditDenomination" Value="200u" />
+      <ConfigItem Name="MaximumBet" Value="5cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="3" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000022" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="1" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="3" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000023" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="2" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="3" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000024" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="3" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="100cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="3" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000025" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="4" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="NSW01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="3" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000026" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="22" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="10cr" />
+      <ConfigItem Name="Percentage" Value="QLD01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="3" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000027" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="23" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="5cr" />
+      <ConfigItem Name="Percentage" Value="QLD01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="4" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000028" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="8" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="4" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000029" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="9" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="4" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000030" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="10" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="100cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="4" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000031" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="11" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="NSW02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="4" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000032" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="24" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="10cr" />
+      <ConfigItem Name="Percentage" Value="QLD02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="4" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000033" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="25" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="5cr" />
+      <ConfigItem Name="Percentage" Value="QLD02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="5" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000034" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="15" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="5" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000035" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="16" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="5" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000036" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="17" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="100cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="5" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000037" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="18" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="NSW03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="5" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000038" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="26" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="10cr" />
+      <ConfigItem Name="Percentage" Value="QLD03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="5" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000039" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="27" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="5cr" />
+      <ConfigItem Name="Percentage" Value="QLD03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="6" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000040" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="28" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="CAS01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="6" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000041" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="29" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="CAS01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="6" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000042" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="30" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="CAS01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="6" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000043" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="31" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="CAS01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="6" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000044" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="32" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="6" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000045" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="33" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="6" VirtualGameId="X0000_0_6" VirtualGameName="No Name $2" BetDescription="5 Lines" QcomGvn="7" AspGameId="0000046" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="34" />
+      <ConfigItem Name="CreditDenomination" Value="200u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS01" />
+      <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    </ConfigGroup>
+    <ConfigGroup ID="7" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000047" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="35" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="CAS02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="7" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000048" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="36" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="CAS02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="7" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000049" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="37" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="CAS02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="7" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000050" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="38" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="CAS02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="7" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000051" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="39" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="7" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000052" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="40" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="7" VirtualGameId="X0000_0_6" VirtualGameName="No Name $2" BetDescription="5 Lines" QcomGvn="7" AspGameId="0000053" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="41" />
+      <ConfigItem Name="CreditDenomination" Value="200u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS02" />
+      <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    </ConfigGroup>
+    <ConfigGroup ID="8" VirtualGameId="X0000_0_0" VirtualGameName="No Name 1c" BetDescription="50 Lines" QcomGvn="1" AspGameId="0000054" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="42" />
+      <ConfigItem Name="CreditDenomination" Value="1u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="CAS03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="8" VirtualGameId="X0000_0_1" VirtualGameName="No Name 2c" BetDescription="50 Lines" QcomGvn="2" AspGameId="0000055" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="43" />
+      <ConfigItem Name="CreditDenomination" Value="2u" />
+      <ConfigItem Name="MaximumBet" Value="500cr" />
+      <ConfigItem Name="Percentage" Value="CAS03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="8" VirtualGameId="X0000_0_2" VirtualGameName="No Name 5c" BetDescription="25 Lines" QcomGvn="3" AspGameId="0000056" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="44" />
+      <ConfigItem Name="CreditDenomination" Value="5u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="CAS03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="8" VirtualGameId="X0000_0_3" VirtualGameName="No Name 10c" BetDescription="25 Lines" QcomGvn="4" AspGameId="0000057" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="45" />
+      <ConfigItem Name="CreditDenomination" Value="10u" />
+      <ConfigItem Name="MaximumBet" Value="250cr" />
+      <ConfigItem Name="Percentage" Value="CAS03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="8" VirtualGameId="X0000_0_4" VirtualGameName="No Name 50c" BetDescription="5 Lines" QcomGvn="5" AspGameId="0000058" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="46" />
+      <ConfigItem Name="CreditDenomination" Value="50u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="8" VirtualGameId="X0000_0_5" VirtualGameName="No Name $1" BetDescription="5 Lines" QcomGvn="6" AspGameId="0000059" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="47" />
+      <ConfigItem Name="CreditDenomination" Value="100u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+    <ConfigGroup ID="8" VirtualGameId="X0000_0_6" VirtualGameName="No Name $2" BetDescription="5 Lines" QcomGvn="7" AspGameId="0000060" AspGameVersion="0">
+      <ConfigItem Name="VariationId" Value="48" />
+      <ConfigItem Name="CreditDenomination" Value="200u" />
+      <ConfigItem Name="MaximumBet" Value="50cr" />
+      <ConfigItem Name="Percentage" Value="CAS03" />
+      <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    </ConfigGroup>
+  </Game>
+  <ColdBootConfiguration>
+    <ConfigLookup Id="VariationId" Name="MG Combination">
+      <ConfigLookupItem Value="1" ConfigGroupIds="0" />
+      <ConfigLookupItem Value="2" ConfigGroupIds="1" />
+      <ConfigLookupItem Value="3" ConfigGroupIds="2" />
+      <ConfigLookupItem Value="4" ConfigGroupIds="3" />
+      <ConfigLookupItem Value="5" ConfigGroupIds="4" />
+      <ConfigLookupItem Value="6" ConfigGroupIds="5" />
+      <ConfigLookupItem Value="7" ConfigGroupIds="6" />
+      <ConfigLookupItem Value="8" ConfigGroupIds="7" />
+      <ConfigLookupItem Value="9" ConfigGroupIds="8" />
+    </ConfigLookup>
+    <ConfigLookup Id="CreditDenomination" Name="Denomination Group">
+      <ConfigLookupItem Value="Multi" ConfigGroupIds="*" />
+    </ConfigLookup>
+    <ConfigLookup Id="ButtonPanelLabelKeys" Name="Button Panel Group">
+      <ConfigLookupItem Value="*" ConfigGroupIds="*" />
+    </ConfigLookup>
+    <ConfigLookup Id="MaximumBet" Name="Maximum Bet Group">
+      <ConfigLookupItem Value="$100" ConfigGroupIds="6,7,8" />
+      <ConfigLookupItem Value="$10" ConfigGroupIds="0,1,2" />
+      <ConfigLookupItem Value="$5" ConfigGroupIds="3,4,5" />
+    </ConfigLookup>
+    <ConfigLookup Id="ProgressiveSetId" Name="Progressive Group">
+      <ConfigLookupItem Value="P1" ConfigGroupIds="0,3,6" />
+      <ConfigLookupItem Value="P2" ConfigGroupIds="1,4,7" />
+      <ConfigLookupItem Value="P3" ConfigGroupIds="2,5,8" />
+    </ConfigLookup>
+  </ColdBootConfiguration>
+  <PackageIdentification>
+    <ConfigLookup Id="AspMultiGamePackageId">
+      <ConfigLookupItem Value="X0000_0" ConfigGroupIds="*" />
+    </ConfigLookup>
+    <ConfigLookup Id="MultiGamePackageId">
+      <ConfigLookupItem Value="X0000_0" ConfigGroupIds="*" />
+    </ConfigLookup>
+    <ConfigLookup Id="MultiGamePackageName">
+      <ConfigLookupItem Value="No Name" ConfigGroupIds="*" />
+    </ConfigLookup>
+    <ConfigLookup Id="AspMultiGamePackageVersion">
+      <ConfigLookupItem Value="0000000" ConfigGroupIds="*" />
+    </ConfigLookup>
+  </PackageIdentification>
+  <Exclusion>
+    <Where>
+      <ConfigGroup ID="3" />
+      <ConfigGroup ID="4" />
+      <ConfigGroup ID="5" />
+      <ConfigGroup ID="6" />
+      <ConfigGroup ID="7" />
+      <ConfigGroup ID="8" />
+    </Where>
+    <Jurisdiction Value="NSW" />
+  </Exclusion>
+  <Exclusion>
+    <Where>
+      <ConfigGroup ID="0" />
+      <ConfigGroup ID="1" />
+      <ConfigGroup ID="2" />
+    </Where>
+    <Jurisdiction Value="QLD" />
+    <Jurisdiction Value="QLC" />
+    <Jurisdiction Value="NTC" />
+    <Jurisdiction Value="SCC" />
+    <Jurisdiction Value="ADC" />
+    <Jurisdiction Value="NZC" />
+  </Exclusion>
+  <Exclusion>
+    <Where>
+      <ConfigGroup ID="0" />
+      <ConfigGroup ID="1" />
+      <ConfigGroup ID="2" />
+      <ConfigGroup ID="6" />
+      <ConfigGroup ID="7" />
+      <ConfigGroup ID="8" />
+    </Where>
+    <Jurisdiction Value="QLS" />
+    <Jurisdiction Value="TSS" />
+    <Jurisdiction Value="SAS" />
+    <Jurisdiction Value="NTS" />
+    <Jurisdiction Value="VSI" />
+  </Exclusion>
+</MultiGamePackageData>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Tyrell Atterberry (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" targetNamespace="F2XBaseExtensionRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.1">
+	<!-- Minor revision 1.1, Added Properties.-->
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:complexType name="BaseExtensionRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry base for describing an extension.  An extension is add-on content that extends or supports a theme, a theme selection menu (TSM), another extension, or the Foundation.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="F2XRegistryTypesVer1:ExtensionName">
+				<xs:annotation>
+					<xs:documentation>Human-readable name for a specific extension.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A short description of the purpose of this extension.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Identifier" type="F2XRegistryTypesVer1:ExtensionId">
+				<xs:annotation>
+					<xs:documentation>Specify the unique extension identifier provided by this registry configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Version" type="F2XRegistryTypesVer1:ExtensionVersion">
+				<xs:annotation>
+					<xs:documentation>Declares support for an extension version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterfaceDefinition" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies an Interface Definition implemented by the provider. Note: The Interface Definition file must also be present within the same package for the Provider to be valid.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="InterfaceIdentifier" type="F2XRegistryTypesVer1:ExtensionId">
+							<xs:annotation>
+								<xs:documentation>Specify the unique extension identifier of the Interface Definition used.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="InterfaceVersion" type="F2XRegistryTypesVer1:ExtensionVersion">
+							<xs:annotation>
+								<xs:documentation>Specifies the version of the Interface Definition that the Provider is supporting.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Signature" type="xs:base64Binary" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Binary signature to verify the integrity of the Extension. Not required for Development.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Properties" type="F2XBaseExtensionRegistryVer1:PropertiesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> Keeps static properties static properties visible internally to the Foundation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PropertiesType">
+		<xs:annotation>
+			<xs:documentation>Provides flexible way of declaring static properties visible internally to the Foundation</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Section" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Property" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Name">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="256"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="Value">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="256"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="Name" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:maxLength value="256"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

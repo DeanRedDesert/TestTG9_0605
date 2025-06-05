@@ -1,0 +1,20 @@
+{
+  "name": "IGT.Game.Core.Logic.Services",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Game.Core.Cloneable",
+    "IGT.Ascent.Communication.Platform",
+    "IGT.Ascent.Communication.Platform.GameLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces",
+    "IGT.Game.Core.Communication.CommunicationLib",
+    "IGT.Game.Core.Communication.Foundation",
+    "IGT.Game.Core.CompactSerialization"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}

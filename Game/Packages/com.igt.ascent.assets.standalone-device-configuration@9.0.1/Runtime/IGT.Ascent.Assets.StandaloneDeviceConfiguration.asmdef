@@ -1,0 +1,19 @@
+{
+    "name": "IGT.Ascent.Assets.StandaloneDeviceConfiguration",
+    "rootNamespace": "",
+    "references": [
+        "IGT.Game.Core.Communication.Cabinet",
+        "IGT.Game.Core.Communication.Cabinet.Standalone",
+        "IGT.Game.Core.Communication.Cabinet.Standalone.Devices",
+        "IGT.Game.Core.Communication.Cabinet.CSI.Schemas"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

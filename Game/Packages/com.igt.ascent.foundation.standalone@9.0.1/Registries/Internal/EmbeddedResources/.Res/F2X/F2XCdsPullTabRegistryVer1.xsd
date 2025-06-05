@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 sp1 (x64) (http://www.altova.com) by International Game Technology -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XCdsPullTabRegistryVer1="F2XCdsPullTabRegistryVer1.xsd" targetNamespace="F2XCdsPullTabRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:element name="CdsPullTabRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing the information to allow a theme to support the Cds Pull Tab protocol.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ThemeRegistry" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Relative path to theme registry to which this Cds Pull Tab information belongs. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PullTabGameId" type="xs:unsignedInt">
+					<xs:annotation>
+						<xs:documentation>Unique Pull Tab protocol theme/game identifier.  This ID must be unique across ALL themes in ALL packages to satisfy uniqueness in the Pull Tab protocol domain.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BetIdsEncodeLines" type="xs:boolean" default="false" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Default is "false", and "false" is the prefered value, specifying that BetIds are sent as string based PoolIds in the Pull Tab protocol messages to the host.  Depricated use: If "true" BetIds strings are intrepreted as numerical "Lines" and sent using the more rigid Lines variant of host messages.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

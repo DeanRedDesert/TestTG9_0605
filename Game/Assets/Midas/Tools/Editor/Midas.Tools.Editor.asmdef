@@ -1,0 +1,24 @@
+{
+    "name": "Midas.Tools.Editor",
+    "rootNamespace": "",
+    "references": [
+        "IGT.Game.Core.Communication.Standalone.Schemas",
+        "IGT.Ascent.Assets.StandaloneSafeStorage",
+        "Midas.Tools",
+		"Midas.Core",
+        "Midas.Presentation",
+        "Midas.LogicToPresentation",
+		"IGT.Ascent.Assets.StandaloneSafeStorage.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

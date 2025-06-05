@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2LRegistryTypeVer2="F2LRegistryTypeVer2.xsd" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2LPayvarRegistryVer3="F2LPayvarRegistryVer3.xsd" targetNamespace="F2LPayvarRegistryVer3.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="3.12">
+	<!-- Version  3.5: Added Progressive Concepts support. -->
+	<!-- Version  3.6: Deprecated. Do not use. -->
+	<!-- Version  3.7: Added PayvarGroupTemplate to PayvarType. -->
+	<!-- Version  3.8: Added MinimumBitsOfEntropyForRNG element to specify a minimum number bits of entropy that the RNG will require for outcomes. -->
+	<!-- Version  3.9: Add pay var type SingleMultiTemplate for supporting single or multiple game instance metering -->
+	<!-- Version  3.10: Add Progressive Concept option NonProgressiveLinkMapByDefault -->
+	<!-- Version  3.11: Add HasMidGameWager option -->
+	<!-- Version  3.12: Add AllowDoubleUpOnJackpotHandpay option -->
+	<xs:import namespace="F2LRegistryTypeVer2.xsd" schemaLocation="F2LRegistryTypeVer2.xsd"/>
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+			Game discovery registry for describing a payvar (short for "pay variation").  Contains data related to a paytable and the initial state of paytable related configuration.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:element name="PayvarRegistry">
+		<xs:annotation>
+			<xs:documentation>Game discovery registry for describing a payvar (short for "pay variation").  Contains data related to a paytable and the initial state of paytable related configuration.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PaytableName">
+					<xs:annotation>
+						<xs:documentation>Paytable name used for display purposes as assigned by game designer. (e.g. AVV036310)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="64"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PayvarType" type="F2LPayvarRegistryVer3:PayvarType" default="Standard" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicates the payvar type.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PaybackPercentage">
+					<xs:annotation>
+						<xs:documentation>This is the theoretical maximum payback percentage (including progressive contributions where applicable).</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:fractionDigits value="3"/>
+							<xs:minInclusive value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MinimumPaybackPercentage">
+					<xs:annotation>
+						<xs:documentation>This is the theoretical minimum payback percentage (including progressive contributions where applicable).  If the game designer has included the (mandatory) progressive contribution as part of this value, then the MinimumPaybackPercentageWithoutProgressives optional element must also be included.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:fractionDigits value="3"/>
+							<xs:minInclusive value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MinimumPaybackPercentageWithoutProgressives" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This is the theoretical minimum payback percentage excluding progressive contributions.  This element must be included if the game designer has included the (mandatory) progressive contribution as part of the MinimumPaybackPercentage element.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:fractionDigits value="3"/>
+							<xs:minInclusive value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ThemeRegistry" type="xs:anyURI">
+					<xs:annotation>
+						<xs:documentation>Relative path to theme registry to which this payvar belongs to.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TagDataFile">
+					<xs:annotation>
+						<xs:documentation>Custom Payvar related file for use with the game.  Passed to the game during startup.  Opaque to the Foundation.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="Tag" type="xs:string">
+									<xs:annotation>
+										<xs:documentation>Custom payvar related data for use with the game.  Passed to the game during startup.  Opaque to the Foundation.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="MinimumBitsOfEntropyForRNG" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The minimum number of bits of entropy used by the RNG that is necessary for the game to achieve all outcomes. The RNG will have at least this many bits of entropy available per outcome request.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:maxInclusive value="28500"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="WagerCategories">
+					<xs:annotation>
+						<xs:documentation>Contains all Wager Category information.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Percentage" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Percentage for wager category.  The wager category entry is referenced by a zero based index based on the order of entries in this list. The entries are not sorted by the foundation.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:fractionDigits value="3"/>
+										<xs:minInclusive value="0"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CustomConfigItems" type="F2LRegistryTypeVer2:CustomConfigItemsType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains all custom configuration items being declared for the payvar scope.  Custom config items are items stored for the game by the Foundation, but are not otherwise interpreted or configured except through the use of game specific plug-in menus and config rule scripts.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ProgressiveGameLevels" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The payvar declares the set of progressive game levels that may be linked to progressive controller levels.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ProgressiveGameLevel" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A progressive game level entry.  The progressive game level entry is referenced by a zero based index based on the order of entries in this list (e.g. the Outcome List references this list using an index number).</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Description">
+											<xs:annotation>
+												<xs:documentation>Descriptive name of game level.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="32"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ControllerType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>The payvar may optionally require  a game level be automatically linked to a controller and controller level.  When this is done the payvar must specify a specific controller type by name, as well as the controller level (e.g. for WAP ControllerType="wap", ControllerLevel=0).  DEPRECATED in favor of Progressive Concept elements and Link Maps.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="32"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ControllerLevel" type="xs:unsignedInt" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Progressive controller level for auto-linking.   DEPRECATED in favor of Progressive Concept elements and Link Maps.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ForcedContribution" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Forced contribution percentage.  DEPRECATED in favor of Progressive Concept elements and Link Maps.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal">
+													<xs:fractionDigits value="3"/>
+													<xs:minInclusive value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StartCredit" type="xs:unsignedLong" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Number of start credits for the progressive level.  DEPRECATED in favor of Progressive Concept elements and Link Maps. </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ProgressiveConceptSettings" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>List of settings, for a game-level, that may be used by Link Map validation rules.  (Link Maps are related to the Progressive Concept elements).</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="StartCredits" type="xs:unsignedLong" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Start credits for use in Progressive Concept Link Map validation.  This value (scaled by denomination) may be compared to linkable controller-levels, as per Link Map constraints.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="ContributionPercent" type="F2XRegistryTypesVer1:PrecisionDecimalType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Contribution percent for use in Progressive Concept Link Map validation.  This value may be compared to linkable controller-levels, as per Link Map constraints.  Recommend at least 3 decimal digits of precision.  NOTE: The precision matters.  For example, entering 0.04 verses 0.040 makes a difference when compared to a controller-level contribution value of 0.041; 0.04 may pass due to rounding to a lower precision value, while 0.040 may fail (pass/fail also depends on Link Map tolerance settings).</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProgressiveConcepts" type="F2LPayvarRegistryVer3:ProgressiveConceptsType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The list of progressive concepts supported by the payvar.  If this element is omitted then game-levels (if any) may be linked individually in a legacy manner (i.e. without the use of Progressive Concept Identifiers and Link Maps).</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="WinLevels" minOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The list of wins associated with the paytable (AKA "win categories").  Used by G2S.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="WinLevel" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A win level entry.  The win level entry is referenced by a zero based index based on the order of entries in this list (e.g. the Outcome List references this list using an index number).</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Description" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Name or description of this win level.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="32"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ProgressiveSupport" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Added if the level supports progressive</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ProgressiveGameLevelIndex" type="xs:unsignedShort">
+														<xs:annotation>
+															<xs:documentation>Progressive game level associated with the win level.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="Odds" type="xs:unsignedLong">
+														<xs:annotation>
+															<xs:documentation>Odds associated with the win level (for G2S). The value of this element specifies the n in "1 in n" type of odd notation. </xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SupportedDenominations">
+					<xs:annotation>
+						<xs:documentation>The list of denominations supported by this payvar.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Denom" type="F2LRegistryTypeVer2:DenomType" maxOccurs="26"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ButtonPanelMinBet" type="F2LRegistryTypeVer2:MaxBetType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Minimum bet in credits that the button panel is allowed to display. If MaxBetResolution for the theme is PER GAME or PER DENOMINATION then this element must exist or it is defaulted to 0 to indicate there is no button panel min bet, otherwise min bet is setup in the theme registry.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MaxBet" type="F2LRegistryTypeVer2:MaxBetType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Maximum bet in credits. If MaxBetResolution for the theme is PER GAME or PER DENOMINATION then this element must exist.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Properties" type="F2LRegistryTypeVer2:PropertiesType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Provides flexible/loosely coupled way of declaring static properties visible to the AI/Foundation.  Example: An optional AI package may contain a  custom Game Selection Menu that may use properties to identify games that it is compatible with it.  Properties should be organized under sections and should be viewed as Key, Value pairs.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DoubleUpSupported" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>True if this payvar supports double up.  This is an optional element with a default value of "false" if not present.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AllowDoubleUpOnJackpotHandpay" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>True if this payvar allows double up on jackpot handpay.  When True, DoubleUpSupported needs to be true.  This is an optional element with a default value of "false" if not present.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="HasMidGameWager" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>If the game uses mid game wagers. If so the foundation will delay game start messaging for protocols until the game is complete to allow for possible wager changes.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="PayvarType">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of payvar types.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="Tournament"/>
+			<xs:enumeration value="PayvarGroupTemplate"/>
+			<xs:enumeration value="SingleMultiTemplate"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DenominationConstraintType">
+		<xs:annotation>
+			<xs:documentation>List of valid denominations for this progressive concept requirement.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DenomRequirement" type="F2LRegistryTypeVer2:DenomType" maxOccurs="26">
+				<xs:annotation>
+					<xs:documentation>Valid denomination for the denomination constraint.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProgressiveConceptRequirementType">
+		<xs:annotation>
+			<xs:documentation>A progressive concept requirement.  Note that ALL constraint sub-elements must be met for this ProgressiveConceptRequirement to be met.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DenominationConstraint" type="F2LPayvarRegistryVer3:DenominationConstraintType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List of valid denominations for this progressive concept requirement.  If this element is omitted then ALL denominations supported by the payvar are considered valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProgressiveConceptType">
+		<xs:annotation>
+			<xs:documentation>A progressive concept supported by the payvar.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProgressiveConceptIdentifier" type="F2XRegistryTypesVer1:ProgressiveConceptIdentifierType">
+				<xs:annotation>
+					<xs:documentation>The progressive concept identifier that determines which associated progressive Link Maps may be applied (assuming progressive concept requirements are met).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProgressiveConceptRequirements" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List of progressive concept requirements.  If the requirements of ONE or MORE ProgressiveConceptRequirement elements are met, then the ProgressiveConceptIdentifier is considered acceptable for this payvar.  If this element is omitted then the ProgressiveConceptIdentifier is considered to always be valid for this payvar.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ProgressiveConceptRequirement" type="F2LPayvarRegistryVer3:ProgressiveConceptRequirementType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>A progressive concept requirement.  Note that ALL constraint sub-elements must be met for this ProgressiveConceptRequirement to be met.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProgressiveConceptsType">
+		<xs:annotation>
+			<xs:documentation>The list of progressive concepts supported by the payvar.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProgressiveConcept" type="F2LPayvarRegistryVer3:ProgressiveConceptType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A progressive concept supported by the payvar. In case the operator selected link map conflicts with the ProgressiveGameLevel ControllerType, the link map settings will take precedence over the setting and overrides on a per level-basis.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="LegacyGameLevelLinkingPermitted" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If "true" this payvar permits the game-levels to be linked individually to controller-levels (e.g. by the operator) as a selectable alternative to a qualifying Link Map.  Note:  If "true", the theme may need to implement additional runtime configuration validation (e.g. Report executable configuration validation and/or game-side tilts).  If omitted this value defaults to "false".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LegacyIppLinkMapSelectionPermitted" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If "true" this payvar allows "Legacy IPP" to be a LinkId/Link Map selection (offered to the operator), effectively disabling the progressive concept logic and relying on legacy IPP linking and validation logic. If omitted this value defaults to "false".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="CustomLinkMapsPermitted" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>Custom Link Maps are Link Maps created by the operator (or by other mechanisms created dynamically in the field).  If "true", custom Link Maps are permitted as selectable options (to the operator) in addition to Link Maps that qualify based on Progressive Concept Identifiers.  Note:  If "true", the theme may need to implement additional runtime configuration validation (e.g. Report executable configuration validation and/or game-side tilts).  If omitted this value defaults to "false".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="NonProgressiveLinkMapSelectionPermitted" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>If "true" this payvar allows "No Progressives" to be a valid selection (by the operator), allowing the equivalent of a link map configuration such that no game-levels are linked to controller-levels.  If omitted this value defaults to "false".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="NonProgressiveLinkMapByDefault" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>If "true" the default selection of link maps for this payvar will populate to "No Progressives" if "NonProgressiveLinkMapSelectionPermitted" is set to true.  If omitted this value defaults to "false". If the "NonProgressiveLinkMapSelectionPermitted" is set to false and "NonProgressiveLinkMapByDefault is set to true, this will result in a semantic error and an invalid configuration.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

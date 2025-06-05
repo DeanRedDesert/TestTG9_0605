@@ -1,0 +1,21 @@
+{
+    "name": "IGT.Ascent.Assets.BuildSettings.Editor",
+    "rootNamespace": "",
+    "references": [
+        "IGT.Ascent.Assets.BuildSettings",
+        "IGT.Game.Core.Communication"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

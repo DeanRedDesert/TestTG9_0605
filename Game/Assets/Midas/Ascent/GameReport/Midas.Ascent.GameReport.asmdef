@@ -1,0 +1,30 @@
+{
+    "name": "Midas.Ascent.GameReport",
+    "rootNamespace": "",
+    "references": [
+		"GleLogic",
+        "Midas.Core",
+        "Midas.Logic",
+		"Midas.Ascent",
+        "Midas.Logging",
+        "Midas.Gle.Logic",
+		"IGT.Game.Core.Communication.Foundation.F2L.Schemas",
+		"IGT.Ascent.Communication.Platform.Interfaces",
+		"IGT.Ascent.Communication.Platform.ReportLib.Interfaces",
+		"IGT.Game.Core.Logic.PaytableLoader.Interfaces",
+		"IGT.Game.Core.Communication.Foundation",
+		"IGT.Game.Core.GameReport",
+		"IGT.Game.Core.GameReport.Interfaces",
+		"IGT.Game.Core.Logging",
+		"InterfaceExtensions.Ugp"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<F2XRegistryVer1:Registry xsi:schemaLocation="F2XRegistryVer1.xsd F2XRegistryVer1.xsd" xmlns:F2XRegistryVer1="F2XRegistryVer1.xsd" xmlns:F2XBaseExtensionRegistryVer1="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" F2XRegistryVer1:RegistryType="ConfigurationExtension" F2XRegistryVer1:Version="1.0">
+	<F2XRegistryVer1:Body>
+		<F2XConfigurationExtensionRegistryVer1:ConfigurationExtensionRegistry xmlns="F2XBaseExtensionRegistryVer1.xsd" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XConfigurationExtensionRegistryVer1="F2XConfigurationExtensionRegistryVer1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="F2XConfigurationExtensionRegistryVer1.xsd F2XConfigurationExtensionRegistryVer1.xsd">
+			<Name>MPSExtensionConfig</Name>
+			<Identifier>3691F66C-6F83-437C-914D-FFD8939B9C49</Identifier>
+			<Version>
+				<F2XRegistryTypesVer1:MajorVersion>1</F2XRegistryTypesVer1:MajorVersion>
+				<F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+				<F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+			</Version>
+			<InterfaceDefinition>
+				<InterfaceIdentifier>2AC2D9CF-BF82-40EE-BEE6-B8D2A4203D4F</InterfaceIdentifier>
+				<InterfaceVersion>
+					<F2XRegistryTypesVer1:MajorVersion>1</F2XRegistryTypesVer1:MajorVersion>
+					<F2XRegistryTypesVer1:MinorVersion>0</F2XRegistryTypesVer1:MinorVersion>
+					<F2XRegistryTypesVer1:PatchVersion>0</F2XRegistryTypesVer1:PatchVersion>
+				</InterfaceVersion>
+			</InterfaceDefinition>
+			<Signature>MCwCFGWpOXLIN+CGdmJSeT7qLxWHpL7pAhQra0S76HXHx1oE5+t/EEpWEPkvnw==</Signature>
+			<F2XConfigurationExtensionRegistryVer1:VersionedConfigSections>
+				<F2XConfigurationExtensionRegistryVer1:VersionedSection F2XConfigurationExtensionRegistryVer1:Version="1.0.0" F2XConfigurationExtensionRegistryVer1:Hash="SHA1:3831D93DE0D88C91DF615173066549844E6B577A">
+					<F2XConfigurationExtensionRegistryVer1:ConfigItems>
+						<F2XRegistryTypesVer1:ConfigItem>
+							<F2XRegistryTypesVer1:Name>ServerAddress</F2XRegistryTypesVer1:Name>
+							<F2XRegistryTypesVer1:Data>
+								<F2XRegistryTypesVer1:StringData>192.168.0.1</F2XRegistryTypesVer1:StringData>
+							</F2XRegistryTypesVer1:Data>
+						</F2XRegistryTypesVer1:ConfigItem>
+						<F2XRegistryTypesVer1:ConfigItem>
+							<F2XRegistryTypesVer1:Name>ServerPort</F2XRegistryTypesVer1:Name>
+							<F2XRegistryTypesVer1:Data>
+								<F2XRegistryTypesVer1:Int64Data F2XRegistryTypesVer1:Min="0" F2XRegistryTypesVer1:Max="65535">33333</F2XRegistryTypesVer1:Int64Data>
+							</F2XRegistryTypesVer1:Data>
+						</F2XRegistryTypesVer1:ConfigItem>
+					</F2XConfigurationExtensionRegistryVer1:ConfigItems>
+				</F2XConfigurationExtensionRegistryVer1:VersionedSection>
+			</F2XConfigurationExtensionRegistryVer1:VersionedConfigSections>
+		</F2XConfigurationExtensionRegistryVer1:ConfigurationExtensionRegistry>
+	</F2XRegistryVer1:Body>
+</F2XRegistryVer1:Registry>

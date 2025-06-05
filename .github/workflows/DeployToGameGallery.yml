@@ -1,0 +1,14 @@
+name: "Deploy to Game Gallery"
+on:
+  push:
+    branches:
+      - "**"
+    paths-ignore:
+      - ".github/**"
+    tags-ignore:
+      - "**"
+jobs:
+  j:
+    name: "Deploy to Game Gallery"
+    uses: igt-ApacStudios/midas-wfs-Deploy/.github/workflows/DeployToGameGallery.yml@main
+    secrets: inherit

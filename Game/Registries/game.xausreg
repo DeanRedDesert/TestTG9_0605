@@ -1,0 +1,2358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PayvarExtraData GameName="No Name" GameId="X0000_0" IsCreditPlayoffSupported="true" MachineConfigurableItems="Percentage,CreditDenomination,ProgressiveSetId,MinimumStakeMultiplier,MaximumStakeMultiplier,MinimumBet,MaximumBet,DenomHotSwitchId,MinimumBaseGameRtp,MaximumBaseGameRtp">
+  <GameConfig ID="0">
+    <ConfigItem Name="VariationId" Value="1" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.364710" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.502784" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.501875" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.639949" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="1" />
+    <ConfigItem Name="StandardDeviation" Value="2.80" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000150029492" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000001" />
+    <ConfigItem Name="SasPaytableId" Value="000001" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,8,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 8,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="1">
+    <ConfigItem Name="VariationId" Value="2" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.659268" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.852572" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.796433" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.989737" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="181700cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="2" />
+    <ConfigItem Name="StandardDeviation" Value="2.81" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000300058984" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000002" />
+    <ConfigItem Name="SasPaytableId" Value="000002" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="2">
+    <ConfigItem Name="VariationId" Value="3" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="200cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="8" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.861777" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.055081" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.998942" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.192246" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="87600cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="3" />
+    <ConfigItem Name="StandardDeviation" Value="3.45" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000750147460" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000003" />
+    <ConfigItem Name="SasPaytableId" Value="000003" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 8,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,6,8, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="8cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 6,Bet 8" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="8" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="3">
+    <ConfigItem Name="VariationId" Value="4" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="100cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.110310" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.303614" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.247475" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.440779" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="43800cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="4" />
+    <ConfigItem Name="StandardDeviation" Value="3.46" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001500294920" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000004" />
+    <ConfigItem Name="SasPaytableId" Value="000004" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="4">
+    <ConfigItem Name="VariationId" Value="5" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="20cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.867736" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.024220" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.004901" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.161385" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="6204cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="5" />
+    <ConfigItem Name="StandardDeviation" Value="9.73" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000007501474600" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000005" />
+    <ConfigItem Name="SasPaytableId" Value="000005" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="5">
+    <ConfigItem Name="VariationId" Value="6" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="10cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="89.116062" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.235726" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.253227" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.372891" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="6204cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="6" />
+    <ConfigItem Name="StandardDeviation" Value="10.22" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000015002949200" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000006" />
+    <ConfigItem Name="SasPaytableId" Value="000006" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="6">
+    <ConfigItem Name="VariationId" Value="7" />
+    <ConfigItem Name="CreditDenomination" Value="200u" />
+    <ConfigItem Name="MaximumBet" Value="5cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="89.557899" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.705178" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.695064" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.842343" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="4750cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="6" />
+    <ConfigItem Name="VariationHotSwitchId" Value="7" />
+    <ConfigItem Name="StandardDeviation" Value="10.20" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000030005898400" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000666797743400" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000007" />
+    <ConfigItem Name="SasPaytableId" Value="000007" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="1cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="1" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="7">
+    <ConfigItem Name="VariationId" Value="8" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.174160" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.312234" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.511384" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.649458" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="8" />
+    <ConfigItem Name="StandardDeviation" Value="2.80" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000150029492" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000008" />
+    <ConfigItem Name="SasPaytableId" Value="000008" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,8,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 8,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="8">
+    <ConfigItem Name="VariationId" Value="9" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.468718" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.662022" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.805942" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.999246" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="181700cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="9" />
+    <ConfigItem Name="StandardDeviation" Value="2.81" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000300058984" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000009" />
+    <ConfigItem Name="SasPaytableId" Value="000009" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="9">
+    <ConfigItem Name="VariationId" Value="10" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="200cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="8" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.671227" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.864531" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.008451" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.201755" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="87600cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="10" />
+    <ConfigItem Name="StandardDeviation" Value="3.45" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000750147460" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000010" />
+    <ConfigItem Name="SasPaytableId" Value="000010" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 8,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,6,8, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="8cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 6,Bet 8" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="8" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="10">
+    <ConfigItem Name="VariationId" Value="11" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="100cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.919761" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.113064" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.256985" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.450288" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="43800cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="11" />
+    <ConfigItem Name="StandardDeviation" Value="3.46" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001500294920" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000011" />
+    <ConfigItem Name="SasPaytableId" Value="000011" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="11">
+    <ConfigItem Name="VariationId" Value="12" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="20cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.674298" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.830782" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.011522" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.168006" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="6204cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="12" />
+    <ConfigItem Name="StandardDeviation" Value="9.79" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000007501474600" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000012" />
+    <ConfigItem Name="SasPaytableId" Value="000012" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="12">
+    <ConfigItem Name="VariationId" Value="13" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="10cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.924120" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.016170" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.261344" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.353394" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="6204cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="13" />
+    <ConfigItem Name="StandardDeviation" Value="10.22" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000015002949200" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000013" />
+    <ConfigItem Name="SasPaytableId" Value="000013" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="13">
+    <ConfigItem Name="VariationId" Value="14" />
+    <ConfigItem Name="CreditDenomination" Value="200u" />
+    <ConfigItem Name="MaximumBet" Value="5cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="89.375163" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.522442" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.712387" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.859666" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="4750cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="6" />
+    <ConfigItem Name="VariationHotSwitchId" Value="14" />
+    <ConfigItem Name="StandardDeviation" Value="10.21" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000030005898400" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000666797743400" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000014" />
+    <ConfigItem Name="SasPaytableId" Value="000014" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="1cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="1" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="14">
+    <ConfigItem Name="VariationId" Value="15" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.007848" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.145922" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.521970" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.660044" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="15" />
+    <ConfigItem Name="StandardDeviation" Value="2.78" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000266719097" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000015" />
+    <ConfigItem Name="SasPaytableId" Value="000015" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,8,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 8,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="15">
+    <ConfigItem Name="VariationId" Value="16" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.302406" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.495710" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.816528" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.009832" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="181700cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="16" />
+    <ConfigItem Name="StandardDeviation" Value="2.79" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000533438194" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000016" />
+    <ConfigItem Name="SasPaytableId" Value="000016" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="16">
+    <ConfigItem Name="VariationId" Value="17" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="200cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="8" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.504915" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.698219" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.019037" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.212341" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="87600cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="17" />
+    <ConfigItem Name="StandardDeviation" Value="3.44" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001333595485" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000017" />
+    <ConfigItem Name="SasPaytableId" Value="000017" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 8,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,6,8, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="8cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 6,Bet 8" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="8" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="17">
+    <ConfigItem Name="VariationId" Value="18" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="100cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.753448" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.946752" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.267570" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.460874" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="43800cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="18" />
+    <ConfigItem Name="StandardDeviation" Value="3.45" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000002667190970" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000018" />
+    <ConfigItem Name="SasPaytableId" Value="000018" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="18">
+    <ConfigItem Name="VariationId" Value="19" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="20cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.504432" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.660916" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.018554" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.175038" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="6204cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="19" />
+    <ConfigItem Name="StandardDeviation" Value="9.75" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000013335954850" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000019" />
+    <ConfigItem Name="SasPaytableId" Value="000019" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="19">
+    <ConfigItem Name="VariationId" Value="20" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="10cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.752489" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.826129" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.266611" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.340251" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="6204cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="20" />
+    <ConfigItem Name="StandardDeviation" Value="10.17" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000026671909700" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000020" />
+    <ConfigItem Name="SasPaytableId" Value="000020" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="20">
+    <ConfigItem Name="VariationId" Value="21" />
+    <ConfigItem Name="CreditDenomination" Value="200u" />
+    <ConfigItem Name="MaximumBet" Value="5cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.203532" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.350811" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.717654" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.864933" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="4750cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="6" />
+    <ConfigItem Name="VariationHotSwitchId" Value="21" />
+    <ConfigItem Name="StandardDeviation" Value="10.16" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000053343819400" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000666797743400" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000021" />
+    <ConfigItem Name="SasPaytableId" Value="000021" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="1cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="1" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="21">
+    <ConfigItem Name="VariationId" Value="1" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.364710" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.502784" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.501875" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.639949" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="1" />
+    <ConfigItem Name="StandardDeviation" Value="2.80" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000150029492" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000001" />
+    <ConfigItem Name="SasPaytableId" Value="000001" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,8,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 8,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="22">
+    <ConfigItem Name="VariationId" Value="2" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="5" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.659268" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.852572" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.796433" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.989737" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="2" />
+    <ConfigItem Name="StandardDeviation" Value="2.81" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000300058984" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000002" />
+    <ConfigItem Name="SasPaytableId" Value="000002" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,5, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="5cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="5" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="23">
+    <ConfigItem Name="VariationId" Value="3" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="100cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.861777" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.055081" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.998942" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.192246" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="175200cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="3" />
+    <ConfigItem Name="StandardDeviation" Value="3.45" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000750147460" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000003" />
+    <ConfigItem Name="SasPaytableId" Value="000003" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="24">
+    <ConfigItem Name="VariationId" Value="4" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.110310" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.303614" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.247475" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.440779" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="87600cr" />
+    <ConfigItem Name="Percentage" Value="NSW01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="4" />
+    <ConfigItem Name="StandardDeviation" Value="3.46" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001500294920" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000004" />
+    <ConfigItem Name="SasPaytableId" Value="000004" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="25">
+    <ConfigItem Name="VariationId" Value="22" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="10cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.364157" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.548256" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.501322" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.685421" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="12408cr" />
+    <ConfigItem Name="Percentage" Value="QLD01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="22" />
+    <ConfigItem Name="StandardDeviation" Value="3.46" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000007501474600" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000022" />
+    <ConfigItem Name="SasPaytableId" Value="000022" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="26">
+    <ConfigItem Name="VariationId" Value="23" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="5cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.829419" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.829419" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.966584" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.966584" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="3102cr" />
+    <ConfigItem Name="Percentage" Value="QLD01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="23" />
+    <ConfigItem Name="StandardDeviation" Value="10.21" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000015002949200" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000023" />
+    <ConfigItem Name="SasPaytableId" Value="000023" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="1cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="1" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="27">
+    <ConfigItem Name="VariationId" Value="8" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.174160" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.312234" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.511384" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.649458" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="8" />
+    <ConfigItem Name="StandardDeviation" Value="2.80" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000150029492" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000008" />
+    <ConfigItem Name="SasPaytableId" Value="000008" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,8,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 8,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="28">
+    <ConfigItem Name="VariationId" Value="9" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="5" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.468718" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.662022" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.805942" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.999246" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="9" />
+    <ConfigItem Name="StandardDeviation" Value="2.81" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000300058984" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000009" />
+    <ConfigItem Name="SasPaytableId" Value="000009" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,5, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="5cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="5" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="29">
+    <ConfigItem Name="VariationId" Value="10" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="100cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.671227" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.864531" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.008451" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.201755" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="175200cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="10" />
+    <ConfigItem Name="StandardDeviation" Value="3.45" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000750147460" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000010" />
+    <ConfigItem Name="SasPaytableId" Value="000010" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="30">
+    <ConfigItem Name="VariationId" Value="11" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.919761" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.113064" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.256985" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.450288" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="87600cr" />
+    <ConfigItem Name="Percentage" Value="NSW02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="11" />
+    <ConfigItem Name="StandardDeviation" Value="3.46" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001500294920" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000011" />
+    <ConfigItem Name="SasPaytableId" Value="000011" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="31">
+    <ConfigItem Name="VariationId" Value="24" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="10cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.168026" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.352125" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.505250" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.689349" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="12408cr" />
+    <ConfigItem Name="Percentage" Value="QLD02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="24" />
+    <ConfigItem Name="StandardDeviation" Value="3.46" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000007501474600" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000024" />
+    <ConfigItem Name="SasPaytableId" Value="000024" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="32">
+    <ConfigItem Name="VariationId" Value="25" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="5cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.640961" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.640961" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.978185" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.978185" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="3102cr" />
+    <ConfigItem Name="Percentage" Value="QLD02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="25" />
+    <ConfigItem Name="StandardDeviation" Value="10.22" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000015002949200" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000025" />
+    <ConfigItem Name="SasPaytableId" Value="000025" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="1cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="1" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="33">
+    <ConfigItem Name="VariationId" Value="15" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.007848" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.145922" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.521970" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.660044" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="15" />
+    <ConfigItem Name="StandardDeviation" Value="2.78" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000266719097" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000015" />
+    <ConfigItem Name="SasPaytableId" Value="000015" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,8,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 8,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="34">
+    <ConfigItem Name="VariationId" Value="16" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="5" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.302406" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.495710" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.816528" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.009832" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="16" />
+    <ConfigItem Name="StandardDeviation" Value="2.79" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000533438194" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000016" />
+    <ConfigItem Name="SasPaytableId" Value="000016" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4,5, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="5cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,Bet 5" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="5" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="35">
+    <ConfigItem Name="VariationId" Value="17" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="100cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="4" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.504915" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.698219" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.019037" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.212341" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="175200cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="17" />
+    <ConfigItem Name="StandardDeviation" Value="3.44" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001333595485" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000017" />
+    <ConfigItem Name="SasPaytableId" Value="000017" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,4, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="4cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 4" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="4" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="36">
+    <ConfigItem Name="VariationId" Value="18" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.753448" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.946752" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.267570" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.460874" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="87600cr" />
+    <ConfigItem Name="Percentage" Value="NSW03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="18" />
+    <ConfigItem Name="StandardDeviation" Value="3.45" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000002667190970" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000018" />
+    <ConfigItem Name="SasPaytableId" Value="000018" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="37">
+    <ConfigItem Name="VariationId" Value="26" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="10cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="2" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.001847" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.185945" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.515969" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.700067" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="12408cr" />
+    <ConfigItem Name="Percentage" Value="QLD03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="26" />
+    <ConfigItem Name="StandardDeviation" Value="3.45" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000013335954850" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000026" />
+    <ConfigItem Name="SasPaytableId" Value="000026" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="2cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="2" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="38">
+    <ConfigItem Name="VariationId" Value="27" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="5cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.483561" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.483561" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.997683" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.997683" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="3102cr" />
+    <ConfigItem Name="Percentage" Value="QLD03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="27" />
+    <ConfigItem Name="StandardDeviation" Value="10.15" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000026671909700" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000027" />
+    <ConfigItem Name="SasPaytableId" Value="000027" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,,,,,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="1cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="1" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="39">
+    <ConfigItem Name="VariationId" Value="28" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.366936" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.505010" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.504101" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.642175" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="CAS01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="28" />
+    <ConfigItem Name="StandardDeviation" Value="2.80" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000150029492" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000028" />
+    <ConfigItem Name="SasPaytableId" Value="000028" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="40">
+    <ConfigItem Name="VariationId" Value="29" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.661494" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.762748" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.798659" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.899913" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="CAS01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="29" />
+    <ConfigItem Name="StandardDeviation" Value="2.82" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000300058984" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000029" />
+    <ConfigItem Name="SasPaytableId" Value="000029" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="41">
+    <ConfigItem Name="VariationId" Value="30" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.864003" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.002077" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.001168" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.139242" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="219000cr" />
+    <ConfigItem Name="Percentage" Value="CAS01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="30" />
+    <ConfigItem Name="StandardDeviation" Value="3.63" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000750147460" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000030" />
+    <ConfigItem Name="SasPaytableId" Value="000030" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="42">
+    <ConfigItem Name="VariationId" Value="31" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.112536" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.305840" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.249701" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.443005" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="219000cr" />
+    <ConfigItem Name="Percentage" Value="CAS01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="31" />
+    <ConfigItem Name="StandardDeviation" Value="3.65" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001500294920" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000031" />
+    <ConfigItem Name="SasPaytableId" Value="000031" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="43">
+    <ConfigItem Name="VariationId" Value="32" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.911674" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.077363" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.048839" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.214528" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="32" />
+    <ConfigItem Name="StandardDeviation" Value="11.23" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000007501474600" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000032" />
+    <ConfigItem Name="SasPaytableId" Value="000032" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="44">
+    <ConfigItem Name="VariationId" Value="33" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="89.161162" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.290031" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.298327" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.427196" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="33" />
+    <ConfigItem Name="StandardDeviation" Value="10.54" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000015002949200" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000033" />
+    <ConfigItem Name="SasPaytableId" Value="000033" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="45">
+    <ConfigItem Name="VariationId" Value="34" />
+    <ConfigItem Name="CreditDenomination" Value="200u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="89.611808" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.777497" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.748973" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.914662" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS01" />
+    <ConfigItem Name="ProgressiveSetId" Value="P1" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="6" />
+    <ConfigItem Name="VariationHotSwitchId" Value="34" />
+    <ConfigItem Name="StandardDeviation" Value="10.56" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000030005898400" />
+    <ConfigItem Name="GRANDRtp" Value="1.07017106" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000666797743400" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.13716542" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000034" />
+    <ConfigItem Name="SasPaytableId" Value="000034" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="46">
+    <ConfigItem Name="VariationId" Value="35" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.225190" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.363264" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.562414" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.700488" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="CAS02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="35" />
+    <ConfigItem Name="StandardDeviation" Value="2.80" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000150029492" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000035" />
+    <ConfigItem Name="SasPaytableId" Value="000035" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="47">
+    <ConfigItem Name="VariationId" Value="36" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.519748" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.621003" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.856972" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.958227" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="CAS02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="36" />
+    <ConfigItem Name="StandardDeviation" Value="2.81" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000300058984" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000036" />
+    <ConfigItem Name="SasPaytableId" Value="000036" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="48">
+    <ConfigItem Name="VariationId" Value="37" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.722257" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.860331" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.059481" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.197555" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="219000cr" />
+    <ConfigItem Name="Percentage" Value="CAS02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="37" />
+    <ConfigItem Name="StandardDeviation" Value="3.63" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000750147460" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000037" />
+    <ConfigItem Name="SasPaytableId" Value="000037" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="49">
+    <ConfigItem Name="VariationId" Value="38" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.970791" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.164095" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.308015" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.501319" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="219000cr" />
+    <ConfigItem Name="Percentage" Value="CAS02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="38" />
+    <ConfigItem Name="StandardDeviation" Value="3.64" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001500294920" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000038" />
+    <ConfigItem Name="SasPaytableId" Value="000038" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="50">
+    <ConfigItem Name="VariationId" Value="39" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.720538" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.886227" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.057762" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.223451" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="39" />
+    <ConfigItem Name="StandardDeviation" Value="11.19" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000007501474600" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000039" />
+    <ConfigItem Name="SasPaytableId" Value="000039" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="51">
+    <ConfigItem Name="VariationId" Value="40" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.969158" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.098027" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.306382" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.435251" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="40" />
+    <ConfigItem Name="StandardDeviation" Value="10.55" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000015002949200" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000040" />
+    <ConfigItem Name="SasPaytableId" Value="000040" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="52">
+    <ConfigItem Name="VariationId" Value="41" />
+    <ConfigItem Name="CreditDenomination" Value="200u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="89.422939" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="89.588628" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.760163" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.925852" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS02" />
+    <ConfigItem Name="ProgressiveSetId" Value="P2" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="6" />
+    <ConfigItem Name="VariationHotSwitchId" Value="41" />
+    <ConfigItem Name="StandardDeviation" Value="10.53" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000030005898400" />
+    <ConfigItem Name="GRANDRtp" Value="1.27023004" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000666797743400" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="3.33722440" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000041" />
+    <ConfigItem Name="SasPaytableId" Value="000041" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="53">
+    <ConfigItem Name="VariationId" Value="42" />
+    <ConfigItem Name="CreditDenomination" Value="1u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.056762" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.222451" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.570884" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="90.736573" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="CAS03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="0" />
+    <ConfigItem Name="VariationHotSwitchId" Value="42" />
+    <ConfigItem Name="StandardDeviation" Value="2.78" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000266719097" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000003333988717" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000042" />
+    <ConfigItem Name="SasPaytableId" Value="000042" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="54">
+    <ConfigItem Name="VariationId" Value="43" />
+    <ConfigItem Name="CreditDenomination" Value="2u" />
+    <ConfigItem Name="MaximumBet" Value="500cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.351320" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.507805" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="90.865442" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.021927" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="363400cr" />
+    <ConfigItem Name="Percentage" Value="CAS03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="50cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="1" />
+    <ConfigItem Name="VariationHotSwitchId" Value="43" />
+    <ConfigItem Name="StandardDeviation" Value="2.80" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000000533438194" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000006667977434" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000043" />
+    <ConfigItem Name="SasPaytableId" Value="000043" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,50 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 50" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="50" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="50" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="50cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="50 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="50" />
+  </GameConfig>
+  <GameConfig ID="55">
+    <ConfigItem Name="VariationId" Value="44" />
+    <ConfigItem Name="CreditDenomination" Value="5u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.553829" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.719518" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.067951" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.233640" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="219000cr" />
+    <ConfigItem Name="Percentage" Value="CAS03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="2" />
+    <ConfigItem Name="VariationHotSwitchId" Value="44" />
+    <ConfigItem Name="StandardDeviation" Value="3.60" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000001333595485" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000016669943585" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000044" />
+    <ConfigItem Name="SasPaytableId" Value="000044" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="56">
+    <ConfigItem Name="VariationId" Value="45" />
+    <ConfigItem Name="CreditDenomination" Value="10u" />
+    <ConfigItem Name="MaximumBet" Value="250cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="86.802363" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="86.949642" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="91.316485" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="91.463764" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="219000cr" />
+    <ConfigItem Name="Percentage" Value="CAS03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="25cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="3" />
+    <ConfigItem Name="VariationHotSwitchId" Value="45" />
+    <ConfigItem Name="StandardDeviation" Value="3.62" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000002667190970" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000033339887170" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000045" />
+    <ConfigItem Name="SasPaytableId" Value="000045" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,25 Lines,,,," />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 25" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="25" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="25" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="25cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="25 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="25" />
+  </GameConfig>
+  <GameConfig ID="57">
+    <ConfigItem Name="VariationId" Value="46" />
+    <ConfigItem Name="CreditDenomination" Value="50u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.557894" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.705173" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.072016" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.219295" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="4" />
+    <ConfigItem Name="VariationHotSwitchId" Value="46" />
+    <ConfigItem Name="StandardDeviation" Value="11.18" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000013335954850" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000166699435850" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000046" />
+    <ConfigItem Name="SasPaytableId" Value="000046" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="58">
+    <ConfigItem Name="VariationId" Value="47" />
+    <ConfigItem Name="CreditDenomination" Value="100u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="87.806606" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="87.935475" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.320728" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.449597" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="5" />
+    <ConfigItem Name="VariationHotSwitchId" Value="47" />
+    <ConfigItem Name="StandardDeviation" Value="10.51" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000026671909700" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000333398871700" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000047" />
+    <ConfigItem Name="SasPaytableId" Value="000047" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <GameConfig ID="59">
+    <ConfigItem Name="VariationId" Value="48" />
+    <ConfigItem Name="CreditDenomination" Value="200u" />
+    <ConfigItem Name="MaximumBet" Value="50cr" />
+    <ConfigItem Name="MinimumStakeMultiplier" Value="1" />
+    <ConfigItem Name="MaximumStakeMultiplier" Value="10" />
+    <ConfigItem Name="MinimumBaseGameRtp" Value="88.252037" />
+    <ConfigItem Name="MaximumBaseGameRtp" Value="88.371702" />
+    <ConfigItem Name="MinimumRtpIncludingSAP" Value="92.766159" />
+    <ConfigItem Name="MaximumRtpIncludingSAP" Value="92.885824" />
+    <ConfigItem Name="MaximumWinNoProgressives" Value="31020cr" />
+    <ConfigItem Name="Percentage" Value="CAS03" />
+    <ConfigItem Name="ProgressiveSetId" Value="P3" />
+    <ConfigItem Name="MinimumBet" Value="1cr" />
+    <ConfigItem Name="DenomHotSwitchId" Value="6" />
+    <ConfigItem Name="VariationHotSwitchId" Value="48" />
+    <ConfigItem Name="StandardDeviation" Value="10.55" />
+    <ConfigItem Name="MaximumPlayerChoices" Value="0" />
+    <ConfigItem Name="GRANDTriggerProbability" Value="0.0000053343819400" />
+    <ConfigItem Name="GRANDRtp" Value="2.44712806" />
+    <ConfigItem Name="MAJORTriggerProbability" Value="0.0000666797743400" />
+    <ConfigItem Name="MAJORRtp" Value="2.06699436" />
+    <ConfigItem Name="TotalSapRtp" Value="4.51412242" />
+    <ConfigItem Name="AspGameVersion" Value="0" />
+    <ConfigItem Name="AspGameId" Value="0000048" />
+    <ConfigItem Name="SasPaytableId" Value="000048" />
+    <ConfigItem Name="QcomGvn" Value="0001" />
+    <ConfigItem Name="ButtonPanelLabelKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10,1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="ButtonPanelDescription" Value="Bet 1,2,3,5,10, Lines 1,2,3,4,5" />
+    <ConfigItem Name="AspReportableMaximumStakeMultiplier" Value="10cr" />
+    <ConfigItem Name="AspReportableMaximumStake" Value="5" />
+    <ConfigItem Name="QcomReportableMaximumStake" Value="5" />
+    <ConfigItem Name="AspReportableMinimumCostToCover" Value="1cr" />
+    <ConfigItem Name="GameBetMeterGroupId" Value="0" />
+    <ConfigItem Name="GameBetMeterHorizontalKeys" Value="Bet 1,Bet 2,Bet 3,Bet 5,Bet 10" />
+    <ConfigItem Name="GameBetMeterMaximumHorizontalKey" Value="10" />
+    <ConfigItem Name="GameBetMeterVerticalKeys" Value="1 Line,2 Lines,3 Lines,4 Lines,5 Lines" />
+    <ConfigItem Name="GameBetMeterMaximumVerticalKey" Value="5" />
+  </GameConfig>
+  <ProgressiveConfiguration ProgressiveSetId="P1">
+    <SapProgressive ProgressiveGameLevelIndex="0" Identifier="GRAND" Name="GRAND" Type="Triggered" Increment="0.002" HiddenIncrement="0" Contribution="0.002" HiddenContribution="0" StartUpAsMoney="580000u" CeilingAsMoney="1000000u" />
+    <SapProgressive ProgressiveGameLevelIndex="1" Identifier="MAJOR" Name="MAJOR" Type="Triggered" Increment="0.004" HiddenIncrement="0" Contribution="0.004" HiddenContribution="0" StartUpAsMoney="50000u" CeilingAsMoney="100000u" />
+  </ProgressiveConfiguration>
+  <ProgressiveConfiguration ProgressiveSetId="P2">
+    <SapProgressive ProgressiveGameLevelIndex="0" Identifier="GRAND" Name="GRAND" Type="Triggered" Increment="0.001" HiddenIncrement="0" Contribution="0.001" HiddenContribution="0" StartUpAsMoney="780000u" CeilingAsMoney="1000000u" />
+    <SapProgressive ProgressiveGameLevelIndex="1" Identifier="MAJOR" Name="MAJOR" Type="Triggered" Increment="0.004" HiddenIncrement="0" Contribution="0.004" HiddenContribution="0" StartUpAsMoney="50000u" CeilingAsMoney="100000u" />
+  </ProgressiveConfiguration>
+  <ProgressiveConfiguration ProgressiveSetId="P3">
+    <SapProgressive ProgressiveGameLevelIndex="0" Identifier="GRAND" Name="GRAND" Type="Triggered" Increment="0.001" HiddenIncrement="0" Contribution="0.001" HiddenContribution="0" StartUpAsMoney="880000u" CeilingAsMoney="1000000u" />
+    <SapProgressive ProgressiveGameLevelIndex="1" Identifier="MAJOR" Name="MAJOR" Type="Triggered" Increment="0.004" HiddenIncrement="0" Contribution="0.004" HiddenContribution="0" StartUpAsMoney="50000u" CeilingAsMoney="100000u" />
+  </ProgressiveConfiguration>
+  <GambleConfiguration>
+    <GambleStyle Style="Trumps" DisplayName="Trumps" />
+  </GambleConfiguration>
+</PayvarExtraData>

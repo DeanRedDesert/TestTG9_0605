@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Lamb (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.igt.com/worldgame/common/xml/gamedata" 
+           targetNamespace="http://www.igt.com/worldgame/common/xml/gamedata" 
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="1.0">
+	<xs:complexType name="ProgressiveLevel">
+		<xs:sequence>
+			<xs:element name="ProgressiveName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The name used to reference this progressive.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Level" type="xs:unsignedInt">
+				<xs:annotation>
+					<xs:documentation>The numeric level of this progressive.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConsolationPay" type="xs:long" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Consolation prize offered as an alternative to the progressive. This may be awarded if it is greater than the progressive.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MinimumContribution" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Defines the minimum contribution percentage for the progressive</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>One of: WAP | Stand Alone | IPC | Game Control</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ControllerSubType" type="xs:string" minOccurs="0"/>
+			<xs:element name="ControllerLevel" type="xs:unsignedInt" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProgressiveLevels">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="ProgressiveLevel" type="ProgressiveLevel"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ProgressiveLevels" type="ProgressiveLevels"/>
+</xs:schema>

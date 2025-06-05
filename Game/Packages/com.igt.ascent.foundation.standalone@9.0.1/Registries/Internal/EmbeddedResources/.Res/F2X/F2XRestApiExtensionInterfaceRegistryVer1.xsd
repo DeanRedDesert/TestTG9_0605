@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 sp1 (x64) (http://www.altova.com) by Tyrell Atterberry (International Game Technology) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:F2XRegistryTypesVer1="F2XRegistryTypesVer1.xsd" xmlns:F2XBaseExtensionInterfaceDefinitionRegistryVer1="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" xmlns:F2XRestApiExtensionInterfaceRegistryVer1="F2XRestApiExtensionInterfaceRegistryVer1.xsd" targetNamespace="F2XRestApiExtensionInterfaceRegistryVer1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:import namespace="F2XRegistryTypesVer1.xsd" schemaLocation="F2XRegistryTypesVer1.xsd"/>
+	<xs:import namespace="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd" schemaLocation="F2XBaseExtensionInterfaceDefinitionRegistryVer1.xsd"/>
+	<xs:element name="RestApiExtensionInterfaceRegistry">
+		<xs:annotation>
+			<xs:documentation>Registry for describing a rest api extension interface.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="F2XBaseExtensionInterfaceDefinitionRegistryVer1:ExtensionInterfaceDefinitionRegistry">
+					<xs:sequence>
+						<xs:element name="ApiDefinition" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>The OpenApi, Swagger, or other IDL API definition.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ApiVersions" type="F2XRestApiExtensionInterfaceRegistryVer1:ApiVersions">
+							<xs:annotation>
+								<xs:documentation>Defines the individual version history of this rest api interface.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApiVersion">
+		<xs:annotation>
+			<xs:documentation>Defines an individual change of this rest api interface.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Description">
+					<xs:annotation>
+						<xs:documentation>Description of the Api change or addition. Required.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="F2XRegistryTypesVer1:ExtensionVersionString" use="required">
+				<xs:annotation>
+					<xs:documentation>Version of Api being described by this ApiVersion element. Minor version must be sequential with previous version, and using with the same major version as the overall extension.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Hash" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Checksum of data for this api version.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ApiVersions">
+		<xs:sequence>
+			<xs:element ref="F2XRestApiExtensionInterfaceRegistryVer1:ApiVersion" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Defines the individual version history of this rest api interface.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,17 @@
+{
+  "name": "IGT.Ascent.Communication.Platform.ExtensionBinLib.Interfaces",
+  "precompiledReferences": [],
+  "references": [
+    "IGT.Ascent.Restricted.EventManagement.Interfaces",
+    "IGT.Game.Core.Threading",
+    "IGT.Ascent.Communication.Platform.ExtensionLib.Interfaces",
+    "IGT.Ascent.Communication.Platform.Interfaces"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "autoReferenced": true,
+  "defineConstraints": []
+}
