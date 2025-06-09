@@ -9,6 +9,10 @@ using Midas.Presentation.Game;
 using Midas.Presentation.Reels.SmartSymbols;
 using Midas.Presentation.Sequencing;
 using Midas.Presentation.StageHandling;
+using Logic.Core.Types;
+using Logic.Types;
+using Midas.Gle.Presentation;
+using System.Linq;
 
 namespace Game
 {
@@ -33,12 +37,34 @@ namespace Game
 			return prize != null;
 		}
 
+		private static bool CheckRespinTrigger()
+		{
+			// Get the respin state. In this game, a non-null RespinState result means we have a trigger.
+			var result = GleGameController.GleStatus.CurrentGameResult.Current.StageResults.FirstOrDefault(r => r.Value is RespinState);
+			if (result?.Value == null)
+				return false;
+
+			var respinState = (RespinState)result.Value;
+
+			// Get the symbol window so we can determine the cells that each trigger symbol are in.
+			result = GleGameController.GleStatus.CurrentGameResult.Current.StageResults.FirstOrDefault(r => r.Name == "SymbolWindow");
+			if (result?.Value == null)
+				return false;
+
+			// Extract the cell information from the respin trigger and place it into GameSpecificController.Data.PreShowWinHighlight before returning true
+			var symbolWindowStructure = ((SymbolWindowResult)result.Value).SymbolWindowStructure;
+			GameSpecificController.Data.PreShowWinHighlight = symbolWindowStructure.IndexesToCells(respinState.Frames.EnumerateIndexes().ToArray()).Select(c => (c.Column, c.Row)).ToList();
+			return true;
+		}
+
 		public static IReadOnlyList<IPresentationNode> CreateNodes()
 		{
 			var baseNode = new SimpleGameNode("BaseStage", GameStages.Base);
 			baseNode.AddPreShowSequence("Trigger", CheckTrigger);
+			baseNode.AddPreShowSequence("RespinTrigger", CheckRespinTrigger);
 			var freeGamesNode = new SimpleGameNode("FreeGamesStage", GameStages.FreeGames);
 			freeGamesNode.AddPreShowSequence("Trigger", CheckTrigger);
+			freeGamesNode.AddPreShowSequence("RespinTrigger", CheckRespinTrigger);
 			var respinNode = new SimpleGameNode("RespinStage", GameStages.Respin);
 			//respinNode.AddPreShowSequence("Trigger", CheckTrigger); // can remove since there is no Trigger Free Games inside Respin
 

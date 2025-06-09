@@ -496,6 +496,7 @@ MonoBehaviour:
   sequenceEventPair:
     sequenceNames:
     - FreeGames/Trigger
+    - FreeGames/RespinTrigger
     eventNameA: HighlightTrigger
     eventNameB: HighlightTrigger
   action: 0

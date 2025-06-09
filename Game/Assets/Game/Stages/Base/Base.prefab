@@ -63,6 +63,7 @@ MonoBehaviour:
   sequenceEventPair:
     sequenceNames:
     - Base/Trigger
+    - Base/RespinTrigger
     eventNameA: HighlightTrigger
     eventNameB: HighlightTrigger
   action: 0
