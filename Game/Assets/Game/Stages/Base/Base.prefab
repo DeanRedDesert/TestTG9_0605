@@ -170,6 +170,7 @@ Transform:
   - {fileID: 740267688605706403}
   - {fileID: 4601767191112722155}
   - {fileID: 2855074096559202193}
+  - {fileID: 709365859211976687}
   m_Father: {fileID: 6802016924399633326}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -666,6 +667,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allWins:
     path: StatusDatabase.DetailedWinPresStatus.Wins
+--- !u!1 &7157184872778069560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709365859211976687}
+  - component: {fileID: 4927174827251900238}
+  m_Layer: 6
+  m_Name: SmartSymbols
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &709365859211976687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157184872778069560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5668334911552399796}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4927174827251900238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157184872778069560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea3144a27a34f24a8dc308f9d2c54e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smartCellsPropRef:
+    path: StatusDatabase.SmartSymbolStatus.FreeGames.SmartSymbolData.SmartCells
+  reelStateChangeGameEvent: {fileID: 11400000, guid: b5c2518fab0bcc34fbf5aff0e1de6ab5, type: 2}
 --- !u!1 &7303499071129898337
 GameObject:
   m_ObjectHideFlags: 0

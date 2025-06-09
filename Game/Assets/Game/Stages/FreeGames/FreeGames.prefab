@@ -107,6 +107,52 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 7963771732116743579}
   - {fileID: 9046187686034459578}
+--- !u!1 &3498797132302341112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8096509362601830604}
+  - component: {fileID: 340610785142378843}
+  m_Layer: 6
+  m_Name: SmartSymbols
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8096509362601830604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498797132302341112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1013946433627000203}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &340610785142378843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498797132302341112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea3144a27a34f24a8dc308f9d2c54e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smartCellsPropRef:
+    path: StatusDatabase.SmartSymbolStatus.FreeGames.SmartSymbolData.SmartCells
+  reelStateChangeGameEvent: {fileID: 11400000, guid: 5fc949d077146cf47af93ca29268455a, type: 2}
 --- !u!1 &3757886848026307185
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +741,7 @@ Transform:
   - {fileID: 2845240844982390593}
   - {fileID: 8911440277163865465}
   - {fileID: 8115974526809790663}
+  - {fileID: 8096509362601830604}
   m_Father: {fileID: 2569324702013923364}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
