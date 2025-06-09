@@ -222,7 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9472402737ae541b4d52642275e6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopSoundEntries: []
+  stopSoundEntries:
+  - {fileID: 11400000, guid: 1d2c5638916cd254cb2434f9a67ea743, type: 2}
   triggerQualifyingEntries: []
   defaultStopSoundIds:
   - id: ReelStop1
