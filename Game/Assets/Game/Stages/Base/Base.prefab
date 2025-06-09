@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopSoundEntries:
   - {fileID: 11400000, guid: 1d2c5638916cd254cb2434f9a67ea743, type: 2}
+  - {fileID: 11400000, guid: 4ca1581f08f7e2647aaf2ed52b7d3556, type: 2}
   triggerQualifyingEntries: []
   defaultStopSoundIds:
   - id: ReelStop1
