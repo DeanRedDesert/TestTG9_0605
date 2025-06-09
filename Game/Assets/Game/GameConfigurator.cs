@@ -92,13 +92,13 @@ namespace Game
 		///
 		/// // Example smart symbol detector configurations:
 		/// 
-		/// private static readonly string[] freeGameSymbols = { "SCAT1" };
+		private static readonly string[] freeGameSymbols = { "SCAT1" };
 		/// 
-		/// private static readonly SmartSymbolDetector[] freeGameDetectors =
-		/// {
-		/// 	new ScatterAnySmartSymbolDetector(GameStages.Base, "SymbolWindow", freeGameSymbols, 3, true, false),
-		/// 	new ScatterAnySmartSymbolDetector(GameStages.FreeGames, "SymbolWindow", freeGameSymbols, 3, true, false),
-		/// };
+		private static readonly SmartSymbolDetector[] freeGameDetectors =
+		{
+			new ScatterAnySmartSymbolDetector(GameStages.Base, "SymbolWindow", freeGameSymbols, 3, true, false),
+			new ScatterAnySmartSymbolDetector(GameStages.FreeGames, "SymbolWindow", freeGameSymbols, 3, true, false),
+		};
 		/// 
 		/// private static readonly string[] respinSymbols = { "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "MINI", "MINOR", "MAJOR", "GRAND", };
 		/// 
@@ -118,7 +118,7 @@ namespace Game
 			// TODO: Add the smart symbol detectors your game requires here.
 			// Each one needs to have a unique name and will create a status database block for you to get your smart anim and anticipation data from.
 			// Example:
-			// smartSymbolController.AddSmartSymbolDetectors("FreeGames", freeGameDetectors);
+			smartSymbolController.AddSmartSymbolDetectors("FreeGames", freeGameDetectors);
 			// smartSymbolController.AddSmartSymbolDetectors("Respins", respinDetectors);
 
 			var progAwardCont = new SimpleProgressiveAwardController();

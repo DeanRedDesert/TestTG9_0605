@@ -718,7 +718,8 @@ MonoBehaviour:
     symbolList: {fileID: 0}
     reelContainer: {fileID: 4494974126094927630}
     reelSpinStateEvent: {fileID: 11400000, guid: 5fc949d077146cf47af93ca29268455a, type: 2}
-    anticipationMasks: []
+    anticipationMasks:
+    - path: StatusDatabase.SmartSymbolStatus.FreeGames.SmartSymbolData.AnticipationMask
   reelSpin: {fileID: 4111709981871343630}
 --- !u!114 &4111709981871343630
 MonoBehaviour:
