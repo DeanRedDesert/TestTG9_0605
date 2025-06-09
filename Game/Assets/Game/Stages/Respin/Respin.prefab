@@ -371,7 +371,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2541628852141094618}
-  - {fileID: 2252322411196285020}
   - {fileID: 5620853305957078238}
   m_Father: {fileID: 2006003893010834281}
   m_RootOrder: 1
@@ -747,90 +746,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
---- !u!1 &3541406171245352851
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2252322411196285020}
-  - component: {fileID: 3055912458948315873}
-  - component: {fileID: 6144091454130903819}
-  m_Layer: 6
-  m_Name: PreShowWin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2252322411196285020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3541406171245352851}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7452855624352040419}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3055912458948315873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3541406171245352851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddb5e5c2c7d4c1fb99abab2b17eeece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bellSound: {fileID: 0}
-  reelContainer: {fileID: 9132759279042127651}
-  highlightPositions:
-    path: StatusDatabase.GameSpecificStatus.PreShowWinHighlight
---- !u!114 &6144091454130903819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3541406171245352851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b54843623447a5a554ac6aac17ec94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sequenceEventPair:
-    sequenceNames:
-    - Respin/Trigger
-    eventNameA: HighlightTrigger
-    eventNameB: HighlightTrigger
-  action: 0
-  activateOffsetMs: 0
-  completionNotifierBehaviour: {fileID: 0}
-  canBeInterrupted: 0
-  canBeAutoInterrupted: 0
-  interruptPrio: 250
-  components:
-  - intensity: -1
-    component: {fileID: 3055912458948315873}
-    durationOverride: 0
-    duration: 0
-    animationComponentClipIndex: 0
-    animationComponentClipName: 
-  activateEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-  resetEvents:
-  - m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &3706974850670324054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2356,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5005890530675873739, guid: 31a4d1fd4d26f8b42b0ff268dcbb7601, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5005890530675873739, guid: 31a4d1fd4d26f8b42b0ff268dcbb7601, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2847,14 +2762,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e77a1d0e1b29740ab189269996ce7a, type: 3}
+--- !u!1 &5582420857862347488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1562311544283346220, guid: e2e77a1d0e1b29740ab189269996ce7a, type: 3}
+  m_PrefabInstance: {fileID: 6401528371219394508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5582420857862347519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1562311544283346227, guid: e2e77a1d0e1b29740ab189269996ce7a, type: 3}
   m_PrefabInstance: {fileID: 6401528371219394508}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5582420857862347488 stripped
+--- !u!1 &5704414425844784197 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1562311544283346220, guid: e2e77a1d0e1b29740ab189269996ce7a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1728514267542090633, guid: e2e77a1d0e1b29740ab189269996ce7a, type: 3}
   m_PrefabInstance: {fileID: 6401528371219394508}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &101287056999722773 stripped
@@ -2868,11 +2788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebc90631fe34f21b5e4ecaccad8f6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &5704414425844784197 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1728514267542090633, guid: e2e77a1d0e1b29740ab189269996ce7a, type: 3}
-  m_PrefabInstance: {fileID: 6401528371219394508}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1607863600312003491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2887,6 +2802,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceEventEntry:
     sequenceName: Game/BaseToRespin
+    eventName: ShowStage
+  fireOn: 0
+  requiredIntensity:
+    intensity: -1
+  activateEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5704414425844784197}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &5564110734813083277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582420857862347488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07326e1e66b4cedbe94ea9f6748f905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceEventEntry:
+    sequenceName: Game/FreeGamesToRespin
     eventName: ShowStage
   fireOn: 0
   requiredIntensity:
@@ -2938,39 +2886,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5564110734813083277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5582420857862347488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e07326e1e66b4cedbe94ea9f6748f905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sequenceEventEntry:
-    sequenceName: Game/FreeGamesToRespin
-    eventName: ShowStage
-  fireOn: 0
-  requiredIntensity:
-    intensity: -1
-  activateEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5704414425844784197}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &5890072570733650715
 MonoBehaviour:

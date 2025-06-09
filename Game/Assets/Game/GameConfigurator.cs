@@ -40,7 +40,7 @@ namespace Game
 			var freeGamesNode = new SimpleGameNode("FreeGamesStage", GameStages.FreeGames);
 			freeGamesNode.AddPreShowSequence("Trigger", CheckTrigger);
 			var respinNode = new SimpleGameNode("RespinStage", GameStages.Respin);
-			respinNode.AddPreShowSequence("Trigger", CheckTrigger);
+			//respinNode.AddPreShowSequence("Trigger", CheckTrigger); // can remove since there is no Trigger Free Games inside Respin
 
 			return new IPresentationNode[]
 			{
