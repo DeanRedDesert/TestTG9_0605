@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Game;
 using Game.Stages.Common.PreShow;
 using Game.GameMessages;
@@ -28,7 +28,7 @@ namespace Game
 
 		private static bool CheckTrigger()
 		{
-			var prize = PreShowHelper.FindPrize("PRIZENAME");
+			var prize = PreShowHelper.FindPrize("SCAT1");
 			GameSpecificController.Data.PreShowWinHighlight = prize?.WinningPositions;
 			return prize != null;
 		}
