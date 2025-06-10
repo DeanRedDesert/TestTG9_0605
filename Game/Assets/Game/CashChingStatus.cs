@@ -8,13 +8,18 @@ using Midas.Core.General;
 using SelectorItems = Logic.Core.Types.SelectorItems;
 using Midas.Presentation.Data.StatusBlocks;
 using System.Diagnostics;
+using Midas.Presentation.Denom;
 
 public sealed class CashChingStatus : StatusBlock
 {
 	private static IReadOnlyDictionary<Money, IReadOnlyList<RespinPrize>> respinPrizes;
 	private StatusProperty<IReadOnlyDictionary<string, long>> respinPrizeValues;
+	private StatusProperty<Money> miniValue;
+	private StatusProperty<Money> minorValue;
 
 	public IReadOnlyDictionary<string, long> RespinPrizeValues => respinPrizeValues.Value;
+	public Money MiniValue => miniValue.Value;
+	public Money MinorValue => minorValue.Value;
 
 	public CashChingStatus() : base(nameof(CashChingStatus))
 	{
@@ -33,6 +38,8 @@ public sealed class CashChingStatus : StatusBlock
 	{
 		base.DoResetProperties();
 		respinPrizeValues = AddProperty(nameof(RespinPrizeValues), default(IReadOnlyDictionary<string, long>));
+		miniValue = AddProperty(nameof(MiniValue), Money.Zero);
+		minorValue = AddProperty(nameof(MinorValue), Money.Zero);
 	}
 
 	protected override void RegisterForEvents(AutoUnregisterHelper unregisterHelper)
@@ -40,6 +47,28 @@ public sealed class CashChingStatus : StatusBlock
 		base.RegisterForEvents(unregisterHelper);
 
 		unregisterHelper.RegisterPropertyChangedHandler(StatusDatabase.ConfigurationStatus, nameof(ConfigurationStatus.DenomConfig), OnDenomConfigChanged);
+		unregisterHelper.RegisterPropertyChangedHandler(StatusDatabase.DenomStatus, nameof(DenomStatus.SelectedDenom), OnSelectedDenomChanged);
+	}
+
+	private void OnSelectedDenomChanged(StatusBlock sender, string propertyname)
+	{
+		var prizes = respinPrizes[StatusDatabase.DenomStatus.SelectedDenom];
+
+		foreach (var prize in prizes)
+		{
+			if (prize.IsBonus && !prize.IsProgressive)
+			{
+				Money value = StatusDatabase.DenomStatus.SelectedDenom * new RationalNumber((long)prize.Value, 1);
+				if (prize.SymbolName == "MINI")
+				{
+					miniValue.Value = value;
+				}
+				else if (prize.SymbolName == "MINOR")
+				{
+					minorValue.Value = value;
+				}
+			}
+		}
 	}
 
 	private void OnDenomConfigChanged(StatusBlock sender, string propertyname)
@@ -53,7 +82,6 @@ public sealed class CashChingStatus : StatusBlock
 		}
 
 		respinPrizeValues.Value = newRespinPrizes;
-		UnityEngine.Debug.Log("DGS Denom Config Changed");
 	}
 
 	private static IReadOnlyDictionary<Money, IReadOnlyList<RespinPrize>> ExtractRespinPrizes()
