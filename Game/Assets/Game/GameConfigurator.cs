@@ -12,6 +12,7 @@ using Midas.Presentation.StageHandling;
 using Logic.Core.Types;
 using Logic.Types;
 using Midas.Gle.Presentation;
+using Logic.Core.WinCheck;
 using System.Linq;
 
 namespace Game

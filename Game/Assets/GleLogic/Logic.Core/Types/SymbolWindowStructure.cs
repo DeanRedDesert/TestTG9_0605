@@ -102,9 +102,6 @@ namespace Logic.Core.Types
 		// ReSharper disable once UnusedMember.Global - Used by presentation
 		public IReadOnlyList<IPopulation> GetSourcePopulations() => sourcePopulations;
 
-		public Cell[] IndexesToCells(int[] indexes) => 
-			indexes.Select(index => cellLookup.Value.FirstOrDefault(pair => pair.Value == index).Key).ToArray();
-
 		#endregion
 
 		#region Private Functions
