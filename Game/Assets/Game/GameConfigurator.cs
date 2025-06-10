@@ -154,6 +154,7 @@ namespace Game
 
 			return new IPresentationController[]
 			{
+				new CashChingController(),
 				smartSymbolController,
 				new FreeGamesXOfYController(GameStages.FreeGames),
 				new RespinRemainingController(GameStages.Respin),
